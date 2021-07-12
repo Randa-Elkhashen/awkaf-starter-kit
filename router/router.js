@@ -5,6 +5,7 @@ import Gallery from "../src/pages/Gallery";
 import Listing from "../src/pages/Listing";
 import Reports from "../src/pages/Reports";
 import ContactUs from "../src/pages/ContactUs";
+import genericFormValidations from "../src/pages/genericFormValidations";
 
 
 
@@ -29,7 +30,11 @@ const routes = [
   {
     path: "/contactus",
     component: ContactUs
-  }
+    },
+    {
+        path: "/genericFormValidations",
+        component: genericFormValidations
+    }
   // {
   //   path: "/food-item/:id",
   //   component: () => import("../views/foodItemDetails.vue")
