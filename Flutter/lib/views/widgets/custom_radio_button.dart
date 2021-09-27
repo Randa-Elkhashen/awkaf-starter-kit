@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/helpers/app_colors.dart';
-import 'package:flutter_app/helpers/app_dimensions.dart';
+import 'package:flutter_app/views/view_helpers/app_colors.dart';
+import 'package:flutter_app/views/view_helpers/app_dimensions.dart';
 
 class CustomRadioButtonProps {
   bool isSelected;

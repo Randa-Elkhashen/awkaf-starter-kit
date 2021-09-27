@@ -2,8 +2,7 @@
 // #
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/helpers/app_colors.dart';
-import 'package:flutter_app/helpers/app_dimensions.dart';
+import 'package:flutter_app/views/view_helpers/imports.dart';
 import 'package:flutter_app/views/widgets/youtube_widget.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -65,9 +64,9 @@ class _GalleryScreenState extends State<GalleryScreen> {
                             //
                             if (item.type == Type.IMAGE)
                               Center(
-                                child: Image.network(
+                                child: Image.asset(
                                   item.url!,
-                                  fit: BoxFit.fill,
+                                  fit: BoxFit.cover,
                                   width: 1000,
                                 ),
                               ),
@@ -147,22 +146,10 @@ class _GalleryScreenState extends State<GalleryScreen> {
 
 // Dummy Gallery List
 List<GalleryViewModel> galleryList = [
-  GalleryViewModel(
-      name: '',
-      url:
-          'https://images.pexels.com/photos/3073666/pexels-photo-3073666.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      type: Type.IMAGE),
-  GalleryViewModel(
-      name: '',
-      url:
-          'https://images.pexels.com/photos/4819658/pexels-photo-4819658.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      type: Type.IMAGE),
+  GalleryViewModel(name: '', url: AppIcons.image1, type: Type.IMAGE),
+  GalleryViewModel(name: '', url: AppIcons.image2, type: Type.IMAGE),
   GalleryViewModel(
       name: '', url: 'https://soundcloud.com/ishraq-zahde/dy8jvciznv6q', type: Type.AUDIO),
-  GalleryViewModel(
-      name: '',
-      url:
-          'https://images.pexels.com/photos/3244513/pexels-photo-3244513.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      type: Type.IMAGE),
+  GalleryViewModel(name: '', url: AppIcons.image3, type: Type.IMAGE),
   GalleryViewModel(name: '', url: 'K8C4yr7zavE', type: Type.VIDEO)
 ];

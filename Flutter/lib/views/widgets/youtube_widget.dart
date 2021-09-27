@@ -42,10 +42,7 @@ class _YoutubeVideoState extends State<YoutubeVideo> {
     final YoutubePlayerController _controller = YoutubePlayerController(
       initialVideoId: widget.initialKey, //  'braVWtZNnsc',
       flags: const YoutubePlayerFlags(
-        autoPlay: true,
-        isLive: true,
-        controlsVisibleAtStart: true,
-      ),
+          autoPlay: true, isLive: true, controlsVisibleAtStart: true, disableDragSeek: true),
     );
 
     return YoutubePlayer(

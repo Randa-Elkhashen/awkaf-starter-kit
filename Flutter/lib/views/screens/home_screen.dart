@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/helpers/app_colors.dart';
-import 'package:flutter_app/helpers/app_dimensions.dart';
+import 'package:flutter_app/views/view_helpers/imports.dart';
+
 import 'package:flutter_app/views/screens/drawer_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,12 +13,6 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: AppColors.orange,
-        // actions: [
-        //   IconButton(
-        //     icon: Icon(Icons.menu),
-        //     onPressed: () => _openMenuScreen(context),
-        //   )
-        // ],
       ),
       drawer: NavigationDrawerWidget(),
       body: Center(

@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/views/view_helpers/imports.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-class TextToSpeechScreen extends StatefulWidget {
+class TextToSpeechMoreScreen extends StatefulWidget {
   @override
-  _TextToSpeechScreenState createState() => _TextToSpeechScreenState();
+  _TextToSpeechMoreScreenState createState() => _TextToSpeechMoreScreenState();
 }
 
 enum TtsState { playing, stopped, paused, continued }
 
-class _TextToSpeechScreenState extends State<TextToSpeechScreen> {
+class _TextToSpeechMoreScreenState extends State<TextToSpeechMoreScreen> {
   late FlutterTts flutterTts;
   String? language;
   String? engine;
@@ -22,7 +22,7 @@ class _TextToSpeechScreenState extends State<TextToSpeechScreen> {
   double rate = 0.5;
   bool isCurrentLanguageInstalled = false;
 
-  String _newVoiceText = arabicText;
+  String _newVoiceText = dummyText;
   int? _inputLength;
 
   TtsState ttsState = TtsState.stopped;
@@ -176,29 +176,21 @@ class _TextToSpeechScreenState extends State<TextToSpeechScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: AppColors.orange,
-      ),
-      body: Container(
-        height: AppDimensions.getFullHeight(),
-        child: SingleChildScrollView(
-          // scrollDirection: Axis.vertical,
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          elevation: 0.0,
+          backgroundColor: AppColors.orange,
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Column(
             children: [
               _btnSection(),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  arabicText,
-                  style: TextStyle(fontSize: 16),
-                  textDirection: TextDirection.rtl,
-                ),
-              ),
-              SizedBox(
-                height: 40,
-              )
+              _engineSection(),
+              _futureBuilder(),
+              _buildSliders(),
+              if (isAndroid) _getMaxSpeechInputLengthSection(),
             ],
           ),
         ),
@@ -359,25 +351,3 @@ class _TextToSpeechScreenState extends State<TextToSpeechScreen> {
 
 var dummyText =
     "Flutter is Google's UI toolkit for building beautiful, natively compiled applications for mobile, web, desktop, and embedded devices from a single codebase.";
-var arabicText =
-    """اجتمع السيد الرئيس عبد الفتاح السيسي اليوم مع الدكتور مصطفى مدبولي رئيس مجلس الوزراء، والدكتورة 
-هالة السعيد وزيرة التخطيط والتنمية الاقتصادية، والدكتورة مايا مرسي رئيس المجلس القومي للمرأة، 
-والدكتور خالد زكريا محمد أمين رئيس مركز السياسات الاقتصادية بالمعهد القومي للتخطيط.
-
-وصرح المتحدث الرسمي باِسم رئاسة الجمهورية بأن الاجتماع تناول عرض جهود الحكومة المصرية في دعم 
-إطلاق تقرير التنمية البشرية في مصر، بالتعاون مع البرنامج الإنمائي للأمم المتحدة بالقاهرة، وذلك بعد توقف 
-إصدار التقرير طوال السنوات العشر الماضية منذ عام ٢٠١١.
-
-وأضاف المتحدث الرسمي أن التقرير المُشار إليه يعتمد على الإطار المفاهيمي الخاص بتحقيق التنمية الشاملة 
-في النواحي الاقتصادية والسياسية والاجتماعية والثقافية، وتعزيز التنمية البشرية والاستثمار والإصلاح 
-الاقتصادي والاجتماعي، وكذا تعزيز الاستدامة البيئية من أجل تحقيق غايات وأهداف التنمية المستدامة.
-
-ويستند التقرير إلى عدة محاور رئيسية تشمل ما تم في الدولة من إصلاح اقتصادي والتأسيس لانطلاقة تنموية، 
-وبرامج الحماية الاجتماعية الهادفة نحو تحقيق عقد اجتماعي أكثر شمولًا في مصر، والاستثمار في الثروة 
-البشرية من خلال التعليم والصحة والسكن اللائق، بالإضافة إلى محور النهضة الجديدة للمرأة المصرية، فضلًا عن 
-إدارة نظم الحماية البيئية، وكذلك تطوير عملية الحوكمة لإنشاء منظومة فعالة لإدارة شؤون الدولة والمجتمع.
-
-وقد وجه السيد الرئيس الحكومة في هذا الإطار بالقيام بالتوثيق الدقيق لكافة جهود الدولة التي شملت جميع 
-القطاعات على مستوى الجمهورية خلال السنوات الماضية وذلك لإتاحة البيانات الدقيقة والمفصلة حول ما يتم 
-من جهود تنموية شاملة وعميقة تمتد لجميع نواحي الحياة في مصر، وهو الأمر الذي يدعم قدرات الرصد 
-والتحليل ودقة المؤشرات التي تصدر عن المؤسسات المتخصصة فيما يتعلق بعملية التنمية في مصر.""";

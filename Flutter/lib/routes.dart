@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/views/screens/font_resizing_screen.dart';
 import 'package:flutter_app/views/screens/gallery_screen.dart';
 import 'package:flutter_app/views/screens/home_screen.dart';
+import 'package:flutter_app/views/screens/text_to_speech_more_screen.dart';
 import 'package:flutter_app/views/screens/text_to_speech_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -10,6 +11,7 @@ class Routes {
   static const HOME_SCREEN = '/homeScreen';
   static const GALLERY_SCREEN = '/galleryScreen';
   static const TEXT_TO_SPEECH_SCREEN = '/textToSpeechScreen';
+  static const TEXT_TO_SPEECH__MORE_SCREEN = '/textToSpeechMoreScreen';
   static const SELECT_FONT_SIZE_SCREEN = '/selectFontSizeScreen';
 
   static MaterialPageRoute onGenerateRoute(RouteSettings settings) {
@@ -17,6 +19,7 @@ class Routes {
       HOME_SCREEN: (context) => HomeScreen(),
       GALLERY_SCREEN: (context) => GalleryScreen(),
       TEXT_TO_SPEECH_SCREEN: (context) => TextToSpeechScreen(),
+      TEXT_TO_SPEECH__MORE_SCREEN: (context) => TextToSpeechMoreScreen(),
       SELECT_FONT_SIZE_SCREEN: (context) => SelectFontSizeScreen(),
     };
 

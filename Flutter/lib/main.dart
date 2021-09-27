@@ -1,8 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/providers/test_flow_provider.dart';
 import 'package:flutter_app/routes.dart';
 import 'package:flutter_app/views/screens/home_screen.dart';
+import 'package:flutter_app/views/screens/test_flow_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,11 +39,15 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'TurnDigital',
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
-      onGenerateRoute: Routes.onGenerateRoute,
-    );
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => TestFlowProvider()),
+        ],
+        child: MaterialApp(
+          title: 'TurnDigital',
+          debugShowCheckedModeBanner: false,
+          home: HomeScreen(),
+          onGenerateRoute: Routes.onGenerateRoute,
+        ));
   }
 }

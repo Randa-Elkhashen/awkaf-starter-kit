@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/helpers/app_colors.dart';
-import 'package:flutter_app/helpers/app_dimensions.dart';
+import 'package:flutter_app/views/view_helpers/imports.dart';
+
 import 'package:flutter_app/views/widgets/custom_radio_button.dart';
 
 enum NEWS_FONT { SMALL, NORMAL, LARGE, LARGER }
