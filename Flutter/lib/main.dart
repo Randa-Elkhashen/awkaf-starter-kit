@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/providers/news_provider.dart';
 import 'package:flutter_app/providers/test_flow_provider.dart';
 import 'package:flutter_app/routes.dart';
 import 'package:flutter_app/views/screens/home_screen.dart';
-import 'package:flutter_app/views/screens/test_flow_screen.dart';
+import 'package:flutter_app/views/style/app_style.dart';
+import 'package:flutter_app/views/view_helpers/app_colors.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -22,7 +24,7 @@ void main() {
   runZonedGuarded<Future<void>>(() async {
     runApp(MyApp());
   }, (Object error, StackTrace stackTrace) {
-    print('runZonedGuarded...... FlutterError: ${stackTrace} -}');
+    print('runZonedGuarded...... FlutterError: $stackTrace -}');
   });
 }
 
@@ -42,9 +44,23 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => TestFlowProvider()),
+          ChangeNotifierProvider(create: (_) => NewsProvider()),
         ],
         child: MaterialApp(
           title: 'TurnDigital',
+          builder: (BuildContext context, Widget? child){
+            AppStyle.setMedia(MediaQuery.maybeOf(context)!);
+            return MediaQuery(
+                data: AppStyle.mediaQueryData!,
+                child: child!
+            );
+          },
+          theme: ThemeData(
+            primaryColor: AppColors.orange,
+            colorScheme: ColorScheme.light(
+              primary: AppColors.orange,
+            )
+          ),
           debugShowCheckedModeBanner: false,
           home: HomeScreen(),
           onGenerateRoute: Routes.onGenerateRoute,

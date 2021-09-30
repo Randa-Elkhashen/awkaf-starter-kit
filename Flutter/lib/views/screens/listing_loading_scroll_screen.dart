@@ -22,7 +22,7 @@ class _ListingLoadingScrollScreenState extends State<ListingLoadingScrollScreen>
         // You're at the edge of the bottom.
         Future.delayed(new Duration(seconds: 2), () async {
           setState(() {
-            list += booksList;
+            list.addAll(booksList) ;
             verticalLoading = false;
           });
         });
@@ -121,6 +121,7 @@ class _ListingLoadingScrollScreenState extends State<ListingLoadingScrollScreen>
                     style: TextStyle(
                       fontSize: AppDimensions.convertToH(18),
                       fontWeight: FontWeight.bold,
+
                     ),
                   ),
                 ],

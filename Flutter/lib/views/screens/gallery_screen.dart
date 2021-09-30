@@ -72,7 +72,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
                               ),
                             if (item.type == Type.VIDEO)
                               Center(
-                                  child: YoutubeVideo(
+                                child: YoutubeVideo(
                                 initialKey: item.url!,
                               )),
                             if (item.type == Type.AUDIO)

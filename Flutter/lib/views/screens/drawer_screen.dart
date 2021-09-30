@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/views/screens/news_screen.dart';
 import 'package:flutter_app/views/screens/text_to_speech_screen.dart';
 import 'package:flutter_app/views/view_helpers/app_colors.dart';
 import 'package:flutter_app/views/view_helpers/app_dimensions.dart';
@@ -49,6 +50,11 @@ class NavigationDrawerWidget extends StatelessWidget {
                       text: 'Listing',
                       icon: Icons.list,
                       onClicked: () => selectedItem(context, 3),
+                    ),
+                    buildMenuItem(
+                      text: 'lazy loading',
+                      icon: Icons.list,
+                      onClicked: () => selectedItem(context, 4),
                     ),
                   ],
                 ),
@@ -119,6 +125,11 @@ class NavigationDrawerWidget extends StatelessWidget {
       case 3:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => ListingLoadingScrollScreen(),
+        ));
+        break;
+      case 4:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => NewsScreens(),
         ));
         break;
     }

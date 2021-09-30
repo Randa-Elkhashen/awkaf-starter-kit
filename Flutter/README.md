@@ -1,24 +1,5 @@
-# flutter_app
+# flutter FE Library
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
----------------------
-
-
-## IMPORTANT RULES
 ## IMPORTANT RULES
 
 [APP-Structure]
@@ -35,8 +16,6 @@ The Flow of data will be as follow:
 - (Providers) Call only Controllers to get data, Not APis
 - (Controllers) call Apis, and implement all logic and return the value to providers
 
-
-
 [Widget-Structure]
 1 => Class variables (if exist)
 2 => Ui Actions & User Actions (if exist)
@@ -45,7 +24,3 @@ The Flow of data will be as follow:
 5 => Widget ui Varaibles [inside build method] (if exist)
 6 => return for build Widget
 7 => Widget ui functions (if exist)
-
-
-# [Note]
-- Example for this structure [WidgetStructure] in rules\widget_structure.md
