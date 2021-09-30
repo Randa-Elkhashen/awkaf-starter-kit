@@ -9,6 +9,8 @@ import 'package:flutter_app/views/screens/font_resizing_screen.dart';
 import 'package:flutter_app/views/screens/gallery_screen.dart';
 import 'package:flutter_app/views/screens/listing_loading_scroll_screen.dart';
 
+import 'auth/sign_in.dart';
+
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: AppDimensions.convertToW(30));
   @override
@@ -52,9 +54,14 @@ class NavigationDrawerWidget extends StatelessWidget {
                       onClicked: () => selectedItem(context, 3),
                     ),
                     buildMenuItem(
-                      text: 'lazy loading',
+                      text: 'Lazy Loading',
                       icon: Icons.list,
                       onClicked: () => selectedItem(context, 4),
+                    ),
+                    buildMenuItem(
+                      text: 'User Cycle',
+                      icon: Icons.supervised_user_circle_outlined,
+                      onClicked: () => selectedItem(context, 5),
                     ),
                   ],
                 ),
@@ -130,6 +137,11 @@ class NavigationDrawerWidget extends StatelessWidget {
       case 4:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => NewsScreens(),
+        ));
+        break;
+      case 5:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => SignInPage(),
         ));
         break;
     }

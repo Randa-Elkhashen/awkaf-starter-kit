@@ -36,7 +36,6 @@ class NewsList extends StatelessWidget {
               vertical: 8
           ),
           itemBuilder: (context,itemIndex){
-            print("$itemIndex - ${topics.length}");
             Topic _topic = topics[itemIndex];
             return NewsItem(
               topic: _topic,

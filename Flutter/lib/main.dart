@@ -1,10 +1,11 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/providers/news_provider.dart';
 import 'package:flutter_app/providers/test_flow_provider.dart';
 import 'package:flutter_app/routes.dart';
-import 'package:flutter_app/views/screens/home_screen.dart';
+import 'package:flutter_app/views/screens/splash_screen.dart';
 import 'package:flutter_app/views/style/app_style.dart';
 import 'package:flutter_app/views/view_helpers/app_colors.dart';
 import 'package:provider/provider.dart';
@@ -46,24 +47,32 @@ class _MyAppState extends State<MyApp> {
           ChangeNotifierProvider(create: (_) => TestFlowProvider()),
           ChangeNotifierProvider(create: (_) => NewsProvider()),
         ],
-        child: MaterialApp(
-          title: 'TurnDigital',
-          builder: (BuildContext context, Widget? child){
-            AppStyle.setMedia(MediaQuery.maybeOf(context)!);
-            return MediaQuery(
-                data: AppStyle.mediaQueryData!,
-                child: child!
-            );
+        child: GestureDetector(
+          onTap: () {
+            FocusScopeNode currentFocus = FocusScope.of(context);
+            if (!currentFocus.hasPrimaryFocus) {
+              FocusManager.instance.primaryFocus!.unfocus();
+            }
           },
-          theme: ThemeData(
-            primaryColor: AppColors.orange,
-            colorScheme: ColorScheme.light(
-              primary: AppColors.orange,
-            )
+          child: MaterialApp(
+            title: 'TurnDigital',
+            builder: (BuildContext context, Widget? child){
+              AppStyle.setMedia(MediaQuery.maybeOf(context)!);
+              return MediaQuery(
+                  data: AppStyle.mediaQueryData!,
+                  child: child!
+              );
+            },
+            theme: ThemeData(
+              primaryColor: AppColors.orange,
+              colorScheme: ColorScheme.light(
+                primary: AppColors.orange,
+              )
+            ),
+            debugShowCheckedModeBanner: false,
+            home: SplashScreen(),
+            onGenerateRoute: Routes.onGenerateRoute,
           ),
-          debugShowCheckedModeBanner: false,
-          home: HomeScreen(),
-          onGenerateRoute: Routes.onGenerateRoute,
         ));
   }
 }

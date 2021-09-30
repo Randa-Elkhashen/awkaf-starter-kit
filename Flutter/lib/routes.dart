@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/views/screens/auth/sign_up.dart';
+import 'package:flutter_app/views/screens/auth/verify_email.dart';
 import 'package:flutter_app/views/screens/font_resizing_screen.dart';
 import 'package:flutter_app/views/screens/gallery_screen.dart';
 import 'package:flutter_app/views/screens/home_screen.dart';
@@ -13,6 +15,8 @@ class Routes {
   static const TEXT_TO_SPEECH_SCREEN = '/textToSpeechScreen';
   static const TEXT_TO_SPEECH__MORE_SCREEN = '/textToSpeechMoreScreen';
   static const SELECT_FONT_SIZE_SCREEN = '/selectFontSizeScreen';
+  static const verifyEmailScreen = "/verify-email";
+  static const signUpPage = "/sign-up";
 
   static MaterialPageRoute onGenerateRoute(RouteSettings settings) {
     var routes = <String, WidgetBuilder>{
@@ -21,6 +25,8 @@ class Routes {
       TEXT_TO_SPEECH_SCREEN: (context) => TextToSpeechScreen(),
       TEXT_TO_SPEECH__MORE_SCREEN: (context) => TextToSpeechMoreScreen(),
       SELECT_FONT_SIZE_SCREEN: (context) => SelectFontSizeScreen(),
+      verifyEmailScreen: (context) => VerifyEmailPage(),
+      signUpPage: (context) => SignUpScreen(),
     };
 
     WidgetBuilder? builder = routes[settings.name];
