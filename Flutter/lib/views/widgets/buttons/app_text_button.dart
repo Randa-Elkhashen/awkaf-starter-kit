@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-class ATextButton extends StatelessWidget {
+class AppTextButton extends StatelessWidget {
   final Color? color;
   final String text;
   final VoidCallback? onPressed;
 
-  const ATextButton({
+  const AppTextButton({
     Key? key,
     this.color,
     required this.text,

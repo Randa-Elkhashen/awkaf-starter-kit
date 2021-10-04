@@ -109,7 +109,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                     SizedBox(height: 32 ,),
                     SizedBox(
                       width: _size.width/1.5,
-                      child: AButton(
+                      child: AppButton(
                         text: "Reset Password",
                         onPressed: () async {
                           if(!_formKey.currentState!.validate()) return;
@@ -127,7 +127,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("Didn't receive message?"),
-                        ATextButton(
+                        AppTextButton(
                           text: "Resend!",
                           color: Theme.of(context).colorScheme.primary,
                           onPressed: () async {

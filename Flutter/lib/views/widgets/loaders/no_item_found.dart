@@ -39,7 +39,7 @@ class NoItemFound extends StatelessWidget {
               const SizedBox(height: 8),
               SizedBox(
                 width: size,
-                child: AButton(
+                child: AppButton(
                   text: buttonText ?? "Add",
                   onPressed: onAddItem!,
                 ),

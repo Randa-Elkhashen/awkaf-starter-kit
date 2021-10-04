@@ -57,7 +57,7 @@ class _NewsSearchSheetState extends State<NewsSearchSheet> {
                   padding: const EdgeInsets.all(16.0),
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    child: AButton(
+                    child: AppButton(
                       text: "Clear Search",
                       onPressed:(){
                         _topicSearch = TopicSearch();

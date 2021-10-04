@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-class AIconButton extends StatelessWidget {
+class AppIconButton extends StatelessWidget {
   final IconData iconData;
   final Color? color;
   final VoidCallback? onPressed;
 
-  const AIconButton({
+  const AppIconButton({
     Key? key,
     required this.iconData,
     this.onPressed, this.color

@@ -50,7 +50,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                 SizedBox(height: 32 ,),
                 SizedBox(
                   width: _size.width / 1.5,
-                  child: AButton(
+                  child: AppButton(
                     text: "Verify",
                     onPressed: () async {
 

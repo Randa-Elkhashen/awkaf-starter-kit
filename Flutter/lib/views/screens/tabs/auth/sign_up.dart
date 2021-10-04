@@ -111,7 +111,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     SizedBox(height: 32 ,),
                     SizedBox(
                       width: _size.width/1.5,
-                      child: AButton(
+                      child: AppButton(
                         text: "Sign Up",
                         onPressed: () async {
                           if(!_formKey.currentState!.validate()) return;
@@ -129,7 +129,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("Do You Have Account!"),
-                        ATextButton(
+                        AppTextButton(
                           text: "Sign In?",
                           color: Theme.of(context).colorScheme.primary,
                           onPressed: (){

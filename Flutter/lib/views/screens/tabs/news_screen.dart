@@ -41,7 +41,7 @@ class _NewsScreensState extends State<NewsScreens> {
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                   ),
-                  AIconButton(
+                  AppIconButton(
                     iconData: Icons.view_headline,
                     onPressed: () async {
                       TopicSearch? _temp = await showModalBottomSheet(

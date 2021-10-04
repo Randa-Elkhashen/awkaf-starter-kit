@@ -78,7 +78,7 @@ class _SignInPageState extends State<SignInPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    ATextButton(
+                    AppTextButton(
                       text: "Forget Password?",
                       onPressed: (){
                         Navigator.of(context).pushNamed(VerifyEmailPage.id);
@@ -89,7 +89,7 @@ class _SignInPageState extends State<SignInPage> {
                 SizedBox(height: 32 ,),
                 SizedBox(
                   width: _size.width / 1.5,
-                  child: AButton(
+                  child: AppButton(
                     text: "Sign In",
                     onPressed: () async {
 
@@ -111,7 +111,7 @@ class _SignInPageState extends State<SignInPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Don't have account?"),
-                    ATextButton(
+                    AppTextButton(
                       text: "Sign Up!",
                       color: Theme.of(context).colorScheme.primary,
                       onPressed: (){
