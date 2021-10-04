@@ -41,6 +41,7 @@ class DateTimeScreen extends StatelessWidget {
         SizedBox(
           height: 140 * AppStyle.scaleFactor,
           child: CupertinoDatePicker(
+
               mode: CupertinoDatePickerMode.dateAndTime,
               onDateTimeChanged: (dateTime) {
 

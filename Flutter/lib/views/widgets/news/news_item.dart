@@ -25,7 +25,7 @@ class NewsItem extends StatelessWidget {
 
           style: ElevatedButton.styleFrom(
             padding: EdgeInsets.zero,
-            primary: Colors.white,
+            primary: Theme.of(context).colorScheme.background,
             elevation: 2
           ),
           onPressed: (){

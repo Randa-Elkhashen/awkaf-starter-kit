@@ -56,7 +56,7 @@ class ATextFormField extends StatelessWidget {
         enabledBorder: InputBorder.none,
         labelText: label,
         hintText: hint,
-        fillColor: Theme.of(context).colorScheme.onPrimary,
+        fillColor: Theme.of(context).colorScheme.background,
         filled: true,
 
         prefixIcon: prefixIcon,

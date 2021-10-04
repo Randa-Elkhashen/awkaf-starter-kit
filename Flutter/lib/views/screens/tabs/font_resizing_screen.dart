@@ -54,7 +54,6 @@ class _SelectFontSizeScreenState extends State<SelectFontSizeScreen> {
               Text(
                 font['title'],
                 style: TextStyle(
-                  color: AppColors.black,
                   fontSize: 17,
                 ),
               ),

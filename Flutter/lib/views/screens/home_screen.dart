@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/providers/setting_provider.dart';
 import 'package:flutter_app/views/screens/tabs/auth/sign_in.dart';
 import 'package:flutter_app/views/screens/tabs/date_time_screen.dart';
 import 'package:flutter_app/views/screens/tabs/font_resizing_screen.dart';
@@ -9,6 +10,8 @@ import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_scr
 import 'package:flutter_app/views/view_helpers/imports.dart';
 
 import 'package:flutter_app/views/screens/drawer_screen.dart';
+import 'package:flutter_app/views/widgets/buttons/app_icon_button.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -29,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
+    final _settingProvider = Provider.of<SettingProvider>(context,listen: false);
     AppDimensions(context);
     return DefaultTabController(
       length: _labels.length,
@@ -41,7 +45,19 @@ class _HomeScreenState extends State<HomeScreen> {
             tabs: _labels.map((e) => Tab(text: e,)).toList()
           ),
           actions: [
-
+            AppIconButton(
+                iconData:  _settingProvider.themeMode?.index == 0
+                    ? Icons.settings_suggest_outlined :
+                _settingProvider.themeMode?.index == 1
+                    ? Icons.light_mode_outlined
+                    : Icons.dark_mode_outlined,
+              onPressed: (){
+                _settingProvider.setThemeMode(
+                    ThemeMode.values[
+                    ((_settingProvider.themeMode?.index ?? 0) + 1) % 3]
+                );
+              },
+            )
           ],
         ),
         drawer: NavigationDrawerWidget(),
