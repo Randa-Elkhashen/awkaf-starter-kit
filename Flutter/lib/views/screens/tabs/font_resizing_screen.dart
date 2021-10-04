@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/views/view_helpers/imports.dart';
 
@@ -27,10 +28,6 @@ class _SelectFontSizeScreenState extends State<SelectFontSizeScreen> {
       {'title': 'Larger', 'type': NEWS_FONT.LARGER},
     ];
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: AppColors.orange,
-      ),
       body: Center(
         child: Column(children: [
           SizedBox(height: AppDimensions.convertToH(4)),
@@ -58,7 +55,6 @@ class _SelectFontSizeScreenState extends State<SelectFontSizeScreen> {
                 font['title'],
                 style: TextStyle(
                   color: AppColors.black,
-                  fontFamily: 'Almarai-Regular',
                   fontSize: 17,
                 ),
               ),
@@ -88,7 +84,7 @@ class _SelectFontSizeScreenState extends State<SelectFontSizeScreen> {
         ' Demo Text For Font Selection ',
         style: TextStyle(
           fontSize: 16 + fontSizeAdded,
-          fontFamily: 'Almarai-Bold',
+          fontWeight: FontWeight.bold
         ),
       ),
     );

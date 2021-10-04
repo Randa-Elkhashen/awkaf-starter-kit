@@ -177,10 +177,6 @@ class _TextToSpeechScreenState extends State<TextToSpeechScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: AppColors.orange,
-      ),
       body: Container(
         height: AppDimensions.getFullHeight(),
         child: SingleChildScrollView(

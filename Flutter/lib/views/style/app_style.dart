@@ -4,13 +4,16 @@ class AppStyle {
 
   static MediaQueryData? mediaQueryData;
 
-  static late double scaleFactor;
+  static late double _scaleFactor;
+
+  static double get scaleFactor => _scaleFactor;
 
   static Size get size => mediaQueryData!.size;
 
+  /// call when app initialized to save MediaQueryData and set [scaleFactor]
   static setMedia(MediaQueryData media){
 
-    scaleFactor = media.size.shortestSide/(360) > 1.5
+    _scaleFactor = media.size.shortestSide/(360) > 1.5
         ? 1.5 : media.size.shortestSide/(360);
 
     mediaQueryData = media.copyWith(

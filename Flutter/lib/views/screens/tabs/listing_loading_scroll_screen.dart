@@ -33,10 +33,6 @@ class _ListingLoadingScrollScreenState extends State<ListingLoadingScrollScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: AppColors.orange,
-      ),
       body: Container(
         height: AppDimensions.getFullHeight(),
         child: Column(

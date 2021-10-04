@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/views/screens/auth/sign_up.dart';
-import 'package:flutter_app/views/screens/auth/verify_email.dart';
-import 'package:flutter_app/views/screens/font_resizing_screen.dart';
-import 'package:flutter_app/views/screens/gallery_screen.dart';
+
+import 'package:flutter_app/views/screens/tabs/font_resizing_screen.dart';
+import 'package:flutter_app/views/screens/tabs/gallery_screen.dart';
 import 'package:flutter_app/views/screens/home_screen.dart';
-import 'package:flutter_app/views/screens/text_to_speech_more_screen.dart';
-import 'package:flutter_app/views/screens/text_to_speech_screen.dart';
+import 'package:flutter_app/views/screens/tabs/auth/sign_up.dart';
+import 'package:flutter_app/views/screens/tabs/auth/verify_email.dart';
+import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_more_screen.dart';
+import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 class Routes {

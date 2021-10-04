@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
             }
           },
           child: MaterialApp(
-            title: 'TurnDigital',
+            title: 'Turn Digital',
             builder: (BuildContext context, Widget? child){
               AppStyle.setMedia(MediaQuery.maybeOf(context)!);
               return MediaQuery(
@@ -64,9 +64,13 @@ class _MyAppState extends State<MyApp> {
               );
             },
             theme: ThemeData(
+              fontFamily: "almarai",
               primaryColor: AppColors.orange,
               colorScheme: ColorScheme.light(
                 primary: AppColors.orange,
+                primaryVariant: AppColors.deepOrange,
+                secondary: AppColors.grey,
+                onSecondary: AppColors.white,
               )
             ),
             debugShowCheckedModeBanner: false,

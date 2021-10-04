@@ -34,10 +34,6 @@ class _GalleryScreenState extends State<GalleryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: AppColors.orange,
-      ),
       body: Container(
         width: AppDimensions.width,
         child: Column(

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/controllers/managers/validator_controller.dart';
-import 'package:flutter_app/views/screens/auth/forget_password.dart';
 import 'package:flutter_app/views/widgets/buttons/app_button.dart';
 import 'package:flutter_app/views/widgets/loaders/loading_manager.dart';
 import 'package:flutter_app/views/widgets/text_field/app_text_form_field.dart';
+
+import 'forget_password.dart';
 
 class VerifyEmailPage extends StatefulWidget {
   static final String id = "/verify-email";
