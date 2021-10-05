@@ -7,7 +7,7 @@ import 'package:flutter_app/views/view_helpers/app_dimensions.dart';
 import 'package:flutter_app/views/view_helpers/app_icons.dart';
 
 import 'package:flutter_app/views/screens/tabs/font_resizing_screen.dart';
-import 'package:flutter_app/views/screens/tabs/gallery_screen.dart';
+import 'package:flutter_app/views/screens/tabs/presentation/gallery_screen.dart';
 import 'package:flutter_app/views/screens/tabs/listing_loading_scroll_screen.dart';
 
 

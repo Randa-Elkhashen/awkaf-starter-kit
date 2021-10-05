@@ -27,9 +27,9 @@ dependencies:
 
   carousel_slider: ^4.0.0
   cupertino_icons: ^1.0.3
-  flutter_html: ^2.1.2
+  flutter_html: ^2.1.4
   flutter_tts: ^3.2.2
-  http: ^0.13.3
+  http: ^0.13.4
   intl: ^0.17.0
   logger: ^1.1.0
   page_transition: ^2.0.4
@@ -39,6 +39,10 @@ dependencies:
   fluttertoast: ^8.0.8
   flare_flutter: ^3.0.2
   shared_preferences: ^2.0.8
+  flutter_cube: ^0.1.1
+  panorama: ^0.4.1
+  webview_flutter: ^2.1.1
+  flutter_cache_manager: ^3.1.2
 
 dev_dependencies:
   flutter_test:

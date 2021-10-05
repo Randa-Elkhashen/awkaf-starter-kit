@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_app/views/screens/tabs/font_resizing_screen.dart';
-import 'package:flutter_app/views/screens/tabs/gallery_screen.dart';
+import 'package:flutter_app/views/screens/tabs/presentation/gallery_screen.dart';
 import 'package:flutter_app/views/screens/home_screen.dart';
 import 'package:flutter_app/views/screens/tabs/auth/sign_up.dart';
 import 'package:flutter_app/views/screens/tabs/auth/verify_email.dart';
