@@ -23,6 +23,7 @@ class _FilesLoaderState extends State<FilesLoader> {
 
   @override
   void initState() {
+    // TODO remove this line before use it just for testing sample
     DefaultCacheManager().emptyCache();
     _loader = FilesLoaderManager(widget.urls);
 
