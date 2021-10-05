@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/views/screens/tabs/presentation/files_loader_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/gallery_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/model_3d_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/panorama_screen.dart';
@@ -31,6 +32,14 @@ class PresentationScreen extends StatelessWidget {
               );
             },
             child: const Text("3D Model")
+        ),
+        ElevatedButton(
+            onPressed: (){
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_)=> const FilesLoaderScreen())
+              );
+            },
+            child: const Text("Files Loaders")
         ),
         ElevatedButton(
             onPressed: (){
