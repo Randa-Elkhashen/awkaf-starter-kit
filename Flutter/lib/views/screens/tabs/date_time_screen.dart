@@ -41,11 +41,8 @@ class DateTimeScreen extends StatelessWidget {
         SizedBox(
           height: 140 * AppStyle.scaleFactor,
           child: CupertinoDatePicker(
-
               mode: CupertinoDatePickerMode.dateAndTime,
-              onDateTimeChanged: (dateTime) {
-
-              }
+              onDateTimeChanged: (dateTime) {}
           ),
         ),
         SizedBox(height: 8 * AppStyle.scaleFactor,),
@@ -53,9 +50,7 @@ class DateTimeScreen extends StatelessWidget {
           height: 140 * AppStyle.scaleFactor,
           child: CupertinoDatePicker(
               mode: CupertinoDatePickerMode.date,
-              onDateTimeChanged: (dateTime) {
-
-              }
+              onDateTimeChanged: (dateTime) {}
           ),
         ),
         SizedBox(height: 8 * AppStyle.scaleFactor,),
@@ -63,9 +58,7 @@ class DateTimeScreen extends StatelessWidget {
           height: 140 * AppStyle.scaleFactor,
           child: CupertinoTimerPicker(
               mode: CupertinoTimerPickerMode.hms,
-              onTimerDurationChanged: (value) {
-
-              }
+              onTimerDurationChanged: (value) {}
           ),
         ),
 

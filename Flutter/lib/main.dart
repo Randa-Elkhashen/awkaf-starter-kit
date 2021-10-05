@@ -9,7 +9,7 @@ import 'package:flutter_app/providers/test_flow_provider.dart';
 import 'package:flutter_app/routes.dart';
 import 'package:flutter_app/views/screens/splash_screen.dart';
 import 'package:flutter_app/views/style/app_style.dart';
-import 'package:flutter_app/views/style/themes.dart';
+import 'package:flutter_app/views/style/app_themes.dart';
 import 'package:flutter_app/views/view_helpers/app_colors.dart';
 import 'package:provider/provider.dart';
 
@@ -75,8 +75,8 @@ class _MyAppState extends State<MyApp> {
                   child: child!
               );
             },
-            theme: Themes.lightTheme,
-            darkTheme: Themes.darkTheme,
+            theme: AppThemes.lightTheme,
+            darkTheme: AppThemes.darkTheme,
             themeMode: _settingProvider.themeMode,
             debugShowCheckedModeBanner: false,
             home: SplashScreen(),

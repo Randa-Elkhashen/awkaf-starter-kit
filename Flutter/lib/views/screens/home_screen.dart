@@ -3,10 +3,12 @@ import 'package:flutter_app/providers/setting_provider.dart';
 import 'package:flutter_app/views/screens/tabs/auth/sign_in.dart';
 import 'package:flutter_app/views/screens/tabs/date_time_screen.dart';
 import 'package:flutter_app/views/screens/tabs/font_resizing_screen.dart';
+import 'package:flutter_app/views/screens/tabs/maps_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/gallery_screen.dart';
 import 'package:flutter_app/views/screens/tabs/listing_loading_scroll_screen.dart';
 import 'package:flutter_app/views/screens/tabs/news_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/presentation_screen.dart';
+import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_form_widget_screen.dart';
 import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_screen.dart';
 import 'package:flutter_app/views/view_helpers/imports.dart';
 
@@ -30,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     "Lazy Loading",
     "User Cycle",
     "Date and Time",
+    "Maps",
   ];
   @override
   Widget build(BuildContext context) {
@@ -65,12 +68,13 @@ class _HomeScreenState extends State<HomeScreen> {
         body: TabBarView(
           children: [
             PresentationScreen(),
-            TextToSpeechScreen(),
+            TextToSpeechFromWidgetScreen(),
             SelectFontSizeScreen(),
             ListingLoadingScrollScreen(),
             NewsScreens(),
             SignInPage(),
             DateTimeScreen(),
+            MapsScreen(),
           ]
         ),
       ),

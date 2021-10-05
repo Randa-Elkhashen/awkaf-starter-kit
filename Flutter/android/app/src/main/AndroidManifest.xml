@@ -5,6 +5,10 @@
    <application
         android:label="Turn Digital"
         android:icon="@mipmap/ic_launcher">
+
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyASCo_fO8_hhsZGYbOTchW7Si99lxtpm04"/>
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

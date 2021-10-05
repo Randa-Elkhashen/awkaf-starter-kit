@@ -2,12 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/views/view_helpers/app_colors.dart';
 
-class Themes{
+class AppThemes{
 
   static ThemeData lightTheme = ThemeData(
     fontFamily: "almarai",
     primaryColor: AppColors.orange,
+    brightness: Brightness.light,
     colorScheme: ColorScheme.light(
+      brightness: Brightness.light,
       primary: AppColors.orange,
       primaryVariant: AppColors.deepOrange,
       secondary: AppColors.grey,
@@ -16,13 +18,14 @@ class Themes{
   );
 
   static ThemeData darkTheme = ThemeData(
-    //fontFamily: "almarai",
+    fontFamily: "almarai",
     primaryColor: AppColors.orange,
     cupertinoOverrideTheme: NoDefaultCupertinoThemeData(
       textTheme: CupertinoTextThemeData(
           textStyle: ThemeData(brightness: Brightness.dark).textTheme.subtitle2
       ),
     ),
+    brightness: Brightness.dark,
     colorScheme: ColorScheme.dark(
       primary: AppColors.orange,
       onPrimary: AppColors.white,

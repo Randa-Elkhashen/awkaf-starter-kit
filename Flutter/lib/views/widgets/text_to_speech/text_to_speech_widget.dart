@@ -26,8 +26,6 @@ class _TextToSpeechWidgetState extends State<TextToSpeechWidget> {
 
   _onPlay() async {
     if(_loading) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Waiting until load")));
       return;
     }
     if(!await _flutterTts.isLanguageAvailable("ar")){
