@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
-class FilesLoaderManager{
+class FilesLoaderController{
 
   /// control the load process
   /// by provide one stream listen to all loading processes
@@ -32,7 +32,7 @@ class FilesLoaderManager{
   /// create new stream used to listen to all process progress
   Stream<double> get stream => _streamController.stream;
 
-  FilesLoaderManager(List<String> urls){
+  FilesLoaderController(List<String> urls){
     _totalProgress = urls.length.toDouble();
     _urls = urls;
     _startGetFiles();

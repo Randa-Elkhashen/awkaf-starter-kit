@@ -4,18 +4,19 @@ import 'package:flutter_app/views/style/app_style.dart';
 import 'package:flutter_app/views/style/map_themes.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
-class AppMap extends StatefulWidget  {
+class LocationView extends StatefulWidget  {
   final LatLng? markLocation;
-  const AppMap({
+  const LocationView({
     Key? key,
     this.markLocation,
   }) : super(key: key);
 
   @override
-  _AppMapState createState() => _AppMapState();
+  _LocationViewState createState() => _LocationViewState();
 }
 
-class _AppMapState extends State<AppMap> with WidgetsBindingObserver  {
+class _LocationViewState extends State<LocationView> {
+
   GoogleMapController? _googleMapController;
   late SettingProvider _settingProvider;
 
@@ -50,23 +51,6 @@ class _AppMapState extends State<AppMap> with WidgetsBindingObserver  {
   }
 
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance?.addObserver(this);
-  }
-
-  @override
-  void didChangePlatformBrightness() {
-    _changeTheme();
-  }
-
-  @override
-  void dispose() {
-    WidgetsBinding.instance?.removeObserver(this);
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     _settingProvider = Provider.of<SettingProvider>(context,listen: false);
     if(_googleMapController != null && widget.markLocation != null){
@@ -74,7 +58,6 @@ class _AppMapState extends State<AppMap> with WidgetsBindingObserver  {
     }
     return GoogleMap(
       mapType: MapType.normal,
-
       initialCameraPosition: CameraPosition(
         target: widget.markLocation ?? LatLng(26.8206,30.8025),
         zoom: 14,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/routes.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/files_loader_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/gallery_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/model_3d_screen.dart';
@@ -22,6 +23,7 @@ class PresentationScreen extends StatelessWidget {
               Navigator.of(context).push(
                   MaterialPageRoute(builder: (_)=> const PanoramaView())
               );
+
             },
             child: const Text("Panorama 360")
         ),

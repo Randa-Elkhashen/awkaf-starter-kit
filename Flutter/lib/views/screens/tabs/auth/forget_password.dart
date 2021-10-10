@@ -51,7 +51,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                     ATextFormField(
                       label: "Code",
                       initialValue: _model.code,
-                      validator: (value) => Validator.hasValue(value)
+                      validator: (value) => Validator.isValidPassword(value)
                           ? null : "Required",
                       onSaved: (value){
                         _model.code = value;

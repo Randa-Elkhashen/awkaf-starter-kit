@@ -20,6 +20,7 @@ class Routes {
   static const signUpPage = "/sign-up";
 
   static MaterialPageRoute onGenerateRoute(RouteSettings settings) {
+
     var routes = <String, WidgetBuilder>{
       HOME_SCREEN: (context) => HomeScreen(),
       GALLERY_SCREEN: (context) => GalleryScreen(),
@@ -38,6 +39,7 @@ class Routes {
       String screenName, String navigateType, dynamic arguments, BuildContext context) async {
     switch (navigateType) {
       case NavigateType.PUSH_NAMED:
+
         Navigator.of(context).pushNamed(screenName, arguments: arguments);
         break;
 

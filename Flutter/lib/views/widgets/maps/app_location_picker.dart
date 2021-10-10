@@ -85,9 +85,12 @@ class _AppLocationPickerState extends State<AppLocationPicker> {
               transitionBuilder: (Widget child, Animation<double> animation){
                 final  offsetAnimation =
                 Tween<Offset>(begin: Offset(0.0, 1.0), end: Offset(0.0, -0.2)).animate(animation);
-                return SlideTransition(
-                  position: offsetAnimation,
-                  child: child,
+                return FadeTransition(
+                  opacity: animation,
+                  child: SlideTransition(
+                    position: offsetAnimation,
+                    child: child,
+                  ),
                 );
               },
               child: _marker == null ? SizedBox.shrink() :

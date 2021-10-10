@@ -44,7 +44,7 @@ class _SignInPageState extends State<SignInPage> {
                   label: "Email",
                   initialValue: _user.email,
                   textInputType: TextInputType.emailAddress,
-                  validator: (value) => Validator.hasValue(value)
+                  validator: (value) => Validator.isEmail(value)
                       ? null : "Invalid email",
                   onSaved: (value){
                     _user.email = value;

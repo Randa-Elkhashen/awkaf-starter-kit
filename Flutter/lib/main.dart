@@ -67,7 +67,7 @@ class _MyAppState extends State<MyApp> {
             }
           },
           child: MaterialApp(
-            title: 'Turn Digital',
+            title: 'FE Library',
             builder: (BuildContext context, Widget? child){
               AppStyle.setMedia(MediaQuery.maybeOf(context)!);
               return MediaQuery(
@@ -80,6 +80,9 @@ class _MyAppState extends State<MyApp> {
             themeMode: _settingProvider.themeMode,
             debugShowCheckedModeBanner: false,
             home: SplashScreen(),
+            onUnknownRoute: (_){
+
+            },
             onGenerateRoute: Routes.onGenerateRoute,
           ),
         ));

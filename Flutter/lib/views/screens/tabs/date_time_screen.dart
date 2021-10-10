@@ -17,7 +17,9 @@ class DateTimeScreen extends StatelessWidget {
         AppSubTitle("Material Picker"),
         SizedBox(height: 8 * AppStyle.scaleFactor,),
         MaterialDateAndTimePicker(
-          onPick: (dateTime){},
+          onPick: (dateTime){
+
+          },
         ),
         SizedBox(height: 8 * AppStyle.scaleFactor,),
         Row(
@@ -42,7 +44,9 @@ class DateTimeScreen extends StatelessWidget {
           height: 140 * AppStyle.scaleFactor,
           child: CupertinoDatePicker(
               mode: CupertinoDatePickerMode.dateAndTime,
-              onDateTimeChanged: (dateTime) {}
+              onDateTimeChanged: (dateTime) {
+
+              }
           ),
         ),
         SizedBox(height: 8 * AppStyle.scaleFactor,),

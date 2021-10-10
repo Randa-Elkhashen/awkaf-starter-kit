@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/controllers/constants/app_settings.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class SharedPreferencesManager{
+class SharedPreferencesController{
 
   static late SharedPreferences _prefs;
 

@@ -22,7 +22,7 @@ class _ListingLoadingScrollScreenState extends State<ListingLoadingScrollScreen>
         // You're at the edge of the bottom.
         Future.delayed(new Duration(seconds: 2), () async {
           setState(() {
-            list.addAll(booksList) ;
+            list+=(booksList) ;
             verticalLoading = false;
           });
         });

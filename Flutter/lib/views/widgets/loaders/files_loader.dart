@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/controllers/managers/files_loader_manager.dart';
+import 'package:flutter_app/controllers/managers/files_loader_controller.dart';
 import 'package:flutter_app/views/widgets/loaders/failed_loading.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 class FilesLoader extends StatefulWidget {
@@ -19,13 +19,13 @@ class FilesLoader extends StatefulWidget {
 
 class _FilesLoaderState extends State<FilesLoader> {
 
-  late FilesLoaderManager _loader;
+  late FilesLoaderController _loader;
 
   @override
   void initState() {
     // TODO remove this line before use it just for testing sample
     DefaultCacheManager().emptyCache();
-    _loader = FilesLoaderManager(widget.urls);
+    _loader = FilesLoaderController(widget.urls);
 
     super.initState();
   }
@@ -43,7 +43,7 @@ class _FilesLoaderState extends State<FilesLoader> {
           return FailedLoading(
             message: "Failed to load data :(",
             onReload: (){
-              _loader = FilesLoaderManager(widget.urls);
+              _loader = FilesLoaderController(widget.urls);
             },
           );
         } else{

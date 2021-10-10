@@ -14,7 +14,7 @@ class SettingProvider extends ChangeNotifier{
   double _textScaleFactor = 1.0;
   double get textScaleFactor => _textScaleFactor;
   Future<void> setTextScaleFactor(double value) async {
-    SharedPreferencesManager.setTextScaleFactor(value);
+    SharedPreferencesController.setTextScaleFactor(value);
     _textScaleFactor = value;
     notifyListeners();
   }
@@ -22,7 +22,7 @@ class SettingProvider extends ChangeNotifier{
   ThemeMode? _themeMode;
   ThemeMode? get themeMode => _themeMode;
   Future<void> setThemeMode(ThemeMode value) async {
-    SharedPreferencesManager.setThemeMode(value);
+    SharedPreferencesController.setThemeMode(value);
     _themeMode = value;
     notifyListeners();
   }
@@ -34,10 +34,10 @@ class SettingProvider extends ChangeNotifier{
 
   // get app setting
   Future<void> loadSharedPreferences() async {
-    await SharedPreferencesManager.initialize();
+    await SharedPreferencesController.initialize();
 
-    _textScaleFactor = SharedPreferencesManager.getTextScaleFactor() ?? 1.0;
-    _themeMode = SharedPreferencesManager.getThemeMode();
+    _textScaleFactor = SharedPreferencesController.getTextScaleFactor() ?? 1.0;
+    _themeMode = SharedPreferencesController.getThemeMode();
 
     loaded = true;
     notifyListeners();

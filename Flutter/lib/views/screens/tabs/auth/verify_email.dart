@@ -41,7 +41,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                   label: "Email",
                   initialValue: _email,
                   textInputType: TextInputType.emailAddress,
-                  validator: (value) => Validator.hasValue(value)
+                  validator: (value) => Validator.isEmail(value)
                       ? null : "Invalid email",
                   onSaved: (value){
                     _email = value;
