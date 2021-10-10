@@ -6,18 +6,40 @@ import 'package:flutter_app/views/screens/tabs/presentation/model_3d_screen.dart
 import 'package:flutter_app/views/screens/tabs/presentation/panorama_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/web_view_screen.dart';
 import 'package:flutter_app/views/style/app_style.dart';
+import 'package:flutter_app/views/widgets/gallery/gallary_with_bar.dart';
+import 'package:flutter_app/views/widgets/gallery/gallery_in_row.dart';
 class PresentationScreen extends StatelessWidget {
   const PresentationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+    final List<String> _links = [
+      "https://www.presidency.eg/media/163551/p-8-00000000000jpg.jpg",
+      "https://www.presidency.eg/media/163557/p-3-000jpg.jpg",
+      "https://www.presidency.eg/media/163553/p-1-000jpg.jpg",
+      "https://youtu.be/8YRL_57pF6c",
+      "https://soundcloud.com/mrfavo/two-steps-from-hell-victory",
+      "https://www.youtube.com/embed/pICAha0nsb0"
+    ];
+
     return  ListView(
       padding: const EdgeInsets.all(16),
       children: [
         SizedBox(
           height: AppStyle.scaleFactor * 260,
             child: GalleryScreen()),
-        SizedBox(height: AppStyle.size.height/10,),
+        SizedBox(
+          height: AppStyle.scaleFactor * 260,
+          child: GalleryInRow(
+            urls: _links,
+          ),
+        ),
+        GalleryWithBar(
+          height: AppStyle.scaleFactor * 260,
+          urls: _links,
+        ),
+        SizedBox(height: AppStyle.scaleFactor * 10,),
         ElevatedButton(
             onPressed: (){
               Navigator.of(context).push(
