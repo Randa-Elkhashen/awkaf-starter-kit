@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
-import 'gallary_view.dart';
+import 'gallery_view.dart';
 class GalleryInRow extends StatefulWidget {
   final List<String> urls;
   final double viewFraction;
   final int initialIndex;
+  final double height;
 
   const GalleryInRow({
     Key? key,
     required this.urls,
     this.viewFraction = 1.0,
-    this.initialIndex = 0
+    this.initialIndex = 0,
+    required this.height
   }) : super(key: key);
 
   @override
@@ -38,11 +40,15 @@ class _GalleryInRowState extends State<GalleryInRow> {
 
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
-      itemCount: widget.urls.length,
-      itemBuilder: (context,index){
-        return GalleryView(url: widget.urls[index]);
-      }
+    return SizedBox(
+      height: widget.height,
+      child: PageView.builder(
+        controller: _pageController,
+        itemCount: widget.urls.length,
+        itemBuilder: (context,index){
+          return GalleryView(url: widget.urls[index]);
+        }
+      ),
     );
   }
 }

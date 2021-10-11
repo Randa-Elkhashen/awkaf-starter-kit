@@ -28,10 +28,8 @@ class _LazyLoadingState extends State<LazyLoading> with TickerProviderStateMixin
         && !_animationController.isCompleted
         && widget.nextPage) {
       _animationController.forward();
-      setState(() {});
       await widget.onLazyLoad();
       await Future.delayed(const Duration(milliseconds: 600));
-      setState(() {});
       _animationController.reverse();
     }
   }
@@ -64,32 +62,37 @@ class _LazyLoadingState extends State<LazyLoading> with TickerProviderStateMixin
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        NotificationListener<ScrollEndNotification>(
+        NotificationListener<ScrollUpdateNotification>(
             onNotification: (notification) {
               if(notification.metrics.pixels >= notification.metrics.maxScrollExtent){
                 _scrollListener();
               }
-              return true;
+              return false;
             },
             child: widget.child
         ),
-        SlideTransition(
-          position: _offsetAnimation,
-          child: Center(
-            child: Visibility(
-              visible: _animationController.isAnimating || _animationController.isCompleted,
-              child: Container(
-                height: 36,
-                width: 36,
-                padding: const EdgeInsets.all(8),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
+        AnimatedBuilder(
+          animation: _offsetAnimation,
+          builder: (BuildContext context, Widget? child) {
+            return  SlideTransition(
+              position: _offsetAnimation,
+              child: Center(
+                child: Visibility(
+                  visible: _animationController.isAnimating || _animationController.isCompleted,
+                  child: Container(
+                    height: 36,
+                    width: 36,
+                    padding: const EdgeInsets.all(8),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const AppLoading(),
+                  ),
                 ),
-                child: const AppLoading(),
               ),
-            ),
-          ),
+            );
+          },
         ),
       ],
     );

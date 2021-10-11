@@ -6,7 +6,7 @@ import 'package:flutter_app/views/screens/tabs/presentation/model_3d_screen.dart
 import 'package:flutter_app/views/screens/tabs/presentation/panorama_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/web_view_screen.dart';
 import 'package:flutter_app/views/style/app_style.dart';
-import 'package:flutter_app/views/widgets/gallery/gallary_with_bar.dart';
+import 'package:flutter_app/views/widgets/gallery/gallery_with_bar.dart';
 import 'package:flutter_app/views/widgets/gallery/gallery_in_row.dart';
 class PresentationScreen extends StatelessWidget {
   const PresentationScreen({Key? key}) : super(key: key);
@@ -24,16 +24,17 @@ class PresentationScreen extends StatelessWidget {
     ];
 
     return  ListView(
+
       padding: const EdgeInsets.all(16),
+
       children: [
         SizedBox(
           height: AppStyle.scaleFactor * 260,
             child: GalleryScreen()),
-        SizedBox(
+        GalleryInRow(
+          viewFraction: .9,
+          urls: _links,
           height: AppStyle.scaleFactor * 260,
-          child: GalleryInRow(
-            urls: _links,
-          ),
         ),
         GalleryWithBar(
           height: AppStyle.scaleFactor * 260,
@@ -45,7 +46,6 @@ class PresentationScreen extends StatelessWidget {
               Navigator.of(context).push(
                   MaterialPageRoute(builder: (_)=> const PanoramaView())
               );
-
             },
             child: const Text("Panorama 360")
         ),
