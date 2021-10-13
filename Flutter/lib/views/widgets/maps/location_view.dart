@@ -32,6 +32,7 @@ class _LocationViewState extends State<LocationView> {
   }
 
   _changeTheme() async {
+
     switch(_settingProvider.themeMode){
       case ThemeMode.light:
         await _googleMapController!.setMapStyle(MapThemes.light);
@@ -47,7 +48,8 @@ class _LocationViewState extends State<LocationView> {
         }
         break;
     }
-    setState(() {});
+    if(this.mounted)
+      setState(() {});
   }
 
   @override
@@ -60,7 +62,7 @@ class _LocationViewState extends State<LocationView> {
       mapType: MapType.normal,
       initialCameraPosition: CameraPosition(
         target: widget.markLocation ?? LatLng(26.8206,30.8025),
-        zoom: 14,
+        zoom: 5.5,
       ),
       markers: widget.markLocation == null ? {} :
       {

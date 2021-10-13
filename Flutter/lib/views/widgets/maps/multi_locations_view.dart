@@ -35,7 +35,7 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
         CameraUpdate.newCameraPosition(
           CameraPosition(
             target: location,
-            zoom: 14,
+            zoom: 10,
           ),
         )
     );
@@ -57,7 +57,8 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
         }
         break;
     }
-    setState(() {});
+    if(this.mounted)
+      setState(() {});
   }
 
   Future<Marker> Function(Cluster<Place>)
@@ -66,6 +67,10 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
       return Marker(
         markerId: MarkerId(cluster.getId()),
         position: cluster.location,
+        infoWindow: InfoWindow(title: cluster.items.first.name),
+        onTap: (){
+          _updateCamera(cluster.location);
+        },
         icon: await _getMarkerBitmap(cluster.isMultiple ? 125 : 75,
             text: cluster.isMultiple ? cluster.count.toString() : null),
       );
@@ -80,7 +85,6 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
   }
 
   void _updateMarkers(Set<Marker> markers) {
-    print('Updated ${markers.length} markers');
     setState(() {
       this._markers = markers;
     });

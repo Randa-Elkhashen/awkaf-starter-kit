@@ -86,6 +86,12 @@ class _LazyLoadingState extends State<LazyLoading> with TickerProviderStateMixin
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black38,
+                          blurRadius: 3
+                        )
+                      ]
                     ),
                     child: const AppLoading(),
                   ),

@@ -10,6 +10,7 @@ import 'package:flutter_app/views/screens/tabs/lazy_loading_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/presentation_screen.dart';
 import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_form_widget_screen.dart';
 import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_screen.dart';
+import 'package:flutter_app/views/screens/tabs/time_line_screen.dart';
 import 'package:flutter_app/views/view_helpers/imports.dart';
 
 import 'package:flutter_app/views/screens/drawer_screen.dart';
@@ -33,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
     "User Cycle",
     "Date and Time",
     "Maps",
+    "Timeline",
   ];
   @override
   Widget build(BuildContext context) {
@@ -75,6 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SignInPage(),
             DateTimeScreen(),
             MapsScreen(),
+            TimeLineScreen(),
           ]
         ),
       ),

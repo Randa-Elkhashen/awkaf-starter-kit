@@ -38,6 +38,7 @@ class TimeLineList extends StatelessWidget {
             itemBuilder: (context,itemIndex){
               Topic _topic = topics[itemIndex];
               return TimeLineItem(
+                index: itemIndex,
                 topic: _topic,
               );
             }

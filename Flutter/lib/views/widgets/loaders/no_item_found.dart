@@ -16,39 +16,43 @@ class NoItemFound extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double size =  AppStyle.size.width/ 1.5;
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(
-            flex: 3,
-            child: Image(
-              width:  size,
-              image: const AssetImage("assets/images/no_item_found.png"),
-              fit: BoxFit.contain,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-              message ?? "no item found",
-            style: Theme.of(context).textTheme.subtitle2,
-          ),
-          onAddItem == null ? const SizedBox.shrink() :
-          Column(
-            children: [
-              const SizedBox(height: 8),
-              SizedBox(
-                width: size,
-                child: AppButton(
-                  text: buttonText ?? "Add",
-                  onPressed: onAddItem!,
-                ),
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        ListView(),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              flex: 3,
+              child: Image(
+                width:  size,
+                image: const AssetImage("assets/images/no_item_found.png"),
+                fit: BoxFit.contain,
               ),
-            ],
-          ),
-          const Spacer(flex: 1,),
-        ],
-      ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+                message ?? "no item found",
+              style: Theme.of(context).textTheme.subtitle2,
+            ),
+            onAddItem == null ? const SizedBox.shrink() :
+            Column(
+              children: [
+                const SizedBox(height: 8),
+                SizedBox(
+                  width: size,
+                  child: AppButton(
+                    text: buttonText ?? "Add",
+                    onPressed: onAddItem!,
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(flex: 1,),
+          ],
+        ),
+      ],
     );
   }
 }
