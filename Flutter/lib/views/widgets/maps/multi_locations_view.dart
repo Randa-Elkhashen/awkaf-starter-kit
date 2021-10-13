@@ -30,12 +30,12 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
   late SettingProvider _settingProvider;
   Set<Marker> _markers = Set();
 
-  _updateCamera(LatLng location){
+  _updateCamera(LatLng location, double zoom){
     _googleMapController?.animateCamera(
         CameraUpdate.newCameraPosition(
           CameraPosition(
             target: location,
-            zoom: 10,
+            zoom: zoom,
           ),
         )
     );
@@ -68,8 +68,8 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
         markerId: MarkerId(cluster.getId()),
         position: cluster.location,
         infoWindow: InfoWindow(title: cluster.items.first.name),
-        onTap: (){
-          _updateCamera(cluster.location);
+        onTap: () async {
+          _updateCamera(cluster.location,(await _googleMapController!.getZoomLevel()) + 1);
         },
         icon: await _getMarkerBitmap(cluster.isMultiple ? 125 : 75,
             text: cluster.isMultiple ? cluster.count.toString() : null),

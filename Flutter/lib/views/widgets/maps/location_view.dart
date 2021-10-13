@@ -29,6 +29,7 @@ class _LocationViewState extends State<LocationView> {
           ),
         )
     );
+    _googleMapController?.showMarkerInfoWindow(MarkerId("MarkerId"));
   }
 
   _changeTheme() async {
@@ -68,6 +69,11 @@ class _LocationViewState extends State<LocationView> {
       {
         Marker(
             markerId: MarkerId("MarkerId"),
+
+            infoWindow: InfoWindow(
+              title: "location name",
+              snippet: "description"
+            ),
             position: widget.markLocation!
         )
       },
