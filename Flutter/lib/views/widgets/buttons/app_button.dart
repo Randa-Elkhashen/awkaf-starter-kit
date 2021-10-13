@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/views/style/app_style.dart';
 class AppButton extends StatelessWidget {
   final Color? color;
   final String? text;
@@ -19,9 +20,9 @@ class AppButton extends StatelessWidget {
 
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(
-              vertical: 16,
-              horizontal: 16,
+          padding: EdgeInsets.symmetric(
+              vertical: 16 * AppStyle.scaleFactor,
+              horizontal: 16 * AppStyle.scaleFactor,
           ),
           primary: color,
           onPrimary: _textColor,

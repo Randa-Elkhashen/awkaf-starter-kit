@@ -7,7 +7,8 @@ class ImageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return MaterialButton(
+      padding: EdgeInsets.zero,
       onPressed: (){
         Navigator.of(context).push(
             MaterialPageRoute(

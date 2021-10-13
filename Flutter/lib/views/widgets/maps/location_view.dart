@@ -40,7 +40,7 @@ class _LocationViewState extends State<LocationView> {
         await _googleMapController!.setMapStyle(MapThemes.dark);
         break;
       default:
-        if(AppStyle.mediaQueryData?.platformBrightness == Brightness.dark){
+        if(AppStyle.mediaQueryData.platformBrightness == Brightness.dark){
           await _googleMapController!.setMapStyle(MapThemes.dark);
         }else {
           await _googleMapController!.setMapStyle(MapThemes.light);

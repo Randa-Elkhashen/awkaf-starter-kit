@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/views/style/app_style.dart';
 
-import 'gallary_thumbnail.dart';
-import 'gallary_view.dart';
+import 'gallery_thumbnail.dart';
+import 'gallery_view.dart';
 class GalleryWithBar extends StatefulWidget {
 
   final double height;

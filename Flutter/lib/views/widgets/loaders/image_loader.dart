@@ -44,7 +44,7 @@ class ImageLoader extends StatelessWidget {
       return image;
     }
     return ColorFiltered(
-      colorFilter: ColorFilter.mode(color ?? Colors.grey, BlendMode.srcIn),
+      colorFilter: ColorFilter.mode(color!, BlendMode.srcIn),
       child: image,
     );
   }

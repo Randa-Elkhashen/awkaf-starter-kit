@@ -3,14 +3,14 @@ import 'package:flutter_app/view_models/topic.dart';
 import 'package:flutter_app/views/widgets/loaders/lazy_loading.dart';
 import 'package:flutter_app/views/widgets/loaders/no_item_found.dart';
 
-import 'news_item.dart';
-class NewsList extends StatelessWidget {
+import 'time_line_item.dart';
+class TimeLineList extends StatelessWidget {
 
   final List<Topic> topics;
   final bool nextPage;
   final Future<void> Function() onLazyLoad;
 
-  const NewsList({
+  const TimeLineList({
     Key? key,
     required this.topics,
     required this.nextPage,
@@ -22,7 +22,7 @@ class NewsList extends StatelessWidget {
     /// if no item found show no item found view
     /// else display our list
     if(topics.isEmpty){
-      return NoItemFound(message: "No news found",);
+      return NoItemFound(message: "No topics found",);
     }
 
     return LazyLoading(
@@ -37,7 +37,7 @@ class NewsList extends StatelessWidget {
             ),
             itemBuilder: (context,itemIndex){
               Topic _topic = topics[itemIndex];
-              return NewsItem(
+              return TimeLineItem(
                 topic: _topic,
               );
             }

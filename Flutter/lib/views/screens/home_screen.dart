@@ -6,7 +6,7 @@ import 'package:flutter_app/views/screens/tabs/font_resizing_screen.dart';
 import 'package:flutter_app/views/screens/tabs/maps_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/gallery_screen.dart';
 import 'package:flutter_app/views/screens/tabs/listing_loading_scroll_screen.dart';
-import 'package:flutter_app/views/screens/tabs/news_screen.dart';
+import 'package:flutter_app/views/screens/tabs/lazy_loading_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/presentation_screen.dart';
 import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_form_widget_screen.dart';
 import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_screen.dart';

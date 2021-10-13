@@ -38,29 +38,33 @@ class _ListingLoadingScrollScreenState extends State<ListingLoadingScrollScreen>
         child: Column(
           children: [
             Expanded(
-              child: NotificationListener<ScrollNotification>(
-                onNotification: (scrollNotification) {
-                  if (scrollNotification is ScrollEndNotification) {
-                    _onEndScroll(scrollNotification.metrics, context);
-                  }
-                  return true;
+              child: RefreshIndicator(
+                onRefresh: () async {
+                  await Future.delayed(Duration(seconds: 2));
                 },
-                child: ListView(
-                  children: [
-                    // List
-                    ...list.map((e) => _buildArtCardWidget(e)).toList(),
-                    // vertical loading
-                    verticalLoading
-                        ? Padding(
-                            padding: EdgeInsets.all(12),
-                            child: Center(
-                              child: CircularProgressIndicator(
-                                color: AppColors.orange,
+                child: NotificationListener<ScrollEndNotification>(
+                  onNotification: (scrollNotification) {
+
+                    _onEndScroll(scrollNotification.metrics, context);
+                    return false;
+                  },
+                  child: ListView(
+                    children: [
+                      // List
+                      ...list.map((e) => _buildArtCardWidget(e)).toList(),
+                      // vertical loading
+                      verticalLoading
+                          ? Padding(
+                              padding: EdgeInsets.all(12),
+                              child: Center(
+                                child: CircularProgressIndicator(
+                                  color: AppColors.orange,
+                                ),
                               ),
-                            ),
-                          )
-                        : Container()
-                  ],
+                            )
+                          : Container()
+                    ],
+                  ),
                 ),
               ),
             ),

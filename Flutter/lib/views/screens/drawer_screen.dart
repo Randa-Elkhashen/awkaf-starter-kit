@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/views/screens/tabs/news_screen.dart';
+import 'package:flutter_app/views/screens/tabs/lazy_loading_screen.dart';
 import 'package:flutter_app/views/screens/tabs/auth/sign_in.dart';
 import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_screen.dart';
 import 'package:flutter_app/views/view_helpers/app_colors.dart';

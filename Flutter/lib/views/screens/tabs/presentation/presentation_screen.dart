@@ -34,7 +34,7 @@ class PresentationScreen extends StatelessWidget {
         GalleryInRow(
           viewFraction: .9,
           urls: _links,
-          height: AppStyle.scaleFactor * 260,
+          height: AppStyle.scaleFactor * 220,
         ),
         GalleryWithBar(
           height: AppStyle.scaleFactor * 260,

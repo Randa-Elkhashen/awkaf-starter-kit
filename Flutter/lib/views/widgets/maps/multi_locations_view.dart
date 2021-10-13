@@ -3,7 +3,6 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/controllers/managers/map_clustering_controller.dart';
 import 'package:flutter_app/providers/setting_provider.dart';
 import 'package:flutter_app/view_models/place.dart';
 import 'package:flutter_app/views/style/app_style.dart';
@@ -51,7 +50,7 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
         await _googleMapController!.setMapStyle(MapThemes.dark);
         break;
       default:
-        if(AppStyle.mediaQueryData?.platformBrightness == Brightness.dark){
+        if(AppStyle.mediaQueryData.platformBrightness == Brightness.dark){
           await _googleMapController!.setMapStyle(MapThemes.dark);
         }else {
           await _googleMapController!.setMapStyle(MapThemes.light);

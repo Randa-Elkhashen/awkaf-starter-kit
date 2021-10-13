@@ -62,9 +62,9 @@ class _LazyLoadingState extends State<LazyLoading> with TickerProviderStateMixin
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        NotificationListener<ScrollUpdateNotification>(
+        NotificationListener<ScrollEndNotification>(
             onNotification: (notification) {
-              if(notification.metrics.pixels >= notification.metrics.maxScrollExtent){
+              if(notification.metrics.pixels >= notification.metrics.maxScrollExtent - 800){
                 _scrollListener();
               }
               return false;
