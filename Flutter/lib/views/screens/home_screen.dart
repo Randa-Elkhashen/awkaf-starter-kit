@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/providers/setting_provider.dart';
-import 'package:flutter_app/views/screens/tabs/auth/sign_in.dart';
+import 'package:flutter_app/views/screens/tabs/auth_and_profile/sign_in_screen.dart';
 import 'package:flutter_app/views/screens/tabs/date_time_screen.dart';
 import 'package:flutter_app/views/screens/tabs/font_resizing_screen.dart';
 import 'package:flutter_app/views/screens/tabs/maps_screen.dart';

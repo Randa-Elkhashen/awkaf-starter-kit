@@ -30,6 +30,7 @@ class NewsList extends StatelessWidget {
       onLazyLoad: onLazyLoad,
       child: Scrollbar(
         child: ListView.builder(
+            physics: RangeMaintainingScrollPhysics(),
             itemCount: topics.length,
             padding: EdgeInsets.symmetric(
                 //horizontal: 16,

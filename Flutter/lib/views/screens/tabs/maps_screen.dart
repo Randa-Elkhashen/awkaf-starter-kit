@@ -5,6 +5,7 @@ import 'package:flutter_app/views/widgets/buttons/app_button.dart';
 import 'package:flutter_app/views/widgets/maps/app_location_picker.dart';
 import 'package:flutter_app/views/widgets/maps/location_view.dart';
 import 'package:flutter_app/views/widgets/maps/multi_locations_view.dart';
+import 'package:flutter_app/views/widgets/maps/two_location_view.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 class MapsScreen extends StatefulWidget {
   const MapsScreen({Key? key}) : super(key: key);
@@ -98,6 +99,37 @@ class _MapsScreenState extends State<MapsScreen> {
             }
           },
         ),
+        SizedBox(height: 16 * AppStyle.scaleFactor,),
+        SizedBox(
+          height: AppStyle.size.shortestSide,
+          width: AppStyle.size.shortestSide,
+          child: TwoLocationView(
+            startLocation: LatLng(48.848200, 2.319124 ),
+            endLocation: LatLng(48.848200 , 10.319124),
+          ),
+        ),
+        AppButton(
+          text: "Test in Full Screen",
+          onPressed: () async {
+            LatLng? _temp = await Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (_)=> Scaffold(
+                      body:SizedBox.expand(
+                          child:TwoLocationView(
+                            startLocation: LatLng(48.848200, 2.319124 ),
+                            endLocation: LatLng(48.848200 , 30.319124),
+                          ),
+                      ),
+                    )
+                )
+            ) as LatLng?;
+            if(_temp != null){
+              _location = _temp;
+              setState(() {});
+            }
+          },
+        ),
+        SizedBox(height: 16 * AppStyle.scaleFactor,),
       ],
     );
   }

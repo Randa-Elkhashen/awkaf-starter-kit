@@ -4,6 +4,7 @@ import 'package:flutter_app/views/style/app_style.dart';
 import 'package:flutter_app/views/widgets/loaders/image_loader.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:timeline_tile/timeline_tile.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 class TimeLineItem extends StatelessWidget {
 
   final int index;
@@ -67,7 +68,7 @@ class TimeLineChild extends StatefulWidget {
 }
 
 class _TimeLineChildState extends State<TimeLineChild>
-    with TickerProviderStateMixin  {
+    with TickerProviderStateMixin, AutomaticKeepAliveClientMixin  {
 
   late AnimationController _animationController;
   late Animation<Offset> _offsetAnimation;
@@ -77,7 +78,7 @@ class _TimeLineChildState extends State<TimeLineChild>
   void initState() {
     super.initState();
     _animationController = AnimationController(
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 600),
       vsync: this
     );
 
@@ -96,97 +97,117 @@ class _TimeLineChildState extends State<TimeLineChild>
       curve: Curves.easeOut,
     );
 
-    _animationController.forward();
+
   }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _animationController,
-      builder: (BuildContext context, Widget? child) {
-        return SlideTransition(
-          position: _offsetAnimation,
-          child: FadeTransition(
-            opacity: _doubleAnimation,
-            child: SizedBox(
-              height: 140 * AppStyle.scaleFactor,
-              child: AbsorbPointer(
-                child: TextButton(
-                  style:TextButton.styleFrom(
-                    padding: EdgeInsets.zero
-                  ) ,
-                  onPressed: (){
-                    widget.onPressed!(widget.topic);
-                  },
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    textDirection: widget.shift
-                      ? TextDirection.rtl
-                      : TextDirection.ltr,
-                    children: [
-                      Container(
-                        height: 1 * AppStyle.scaleFactor,
-                        width: 18 * AppStyle.scaleFactor,
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: widget.shift
-                              ? CrossAxisAlignment.end
-                              : CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(2 * AppStyle.scaleFactor),
-                              decoration: BoxDecoration(
-                                color: Theme.of(context).colorScheme.primary,
-                                border: Border(
-                                  top: BorderSide(
-                                    color: Theme.of(context).colorScheme.primary,
-                                    width: 1.0 * AppStyle.scaleFactor
-                                  )
-                                )
-                              ),
-                              child: Text(
-                                intl.DateFormat.yMMMMd().format(widget.topic.dateTime!),
-                                style: Theme.of(context).textTheme.caption?.copyWith(
-                                  color: Theme.of(context).colorScheme.onPrimary,
-                                ),
-                              ),
-                            ),
-                            Column(
-                              children: [
-                                AspectRatio(
-                                  aspectRatio: 16/9,
-                                  child: ImageLoader(
-                                    url: widget.topic.imageUrl,
-                                  ),
-                                ),
-                                Container(
-                                  width: double.infinity,
-                                  alignment: Alignment.center,
-                                  padding: EdgeInsets.all(4 * AppStyle.scaleFactor),
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context).colorScheme.background,
-                                  ),
-                                  child: Text(
-                                    widget.topic.title,
-                                    style: Theme.of(context).textTheme.bodyText1,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+    super.build(context);
+    return VisibilityDetector(
+      onVisibilityChanged: (visibilityInfo){
+        print("--------------------");
+        print(visibilityInfo.visibleBounds.bottom);
+        if(visibilityInfo.visibleFraction == 1.0)
+          _animationController.forward();
+      },
+      key: GlobalKey(),
+      child: AnimatedBuilder(
+        animation: _animationController,
+        builder: (BuildContext context, Widget? child) {
+          return SlideTransition(
+            position: _offsetAnimation,
+            child: FadeTransition(
+              opacity: _doubleAnimation,
+              child: SizedBox(
+                height: 140 * AppStyle.scaleFactor,
+                child: AbsorbPointer(
+                  child: TextButton(
+                    style:TextButton.styleFrom(
+                      padding: EdgeInsets.zero
+                    ) ,
+                    onPressed: (){
+                      widget.onPressed!(widget.topic);
+                    },
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      textDirection: widget.shift
+                        ? TextDirection.rtl
+                        : TextDirection.ltr,
+                      children: [
+                        Container(
+                          height: 1 * AppStyle.scaleFactor,
+                          width: 18 * AppStyle.scaleFactor,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
-                      ),
-                    ],
-                  )
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: widget.shift
+                                ? CrossAxisAlignment.end
+                                : CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(2 * AppStyle.scaleFactor),
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).colorScheme.primary,
+                                  border: Border(
+                                    top: BorderSide(
+                                      color: Theme.of(context).colorScheme.primary,
+                                      width: 1.0 * AppStyle.scaleFactor
+                                    )
+                                  )
+                                ),
+                                child: Text(
+                                  intl.DateFormat.yMMMMd().format(widget.topic.dateTime!),
+                                  style: Theme.of(context).textTheme.caption?.copyWith(
+                                    color: Theme.of(context).colorScheme.onPrimary,
+                                  ),
+                                ),
+                              ),
+                              Column(
+                                children: [
+                                  AspectRatio(
+                                    aspectRatio: 16/9,
+                                    child: ImageLoader(
+                                      url: widget.topic.imageUrl,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: double.infinity,
+                                    alignment: Alignment.center,
+                                    padding: EdgeInsets.all(4 * AppStyle.scaleFactor),
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(context).colorScheme.background,
+                                    ),
+                                    child: Text(
+                                      widget.topic.title,
+                                      style: Theme.of(context).textTheme.bodyText1,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    )
+                  ),
                 ),
               ),
             ),
-          ),
-        );
-      }
+          );
+        }
+      ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 

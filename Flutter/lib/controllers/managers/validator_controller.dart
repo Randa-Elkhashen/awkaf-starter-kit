@@ -32,7 +32,7 @@ class Validator{
       return false;
     }
 
-    final pattern = r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$';
+    final pattern = r'^(?:[+0]10)?[0-9]{11}$';
     final regExp = RegExp(pattern);
 
     if (regExp.hasMatch(phoneNumber))

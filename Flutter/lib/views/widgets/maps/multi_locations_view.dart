@@ -67,7 +67,8 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
       return Marker(
         markerId: MarkerId(cluster.getId()),
         position: cluster.location,
-        infoWindow: InfoWindow(title: cluster.items.first.name),
+        infoWindow: cluster.isMultiple ?
+          InfoWindow.noText :InfoWindow(title: cluster.items.first.name),
         onTap: () async {
           _updateCamera(cluster.location,(await _googleMapController!.getZoomLevel()) + 1);
         },
