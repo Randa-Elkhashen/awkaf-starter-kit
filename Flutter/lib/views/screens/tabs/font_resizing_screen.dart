@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/views/view_helpers/imports.dart';
+import 'package:flutter_app/providers/setting_provider.dart';
+import 'package:flutter_app/views/style/imports.dart';
 
 import 'package:flutter_app/views/widgets/custom_radio_button.dart';
+import 'package:provider/provider.dart';
 
 enum NEWS_FONT { SMALL, NORMAL, LARGE, LARGER }
 
@@ -12,36 +14,37 @@ class SelectFontSizeScreen extends StatefulWidget {
 }
 
 class _SelectFontSizeScreenState extends State<SelectFontSizeScreen> {
-  NEWS_FONT newsFontSize = NEWS_FONT.NORMAL;
   // user Actions
-  _setFontSize(NEWS_FONT fontsize) async {
-    newsFontSize = fontsize;
-    setState(() {});
+  _setFontSize(double fontsizeScale) async {
+    await Provider.of<SettingProvider>(context, listen: false).setTextScaleFactor(fontsizeScale);
   }
 
   @override
   Widget build(BuildContext context) {
     var fonts = [
-      {'title': 'Small', 'type': NEWS_FONT.SMALL},
-      {'title': 'Normal', 'type': NEWS_FONT.NORMAL},
-      {'title': 'Large', 'type': NEWS_FONT.LARGE},
-      {'title': 'Larger', 'type': NEWS_FONT.LARGER},
+      {'title': 'Small', 'scale': 0.8},
+      {'title': 'Normal', 'scale': 1.0},
+      {'title': 'Large', 'scale': 1.2},
+      {'title': 'Larger', 'scale': 1.5},
     ];
     return Scaffold(
       body: Center(
-        child: Column(children: [
-          SizedBox(height: AppDimensions.convertToH(4)),
-          ...fonts.map((e) => _buildFontContainer(e)).toList(),
-          SizedBox(height: AppDimensions.convertToH(40)),
-          _buildFontTestTextWidget(),
-        ]),
-      ),
+          child: Selector<SettingProvider, double>(
+              selector: (_, provider) => provider.textScaleFactor,
+              builder: (_, textScaleFactor, __) {
+                return Column(children: [
+                  SizedBox(height: AppDimensions.convertToH(4)),
+                  ...fonts.map((e) => _buildFontContainer(e, textScaleFactor)).toList(),
+                  SizedBox(height: AppDimensions.convertToH(40)),
+                  _buildFontTestTextWidget(textScaleFactor),
+                ]);
+              })),
     );
   }
 
-  Widget _buildFontContainer(font) {
+  Widget _buildFontContainer(font, textScaleFactor) {
     return GestureDetector(
-      onTap: () async => await _setFontSize(font['type']),
+      onTap: () => _setFontSize(font['scale']),
       child: Card(
         elevation: .1,
         margin: EdgeInsets.zero,
@@ -58,7 +61,7 @@ class _SelectFontSizeScreenState extends State<SelectFontSizeScreen> {
                 ),
               ),
               CustomRadioButton(
-                props: CustomRadioButtonProps(isSelected: font['type'] == newsFontSize),
+                props: CustomRadioButtonProps(isSelected: font['scale'] == textScaleFactor),
               ),
             ],
           ),
@@ -67,24 +70,11 @@ class _SelectFontSizeScreenState extends State<SelectFontSizeScreen> {
     );
   }
 
-  Widget _buildFontTestTextWidget() {
-    double fontSizeAdded = 0;
-    if (newsFontSize == NEWS_FONT.SMALL) {
-      fontSizeAdded = -4;
-    }
-    if (newsFontSize == NEWS_FONT.LARGE) {
-      fontSizeAdded = 4;
-    }
-    if (newsFontSize == NEWS_FONT.LARGER) {
-      fontSizeAdded = 6;
-    }
+  Widget _buildFontTestTextWidget(double textScaleFactor) {
     return Center(
       child: Text(
         ' Demo Text For Font Selection ',
-        style: TextStyle(
-          fontSize: 16 + fontSizeAdded,
-          fontWeight: FontWeight.bold
-        ),
+        style: TextStyle(fontSize: 16 * textScaleFactor, fontWeight: FontWeight.bold),
       ),
     );
   }

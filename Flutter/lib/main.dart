@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/providers/news_provider.dart';
 import 'package:flutter_app/providers/setting_provider.dart';
+import 'package:flutter_app/providers/stepper_provider.dart';
 import 'package:flutter_app/providers/test_flow_provider.dart';
 import 'package:flutter_app/routes.dart';
 import 'package:flutter_app/views/screens/splash_screen.dart';
 import 'package:flutter_app/views/style/app_style.dart';
 import 'package:flutter_app/views/style/app_themes.dart';
-import 'package:flutter_app/views/view_helpers/app_colors.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -19,12 +19,10 @@ void main() {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  runApp(
-      ChangeNotifierProvider(
-        create: (_) => SettingProvider(),
-        child: MyApp(),
-      )
-  );
+  runApp(ChangeNotifierProvider(
+    create: (_) => SettingProvider(),
+    child: MyApp(),
+  ));
   FlutterError.onError = (FlutterErrorDetails details) async {
     print('FlutterError: ${details.exception} - ${details.stack}');
     StackTrace stackTrace = details.stack != null ? details.stack! : StackTrace.empty;
@@ -58,6 +56,7 @@ class _MyAppState extends State<MyApp> {
         providers: [
           ChangeNotifierProvider(create: (_) => TestFlowProvider()),
           ChangeNotifierProvider(create: (_) => NewsProvider()),
+          ChangeNotifierProvider(create: (_) => StepperProvider()),
         ],
         child: GestureDetector(
           onTap: () {
@@ -68,21 +67,16 @@ class _MyAppState extends State<MyApp> {
           },
           child: MaterialApp(
             title: 'FE Library',
-            builder: (BuildContext context, Widget? child){
+            builder: (BuildContext context, Widget? child) {
               AppStyle.setMedia(MediaQuery.maybeOf(context)!);
-              return MediaQuery(
-                  data: AppStyle.mediaQueryData!,
-                  child: child!
-              );
+              return MediaQuery(data: AppStyle.mediaQueryData!, child: child!);
             },
             theme: AppThemes.lightTheme,
             darkTheme: AppThemes.darkTheme,
             themeMode: _settingProvider.themeMode,
             debugShowCheckedModeBanner: false,
             home: SplashScreen(),
-            onUnknownRoute: (_){
-
-            },
+            onUnknownRoute: (_) {},
             onGenerateRoute: Routes.onGenerateRoute,
           ),
         ));

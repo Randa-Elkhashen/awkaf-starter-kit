@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/views/screens/tabs/news_screen.dart';
 import 'package:flutter_app/views/screens/tabs/auth/sign_in.dart';
 import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_screen.dart';
-import 'package:flutter_app/views/view_helpers/app_colors.dart';
-import 'package:flutter_app/views/view_helpers/app_dimensions.dart';
+import 'package:flutter_app/views/style/app_colors.dart';
+import 'package:flutter_app/views/style/app_dimensions.dart';
 import 'package:flutter_app/views/view_helpers/app_icons.dart';
 
 import 'package:flutter_app/views/screens/tabs/font_resizing_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/gallery_screen.dart';
 import 'package:flutter_app/views/screens/tabs/listing_loading_scroll_screen.dart';
-
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: AppDimensions.convertToW(30));

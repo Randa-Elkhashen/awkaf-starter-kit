@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/views/view_helpers/imports.dart';
+import 'package:flutter_app/views/style/imports.dart';
+import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
 
 class ListingLoadingScrollScreen extends StatefulWidget {
   const ListingLoadingScrollScreen({Key? key}) : super(key: key);
@@ -11,23 +12,17 @@ class ListingLoadingScrollScreen extends StatefulWidget {
 class _ListingLoadingScrollScreenState extends State<ListingLoadingScrollScreen> {
   bool verticalLoading = false;
   List<BookCard> list = booksList;
-  _onEndScroll(ScrollMetrics metrics, context) {
+
+  _loadMore() {
     setState(() {
       verticalLoading = true;
     });
-    if (metrics.atEdge) {
-      if (metrics.pixels == 0) {
-        // You're at the top.
-      } else {
-        // You're at the edge of the bottom.
-        Future.delayed(new Duration(seconds: 2), () async {
-          setState(() {
-            list+=(booksList) ;
-            verticalLoading = false;
-          });
-        });
-      }
-    }
+    Future.delayed(new Duration(seconds: 2), () async {
+      setState(() {
+        list += (booksList);
+        verticalLoading = false;
+      });
+    });
   }
 
   @override
@@ -38,31 +33,27 @@ class _ListingLoadingScrollScreenState extends State<ListingLoadingScrollScreen>
         child: Column(
           children: [
             Expanded(
-              child: NotificationListener<ScrollNotification>(
-                onNotification: (scrollNotification) {
-                  if (scrollNotification is ScrollEndNotification) {
-                    _onEndScroll(scrollNotification.metrics, context);
-                  }
-                  return true;
-                },
-                child: ListView(
-                  children: [
-                    // List
-                    ...list.map((e) => _buildArtCardWidget(e)).toList(),
-                    // vertical loading
-                    verticalLoading
-                        ? Padding(
-                            padding: EdgeInsets.all(12),
-                            child: Center(
-                              child: CircularProgressIndicator(
-                                color: AppColors.orange,
-                              ),
-                            ),
-                          )
-                        : Container()
-                  ],
-                ),
-              ),
+              child: LazyLoadScrollView(
+                  isLoading: verticalLoading,
+                  onEndOfPage: _loadMore,
+                  child: ListView.builder(
+                      itemCount: list.length + 1,
+                      itemBuilder: (context, index) {
+                        if (index < list.length) {
+                          return _buildArtCardWidget(list[index]);
+                        }
+
+                        return verticalLoading
+                            ? Padding(
+                                padding: EdgeInsets.all(12),
+                                child: Center(
+                                  child: CircularProgressIndicator(
+                                    color: AppColors.orange,
+                                  ),
+                                ),
+                              )
+                            : SizedBox.shrink();
+                      })),
             ),
           ],
         ),
@@ -117,7 +108,6 @@ class _ListingLoadingScrollScreenState extends State<ListingLoadingScrollScreen>
                     style: TextStyle(
                       fontSize: AppDimensions.convertToH(18),
                       fontWeight: FontWeight.bold,
-
                     ),
                   ),
                 ],

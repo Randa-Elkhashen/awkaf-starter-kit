@@ -3,7 +3,6 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/controllers/managers/map_clustering_controller.dart';
 import 'package:flutter_app/providers/setting_provider.dart';
 import 'package:flutter_app/view_models/place.dart';
 import 'package:flutter_app/views/style/app_style.dart';
@@ -11,7 +10,8 @@ import 'package:flutter_app/views/style/map_themes.dart';
 import 'package:google_maps_cluster_manager/google_maps_cluster_manager.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
-class MultiLocationsView extends StatefulWidget  {
+
+class MultiLocationsView extends StatefulWidget {
   final List<Place> places;
   final LatLng? initialCameraPosition;
   const MultiLocationsView({
@@ -25,25 +25,22 @@ class MultiLocationsView extends StatefulWidget  {
 }
 
 class _MultiLocationsViewState extends State<MultiLocationsView> {
-
   late ClusterManager _manager;
   GoogleMapController? _googleMapController;
   late SettingProvider _settingProvider;
   Set<Marker> _markers = Set();
 
-  _updateCamera(LatLng location){
-    _googleMapController?.animateCamera(
-        CameraUpdate.newCameraPosition(
-          CameraPosition(
-            target: location,
-            zoom: 14,
-          ),
-        )
-    );
+  _updateCamera(LatLng location) {
+    _googleMapController?.animateCamera(CameraUpdate.newCameraPosition(
+      CameraPosition(
+        target: location,
+        zoom: 14,
+      ),
+    ));
   }
 
   _changeTheme() async {
-    switch(_settingProvider.themeMode){
+    switch (_settingProvider.themeMode) {
       case ThemeMode.light:
         await _googleMapController!.setMapStyle(MapThemes.light);
         break;
@@ -51,9 +48,9 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
         await _googleMapController!.setMapStyle(MapThemes.dark);
         break;
       default:
-        if(AppStyle.mediaQueryData?.platformBrightness == Brightness.dark){
+        if (AppStyle.mediaQueryData?.platformBrightness == Brightness.dark) {
           await _googleMapController!.setMapStyle(MapThemes.dark);
-        }else {
+        } else {
           await _googleMapController!.setMapStyle(MapThemes.light);
         }
         break;
@@ -61,23 +58,17 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
     setState(() {});
   }
 
-  Future<Marker> Function(Cluster<Place>)
-    get _markerBuilder =>
-        (cluster) async {
-      return Marker(
-        markerId: MarkerId(cluster.getId()),
-        position: cluster.location,
-        icon: await _getMarkerBitmap(cluster.isMultiple ? 125 : 75,
-            text: cluster.isMultiple ? cluster.count.toString() : null),
-      );
-    };
+  Future<Marker> Function(Cluster<Place>) get _markerBuilder => (cluster) async {
+        return Marker(
+          markerId: MarkerId(cluster.getId()),
+          position: cluster.location,
+          icon: await _getMarkerBitmap(cluster.isMultiple ? 125 : 75,
+              text: cluster.isMultiple ? cluster.count.toString() : null),
+        );
+      };
 
   ClusterManager<Place> _initClusterManager() {
-    return ClusterManager<Place>(
-        widget.places,
-        _updateMarkers,
-        markerBuilder: _markerBuilder
-    );
+    return ClusterManager<Place>(widget.places, _updateMarkers, markerBuilder: _markerBuilder);
   }
 
   void _updateMarkers(Set<Marker> markers) {
@@ -95,11 +86,11 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
 
   @override
   Widget build(BuildContext context) {
-    _settingProvider = Provider.of<SettingProvider>(context,listen: false);
+    _settingProvider = Provider.of<SettingProvider>(context, listen: false);
     return GoogleMap(
       mapType: MapType.normal,
       initialCameraPosition: CameraPosition(
-        target: widget.initialCameraPosition ?? LatLng(26.8206,30.8025),
+        target: widget.initialCameraPosition ?? LatLng(26.8206, 30.8025),
         zoom: 10,
       ),
       markers: _markers,
@@ -129,10 +120,7 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
       TextPainter painter = TextPainter(textDirection: TextDirection.ltr);
       painter.text = TextSpan(
         text: text,
-        style: TextStyle(
-            fontSize: size / 3,
-            color: Colors.white,
-            fontWeight: FontWeight.normal),
+        style: TextStyle(fontSize: size / 3, color: Colors.white, fontWeight: FontWeight.normal),
       );
       painter.layout();
       painter.paint(

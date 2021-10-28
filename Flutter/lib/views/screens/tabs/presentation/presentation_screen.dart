@@ -6,14 +6,15 @@ import 'package:flutter_app/views/screens/tabs/presentation/model_3d_screen.dart
 import 'package:flutter_app/views/screens/tabs/presentation/panorama_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/web_view_screen.dart';
 import 'package:flutter_app/views/style/app_style.dart';
-import 'package:flutter_app/views/widgets/gallery/gallery_with_bar.dart';
+import 'package:flutter_app/views/widgets/gallery/gallary_with_bar.dart';
+// import 'package:flutter_app/views/widgets/gallery/gallery_with_bar.dart';
 import 'package:flutter_app/views/widgets/gallery/gallery_in_row.dart';
+
 class PresentationScreen extends StatelessWidget {
   const PresentationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     final List<String> _links = [
       "https://www.presidency.eg/media/163551/p-8-00000000000jpg.jpg",
       "https://www.presidency.eg/media/163557/p-3-000jpg.jpg",
@@ -23,14 +24,10 @@ class PresentationScreen extends StatelessWidget {
       "https://www.youtube.com/embed/pICAha0nsb0"
     ];
 
-    return  ListView(
-
+    return ListView(
       padding: const EdgeInsets.all(16),
-
       children: [
-        SizedBox(
-          height: AppStyle.scaleFactor * 260,
-            child: GalleryScreen()),
+        SizedBox(height: AppStyle.scaleFactor * 260, child: GalleryScreen()),
         GalleryInRow(
           viewFraction: .9,
           urls: _links,
@@ -40,39 +37,30 @@ class PresentationScreen extends StatelessWidget {
           height: AppStyle.scaleFactor * 260,
           urls: _links,
         ),
-        SizedBox(height: AppStyle.scaleFactor * 10,),
-        ElevatedButton(
-            onPressed: (){
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_)=> const PanoramaView())
-              );
-            },
-            child: const Text("Panorama 360")
+        SizedBox(
+          height: AppStyle.scaleFactor * 10,
         ),
         ElevatedButton(
-            onPressed: (){
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_)=> const Model3DView())
-              );
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (_) => const PanoramaView()));
             },
-            child: const Text("3D Model")
-        ),
+            child: const Text("Panorama 360")),
         ElevatedButton(
-            onPressed: (){
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_)=> const FilesLoaderScreen())
-              );
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (_) => const Model3DView()));
             },
-            child: const Text("Files Loaders")
-        ),
+            child: const Text("3D Model")),
         ElevatedButton(
-            onPressed: (){
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_)=> const WebViewExample())
-              );
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => const FilesLoaderScreen()));
             },
-            child: const Text("WebView")
-        ),
+            child: const Text("Files Loaders")),
+        ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (_) => const WebViewExample()));
+            },
+            child: const Text("WebView")),
       ],
     );
   }

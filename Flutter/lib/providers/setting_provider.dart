@@ -2,10 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/controllers/managers/shared_preferences_controller.dart';
 
-class SettingProvider extends ChangeNotifier{
-
+class SettingProvider extends ChangeNotifier {
   resetSettings() async {
-
     notifyListeners();
   }
 
@@ -28,7 +26,7 @@ class SettingProvider extends ChangeNotifier{
   }
 
   // call loadSharedPreferences when provider initialise
-  SettingProvider(){
+  SettingProvider() {
     loadSharedPreferences();
   }
 
@@ -42,5 +40,4 @@ class SettingProvider extends ChangeNotifier{
     loaded = true;
     notifyListeners();
   }
-
 }

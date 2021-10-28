@@ -47,7 +47,10 @@ dependencies:
   google_maps_flutter: ^2.0.11
   google_maps_cluster_manager: ^3.0.0+1
   font_awesome_flutter: ^9.1.0
-
+  step_progress_indicator: ^1.0.1
+  lazy_load_scrollview: ^1.3.0
+  image_picker: ^0.8.4+3
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -80,6 +83,7 @@ flutter:
     - assets/images/
     - assets/3d_models/astronaut/
     - assets/flares/
+    - assets/nationality.json
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

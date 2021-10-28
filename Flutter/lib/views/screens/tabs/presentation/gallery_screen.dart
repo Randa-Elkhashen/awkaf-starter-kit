@@ -2,7 +2,7 @@
 // #
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/views/view_helpers/imports.dart';
+import 'package:flutter_app/views/style/imports.dart';
 import 'package:flutter_app/views/widgets/youtube_widget.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -38,48 +38,54 @@ class _GalleryScreenState extends State<GalleryScreen> {
         width: AppDimensions.width,
         child: Column(
           children: [
-            Container(
-              height: AppDimensions.convertToH(200),
-              width: AppDimensions.width,
-              child: CarouselSlider(
-                options: CarouselOptions(
-                    viewportFraction: 1,
-                    onPageChanged: (index, reason) {
-                      setState(() {
-                        _current = index;
-                      });
-                    }),
-                items: galleryList
-                    .map(
-                      (GalleryViewModel item) => Container(
-                        width: 1000,
-                        height: AppDimensions.convertToH(200),
-                        child: Stack(
-                          alignment: Alignment.bottomRight,
-                          children: [
-                            //
-                            if (item.type == Type.IMAGE)
-                              Center(
-                                child: Image.asset(
-                                  item.url!,
-                                  fit: BoxFit.cover,
-                                  width: 1000,
-                                ),
-                              ),
-                            if (item.type == Type.VIDEO)
-                              Center(
-                                child: YoutubeVideo(
-                                initialKey: item.url!,
-                              )),
-                            if (item.type == Type.AUDIO)
-                              Center(child: audioSoundCloudWidget(item.url)),
-                            gallerySliderNumberText()
-                          ],
-                        ),
-                      ),
-                    )
-                    .toList(),
-              ),
+            Stack(
+              alignment: AlignmentDirectional.bottomStart,
+              children: [
+                Container(
+                  height: AppDimensions.convertToH(200),
+                  width: AppDimensions.width,
+                  child: CarouselSlider(
+                    options: CarouselOptions(
+                        viewportFraction: 1,
+                        onPageChanged: (index, reason) {
+                          setState(() {
+                            _current = index;
+                          });
+                        }),
+                    items: galleryList
+                        .map(
+                          (GalleryViewModel item) => Container(
+                            width: AppDimensions.getFullWidth(),
+                            height: AppDimensions.convertToH(200),
+                            color: Colors.grey[300],
+                            child: Stack(
+                              alignment: Alignment.bottomRight,
+                              children: [
+                                //
+                                if (item.type == Type.IMAGE)
+                                  Center(
+                                    child: Image.asset(
+                                      item.url!,
+                                      fit: BoxFit.fill,
+                                      width: AppDimensions.getFullWidth(),
+                                    ),
+                                  ),
+                                if (item.type == Type.VIDEO)
+                                  Center(
+                                      child: YoutubeVideo(
+                                    initialKey: item.url!,
+                                  )),
+                                if (item.type == Type.AUDIO)
+                                  Center(child: audioSoundCloudWidget(item.url)),
+                              ],
+                            ),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
+                gallerySliderNumberText(),
+              ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -120,11 +126,13 @@ class _GalleryScreenState extends State<GalleryScreen> {
 
   Widget gallerySliderNumberText() {
     return Positioned(
-        child: Container(
-      padding: EdgeInsets.all(10),
-      child: Text('${(_current + 1).toString()}/${(galleryList.length).toString()}',
-          style: TextStyle(color: Colors.white)),
-    ));
+      child: Container(
+        color: AppColors.grey,
+        padding: EdgeInsets.all(10),
+        child: Text('${(_current + 1).toString()}/${(galleryList.length).toString()}',
+            style: TextStyle(color: Colors.white)),
+      ),
+    );
   }
 
   Widget gallerySliderIndicator(index) {
