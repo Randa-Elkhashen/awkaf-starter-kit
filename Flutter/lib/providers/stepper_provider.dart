@@ -3,7 +3,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/routes.dart';
 import 'package:flutter_app/view_models/stepper_form_view_model.dart';
 import 'package:flutter_app/views/screens/tabs/stepper/stepper_screen.dart';
 import 'package:flutter_app/views/screens/tabs/stepper/steps/step_1_basic_info.dart';
@@ -16,7 +15,6 @@ class StepperProvider extends ChangeNotifier {
   bool isLastStep = false;
   bool isSubmittedForm = false;
   List<String> nationalityStringList = [];
-  // String selectedNationality = 'Egyptian';
   GlobalKey<FormState> formKeyStep = GlobalKey<FormState>();
 
   // DATA
@@ -41,9 +39,11 @@ class StepperProvider extends ChangeNotifier {
 
   moveNext(index) {
     if (saveStepData()) {
-      if (index <= _steps.length) currentStepIndex = index;
-      if (index == _steps.length) isLastStep = true;
-      if (index > _steps.length && isLastStep) _submitForm();
+      if (index <= _steps.length) {
+        currentStepIndex = index;
+        if (index == _steps.length) isLastStep = true;
+      } else
+        _submitForm();
       notifyListeners();
     }
   }
@@ -56,6 +56,14 @@ class StepperProvider extends ChangeNotifier {
   moveBack(index) {
     isLastStep = false;
     if (index >= 1) currentStepIndex = index;
+    notifyListeners();
+  }
+
+  start() {
+    isSubmittedForm = false;
+    isLastStep = true;
+    currentStepIndex = 1;
+    stepperForm = StepperFormViewModel();
     notifyListeners();
   }
 

@@ -30,11 +30,11 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
   late SettingProvider _settingProvider;
   Set<Marker> _markers = Set();
 
-  _updateCamera(LatLng location) {
+  _updateCamera(LatLng location, double zoom) {
     _googleMapController?.animateCamera(CameraUpdate.newCameraPosition(
       CameraPosition(
         target: location,
-        zoom: 14,
+        zoom: zoom,
       ),
     ));
   }
@@ -48,20 +48,25 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
         await _googleMapController!.setMapStyle(MapThemes.dark);
         break;
       default:
-        if (AppStyle.mediaQueryData?.platformBrightness == Brightness.dark) {
+        if (AppStyle.mediaQueryData.platformBrightness == Brightness.dark) {
           await _googleMapController!.setMapStyle(MapThemes.dark);
         } else {
           await _googleMapController!.setMapStyle(MapThemes.light);
         }
         break;
     }
-    setState(() {});
+    if (this.mounted) setState(() {});
   }
 
   Future<Marker> Function(Cluster<Place>) get _markerBuilder => (cluster) async {
         return Marker(
           markerId: MarkerId(cluster.getId()),
           position: cluster.location,
+          infoWindow:
+              cluster.isMultiple ? InfoWindow.noText : InfoWindow(title: cluster.items.first.name),
+          onTap: () async {
+            _updateCamera(cluster.location, (await _googleMapController!.getZoomLevel()) + 1);
+          },
           icon: await _getMarkerBitmap(cluster.isMultiple ? 125 : 75,
               text: cluster.isMultiple ? cluster.count.toString() : null),
         );
@@ -72,7 +77,6 @@ class _MultiLocationsViewState extends State<MultiLocationsView> {
   }
 
   void _updateMarkers(Set<Marker> markers) {
-    print('Updated ${markers.length} markers');
     setState(() {
       this._markers = markers;
     });

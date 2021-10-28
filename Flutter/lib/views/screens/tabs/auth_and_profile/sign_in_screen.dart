@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/controllers/managers/validator_controller.dart';
 import 'package:flutter_app/view_models/user.dart';
-import 'package:flutter_app/views/screens/tabs/auth/sign_up.dart';
-import 'package:flutter_app/views/screens/tabs/auth/verify_email.dart';
+import 'package:flutter_app/views/screens/tabs/auth_and_profile/profile/user_profile_screen.dart';
+import 'package:flutter_app/views/screens/tabs/auth_and_profile/sign_up_screen.dart';
+import 'package:flutter_app/views/screens/tabs/auth_and_profile/verify_email_screen.dart';
 import 'package:flutter_app/views/widgets/buttons/app_button.dart';
 import 'package:flutter_app/views/widgets/buttons/app_text_button.dart';
 import 'package:flutter_app/views/widgets/loaders/loading_manager.dart';
@@ -32,6 +33,7 @@ class _SignInPageState extends State<SignInPage> {
         key: _formKey,
         child: LoadingManager(
           isLoading: _isLoading,
+
           child: SingleChildScrollView(
             padding: EdgeInsets.symmetric(
               vertical: 16 ,
@@ -92,17 +94,20 @@ class _SignInPageState extends State<SignInPage> {
                   child: AppButton(
                     text: "Sign In",
                     onPressed: () async {
-
                       if(!_formKey.currentState!.validate())
                         return;
                       _formKey.currentState?.save();
 
                       _isLoading = true;
                       setState(() {});
-                      await Future.delayed(Duration(seconds: 2));
+                      await Future.delayed(Duration(seconds: 1));
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (_) => UserProfile()
+                        )
+                      );
                       _isLoading = false;
                       setState(() {});
-
                     },
                   ),
                 ),

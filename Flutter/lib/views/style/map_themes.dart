@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/views/view_helpers/app_colors.dart';
 
-class MapThemes{
-
+class MapThemes {
   static String light = "[]";
 
   static String dark = '''[
@@ -167,5 +165,4 @@ class MapThemes{
     ]
   }
 ]''';
-
 }

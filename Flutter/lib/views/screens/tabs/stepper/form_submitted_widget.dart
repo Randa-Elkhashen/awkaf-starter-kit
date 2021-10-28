@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/providers/stepper_provider.dart';
 import 'package:flutter_app/view_models/stepper_form_view_model.dart';
+import 'package:flutter_app/views/widgets/buttons/app_button.dart';
 
 import 'package:provider/provider.dart';
 
@@ -18,7 +19,12 @@ class FormSubmittedWidget extends StatelessWidget {
               selector: (_, provider) => provider.stepperForm,
               builder: (_, stepperForm, __) {
                 return Text(stepperForm.toString());
-              })
+              }),
+          AppButton(
+            text: 'Back',
+            color: Theme.of(context).colorScheme.primary,
+            onPressed: () => Provider.of<StepperProvider>(context, listen: false).start(),
+          )
         ],
       ),
     );

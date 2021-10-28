@@ -69,14 +69,13 @@ class _MyAppState extends State<MyApp> {
             title: 'FE Library',
             builder: (BuildContext context, Widget? child) {
               AppStyle.setMedia(MediaQuery.maybeOf(context)!);
-              return MediaQuery(data: AppStyle.mediaQueryData!, child: child!);
+              return MediaQuery(data: AppStyle.mediaQueryData, child: child!);
             },
             theme: AppThemes.lightTheme,
             darkTheme: AppThemes.darkTheme,
             themeMode: _settingProvider.themeMode,
             debugShowCheckedModeBanner: false,
             home: SplashScreen(),
-            onUnknownRoute: (_) {},
             onGenerateRoute: Routes.onGenerateRoute,
           ),
         ));

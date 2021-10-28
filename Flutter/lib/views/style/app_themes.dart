@@ -8,7 +8,6 @@ class AppThemes {
     primaryColor: AppColors.orange,
     brightness: Brightness.light,
     colorScheme: ColorScheme.light(
-      brightness: Brightness.light,
       primary: AppColors.orange,
       primaryVariant: AppColors.deepOrange,
       secondary: AppColors.grey,

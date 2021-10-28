@@ -3,24 +3,26 @@ import 'package:flutter_app/view_models/topic.dart';
 import 'package:flutter_app/views/widgets/loaders/lazy_loading.dart';
 import 'package:flutter_app/views/widgets/loaders/no_item_found.dart';
 
-import 'news_item.dart';
+import 'time_line_item.dart';
+class TimeLineList extends StatelessWidget {
 
-class NewsList extends StatelessWidget {
   final List<Topic> topics;
   final bool nextPage;
   final Future<void> Function() onLazyLoad;
 
-  const NewsList({Key? key, required this.topics, required this.nextPage, required this.onLazyLoad})
-      : super(key: key);
+  const TimeLineList({
+    Key? key,
+    required this.topics,
+    required this.nextPage,
+    required this.onLazyLoad
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     /// if no item found show no item found view
     /// else display our list
-    if (topics.isEmpty) {
-      return NoItemFound(
-        message: "No news found",
-      );
+    if(topics.isEmpty){
+      return NoItemFound(message: "No topics found",);
     }
 
     return LazyLoading(
@@ -28,17 +30,19 @@ class NewsList extends StatelessWidget {
       onLazyLoad: onLazyLoad,
       child: Scrollbar(
         child: ListView.builder(
-            physics: RangeMaintainingScrollPhysics(),
             itemCount: topics.length,
             padding: EdgeInsets.symmetric(
                 //horizontal: 16,
-                vertical: 8),
-            itemBuilder: (context, itemIndex) {
+                vertical: 8
+            ),
+            itemBuilder: (context,itemIndex){
               Topic _topic = topics[itemIndex];
-              return NewsItem(
+              return TimeLineItem(
+                index: itemIndex,
                 topic: _topic,
               );
-            }),
+            }
+        ),
       ),
     );
   }

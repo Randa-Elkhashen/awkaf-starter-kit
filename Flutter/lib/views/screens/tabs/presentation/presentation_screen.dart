@@ -6,9 +6,8 @@ import 'package:flutter_app/views/screens/tabs/presentation/model_3d_screen.dart
 import 'package:flutter_app/views/screens/tabs/presentation/panorama_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/web_view_screen.dart';
 import 'package:flutter_app/views/style/app_style.dart';
-import 'package:flutter_app/views/widgets/gallery/gallary_with_bar.dart';
-// import 'package:flutter_app/views/widgets/gallery/gallery_with_bar.dart';
 import 'package:flutter_app/views/widgets/gallery/gallery_in_row.dart';
+import 'package:flutter_app/views/widgets/gallery/gallery_with_bar.dart';
 
 class PresentationScreen extends StatelessWidget {
   const PresentationScreen({Key? key}) : super(key: key);
@@ -31,7 +30,7 @@ class PresentationScreen extends StatelessWidget {
         GalleryInRow(
           viewFraction: .9,
           urls: _links,
-          height: AppStyle.scaleFactor * 260,
+          height: AppStyle.scaleFactor * 220,
         ),
         GalleryWithBar(
           height: AppStyle.scaleFactor * 260,

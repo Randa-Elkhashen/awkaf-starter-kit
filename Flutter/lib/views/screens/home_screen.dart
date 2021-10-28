@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/providers/setting_provider.dart';
-import 'package:flutter_app/views/screens/tabs/auth/sign_in.dart';
+import 'package:flutter_app/views/screens/tabs/auth_and_profile/sign_in_screen.dart';
 import 'package:flutter_app/views/screens/tabs/date_time_screen.dart';
 import 'package:flutter_app/views/screens/tabs/font_resizing_screen.dart';
 import 'package:flutter_app/views/screens/tabs/maps_screen.dart';
 import 'package:flutter_app/views/screens/tabs/listing_loading_scroll_screen.dart';
-import 'package:flutter_app/views/screens/tabs/news_screen.dart';
+import 'package:flutter_app/views/screens/tabs/lazy_loading_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/presentation_screen.dart';
 import 'package:flutter_app/views/screens/tabs/stepper/stepper_screen.dart';
 import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_form_widget_screen.dart';
 import 'package:flutter_app/views/style/imports.dart';
+import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_screen.dart';
+import 'package:flutter_app/views/screens/tabs/time_line_screen.dart';
 
 import 'package:flutter_app/views/screens/drawer_screen.dart';
 import 'package:flutter_app/views/widgets/buttons/app_icon_button.dart';
@@ -33,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
     "Date and Time",
     "Maps",
     "Stepper",
+    "Timeline",
   ];
   @override
   Widget build(BuildContext context) {
@@ -77,6 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
           DateTimeScreen(),
           MapsScreen(),
           StepperScreen(),
+          TimeLineScreen(),
         ]),
       ),
     );

@@ -9,9 +9,9 @@ class AppSubTitle extends StatelessWidget {
     return Text(
       text,
       style: Theme.of(context).textTheme.subtitle2?.copyWith(
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: FontWeight.bold,
-        color: color ?? Theme.of(context).colorScheme.primary
+        color: color
       ),
     );
   }

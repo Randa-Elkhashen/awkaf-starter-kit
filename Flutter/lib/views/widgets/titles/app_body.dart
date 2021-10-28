@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-class ABody extends StatelessWidget {
+class AppBody extends StatelessWidget {
   final String text;
   final Color? color;
   final int? maxLines;
-  const ABody(this.text,{Key? key,this.color, this.maxLines}) : super(key: key);
+  const AppBody(this.text,{Key? key,this.color, this.maxLines}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

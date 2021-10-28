@@ -7,7 +7,7 @@ import 'package:flutter_app/views/widgets/news/news_list.dart';
 import 'package:flutter_app/views/widgets/news/search_bar.dart';
 import 'package:provider/provider.dart';
 
-class NewsScreens extends StatefulWidget {
+class NewsScreens extends StatefulWidget  {
   static final String id = "/news-screen";
   const NewsScreens({Key? key}) : super(key: key);
 
@@ -15,12 +15,13 @@ class NewsScreens extends StatefulWidget {
   _NewsScreensState createState() => _NewsScreensState();
 }
 
-class _NewsScreensState extends State<NewsScreens> {
+class _NewsScreensState extends State<NewsScreens> with AutomaticKeepAliveClientMixin {
 
   late NewsProvider _newsProvider;
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     _newsProvider = Provider.of<NewsProvider>(context);
     return Scaffold(
       body: SafeArea(
@@ -77,4 +78,7 @@ class _NewsScreensState extends State<NewsScreens> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

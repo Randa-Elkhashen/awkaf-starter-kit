@@ -29,9 +29,11 @@ class _LocationViewState extends State<LocationView> {
           ),
         )
     );
+    _googleMapController?.showMarkerInfoWindow(MarkerId("MarkerId"));
   }
 
   _changeTheme() async {
+
     switch(_settingProvider.themeMode){
       case ThemeMode.light:
         await _googleMapController!.setMapStyle(MapThemes.light);
@@ -40,14 +42,15 @@ class _LocationViewState extends State<LocationView> {
         await _googleMapController!.setMapStyle(MapThemes.dark);
         break;
       default:
-        if(AppStyle.mediaQueryData?.platformBrightness == Brightness.dark){
+        if(AppStyle.mediaQueryData.platformBrightness == Brightness.dark){
           await _googleMapController!.setMapStyle(MapThemes.dark);
         }else {
           await _googleMapController!.setMapStyle(MapThemes.light);
         }
         break;
     }
-    setState(() {});
+    if(this.mounted)
+      setState(() {});
   }
 
   @override
@@ -60,12 +63,17 @@ class _LocationViewState extends State<LocationView> {
       mapType: MapType.normal,
       initialCameraPosition: CameraPosition(
         target: widget.markLocation ?? LatLng(26.8206,30.8025),
-        zoom: 14,
+        zoom: 5.5,
       ),
       markers: widget.markLocation == null ? {} :
       {
         Marker(
             markerId: MarkerId("MarkerId"),
+
+            infoWindow: InfoWindow(
+              title: "location name",
+              snippet: "description"
+            ),
             position: widget.markLocation!
         )
       },

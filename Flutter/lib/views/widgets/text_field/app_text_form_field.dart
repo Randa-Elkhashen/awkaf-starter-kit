@@ -14,11 +14,13 @@ class ATextFormField extends StatelessWidget {
   final TextAlign? textAlign;
   final double? width;
   final bool readOnly;
-  final int? maxLength;
   final Function(String?)? onSaved;
   final String? Function(String?)? validator;
   final Function(String?)? onChange;
-  final Function()? onTap;
+  final Function()? onTap; //
+  final int? length;
+  final TextInputAction? textInputAction;
+  final VoidCallback? onAction;
 
   const ATextFormField({
     Key? key,
@@ -27,18 +29,20 @@ class ATextFormField extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.obscureText = false,
-    this.width,
     this.textAlign,
     this.label,
     this.hint,
     this.errorMessage,
     this.readOnly = false,
-    this.maxLength,
+    this.length,
     this.onSaved,
     this.validator,
     this.onChange,
     this.onTap,
     this.initialValue,
+    this.textInputAction,
+    this.onAction,
+    this.width,
   }) : super(key: key);
 
   @override
@@ -55,9 +59,12 @@ class ATextFormField extends StatelessWidget {
       readOnly: readOnly,
       controller: controller,
       obscureText: obscureText,
+      maxLength: length,
       textAlign: textAlign ?? TextAlign.start,
       maxLines: textInputType == TextInputType.multiline ? null : 1,
-      maxLength: maxLength,
+      textInputAction:
+          textInputType == TextInputType.multiline ? null : textInputAction ?? TextInputAction.next,
+      onEditingComplete: onAction ?? () => FocusScope.of(context).nextFocus(),
       decoration: InputDecoration(
         border: InputBorder.none,
         disabledBorder: InputBorder.none,

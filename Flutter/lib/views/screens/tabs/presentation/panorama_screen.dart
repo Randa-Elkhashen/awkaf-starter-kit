@@ -6,13 +6,13 @@ class PanoramaView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Center(
-          child: Panorama(
-              animSpeed: 2.5,
-              sensitivity: 2.0,
-              child: Image.asset("assets/images/panorama_360.jpg")
-          )
+        child: Panorama(
+          animSpeed: 2.5,
+          sensitivity: 2.0,
+          child: Image.asset("assets/images/panorama_360.jpg"),
+        ),
       ),
     );
   }
