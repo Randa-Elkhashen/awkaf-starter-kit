@@ -31,11 +31,11 @@ class _StepTwoDetailsState extends State<StepTwoDetails> {
             ATextFormField(
               label: "The return from the idea",
               initialValue: _stepperProvider.stepperForm.returnOfTheIdea,
-              length: 500,
+              length: 100,
               textInputType: TextInputType.multiline,
-              validator: (String? value) => Validator.isExceedMinChars(1, value)
+              validator: (String? value) => Validator.isExceedMinChars(20, value)
                   ? null
-                  : "The minimum number of characters is 100",
+                  : "The minimum number of characters is 20",
               onSaved: (value) {
                 _stepperProvider.stepperForm.returnOfTheIdea = value;
               },
@@ -43,11 +43,11 @@ class _StepTwoDetailsState extends State<StepTwoDetails> {
             ATextFormField(
               label: "Explain the idea",
               initialValue: _stepperProvider.stepperForm.ideaExplaination,
-              length: 500,
+              length: 200,
               textInputType: TextInputType.multiline,
-              validator: (String? value) => Validator.isExceedMinChars(1, value)
+              validator: (String? value) => Validator.isExceedMinChars(40, value)
                   ? null
-                  : "The minimum number of characters is 200",
+                  : "The minimum number of characters is 40",
               onSaved: (value) {
                 _stepperProvider.stepperForm.ideaExplaination = value;
               },

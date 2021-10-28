@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/view_models/stepper_form_view_model.dart';
@@ -59,16 +57,17 @@ class StepperProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  start() {
+  // start the form from step 1
+  reset() {
     isSubmittedForm = false;
-    isLastStep = true;
+    isLastStep = false;
     currentStepIndex = 1;
     stepperForm = StepperFormViewModel();
     notifyListeners();
   }
 
   // ** STEP 1
-  readnationalityListJson() async {
+  readnationalityListFromJson() async {
     nationalityStringList = [];
     final String response = await rootBundle.loadString('./assets/nationality.json');
     final data = await json.decode(response);

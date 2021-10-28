@@ -15,21 +15,21 @@ class StepOneBasicInfo extends StatefulWidget {
 
 class _StepOneBasicInfoState extends State<StepOneBasicInfo> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
+  late StepperProvider _stepperProvider;
   @override
   void initState() {
     super.initState();
-    Provider.of<StepperProvider>(context, listen: false).readnationalityListJson();
-    Provider.of<StepperProvider>(context, listen: false).setCurrentFormKey(_formKey);
+    _stepperProvider = Provider.of<StepperProvider>(context, listen: false);
+    _stepperProvider.readnationalityListFromJson();
+    _stepperProvider.setCurrentFormKey(_formKey);
   }
 
   _selectNationality(nationality) {
-    Provider.of<StepperProvider>(context, listen: false).setSelectedNationality(nationality);
+    _stepperProvider.setSelectedNationality(nationality);
   }
 
   @override
   Widget build(BuildContext context) {
-    StepperProvider _stepperProvider = Provider.of<StepperProvider>(context, listen: false);
     return Form(
       key: _formKey,
       child: SingleChildScrollView(
@@ -40,9 +40,7 @@ class _StepOneBasicInfoState extends State<StepOneBasicInfo> {
               initialValue: _stepperProvider.stepperForm.fullName,
               textInputType: TextInputType.name,
               validator: (value) => Validator.hasValue(value) ? null : "This Field is Required",
-              onSaved: (value) {
-                _stepperProvider.stepperForm.fullName = value;
-              },
+              onSaved: (value) => _stepperProvider.stepperForm.fullName = value,
             ),
             SizedBox(height: AppDimensions.convertToH(15)),
             _buildNationalityInput(context),
@@ -64,9 +62,7 @@ class _StepOneBasicInfoState extends State<StepOneBasicInfo> {
               initialValue: _stepperProvider.stepperForm.email,
               textInputType: TextInputType.emailAddress,
               validator: (value) => Validator.isEmail(value) ? null : "Invalid email",
-              onSaved: (value) {
-                _stepperProvider.stepperForm.email = value;
-              },
+              onSaved: (value) => _stepperProvider.stepperForm.email = value,
             ),
           ],
         ),

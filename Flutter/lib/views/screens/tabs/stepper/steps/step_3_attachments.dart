@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/app_helpers/app_logger.dart';
 import 'package:flutter_app/controllers/managers/validator_controller.dart';
 import 'package:flutter_app/providers/stepper_provider.dart';
 import 'package:flutter_app/views/style/app_dimensions.dart';
@@ -21,7 +22,6 @@ class _StepThreeAttachmentsState extends State<StepThreeAttachments> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _stepperProvider = Provider.of<StepperProvider>(context, listen: false);
     _stepperProvider.setCurrentFormKey(_formKey);
@@ -111,9 +111,7 @@ class _StepThreeAttachmentsState extends State<StepThreeAttachments> {
               style: TextStyle(color: Colors.transparent),
               textAlign: TextAlign.center,
               validator: (value) => Validator.hasValue(value) ? null : "This Field is Required",
-              onTap: () {
-                _onImageButtonPressed(context, type);
-              },
+              onTap: () => _onImageButtonPressed(context, type),
               onSaved: (v) {},
             ),
             Positioned(
@@ -133,12 +131,11 @@ class _StepThreeAttachmentsState extends State<StepThreeAttachments> {
       if (image != null && await File(image.path).exists()) {
         File imageFile = File(image.path);
         _stepperProvider.setAttachments(type, imageFile);
-        print("image selected");
       } else {
-        print("image not selected");
+        AppLogger.logToConsole("image not selected");
       }
-    }).catchError((error) {
-      print("Error: ");
+    }).catchError((error, stackTrace) {
+      AppLogger.logErrorToConsole('_onImageButtonPressed', error, stackTrace);
     });
   }
 }

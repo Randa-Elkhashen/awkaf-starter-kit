@@ -21,9 +21,9 @@ class FormSubmittedWidget extends StatelessWidget {
                 return Text(stepperForm.toString());
               }),
           AppButton(
-            text: 'Back',
+            text: 'Reset',
             color: Theme.of(context).colorScheme.primary,
-            onPressed: () => Provider.of<StepperProvider>(context, listen: false).start(),
+            onPressed: () => Provider.of<StepperProvider>(context, listen: false).reset(),
           )
         ],
       ),
