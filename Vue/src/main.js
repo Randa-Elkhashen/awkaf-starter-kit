@@ -5,6 +5,10 @@ import router from "../router/router"
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "@/plugins/mixins";
+import LazyLoadDirective from "./directives/LazyLoadDirective";
+
+
+Vue.directive("lazyload", LazyLoadDirective);
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
