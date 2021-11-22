@@ -1,10 +1,10 @@
 /********* 
-useg of this dirctive
+usage of this directive
 
-It already imported glable so all you need to do to add v-lazyload to the img parent
-then add the bind img to to :data-url and make a dumy img in img src
+It already imported global, So all you need to do is to add v-lazyload to the img parent
+then add the binded img to :data-url and make a dummy img in img src
 
--An example for useg
+-An example for usage
 <span v-lazyload>
     <img :data-url="item.thumbnailUrl" src="../assets/spinner.gif" alt="card image" />
 </span>
