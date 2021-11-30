@@ -7,6 +7,7 @@ import 'package:flutter_app/views/screens/tabs/maps_screen.dart';
 import 'package:flutter_app/views/screens/tabs/listing_loading_scroll_screen.dart';
 import 'package:flutter_app/views/screens/tabs/lazy_loading_screen.dart';
 import 'package:flutter_app/views/screens/tabs/presentation/presentation_screen.dart';
+import 'package:flutter_app/views/screens/tabs/sliders/sliders_screen.dart';
 import 'package:flutter_app/views/screens/tabs/stepper/stepper_screen.dart';
 import 'package:flutter_app/views/screens/tabs/text_to_speech/text_to_speech_form_widget_screen.dart';
 import 'package:flutter_app/views/style/imports.dart';
@@ -26,6 +27,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<String> _labels = const [
+    "sliders",
     "Gallery",
     "Text To Speech",
     "Font Resizing",
@@ -71,6 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         drawer: NavigationDrawerWidget(),
         body: TabBarView(children: [
+          SlidersScreen(),
           PresentationScreen(),
           TextToSpeechFromWidgetScreen(),
           SelectFontSizeScreen(),

@@ -81,6 +81,12 @@ class _TextToSpeechWidgetState extends State<TextToSpeechWidget> {
   }
 
   @override
+  void dispose() {
+    _onStop();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Row(
       children: [

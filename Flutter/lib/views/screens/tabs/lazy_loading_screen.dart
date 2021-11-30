@@ -42,6 +42,7 @@ class _NewsScreensState extends State<NewsScreens> with AutomaticKeepAliveClient
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                   ),
+                  true ? SizedBox.shrink():
                   AppIconButton(
                     iconData: Icons.view_headline,
                     onPressed: () async {

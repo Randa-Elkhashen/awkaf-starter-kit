@@ -42,7 +42,6 @@ class _ListingLoadingScrollScreenState extends State<ListingLoadingScrollScreen>
                         if (index < list.length) {
                           return _buildArtCardWidget(list[index]);
                         }
-
                         return verticalLoading
                             ? Padding(
                                 padding: EdgeInsets.all(12),
