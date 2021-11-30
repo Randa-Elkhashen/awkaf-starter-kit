@@ -29,8 +29,8 @@
       </thead>
       <tbody>
         <tr v-for="(report, i) in reportList" :key="i">
-          <td scope="row">
-            <img :src="report.thumbnailUrl"/>
+          <td scope="row" v-lazyload>
+            <img src="../assets/spinner.gif" data-url="https://i.picsum.photos/id/60/500/500.jpg?hmac=R9f8YrvBF1RGTW4E5p4J9PsnN6sv60YJoVTMC6CkzqQ" />
           </td>
           <td>{{ report.title }}</td>
         </tr>

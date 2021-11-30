@@ -5,12 +5,13 @@
   <div class="nap-listing-container">
     <div class="container">
       <div class="row">
+
         <div class="col-md-4" :key="index" v-for="(item, index) in GenericListingData">
           <article class="nap-generic-card nap-generic-card--horizontal nap-generic-card--bg-img">
             <header class="nap-generic-card__header nap-generic-card__header--error">
               <div class="nap-generic-card__header-upper">
                 <div class="nap-generic-card__header-upper__start">
-                  <img :src="item.thumbnailUrl" alt="card source" />
+                  <img :src="item.thumbnailUrl" alt="card source" loading="lazy" />
                   <span class="nap-generic-card__header-upper__start-source label--error">{{ item.id }}</span>
                 </div>
                 <div class="nap-generic-card__header-upper__end">...</div>
@@ -26,12 +27,44 @@
               </div>
             </header>
             <div class="nap-generic-card__image-container">
-              <a :href="item.url">
-                <img src="https://picsum.photos/seed/picsum/414/211" alt="card image" />
+              <!-- :src="item.thumbnailUrl" -->
+              <a :href="item.url" v-lazyload v-if="item.thumbnailUrl">
+                <img :data-url="item.thumbnailUrl" src="../assets/spinner.gif" alt="card image" />
               </a>
             </div>
           </article>
         </div>
+
+        <div v-if="isLoading" class="col-12">
+            <div class="row">
+              <div class="col-md-4" :key="index" v-for="(item, index) in 9">
+                <article class="nap-generic-card nap-generic-card--horizontal nap-generic-card--bg-img">
+                  <header class="nap-generic-card__header nap-generic-card__header--error">
+                    <div class="nap-generic-card__header-upper placeholder-glow">
+                      <div class="nap-generic-card__header-upper__start">
+                        <span class="placeholder img-circle" />
+                      </div>
+                    </div>
+                    <div class="nap-generic-card__header-bottom placeholder-glow">
+                      <a href="#" class="placeholder-glow">
+                        <h3 class="placeholder col-9"></h3>
+                      </a>
+                      <div class="nap-generic-card__header-bottom__extra-info">
+                      <span class="placeholder col-4"></span>
+                      <span class="nap-generic-card__header-bottom__tag placeholder col-4"></span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="nap-generic-card__image-container placeholder-glow">
+                    <a href="#" class="placeholder">
+                      <span></span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+        </div>
+        
       </div>
       <div class="generic-error-msg" v-show="isNoDataMsg">
         <div class="icon">
@@ -40,9 +73,10 @@
         <p class="error-title">EmptyListMessagelbl</p>
         <a v-bind:href="goHome"><i class="icon-home"></i>HomePagelbl</a>
       </div>
-      <div class="listing-loader" v-show="isLoading">
+      <!-- <div class="listing-loader" v-show="isLoading">
         <img src="../assets/spinner.gif" />
-      </div>
+      </div> -->
+      
 
       <div class="observer"></div>
     </div>
@@ -86,6 +120,7 @@ export default {
   },
   methods: {
     getData: async function () {
+      
       this.isLoading = true;
       let ListingData = await this.ListingDataAPI.Photos.fetch();
       this.GenericListingData = ListingData.GenericListingData;
@@ -173,7 +208,7 @@ export default {
   watch: {
     "selectedDate.start": function () {
       listingThis.changeUrlParams(listingThis.selectedDate.start);
-      listingThis.getData();
+      //listingThis.getData();
     },
     "selectedDate.end": function () {
       listingThis.changeUrlParams(listingThis.selectedDate.end);
@@ -184,10 +219,48 @@ export default {
       }
       listingThis.scrollCount = 1;
       listingThis.isThereMoreData = true;
-      this.getData();
+      //this.getData();
     },
   },
+  inserted: el => {
+    function loadImage() {
+      const imageElement = Array.from(el.children).find(
+      el => el.nodeName === "IMG"
+      );
+      if (imageElement) {
+        imageElement.addEventListener("load", () => {
+          setTimeout(() => el.classList.add("loaded"), 100);
+        });
+        imageElement.addEventListener("error", () => console.log("error"));
+        imageElement.src = imageElement.dataset.url;
+      }
+    }
+
+    function handleIntersect(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadImage();
+          observer.unobserve(el);
+        }
+      });
+    }
+
+    function createObserver() {
+      const options = {
+        root: null,
+        threshold: "0"
+      };
+      const observer = new IntersectionObserver(handleIntersect, options);
+      observer.observe(el);
+    }
+    if (window["IntersectionObserver"]) {
+      createObserver();
+    } else {
+      loadImage();
+    }
+  },
   async mounted() {
+    // eslint-disable-next-line no-debugger
     
     await this.getData();
     await this.LoadOnScroll.loadOnScroll(this.getData, this.isThereMoreData);

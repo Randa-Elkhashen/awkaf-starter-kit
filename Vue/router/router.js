@@ -6,6 +6,7 @@ import Listing from "../src/pages/Listing";
 import Reports from "../src/pages/Reports";
 import ContactUs from "../src/pages/ContactUs";
 import genericFormValidations from "../src/pages/genericFormValidations";
+import GenericCharts from "../src/pages/GenericCharts"
 
 
 
@@ -29,11 +30,15 @@ const routes = [
   {
     path: "/contactus",
     component: ContactUs
-    },
-    {
-        path: "/genericFormValidations",
-        component: genericFormValidations
-    }
+  },
+  {
+    path: "/genericFormValidations",
+    component: genericFormValidations
+  },
+{
+  path: "/genericCharts",
+  component: GenericCharts
+}
   // {
   //   path: "/food-item/:id",
   //   component: () => import("../views/foodItemDetails.vue")
