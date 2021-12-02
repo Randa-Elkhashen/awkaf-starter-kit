@@ -1,0 +1,67 @@
+/* built in modules*/
+@use "sass:map";
+/* built in modules*/
+
+:root {
+    --fontModifier: 1;
+}
+/***Responsive variables***/
+$breakpoints: (
+    "phone": 375,
+    "phablet": 766,
+    "ipad": 1023,
+    "ipad-pro": 1024,
+    "desktop": 1366,
+    "desktop-wide": 1920,
+);
+/***Responsive variables***/
+/*** fonts***/
+$font-weights: ("regular": 400, "medium": 500, "bold": 700);
+/*** fonts***/
+/*** Colors***/
+$normaModeColors : (
+    "primary-bg" : #f5f7f8 ,
+    "secondary-bg" :#ecf0f3 ,
+    "navbar-bg": #ffffff ,
+    "dark-color": #1e2337 ,
+    "dark-theme-switcher":#1b2033
+);
+$darkModeColors : (
+    "primary-bg" : #090d1d,
+    "secondary-bg" :#1b2033, 
+    "navbar-bg" : #171c30 ,
+    "dark-color" : #ffffff ,
+    "dark-theme-switcher" : #e2ded4
+);
+
+@mixin set-main-colors( $colors ) {
+    $primary-bg : map-get($map:$colors ,  $key: "primary-bg")!global;
+    $secondary-bg :map-get( $map: $colors , $key:  "secondary-bg")!global;
+    $navbar-bg :map-get( $map: $colors , $key:  "navbar-bg")!global;
+    $dark-color :map-get( $map: $colors , $key:  "dark-color")!global;
+    $dark-theme-switcher :map-get( $map: $colors , $key:  "dark-theme-switcher")!global;
+}
+@mixin normal-mode($modeColors : $normaModeColors) {
+    @include set-main-colors($modeColors);
+}
+@mixin dark-mode($modeColors : $darkModeColors) {
+    @include set-main-colors($modeColors);
+}
+
+@mixin dark-mode--force {
+    @include set-all-item-proprties( ( "color" : $dark-color , "background-color": $primary-bg ) );
+}
+@mixin set-all-item-proprties( $properties){
+    @each $property , $value in $properties {
+        @include set-all-item-proprty($property , $value  , $isImprtant : true );
+    }
+}
+@mixin set-all-item-proprty( $property , $value  , $isImprtant : false ){
+    @if $isImprtant {
+        $value : #{$value + '!important'};
+      }
+    div , p , label ,  span , a , h1, h2 , h3 , h4 , h5 , h6 , main , footer , header , ul , li , button , section {
+        #{$property}:$value;
+    }  
+}
+/*** Colors***/
