@@ -1,24 +1,22 @@
-import ApiService from "../../../services/services";
-import { photosUrl } from "./http-constants";
-import { AsyncHandler } from "../plugins/util";
-import createNewRequest from "../../../services/createNewRequest";
-import httpConstants from "../../../services/http-constants";
+import ApiService from "./ApiService";
+import httpConstants , { photosUrl , postsUrl } from "./http/http-constants";
+import { AsyncHandler } from "../plugins";
+import createNewRequest from "./http/createNewRequest";
 export default class PhotosService extends ApiService {
   constructor() {
     super("photos" , {baseUrl : photosUrl});
-   
   }
   async getAllPhotos(){
     return  await AsyncHandler.responseHandler( ()=> createNewRequest(httpConstants.HttpTypes.GET , 
-     this.getUrl() +`/?albumId=${this.ScrollCount}` ,{}))  
+     this.getRequestUrl() +`/?albumId=${this.ScrollCount}` ,{}))  
    }
    async getAlbumById(albumId){
     return  await AsyncHandler.responseHandler( ()=> createNewRequest(httpConstants.HttpTypes.GET , 
-     this.getUrl() +`/?albumId=${albumId}` ,{}))  
+     this.getRequestUrl() +`/?albumId=${albumId}` ,{}))  
    }
    async addNewPhoto(photo){
      return await AsyncHandler.responseHandler( ()=> createNewRequest(httpConstants.HttpTypes.POST , 
-      this.getUrl(),{photo : photo}))  
+      this.getRequestUrl(),{photo : photo}))  
    }
 }
 

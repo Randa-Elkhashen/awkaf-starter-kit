@@ -1,12 +1,9 @@
+import statusCodes from "./statusCodes.json";
 export class AsyncHandler {
-    static statusCodes =Object.freeze({
-        success : 200 ,
-        serverError : 500 ,
-        NotFound : 404
-    });
+    static status = statusCodes
     static async responseHandler( asyncRequestFunc ){
         let res = await this.requestWrapper(asyncRequestFunc);
-        if(res.status == this.statusCodes.success)
+        if(res.status == this.status.SUCCESS)
         return res;
         throw new ErrorMessage()
     }

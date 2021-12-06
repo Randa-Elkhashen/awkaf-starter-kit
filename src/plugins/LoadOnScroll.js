@@ -1,4 +1,4 @@
-class loadOnScrollPlugin {
+export class LoadOnScrollPlugin {
     #observer;
     #isCallBackSetteled = true;
     initLoadingOnScroll( CallBackFunction  ){
@@ -7,6 +7,7 @@ class loadOnScrollPlugin {
                 if (entry.isIntersecting  ) {
                     if( this.#isCallBackSetteled ){
                         this.#isCallBackSetteled = false;
+                        debugger
                         await CallBackFunction();
                         this.#isCallBackSetteled = true;
                     }
@@ -17,12 +18,10 @@ class loadOnScrollPlugin {
     detachLoader(){
         this.#observer.disconnect()
     }
-    attachLoader() {
+    attachLoader(loader) {
         setTimeout(()=> {
-            let container = document.querySelector("#observer");
-            this.#observer.observe(container);
+            this.#observer.observe(loader);
         }, 100);
     }
 }
   
-export const LoadOnScroll = new loadOnScrollPlugin();  
