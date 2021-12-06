@@ -1,4 +1,4 @@
-import { ErrorMessage } from "../plugins/util";
+import { ErrorMessage } from "@/plugins";
 
 //#region modules
 // import Swiper core and required modules
