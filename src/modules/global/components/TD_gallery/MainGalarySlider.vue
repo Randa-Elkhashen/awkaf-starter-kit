@@ -76,6 +76,8 @@ export default {
     return {
       swiperParams : {
         loop : true , 
+        spaceBetween:10 ,
+        slidesPerView:1 ,
       } , // for more params go to https://swiperjs.com/swiper-api#parameters
       swiperModules: {
         modules: [
@@ -98,7 +100,7 @@ export default {
           // }, // for custom props go to https://swiperjs.com/swiper-api#free-mode
           thumbs : { swiper : null }
         },
-      },
+      },// for more modules go to https://swiperjs.com/swiper-api#modules
       fullScreenIndex: null,
       mainSliderEvents: {
         realIndexChange: this.handleActiveChange,

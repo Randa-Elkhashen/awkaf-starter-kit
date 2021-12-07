@@ -14,11 +14,12 @@
 </template>
 
 <script>
-import ScrollLoader from './ScrollLoader.vue'
+import ScrollLoader from "../TD_infiniteScroll/TD_InfiniteScroll.vue";
+
     export default {
         name: 'NewsListing',
         components : {
-                ScrollLoader
+            ScrollLoader
         } ,
         data() {
             return {
@@ -34,7 +35,6 @@ import ScrollLoader from './ScrollLoader.vue'
             }
         },
         mounted(){
-            
             this.getNews()
         }
     }

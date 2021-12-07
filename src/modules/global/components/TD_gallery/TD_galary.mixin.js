@@ -62,18 +62,10 @@ export  const swiperBaseMixin = {
    data() {
      return {
        swiperConfig : {
-        requiredConfig:{
-          isMultiSlide : false ,
-        } ,
         optionalProps : {
           tag : "div" ,
           wrapperTag : "div" ,
-          // spaceBetween : 10 , 
-          // slidesPerView : 1 ,  
-          // slidesPerGroup : 1 , // default 1
-          // loop : false ,
-          // loopedSlides: 1 , // default : null ,
-        } , 
+        } , // will be shared For all Sliders , u can override it in swiper params object in each slider component
         mainSliderEvents : {
           realIndexChange : this.handleActiveChange
         } ,
@@ -82,13 +74,9 @@ export  const swiperBaseMixin = {
    },
   computed : {
     swiperOptionsModel(){
-      let model =  {...this.swiperConfig.optionalProps , slidesPerView : this.slidesPerView ,
+      let model =  {...this.swiperConfig.optionalProps , 
          ...this.swiperModules.modulesProps , ...this.swiperParams }
-         console.log(model)
       return model;
-    } ,
-    slidesPerView(){
-      return this.swiperConfig.requiredConfig.isMultiSlide ? this.swiperConfig.optionalProps.slidesPerView : 1
     } ,
   },
   methods: {
@@ -97,12 +85,10 @@ export  const swiperBaseMixin = {
         this.swiperConfig.optionalProps.modules.push(modules[module]) 
         this.swiperConfig.optionalProps[modulesProps[module].propName] = modulesProps[module].default ?
         modulesProps[module].default : modulesProps[module].customOptions
-        console.log(module , ": ", this.swiperConfig.optionalProps)
       }
     } ,
     handleActiveChange(swiper){
       swiper.updateSlidesClasses()
-      console.log("call")
     } ,
     isNotCompatable(){
      if( this.swiperConfig.optionalProps.loop &&  this.swiperConfig.optionalProps.grid.rows > 1){
@@ -114,16 +100,8 @@ export  const swiperBaseMixin = {
      }
      return "";
     } ,
-    checkRequiredConfigs(){
-      let {isMultiSlide , isHaveThumbs } = this.swiperConfig.requiredConfig
-      if( !isMultiSlide )
-       throw new ErrorMessage(["isMulitSlide attribute in requiredConfig is Missing"]);
-      if( !isHaveThumbs )
-      throw new ErrorMessage(["isHaveThumbs attribute in requiredConfig is Missing"]);
-    } ,
   },
   mounted() {
-    console.log("main mixin mounting")
     this.isNotCompatable()
   },
 };

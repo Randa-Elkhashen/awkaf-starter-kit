@@ -52,10 +52,27 @@ import { Thumbs , Navigation, FreeMode } from "swiper";
         return {
             swiperParams : {
               loop : true , 
-              spaceBetween:10 ,
-              slidesPerView:6 ,
               loopedSlides:50 ,
               watchSlidesProgress:true ,
+              slidesPerView: 3, // default in no breakpoints
+              spaceBetween: 10 ,// default in no breakpoints
+              breakpoints: {
+                // when window width is >= 320px
+                320: {
+                  slidesPerView: 2,
+                  spaceBetween: 10
+                },
+                // when window width is >= 480px
+                768: {
+                  slidesPerView: 4,
+                  spaceBetween: 10
+                },
+                // when window width is >= 640px
+                1024: {
+                  slidesPerView: 6,
+                  spaceBetween: 10
+                }
+              } // for less than 320 default will be applied
             } , // for more params go to https://swiperjs.com/swiper-api#parameters
             swiperModules: {
               modules: [
@@ -69,7 +86,7 @@ import { Thumbs , Navigation, FreeMode } from "swiper";
                   prevEl : ".swiper-button-prev" ,
                 } ,  // for custom props go to https://swiperjs.com/swiper-api#navigation
               },
-            },
+            },// for more modules go to https://swiperjs.com/swiper-api#modules
             thumbSliderEvents : {
               realIndexChange : this.handleActiveChange
             }

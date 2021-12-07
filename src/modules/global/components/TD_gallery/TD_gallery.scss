@@ -14,11 +14,6 @@ $end: right;
     padding: 60px 20%;
     @include medium-screen( "padding" , 60px 15% );
     @include mobile-screen( "padding" , 20px 20px );
-    .swiper{
-      &.gallery-thumbs .swiper-slide {
-        min-width: 100px;
-      }
-    }
     .thumb-example {
       .slider-container {
         .swiper-button-next,

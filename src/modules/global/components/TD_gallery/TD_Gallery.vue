@@ -9,7 +9,8 @@
 <script>
 import MainGalarySlider from "./MainGalarySlider.vue"
 import ThumbSlider from "./ThumbSlider.vue"
-import images from "../mocking-data/images.json"
+import images from "@/mocking-data/images.json"
+import "./TD_gallery.scss"
 export default {
   name: 'Galary',
   components: {

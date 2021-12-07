@@ -352,9 +352,10 @@
 </template>
 
 <script>
-import LazyLoadDirective from "../directives/LazyLoad";
-import AutoplayObserver from "../directives/AutoplayObserver";
+import LazyLoadDirective from "./directives/LazyLoad";
+import AutoplayObserver from "./directives/AutoplayObserver";
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import "./TD_lightBox.scss"
 import {ref} from "vue"
 export default {
   name : "CustomLightBox" ,

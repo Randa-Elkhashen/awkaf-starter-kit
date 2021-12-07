@@ -3,7 +3,7 @@
         <div class="navbar-container">
             <div class="navbar-links">
                 <a class="navbar-brand" href="/">
-                <img src="../../../assets/logo.png" alt="image" /></a>
+                <img src="@/assets/logo.png" alt="image" /></a>
                 <ul class="nav navbar-links-container">
                     <li class="nav-item font-options">
                         <ul class="nav">
@@ -52,7 +52,8 @@
         </div>
 </template>
 <script>
-import {STORAGE_VARIABLES} from "../Constants";
+import header from "./header.scss"
+import {STORAGE_VARIABLES} from "@/global/Constants.js";
     export default {
         name: 'fontResizeAndColorInverter',
         components: {
@@ -193,6 +194,7 @@ import {STORAGE_VARIABLES} from "../Constants";
             }
         },
         mounted() {
+            debugger
             this.colorInverterGlobalFunction("init-call");
             this.setupFontSizeOnMount()
             this.initDarkMode()
@@ -206,6 +208,5 @@ a , .pointer{
     *{
         cursor: inherit;
     }
-    
 }
 </style>
