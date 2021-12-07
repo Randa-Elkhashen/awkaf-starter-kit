@@ -1,9 +1,9 @@
-import ApiService from "./ApiService.js";
+import {APIService} from "@/services";
 import {AsyncHandler} from "@/plugins"
-import { createNewRequest , httpConstants , photosUrl } from "./http"
-export default class PostsService extends ApiService {
+import { createNewRequest , httpConstants , postsUrl } from "@/services"
+export default class PostsService extends APIService {
     constructor(){
-        super("posts" , {baseUrl : photosUrl });
+        super("posts" , {baseUrl : postsUrl });
         // now getRequestUrl = baseUrl/posts
         // any additional routes and queries would be added on each method seperatly
     }

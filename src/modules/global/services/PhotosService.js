@@ -1,8 +1,6 @@
-import ApiService from "./ApiService";
-import httpConstants , { photosUrl , postsUrl } from "./http/http-constants";
-import { AsyncHandler } from "../plugins";
-import createNewRequest from "./http/createNewRequest";
-export default class PhotosService extends ApiService {
+import { APIService ,  httpConstants , createNewRequest , photosUrl } from "@/services";
+import { AsyncHandler } from "@/plugins";
+export default class PhotosService extends APIService {
   constructor() {
     super("photos" , {baseUrl : photosUrl});
   }
