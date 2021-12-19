@@ -104,6 +104,7 @@ export default {
       fullScreenIndex: null,
       mainSliderEvents: {
         realIndexChange: this.handleActiveChange,
+        swiper : this.initSwiper
       },
       fullScreen: {
         options: {
@@ -123,9 +124,13 @@ export default {
   },
   methods: {
     handleActiveChange(swiper) {
-      swiper.updateSlidesClasses();
-      console.log("call");
+      // swiper.updateSlidesClasses();
+      // console.log("call");
     },
+    initSwiper(swiper ){
+      this.swiper = swiper;
+      // this.swiper.slideTo(3)
+    } ,
     openFullScreen(index) {
       this.fullScreenIndex = index;
     },

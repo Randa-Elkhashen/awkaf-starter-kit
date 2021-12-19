@@ -1,3 +1,5 @@
 export { default as APIService} from "./APIService";
+// import http index
 export { http , setHttpDefaults , httpConstants ,  photosUrl , postsUrl, createNewRequest  } from "./http";
-export { photos , posts } from "../modules/global/services";
+// import all modules services and export it for use inside components
+export { photos , posts , users } from "../modules/global/services";

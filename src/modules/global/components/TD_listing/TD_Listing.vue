@@ -1,13 +1,16 @@
 <template>
-  <div class="nap-listing-container">
+  <error-message :goHome="goHome" v-if="isNoDataMsg" >
+          <slot name="emptyMessage"></slot>
+  </error-message>
+  <div v-else class="nap-listing-container">
     <div class="container">
       <div class="row">
         <div class="col-md-4" :key="index" v-for="(item, index) in GenericListingData">
           <slot  :item="item" ></slot>
         </div>
       </div>
-
-      <error-message :goHome="goHome" v-show="isNoDataMsg" />
+    </div>
+  </div>
       <!-- loader -->
       <scroll-loader v-if="loader"
       :onScrollToEnd="getData" 
@@ -16,10 +19,9 @@
       >
       <slot name="loader"></slot>
       </scroll-loader>
-    </div>
-  </div>
 </template>
 <script>
+import {AsyncHandler} from "@/plugins"
 import { photos } from "@/services";
 import ErrorMessage from "../TD_genericInformationMessage/TD_GenericInformationMessage.vue"
 import ScrollLoader from "../TD_infiniteScroll/TD_InfiniteScroll.vue"
@@ -49,13 +51,11 @@ export default {
       isNoDataMsg: false,
       count:0 , 
       isLoading : false ,
-      albumId : 1
+      albumId : 1 ,
     };
   },
   methods: {
     getData: async function () {
-      console.log("call request")
-      debugger
       let res = await photos.getAlbumById(this.albumId);
       if(res.data)
         this.onRequestSuccess(res.data)
@@ -64,14 +64,11 @@ export default {
     onRequestSuccess(data){
       if (data && data.length && this.albumId <  10) {
         this.GenericListingData = [...this.GenericListingData , ...data]
-        console.log("datalength:" , this.GenericListingData.length)
             this.albumId++;
-         console.log("succeed:" , this.albumId)
         } else {
-         console.log("faild:" , this.albumId)
           this.isThereMoreData = false;
         }
-      this.isNoDataMsg = false;
+        this.isNoDataMsg = false;
       if (
         this.GenericListingData == null ||
         this.GenericListingData == ""
@@ -141,8 +138,14 @@ export default {
     },
   },
   async mounted() {
+    // this.isLoading = true;
+    // debugger
+    // this.isLoading = false;
+    AsyncHandler.addRequestEventListener(( requestState )=>{
+      console.log("request is calling : " , requestState)
+      this.isLoading = requestState
+    })
     this.isLoading = true;
-    debugger
     await this.getData();
     this.isLoading = false;
     listingThis = this;

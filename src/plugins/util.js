@@ -1,8 +1,18 @@
 import statusCodes from "./statusCodes.json";
 export class AsyncHandler {
     static status = statusCodes
+    static listeners = [];
+    static addRequestEventListener = (listener)=> this.listeners.push(listener)
+    static notifyListeners( isRequestPending ){
+        if(this.listeners.length)
+            this.listeners.forEach(listener => {
+                listener( isRequestPending )
+            });
+    }
     static async responseHandler( asyncRequestFunc ){
+        this.notifyListeners(true)
         let res = await this.requestWrapper(asyncRequestFunc);
+        this.notifyListeners(false)
         if(res.status == this.status.SUCCESS)
         return res;
         throw new ErrorMessage()
