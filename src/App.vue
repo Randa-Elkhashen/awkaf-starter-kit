@@ -6,7 +6,8 @@
         <list-item :itemDataModel="item" />
       </template>
         <template v-slot:loader>
-            <img   src="./assets/spinner.gif"/>
+            <!-- <img   src="./assets/spinner.gif"/> -->
+            <lazy-card />
         </template>
         <template v-slot:emptyMessage>
               <div class="alert alert-warning">
@@ -38,6 +39,7 @@ import FormDemo from "@/modules/global/components/FormDemo"
 import FormDemoTwo from "@/modules/global/components/FormDemoTwo"
 import Composite from "./modules/test/components/Composition.vue";
 import LoaderProvider from "@/modules/global/components/TD_loaderProvider/TD_LoaderProvider.vue"
+import LazyCard from "@/modules/global/components/Lazy_genericCard/Lazy_genericCard"
 export default {
   name: 'App',
   components : {
@@ -55,7 +57,8 @@ export default {
     FormDemo ,
     FormDemoTwo,
     LoaderProvider ,
-    Composite
+    Composite,
+    LazyCard
   }
 }
 </script>

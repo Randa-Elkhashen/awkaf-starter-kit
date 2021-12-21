@@ -10,7 +10,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
       <!-- loader -->
       <scroll-loader v-if="loader"
       :onScrollToEnd="getData" 
@@ -19,6 +19,7 @@
       >
       <slot name="loader"></slot>
       </scroll-loader>
+  </div>
 </template>
 <script>
 import {AsyncHandler} from "@/plugins"
