@@ -11,3 +11,6 @@ export default class APIService {
         return `${this.baseUrl}/${this.endPoint}`;
       }
     }
+
+
+    
