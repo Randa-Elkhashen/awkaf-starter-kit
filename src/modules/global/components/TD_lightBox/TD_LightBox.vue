@@ -571,7 +571,6 @@ export default {
       this.swipeAnimation = swipeAnimation
 
       if(prev) {
-          console.log("prev")
         if(this.dir === 'rtl') {
           this.xSwipeWrapper = this.imgIndex*(window.innerWidth - widthGalleryBlock) + 30*this.imgIndex
         } else {
@@ -579,9 +578,7 @@ export default {
         }
 
       } else {
-          console.log("next")
         if(this.dir === 'rtl') {
-          console.log("rtl positionX")
           this.xSwipeWrapper = this.imgIndex*window.innerWidth + 30*this.imgIndex
         } else {
           this.xSwipeWrapper = -this.imgIndex*window.innerWidth - 30*this.imgIndex
@@ -692,7 +689,6 @@ export default {
       // when animation is loaded
       this.$nextTick(() => {
         if(this.effect === 'swipe') {
-          console.log("set width")
           this.setLightboxInnerWidth()
           this.setXPosition(prev)
         }
@@ -919,7 +915,6 @@ export default {
         // swipe
         if(this.swipeType == 'h') {
           // swipe wrapper
-            console.log("set x position")
           if(this.dir === 'rtl') {
             this.xSwipeWrapper = (windowWidth*this.imgIndex) + currentPosX - this.initialMouseX + 30*this.imgIndex
           } else {
@@ -1020,12 +1015,10 @@ export default {
       const windowWidth = this.lightboxInnerWidth
 
       if(this.dir === 'rtl') {
-            console.log("set x position")
 
         this.xSwipeWrapper = this.imgIndex*windowWidth + 30*this.imgIndex
         return;
       }
-            console.log("set x position")
 
       this.xSwipeWrapper = -this.imgIndex*windowWidth - 30*this.imgIndex
     },
@@ -1035,11 +1028,9 @@ export default {
       if(!this.hasPrevious && this.effect === 'swipe') {
 
         if(this.dir === 'rtl') {
-            console.log("set x position")
 
           return this.xSwipeWrapper = this.imgIndex*this.lightboxInnerWidth + 30*this.imgIndex
         }
-            console.log("set x position")
 
         return this.xSwipeWrapper = -this.imgIndex*this.lightboxInnerWidth - 30*this.imgIndex
       }
@@ -1050,7 +1041,6 @@ export default {
     // swipe to right effect
     swipeToRight() {
       if(!this.hasNext && this.effect === 'swipe') {
-            console.log("set x position")
 
         if(this.dir === 'rtl') {
           return this.xSwipeWrapper = this.imgIndex*this.lightboxInnerWidth + 30*this.imgIndex
@@ -1599,12 +1589,10 @@ export default {
       let el = document.getElementsByClassName('cool-lightbox__inner');
       let width = el[0].clientWidth
       this.lightboxInnerWidth =  width
-      console.log("width : " , width)
     },
 
     // x position on resize event
     xPositionOnResize() {
-      console.log("set width")
       this.setLightboxInnerWidth()
       const index = this.imgIndex
 
@@ -1620,8 +1608,6 @@ export default {
     // set x position by img index
     setXPosition(index) {
       const rightMargin = 30;
-            console.log("index :" , index , "set x position -- old value = " , this.xSwipeWrapper )
-            console.log("slide width = " , this.lightboxInnerWidth + rightMargin )
 
       if(this.dir === 'rtl') {
         this.xSwipeWrapper = index*this.lightboxInnerWidth+rightMargin*index
@@ -1629,7 +1615,6 @@ export default {
       }
       // set x position
       this.xSwipeWrapper = -index*this.lightboxInnerWidth - rightMargin*index
-      console.log("set x position -- New value = " , this.xSwipeWrapper )
 
       return; 
     },

@@ -126,7 +126,6 @@
             onSubmit() {
                 this.$v.dataForm.$touch();
                 if (this.$v.dataForm.$anyError) {
-                    console.log(this.$v.dataForm.$anyError);
                     return;
                 } else {
                     this.form = false;

@@ -9,20 +9,21 @@
             </div>
         </div>
     </div>
-    <scroll-loader :isLoadMore="isThereIsMoreData" :onScrollToEnd="getListByStarterKitService" >
+    <!-- loader -->
+    <scroll-loader :isLoadMore="isMoreData" :onScrollToEnd="getListByStarterKitService" >
         <div class="my-ldr">
-            simple loader
             <div class="spinner-border" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
         </div>
     </scroll-loader>
+    <!-- loader -->
 </template>
 <script>
     // init bootstrap as global plugin to use in Component styling
     import axios from "axios"
     import ScrollLoader from "@/modules/global/components/TD_infiniteScroll/TD_InfiniteScroll.vue"
-    import { posts } from "@/services"
+    import { posts , users } from "@/services"
     export default {
         name : "listing" ,
         components : {
@@ -31,24 +32,24 @@
         data (){
             return {
                 list : [] , 
-                isThereIsMoreData : true
+                isMoreData : true ,
             }
         } ,
         methods : {
             async getList(){
-               let res = await axios.get('https://jsonplaceholder.typicode.com/posts')
+               let res = await axios.get('https://jsonplaceholder.typicode.com/users')
                     // handle success
                      this.list = [ ...this.list , ...res.data]
                     this.checkIsThereIsMoreData()
             } ,
             async getListByStarterKitService(){
-              let res =  await posts.getAllPosts()
+              let res =  await users.getAllUsers()
                  this.list = [ ...this.list , ...res.data]
                 this.checkIsThereIsMoreData()
             } ,
             checkIsThereIsMoreData(){
-                let isNoMoreData = false;
-                if(isNoMoreData){
+                let isNoMoreData = true;
+                if(!isNoMoreData){
                     this.isMoreData = false;
                 }
             }

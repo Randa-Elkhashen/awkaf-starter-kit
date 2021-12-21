@@ -3,6 +3,7 @@
     <!-- loader starts -->
     <div ref="observer">
         <div  v-show="isLoading || isLoadingOnInit" class="listing-loader text-center" >
+            <!-- default loader -->
             <div v-if="!isCustomLoading " >
                     <div class="my-ldr">
                         <div class="spinner-border" role="status">
@@ -53,7 +54,6 @@ import {ref } from "vue"
                 this.LoadOnScroll.attachLoader(this.observer)
             } ,
             async onScrollToEndHandler(){
-                console.log("loader is LoadMore :" ,this.isLoadMore )
                if(this.isLoadMore)
                  await this.renderLoaderOnRequest(this.onScrollToEnd , )
                 else {
@@ -68,7 +68,9 @@ import {ref } from "vue"
         } , 
         computed : {
             isCustomLoading (){
-                  return this.$slots.default()[0].children.length;
+                if(!this.$slots.default)
+                    return false;
+                return this.$slots.default()[0].children.length;
             }
         },
         mounted(){

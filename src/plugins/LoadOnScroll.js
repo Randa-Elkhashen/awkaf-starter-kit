@@ -7,7 +7,6 @@ export class LoadOnScrollPlugin {
                 if (entry.isIntersecting  ) {
                     if( this.#isCallBackSetteled ){
                         this.#isCallBackSetteled = false;
-                        debugger
                         await CallBackFunction();
                         this.#isCallBackSetteled = true;
                     }

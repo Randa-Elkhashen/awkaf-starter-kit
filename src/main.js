@@ -2,11 +2,14 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import setHttpDefaults from './services/http-defaults'
+import setHttpDefaults from './services/http/http-defaults'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {load} from "./modules/test/testLoader"
 
+import { defineRule } from "vee-validate";
+import { required } from "@vee-validate/rules";
+defineRule('required', required);
 
 import { configure } from 'vee-validate';
 // Default values

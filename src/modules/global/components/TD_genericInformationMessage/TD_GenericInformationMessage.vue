@@ -4,7 +4,9 @@
           <div class="icon">
             <i class="icon-inbox"></i>
           </div>
-          <p class="error-title">EmptyListMessagelbl</p>
+          <p class="error-title">
+              <slot></slot>
+          </p>
           <a v-bind:href="goHome"><i class="icon-home"></i>HomePagelbl</a>
       </div>
 </template>
@@ -17,10 +19,6 @@
                 type : String  ,
                 default: "/"
             } ,
-            message : {
-              type : String , 
-              required : true ,
-            }
         } ,
         mounted(){
             

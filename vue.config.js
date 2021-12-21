@@ -8,10 +8,10 @@ module.exports = {
       .entry("main-ltr")
       .add("./src/assets/sass/main-ltr.scss")
       .end();
-    // config
-    //   .entry("main-rtl")
-    //   .add("./src/assets/sass/main-rtl.scss")
-    //   .end();
+    config
+      .entry("main-rtl")
+      .add("./src/assets/sass/main-rtl.scss")
+      .end();
   },
   css: {
     extract: {
@@ -20,6 +20,14 @@ module.exports = {
     },
     modules: false,
     sourceMap: false,
+    loaderOptions: {
+      scss: {
+        additionalData: `
+          @import './src/assets/sass/Directions/_ltr-direction.scss';
+          @import "./src/assets/sass/main.scss";
+        `
+      }
+    }
   },
   configureWebpack: {
     devtool: 'source-map'
