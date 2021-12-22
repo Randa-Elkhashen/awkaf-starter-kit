@@ -6,9 +6,7 @@
   </error-message>
   <!-- listing -->
         <div :class="[listWrapperClass]" v-else >
-            <div   :key="index" v-for="(item, index) in GenericListingData">
-                    <slot  :item="item" :index="index" ></slot>
-            </div>
+                    <slot  :key="index" v-for="(item, index) in GenericListingData" :item="item" :index="index" ></slot>
         </div>
       <!-- loader -->
       <scroll-loader v-if="loader"
@@ -41,6 +39,7 @@ export default {
     },
     updateNextCallServiceParams : {
       type : Function , 
+      default : ()=>{}
     },
     class : {
       type : String , 
@@ -71,7 +70,7 @@ export default {
       if(this.loader){
         if(!this.service)
           throw new Error("service Function is required Props")
-        if(!this.updateNextCallServiceParams)
+        if(this.serviceParams &&  !this.updateNextCallServiceParams)
           throw new Error("updatenNextCallServiceParams Function is required Props")
       }
     } ,
