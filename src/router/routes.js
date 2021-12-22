@@ -1,4 +1,4 @@
-import authRoutes from '../modules/auth/routes'
+import globalRoutes from '../modules/global/routes'
 
-export const routes = [...authRoutes]
+export const routes = [...globalRoutes]
 
