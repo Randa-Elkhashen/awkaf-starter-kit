@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import loaderMixin from "./TD_infiniteScroll.mixin"
+import loaderMixin from "./TD_infiniteScroll.mixin";
+import "./TD_infiniteScroll.scss";
 import {ref } from "vue"
     export default {
         name: 'ScrollLoader',
@@ -39,7 +40,7 @@ import {ref } from "vue"
                 default : false ,
             }
         } ,
-        setup(props) {
+        setup() {
                 const observer = ref(null);
                 return { observer }
         } ,
