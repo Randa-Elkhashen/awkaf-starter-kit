@@ -8,16 +8,10 @@
 
 const routes = [
     {
-        path: '/tdLisiting',
-        name: 'tdLisiting',
-        component: () => import('./views/TD-Listing-Demo.vue')
+        path: '/tdAnimation',
+        name: 'tdAnimation',
+        component: () => import('./views/TD-ScrollAnimationProvider-Demo.vue')
     },
-    {
-        path: '/tdLisiting2',
-        name: 'tdLisiting2',
-        component: () => import('./views/TD-Listing-Demo2.vue')
-    },
-
 ]
 
 export default routes
