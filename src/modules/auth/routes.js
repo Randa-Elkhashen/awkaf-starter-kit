@@ -2,7 +2,7 @@ const routes = [
     {
         path: '/login',
         name: 'Login',
-        component: () => import('./components/TD_Login/Login.vue') ,
+        component: () => import('./views/LoginPage.vue') ,
     }
 ]
 
