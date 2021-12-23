@@ -8,9 +8,9 @@
 
 const routes = [
     {
-        path: '/tdInfiniteScroll',
-        name: 'tdInfiniteScroll',
-        component: () => import('./views/TD-InfintedScroll-Demo.vue')
+        path: '/tdloader',
+        name: 'tdloader',
+        component: () => import('./views/TD-loaderProvider-Demo.vue')
     },
     {
         path: '/tdAnimation',
