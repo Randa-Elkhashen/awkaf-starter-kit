@@ -16,13 +16,6 @@ export default {
 </script>
 
 <style lang="scss">
-    .invert-color {
-        .center-logo {
-            img {
-                filter: grayscale(1);
-            }
-        }
-    }
     .center-logo {
         display: flex;
         flex-direction: column;
