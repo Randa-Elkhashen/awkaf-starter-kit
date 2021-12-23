@@ -3,6 +3,7 @@ import { ErrorMessage } from "@/plugins";
 //#region modules
 // import Swiper core and required modules
 import * as modules from "swiper"
+
 // install Swiper modules
 // SwiperCore.use([FreeMode ,Navigation, Thumbs , Autoplay , Pagination , Lazy]);
 //#endregion

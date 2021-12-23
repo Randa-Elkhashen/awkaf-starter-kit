@@ -1,4 +1,5 @@
 <template>
+
   <section class="generic-gallery-slider">
   <div class="thumb-example" >
     <main-galary-slider :images="images" :thumbsSwiper="thumbs" />

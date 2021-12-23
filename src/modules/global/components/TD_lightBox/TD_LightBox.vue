@@ -1,4 +1,5 @@
 <template>
+
   <transition name="cool-lightbox-modal">
     <div class="cool-lightbox" 
       v-bind:class="lightboxClasses"

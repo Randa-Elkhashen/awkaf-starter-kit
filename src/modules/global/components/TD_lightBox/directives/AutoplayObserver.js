@@ -1,4 +1,5 @@
 export default {
+  
     mounted: el => {
       // getYoutube ID
       function isYoutubeVideo(url) {

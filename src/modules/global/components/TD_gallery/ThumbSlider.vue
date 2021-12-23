@@ -1,5 +1,6 @@
 
 <template>
+
   <!-- thumbs slider starts -->
 <div class="slider-container" >
 <div class="swiper-button-next"></div>

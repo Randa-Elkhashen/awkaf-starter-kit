@@ -1,4 +1,5 @@
 const attributes = ['media', 'srcset', 'sizes', 'src'];
+
 export default {
   mounted: el => {
     function loadImage() {
