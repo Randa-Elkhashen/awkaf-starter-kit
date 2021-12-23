@@ -35,7 +35,7 @@ const routes = [
     {
         path: '/listing',
         name: 'Listing',
-        component: () => import('../global/view/TD_Listing_View/Listing.vue')
+        component: () => import('./views/TD_Listing_View/Listing.vue')
     },
 
 ]
