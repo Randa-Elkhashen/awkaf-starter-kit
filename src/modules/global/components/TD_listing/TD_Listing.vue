@@ -24,13 +24,9 @@
 <script>
 import {AsyncHandler} from "@/plugins"
 import { photos } from "@/services";
-import ErrorMessage from "../TD_genericInformationMessage/TD_GenericInformationMessage.vue"
-import ScrollLoader from "../TD_infiniteScroll/TD_InfiniteScroll.vue"
 let listingThis;
 export default {
   components: {
-    ErrorMessage ,
-    ScrollLoader
   },
   props : {
     loader : {

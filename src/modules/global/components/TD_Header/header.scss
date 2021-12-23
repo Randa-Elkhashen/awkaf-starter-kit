@@ -2,7 +2,7 @@
   background-color: white;
   padding: 20px 0;
   padding-bottom: 0;
-
+  border-bottom: 1px solid var(--subtitle-black);
   &.header--is-ready {
       .header__content__nav-menu {
           .navbar-nav {
