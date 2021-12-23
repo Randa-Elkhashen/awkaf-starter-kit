@@ -39,7 +39,22 @@
                                 <router-link to="/" class="nav-link">Home</router-link>
                             </li>
                             <li class="nav-item nav-item__first-level nav-item--first-node-level">
-                                <router-link to="/listing" class="nav-link">Listing</router-link>
+                                <router-link to="/listing" class="nav-link">td Listing</router-link>
+                            </li>
+                            <li class="nav-item nav-item__first-level nav-item--first-node-level">
+                                <router-link to="/tdloader" class="nav-link">td loader</router-link>
+                            </li>
+                            <li class="nav-item nav-item__first-level nav-item--first-node-level">
+                                <router-link to="/tdtimeline" class="nav-link">td timeline</router-link>
+                            </li>
+                            <li class="nav-item nav-item__first-level nav-item--first-node-level">
+                                <router-link to="/tdAnimation" class="nav-link">td Animation</router-link>
+                            </li>
+                            <li class="nav-item nav-item__first-level nav-item--first-node-level">
+                                <router-link to="/tdLisiting" class="nav-link">td Lisiting</router-link>
+                            </li>
+                            <li class="nav-item nav-item__first-level nav-item--first-node-level">
+                                <router-link to="/tdLisiting2" class="nav-link">td Lisiting2</router-link>
                             </li>
                         </ul>
                     </div>
