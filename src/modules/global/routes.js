@@ -32,6 +32,11 @@ const routes = [
         name: 'tdLisiting2',
         component: () => import('./views/TD-Listing-Demo2.vue')
     },
+    {
+        path: '/listing',
+        name: 'Listing',
+        component: () => import('../global/view/TD_Listing_View/Listing.vue')
+    },
 
 ]
 
