@@ -8,10 +8,11 @@
 
 const routes = [
     {
-        path: '/tdgallery',
-        name: 'tdgallery',
-        component: () => import('./views/TD-Gallery-Demo.vue')
+        path: '/tdInfiniteScroll',
+        name: 'tdInfiniteScroll',
+        component: () => import('./views/TD-InfintedScroll-Demo.vue')
     },
+
 ]
 
 export default routes
