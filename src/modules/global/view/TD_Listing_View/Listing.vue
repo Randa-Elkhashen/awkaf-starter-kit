@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import Listing from "@/modules/global/components/TD_listing/TD_Listing.vue"
-import ListItem from "@/modules/global/components/TD_genericCard/TD_GenericCard.vue"
+import Listing from "@/modules/global/components/TD_listing_modified/TD_Listing.vue"
+import ListItem from "@/modules/global/components/TD_genericCard_modified/TD_GenericCard.vue"
 import LazyCard from "@/modules/global/components/TD_GenericLazyCard/TD_GenericLazyCard.vue"
 export default {
     components : {

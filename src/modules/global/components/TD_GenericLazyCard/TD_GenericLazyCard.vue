@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import "../TD_listing/TD_listing.scss"
+import "./TD_listing.scss"
 
 export default {
 
