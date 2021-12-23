@@ -1,5 +1,6 @@
 
 <template>
+
     <!-- loader starts -->
     <div ref="observer">
         <div  v-show="isLoading || isLoadingOnInit" class="listing-loader text-center" >
