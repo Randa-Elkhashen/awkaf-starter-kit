@@ -8,7 +8,7 @@
 </style>
 
 <script>
-    import "./forms.scss"
+    // import "./forms.scss"
     // import Vue from "vue";
     // import Vuelidate from "vuelidate";
     // Vue.use(Vuelidate);

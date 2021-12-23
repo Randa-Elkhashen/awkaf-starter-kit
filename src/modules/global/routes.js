@@ -8,9 +8,9 @@
 
 const routes = [
     {
-        path: '/path/here',
-        name: 'Name',
-        component: () => import('path/to/component')
+        path: '/listing',
+        name: 'Listing',
+        component: () => import('../global/components/TD_Listing_View/Listing.vue')
     },
 
 ]

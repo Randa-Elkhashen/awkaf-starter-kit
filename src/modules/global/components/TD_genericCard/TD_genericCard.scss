@@ -2,6 +2,8 @@ body {
     background-color: #f8f8f8 !important;
 }
 .nap-listing-container {
+    padding: 40px 0;
+    background-color: var(--main-bg);
     div[class*="col-"] {
         margin-bottom: 30px;
         .nap-generic-card {

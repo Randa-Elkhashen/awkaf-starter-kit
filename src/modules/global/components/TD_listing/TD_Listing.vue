@@ -121,23 +121,23 @@ export default {
   computed: {
     
   },
-  watch: {
-    "selectedDate.start": function () {
-      listingThis.changeUrlParams(listingThis.selectedDate.start);
-      // listingThis.getData();
-    },
-    "selectedDate.end": function () {
-      listingThis.changeUrlParams(listingThis.selectedDate.end);
-    },
-    dropdownValue: function () {
-      if (listingThis.dropdownValue != null) {
-        listingThis.changeUrlParams(listingThis.dropdownValue);
-      }
-      listingThis.scrollCount = 1;
-      listingThis.isThereMoreData = true;
-      // this.getData();
-    },
-  },
+  // watch: {
+  //   "selectedDate.start": function () {
+  //     listingThis.changeUrlParams(listingThis.selectedDate.start);
+  //     // listingThis.getData();
+  //   },
+  //   "selectedDate.end": function () {
+  //     listingThis.changeUrlParams(listingThis.selectedDate.end);
+  //   },
+  //   dropdownValue: function () {
+  //     if (listingThis.dropdownValue != null) {
+  //       listingThis.changeUrlParams(listingThis.dropdownValue);
+  //     }
+  //     listingThis.scrollCount = 1;
+  //     listingThis.isThereMoreData = true;
+  //     // this.getData();
+  //   },
+  // },
   async mounted() {
     // this.isLoading = true;
     // debugger
@@ -150,7 +150,7 @@ export default {
     await this.getData();
     this.isLoading = false;
     listingThis = this;
-    listingThis.getUrlParams();
+    //listingThis.getUrlParams();
   },
 };
 </script>

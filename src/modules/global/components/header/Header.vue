@@ -1,58 +1,55 @@
 <template>
-    <nav class="navbar navbar-expand-md">
-        <div class="navbar-container">
-            <div class="navbar-links">
-                <a class="navbar-brand" href="/">
-                <img src="@/assets/logo.png" alt="image" /></a>
-                <ul class="nav navbar-links-container">
-                    <li class="nav-item font-options">
-                        <ul class="nav">
-                            <li @click="colorInverter" class="nav-item mx-2 badge bg-dark pointer">
-                                <div class="dark-theme-toggle">
-                                    <label class="">
-                                        <span style="color:transparent;" class="">{{"inv"}}</span>
-                                    </label>
-                                </div>
-                            </li>
-                            <li @click="toggleDarkMode" class="nav-item badge bg-dark mx-2 pointer">
-                                <div class="dark-theme-toggle">
-                                    <label class="">
-                                        <span class="">{{"darkMode"}}</span>
-                                    </label>
-                                </div>
-                            </li>
-                            <li  class="nav-item font-up badge bg-info mx-2" @click="fontUpButtonClick">
-                                <a  class="nav-link ">+A</a>
-                            </li>
-                            <li class="nav-item font-down badge bg-info mx-2" @click="fontDownButtonClick">
-                                <a class="nav-link" >-A</a>
-                            </li>
-                            <li class="nav-item reset-font badge bg-info mx-2" @click="fontResetButtonClick">
-                                <a class="nav-link">A</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <section class="header header--desktop">
+        <nav class="navbar navbar-expand-sm">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="../../../../assets/logo.png" alt="SiteTitle" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="header__content">
+                    <div class="collapse navbar-collapse header__content__accessibility" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item trail-version">نسخة تجريبية</li>
+
+                            <li @click="colorInverter" class="nav-item nav-item--show-in-desktop">
+                                <span class="nav-link constrast-icon">
+                                    <span class="icon-contrast-icon"></span>
+                                </span>
+                            </li>
+
+                            <li class="nav-item dropdown dropdown-menu--font-parent nav-item--show-in-desktop">
+                                <a class="nav-link" href="#" id="fontDropdownMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"> A </a>
+                                <ul class="dropdown-menu dropdown-menu--font" aria-labelledby="fontDropdownMenu">
+                                    <li>
+                                        <a class="dropdown-item fontUp-icon" href="#" @click="fontUpButtonClick">A+</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item fontUp-icon" href="#" @click="fontDownButtonClick">A-</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header__content__nav-menu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item nav-item--first-node-level">
+                                <router-link to="/" class="nav-link">Home</router-link>
+                            </li>
+                            <li class="nav-item nav-item__first-level nav-item--first-node-level">
+                                <router-link to="/listing" class="nav-link">Listing</router-link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
-            <div class="navbar-collapse collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <router-link to="/" class="nav-link">Home</router-link>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-         <div>
-            <p class="font-equation">Comming From Equation</p>
-            <p class="font-static">Comming From Static</p>
-        </div>
+        </nav>
+    </section>
 </template>
 <script>
-import header from "./header.scss"
+import "./header.scss"
 import {STORAGE_VARIABLES} from "@/global/Constants.js";
     export default {
         name: 'fontResizeAndColorInverter',
@@ -194,7 +191,7 @@ import {STORAGE_VARIABLES} from "@/global/Constants.js";
             }
         },
         mounted() {
-            debugger
+            //debugger
             this.colorInverterGlobalFunction("init-call");
             this.setupFontSizeOnMount()
             this.initDarkMode()

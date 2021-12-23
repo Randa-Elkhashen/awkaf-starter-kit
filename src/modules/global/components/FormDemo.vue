@@ -28,7 +28,7 @@ import { required , length } from "@vee-validate/rules"
 import { string , addMethod }  from "yup"
       addMethod( string, "customRequired" , function( message ) {
         return this.test("customRequired", message, function(value) {
-          debugger
+          //debugger
             const { path, createError } = this;
                           if (value && value.trim()) {
                 return true;
