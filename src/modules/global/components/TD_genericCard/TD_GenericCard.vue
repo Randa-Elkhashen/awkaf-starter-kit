@@ -2,6 +2,7 @@
   <article
     class="nap-generic-card nap-generic-card--horizontal nap-generic-card--bg-img"
   >
+  
     <header class="nap-generic-card__header nap-generic-card__header--error">
       <div class="nap-generic-card__header-upper">
         <div class="nap-generic-card__header-upper__start">
