@@ -13,6 +13,11 @@ const routes = [
         component: () => import('./views/TD-loaderProvider-Demo.vue')
     },
     {
+        path: '/tdtimeline',
+        name: 'tdtimeline',
+        component: () => import('./views/TD-ScrollAnimationProvider-Demo.vue')
+    },
+    {
         path: '/tdAnimation',
         name: 'tdAnimation',
         component: () => import('./views/TD-ScrollAnimationProvider-Demo.vue')
