@@ -3,8 +3,8 @@
 /* built in modules*/
 
 :root {
-    --fontModifier: 1;
-    --blue-background-color: #28cede;
+  --fontModifier: 1;
+  --blue-background-color: #28cede;
   --black-nav-menu-color: #051d40;
   --body-background-color: #fffaf2;
   --font-modifier: 1;
@@ -31,6 +31,7 @@
   --cardBorder: #e4e9f2;
   --yellowColor: #f9de6d;
   --cardText: #011727;
+  --blackColor: #000;
 }
 
 .invert-color {
@@ -45,18 +46,13 @@
     --subtitle-black: #000000;
     --cardText: #011727;
     --orangeColor: #000000;
+    --whiteColor: #000;
+    --blackColor: #fff;
     /*--primary-second-color: #f5f7f8;
     --primary-third-color: #f5f7f8;
     --primary-fourth-color: #f5f7f8;
     --primary-fifth-color: #f5f7f8;*/
   /* Custom filter for specific icons */
-  img {
-    filter: grayscale(1.5);
-  }
-  .header .navbar-brand img,
-  footer .footerContainer .logoContainer__logo img {
-    filter: grayscale(1);
-  }
   footer .footerContainer .logoContainer__logo img {
     filter: greyscale(1) !important;
   }
