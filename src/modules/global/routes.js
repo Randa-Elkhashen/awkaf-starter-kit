@@ -12,6 +12,11 @@ const routes = [
         name: 'tdInfiniteScroll',
         component: () => import('./views/TD-InfintedScroll-Demo.vue')
     },
+    {
+        path: '/tdAnimation',
+        name: 'tdAnimation',
+        component: () => import('./views/TD-ScrollAnimationProvider-Demo.vue')
+    },
 
 ]
 
