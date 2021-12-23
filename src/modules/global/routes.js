@@ -15,7 +15,7 @@ const routes = [
     {
         path: '/listing',
         name: 'Listing',
-        component: () => import('../global/components/TD_Listing_View/Listing.vue')
+        component: () => import('../global/view/TD_Listing_View/Listing.vue')
     },
 
 ]
