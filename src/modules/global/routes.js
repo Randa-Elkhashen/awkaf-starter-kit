@@ -8,9 +8,9 @@
 
 const routes = [
     {
-        path: '/tdAnimation',
-        name: 'tdAnimation',
-        component: () => import('./views/TD-ScrollAnimationProvider-Demo.vue')
+        path: '/tdgallery',
+        name: 'tdgallery',
+        component: () => import('./views/TD-Gallery-Demo.vue')
     },
 ]
 
