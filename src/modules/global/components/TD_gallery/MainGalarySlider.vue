@@ -1,4 +1,5 @@
 <template>
+<!--  -->
   <swiper
     v-bind="swiperOptionsModel"
     :modules="swiperModules.modules"
