@@ -8,6 +8,7 @@
 | onScrollToEnd     |Function / true| request that fires when reach to Data End when isLoadMore is true , else detach Loader   |
 | isLoadingOnInit   |Boolean / false| to control showing Loader By Consumer best use is to send true onMount at consumer Component then call API then send False   |
 
+
 ## data
 
 | attribute         |     type      | description                               |
