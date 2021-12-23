@@ -1,8 +1,8 @@
 .header {
-  background-color: white;
+  background-color: var(--whiteColor);
   padding: 20px 0;
   padding-bottom: 0;
-  border-bottom: 1px solid var(--subtitle-black);
+  border-bottom: 1px solid var(--blue-background-color);
   &.header--is-ready {
       .header__content__nav-menu {
           .navbar-nav {
@@ -70,7 +70,7 @@
           }
 
           .dropdown-menu > li:hover {
-              background-color: #f1f1f1
+              //background-color: #f1f1f1
           }
 
           .dropdown-menu > li:hover > .submenu {
@@ -83,8 +83,9 @@
               > .nav-item {
                   margin: 0 32px;
                   position: relative;
-
-
+                  .nav-link {
+                    color: var(--blackColor);
+                  }
                   &.nav-item--more-dropdown {
                       .submenu {
                           #{$end}: 100%;
@@ -97,7 +98,7 @@
                       }
 
                       .nav-link--more-style {
-                          color: var(--dark--grey-color);
+                            color: var(--blackColor);
                           font-size: calc(
                             var(--fontModifier) * 14px + (18 - 14) *
                               ((100vw - 768px) / (1366 - 768))
@@ -133,7 +134,7 @@
                         var(--fontModifier) * 14px + (18 - 14) *
                           ((100vw - 768px) / (1366 - 768))
                       );
-                      color: var(--black-nav-menu-color);
+                      color: var(--blackColor);
                       line-height: 25px;
                       padding: 0;
                       position: relative;
@@ -141,7 +142,6 @@
 
                       &:hover, &:focus, &:active {
                           color: #C19508;
-                          background-color: white !important;
 
                           &:before {
                               transform: rotate(180deg);
@@ -241,7 +241,7 @@
                   margin: 0 20px;
                   display: flex;
                   align-items: center;
-
+                  color: var(--blackColor);
                   &.dropdown-menu--font-parent {
                       li {
                           a {
@@ -314,7 +314,7 @@
 
                   .nav-link {
                       padding: 0;
-                      color: var(--black-nav-menu-color);
+                      color: var(--blackColor);
                       font-size: calc(
                         var(--fontModifier) * 18px + (24 - 18) *
                           ((100vw - 768px) / (1366 - 768))
@@ -343,6 +343,7 @@
                           &.icon-contrast-icon {
                               &:before {
                                   font-size: 22.5px;
+                                  color: var(--blackColor);
                               }
                           }
 
@@ -410,7 +411,7 @@
                               padding: 3px 10px;
 
                               &:focus, &:active, &:hover {
-                                  background-color: #F2F2F2;
+                                  //background-color: #F2F2F2;
                                   color: #C19508;
                               }
                           }
