@@ -39,7 +39,7 @@
                                 <router-link to="/" class="nav-link">Home</router-link>
                             </li>
                             <li class="nav-item nav-item__first-level nav-item--first-node-level">
-                                <router-link to="/listing" class="nav-link">td Listing</router-link>
+                                <router-link to="/listing" class="nav-link">Listing Lazy</router-link>
                             </li>
                             <li class="nav-item nav-item__first-level nav-item--first-node-level">
                                 <router-link to="/tdloader" class="nav-link">td loader</router-link>
@@ -66,7 +66,7 @@
 </template>
 <script>
 import "./header.scss"
-import {STORAGE_VARIABLES} from "@/global/Constants.js";
+import {STORAGE_VARIABLES} from "@/globale/Constants.js";
     export default {
         name: 'fontResizeAndColorInverter',
         components: {
@@ -207,7 +207,6 @@ import {STORAGE_VARIABLES} from "@/global/Constants.js";
             }
         },
         mounted() {
-            //debugger
             this.colorInverterGlobalFunction("init-call");
             this.setupFontSizeOnMount()
             this.initDarkMode()

@@ -1,6 +1,6 @@
 <template>
 <scroll-animation-provider>
-  <div class="container">
+  <div class="container custom-padding">
       <div v-for="(val , index) in 50" :key="index" class="row justify-content-between">
           <div class="col-6 ">
             <scroll-animation class="w-100" :class="[index%2 ==0 ? 'd-none' : '']" :aosAnimation="getAnimationType(index)" >
@@ -84,9 +84,9 @@ export default {
 }
 </script>
 <style lang="scss">
-body{
+.custom-padding {
   background: #3F51B5;
-  padding-top: 600px;
+  padding-top: 100px;
   }
 .card{
   border: 10px solid white;

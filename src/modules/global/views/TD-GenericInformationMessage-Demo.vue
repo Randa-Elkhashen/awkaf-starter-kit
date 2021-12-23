@@ -51,7 +51,6 @@
             checkIsThereIsMoreData(){
                 let isNoMoreData = true;
                 if(!isNoMoreData){
-                    debugger
                     this.isMoreData = false;
                 }
             }

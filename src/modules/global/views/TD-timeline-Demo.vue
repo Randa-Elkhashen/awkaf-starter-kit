@@ -84,10 +84,7 @@ export default {
 }
 </script>
 <style lang="scss">
-body{
-  background: #3F51B5;
-  padding-top: 600px;
-  }
+
 .card{
   border: 10px solid white;
   width: 100%;

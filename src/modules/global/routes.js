@@ -8,6 +8,11 @@
 
 const routes = [
     {
+        path: '/',
+        name: 'Home',
+        component: () => import('../../views/Home.vue')
+    },
+    {
         path: '/tdloader',
         name: 'tdloader',
         component: () => import('./views/TD-loaderProvider-Demo.vue')
