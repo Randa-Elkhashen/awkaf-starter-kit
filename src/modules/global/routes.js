@@ -8,10 +8,16 @@
 
 const routes = [
     {
-        path: '/tdgallery',
-        name: 'tdgallery',
-        component: () => import('./views/TD-Gallery-Demo.vue')
+        path: '/tdLisiting',
+        name: 'tdLisiting',
+        component: () => import('./views/TD-Listing-Demo.vue')
     },
+    {
+        path: '/tdLisiting2',
+        name: 'tdLisiting2',
+        component: () => import('./views/TD-Listing-Demo2.vue')
+    },
+
 ]
 
 export default routes

@@ -1,4 +1,8 @@
 # Feature Guide
 ## Dependencies 
-- Aos
-- Need 2 Components - Wrapper Component and Child Component
+- TD-InfinteScroll
+- Td-genericInformationMessage
+- Td-CardItem
+
+## how to get Latest Dependencies by Git
+- git rebase /feature/<feature-name>
