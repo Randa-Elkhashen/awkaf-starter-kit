@@ -1,72 +1,9 @@
-<template>
-<!-- asdasd -->
-    <section class="header header--desktop">
-        <nav class="navbar navbar-expand-sm">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="../../../../assets/logo.png" alt="SiteTitle" class="d-inline-block align-text-top">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="header__content">
-                    <div class="collapse navbar-collapse header__content__accessibility" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item trail-version">نسخة تجريبية</li>
+<template src="./TD_header.html">
 
-                            <li @click="colorInverter" class="nav-item nav-item--show-in-desktop">
-                                <span class="nav-link constrast-icon">
-                                    <span class="icon-contrast-icon"></span>
-                                </span>
-                            </li>
-
-                            <li class="nav-item dropdown dropdown-menu--font-parent nav-item--show-in-desktop">
-                                <a class="nav-link" href="#" id="fontDropdownMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"> A </a>
-                                <ul class="dropdown-menu dropdown-menu--font" aria-labelledby="fontDropdownMenu">
-                                    <li>
-                                        <a class="dropdown-item fontUp-icon" href="#" @click="fontUpButtonClick">A+</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item fontUp-icon" href="#" @click="fontDownButtonClick">A-</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="header__content__nav-menu">
-                        <ul class="navbar-nav">
-                            <li class="nav-item nav-item--first-node-level">
-                                <router-link to="/" class="nav-link">Home</router-link>
-                            </li>
-                            <li class="nav-item nav-item__first-level nav-item--first-node-level">
-                                <router-link to="/listing" class="nav-link">Listing Lazy</router-link>
-                            </li>
-                            <li class="nav-item nav-item__first-level nav-item--first-node-level">
-                                <router-link to="/tdloader" class="nav-link">td loader</router-link>
-                            </li>
-                            <li class="nav-item nav-item__first-level nav-item--first-node-level">
-                                <router-link to="/tdtimeline" class="nav-link">td timeline</router-link>
-                            </li>
-                            <li class="nav-item nav-item__first-level nav-item--first-node-level">
-                                <router-link to="/tdAnimation" class="nav-link">td Animation</router-link>
-                            </li>
-                            <li class="nav-item nav-item__first-level nav-item--first-node-level">
-                                <router-link to="/tdLisiting" class="nav-link">td Lisiting</router-link>
-                            </li>
-                            <li class="nav-item nav-item__first-level nav-item--first-node-level">
-                                <router-link to="/tdLisiting2" class="nav-link">td Lisiting2</router-link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </nav>
-    </section>
 </template>
 <script>
 import "./header.scss"
-import {STORAGE_VARIABLES} from "@/globale/Constants.js";
+import {STORAGE_VARIABLES} from "@/global/Constants.js";
     export default {
         name: 'fontResizeAndColorInverter',
         components: {
@@ -193,6 +130,33 @@ import {STORAGE_VARIABLES} from "@/globale/Constants.js";
             } ,
             disableDarkMode(){
               this.rootElement.classList.remove("dark-mode")
+            },
+            headerShowMoreCalcs() {
+                let getSingleItemHeight = document.querySelectorAll(".nav-item__first-level")[0].offsetHeight;
+                let getheaderNavTotalHeight = document.querySelector(".header__content__nav-menu").offsetHeight;
+                let countOfAllFirstLevelItems = document.querySelectorAll(".nav-item--first-node-level").length;
+
+                if (getheaderNavTotalHeight > getSingleItemHeight) {
+                    //this means that our items became more than 2 lines
+                    document.querySelector(".nav-item--more-dropdown").classList.add("nav-item--more-dropdown--show-more");
+                    for (let i = countOfAllFirstLevelItems - 1; i >= 0; i--) {
+
+                        getSingleItemHeight = document.querySelectorAll(".nav-item__first-level")[0].offsetHeight;
+                        getheaderNavTotalHeight = document.querySelector(".header__content__nav-menu").offsetHeight;
+                        if (getheaderNavTotalHeight > getSingleItemHeight) {
+                            document.querySelector(".nav-item--more-dropdown .nav-item--more-dropdown__main-node").appendChild(document.querySelectorAll(".nav-item--first-node-level")[i]);
+                            setTimeout(function () {
+                                getheaderNavTotalHeight = document.querySelector(".header__content__nav-menu").offsetHeight;
+                            }, 0);
+                        } else {
+                            //TODO check last 2 items , and we might need to put open from right to left
+                            document.querySelector(".header.header--desktop").classList.add("header--is-ready");
+                        }
+
+                    }
+                } else {
+                    document.querySelector(".header.header--desktop").classList.add("header--is-ready");
+                }
             }
         },
         watch: {
