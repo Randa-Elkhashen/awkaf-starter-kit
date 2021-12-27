@@ -2,11 +2,11 @@ body {
     background-color: var(--main-bg);
 }
 
-.nap-listing-container {
+.td-listing-container {
     padding: 40px 0;
     div[class*="col-"] {
         margin-bottom: 30px;
-        .nap-generic-card {
+        .td-generic-card {
             background: #fff;
             border: 1px solid lightgray;
             display: flex;
@@ -19,18 +19,18 @@ body {
                 display: block;
             }
 
-            &.nap-generic-card--vertical {
+            &.td-generic-card--vertical {
                 flex-direction: column;
-                .nap-generic-card__image-container {
+                .td-generic-card__image-container {
                     &::before {
                         padding-top: (212 / 415) * 100%;
                     }
                 }
             }
-            &.nap-generic-card--horizontal {
+            &.td-generic-card--horizontal {
                 flex-direction: row;
                 position: relative;
-                .nap-generic-card__image-container {
+                .td-generic-card__image-container {
                     flex: 0 0 33.333333%;
                     max-width: 33.333333%;
                     order: 0;
@@ -41,14 +41,14 @@ body {
                         padding-top: (157 / 140) * 100%;
                     }
                 }
-                .nap-generic-card__header {
+                .td-generic-card__header {
                     flex: 0 0 66.666666%;
                     max-width: 66.666666%;
                     order: 1;
                     padding: 5px 15px;
                 }
-                &.nap-generic-card--bg-img {
-                    .nap-generic-card__header {
+                &.td-generic-card--bg-img {
+                    .td-generic-card__header {
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
@@ -62,25 +62,25 @@ body {
                         height: 100%;
                         background-color: transparent;
                         background-image: linear-gradient(to bottom, rgba(0, 3, 21, 0.08), rgba(0, 3, 21, 0.83));
-                        .nap-generic-card__header-upper {
-                            .nap-generic-card__header-upper__start {
-                                .nap-generic-card__header-upper__start-source {
+                        .td-generic-card__header-upper {
+                            .td-generic-card__header-upper__start {
+                                .td-generic-card__header-upper__start-source {
                                     color: #fff;
                                 }
                             }
                         }
-                        .nap-generic-card__header-bottom{
+                        .td-generic-card__header-bottom{
                             h3{
                                 color: #fff;
                             }
-                            .nap-generic-card__header-bottom__extra-info{
+                            .td-generic-card__header-bottom__extra-info{
                                 span{
                                     color: #fff;
                                 }
                             }
                         }
                     }
-                    .nap-generic-card__image-container {
+                    .td-generic-card__image-container {
                         flex: 0 0 100%;
                         max-width: 100%;
                         width: 100%;
@@ -90,15 +90,15 @@ body {
                     }
                 }
             }
-            .nap-generic-card__header {
+            .td-generic-card__header {
                 padding: 5px 10px 10px;
-                &.nap-generic-card__header--error {
+                &.td-generic-card__header--error {
                     background-color: #f3e9e9;
                 }
-                .nap-generic-card__header-upper {
+                .td-generic-card__header-upper {
                     display: flex;
                     justify-content: space-between;
-                    .nap-generic-card__header-upper__start {
+                    .td-generic-card__header-upper__start {
                         img {
                             width: 30px;
                             height: 30px;
@@ -106,7 +106,7 @@ body {
                             border: 1px solid lightgray;
                             border-radius: 50%;
                         }
-                        .nap-generic-card__header-upper__start-source {
+                        .td-generic-card__header-upper__start-source {
                             color: lightgray;
                             font-size: calc(var(--fontModifier) * 14px);
                             &.label--error {
@@ -116,20 +116,20 @@ body {
                         }
                     }
                 }
-                .nap-generic-card__header-bottom {
+                .td-generic-card__header-bottom {
                     h3 {
                         color: #21274c;
                         font-weight: bold;
                         font-size: calc(var(--fontModifier) * 16px);
                         margin: 10px 0;
                     }
-                    .nap-generic-card__header-bottom__extra-info {
+                    .td-generic-card__header-bottom__extra-info {
                         font-size: calc(var(--fontModifier) * 11px);
                         color: lightgray;
                         display: flex;
                         justify-content: space-between;
                   
-                        .nap-generic-card__header-bottom__tag {
+                        .td-generic-card__header-bottom__tag {
                             color: #00bc46;
                             font-size: calc(var(--fontModifier) * 10px);
                             border: 1px solid #00bc46;
@@ -139,7 +139,7 @@ body {
                     }
                 }
             }
-            .nap-generic-card__image-container {
+            .td-generic-card__image-container {
                 position: relative;
                 background-color: burlywood;
                 &::before {

@@ -1,22 +1,6 @@
 
-<template>
+<template src="./TD_InfiniteScroll.html">
 
-    <!-- loader starts -->
-    <div ref="observer">
-        <div  v-show="isLoading || isLoadingOnInit" class="listing-loader text-center" >
-            <!-- default loader -->
-            <div v-if="!isCustomLoading " >
-                    <div class="my-ldr">
-                        <div class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                    </div>
-            </div>
-            <!-- put your Ui Loader here -->
-            <slot v-else ></slot>
-        </div>
-    </div>
-    <!-- loader starts -->
 </template>
 
 <script>

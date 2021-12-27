@@ -1,21 +1,5 @@
-<template>
-<div>
+<template src="./TD_GenericInformationMessage.html">
 
-  
-  <!-- default information Message -->
-  <div v-if="!isCustomUi">
-    <div class="generic-error-msg">
-      <div class="icon">
-        <i class="icon-inbox"></i>
-      </div>
-      <p class="error-title">
-      </p>
-      <a v-bind:href="goHome"><i class="icon-home"></i>HomePage</a>
-    </div>
-  </div>
-  <!-- put your Ui Loader here -->
-  <slot v-else></slot>
-</div>
 </template>
 
 <script>

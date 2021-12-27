@@ -1,0 +1,31 @@
+<div  class="td-listing-container">
+    <div class="container">
+          <Listing loader 
+            :service="getData" 
+            class="row"
+          >
+            <template v-slot="{item}" >
+                  <div class="col-md-4" >
+                      <list-item :itemDataModel="item" :lazyLoad="false"/>
+                  </div>
+            </template>
+              <template v-slot:loader>
+                <!-- <img   src="../../../../assets/spinner.gif" /> -->
+                <div class="container">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-md-4" :key="index" v-for="(item, index) in 3">
+                                <list-item :itemDataModel="{}" :lazyLoad="true"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </template>
+              <template v-slot:emptyMessage>
+                    <div class="alert alert-warning">
+                          No Data Found
+                    </div>  
+              </template>
+          </Listing>
+      </div>
+    </div>

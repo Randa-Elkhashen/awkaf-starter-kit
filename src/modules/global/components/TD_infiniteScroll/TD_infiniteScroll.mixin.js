@@ -6,4 +6,3 @@ import { LoadOnScrollPlugin } from "@/plugins";
   },
 };
 export default loaderMixin;
-

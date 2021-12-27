@@ -1,0 +1,236 @@
+<!-- desktop menu -->
+<section class="header header--desktop header--is-ready">
+    <nav class="navbar navbar-expand-sm">
+        <div class="container">
+            <a class="navbar-brand" href="/ar">
+                <img src="../../../../assets/logo.png" alt="img alt" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="header__content">
+                <div class="collapse navbar-collapse header__content__accessibility" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item trail-version">نسخة تجريبية</li>
+                        <li @click="colorInverter" class="nav-item nav-item--show-in-desktop">
+                            <span class="nav-link constrast-icon">
+                                <span class="icon-contrast-icon"></span>
+                            </span>
+                        </li>
+                        <li class="nav-item dropdown dropdown-menu--font-parent nav-item--show-in-desktop">
+                            <a class="nav-link" href="#" id="fontDropdownMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"> A+ </a>
+                            <ul class="dropdown-menu dropdown-menu--font" aria-labelledby="fontDropdownMenu">
+                                <li><a class="dropdown-item fontUp-icon" id="increaseFont" href="#" @click="fontUpButtonClick">A+</a></li>
+                                <li><a class="dropdown-item fontReset-icon" id="resetFont" href="#" @click="fontResetButtonClick"> A<span class="icon-rotating-arrow-to-the-right"></span></a></li>
+                                <li><a class="dropdown-item fontDown-icon" id="decreaseFont" href="#" @click="fontDownButtonClick">A-</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item--hide">
+                            <a class="nav-link" href="#">
+                                <span>
+                                    <span class="icon-profile-icon"></span><span class="icon-arrow-down-sign-to-navigate"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item nav-item--hide">
+                            <a class="nav-link" href="#"><span class="icon-dot-shape"></span><span class="icon-bell"></span></a>
+                        </li>
+                        <li class="nav-item nav-item--language-switcher nav-item--hide">
+                            <div class="switchLang"><a class="nav-link" href="/en/" data-switchlang="en-US">EN</a></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__content__nav-menu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item nav-item__first-level nav-item--first-node-level"> 
+                            <router-link to="/" class="nav-link nav-link--more-style">Home</router-link>
+                        </li>
+                        <li class="nav-item dropdown nav-item--first-node-level">
+                            <a class="nav-link  dropdown-toggle dropdown-item dropdown-item__has-child" href="#" data-bs-toggle="dropdown">Listing</a>
+                            <ul class="dropdown-menu submenu">
+                                <li>
+                                    <router-link to="/listing" class="dropdown-item">Lazy</router-link>
+                                </li>
+                                <li>
+                                    <router-link to="/listing" class="dropdown-item">Loader</router-link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown nav-item--first-node-level">
+                            <a class="nav-link  dropdown-toggle dropdown-item dropdown-item__has-child" href="#" data-bs-toggle="dropdown">Gallery</a>
+                            <ul class="dropdown-menu submenu">
+                                <li>
+                                    <a class="dropdown-item dropdown-item__has-child" href="#">Gallery 1</a>
+                                    <ul class="submenu dropdown-menu  submenu--last-item">
+                                        <li><a class="dropdown-item" href="#">Galler 1 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Galler 1 2</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item dropdown-item__has-child" href="#">Gallery 2</a>
+                                    <ul class="submenu dropdown-menu  submenu--last-item">
+                                        <li><a class="dropdown-item" href="#">Galler 2 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Galler 2 2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown nav-item--more-dropdown">
+                            <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">Load more</a>
+                            <ul class="dropdown-menu  nav-item--more-dropdown__main-node">
+                            </ul>
+                        </li>
+                        <!-- <li class="nav-item nav-item--first-node-level">
+                            <router-link to="/" class="nav-link">Home</router-link>
+                        </li>
+                        <li class="nav-item nav-item__first-level nav-item--first-node-level">
+                            <router-link to="/listing" class="nav-link">Listing Lazy</router-link>
+                        </li>
+                        <li class="nav-item nav-item__first-level nav-item--first-node-level">
+                            <router-link to="/tdloader" class="nav-link">td loader</router-link>
+                        </li>
+                        <li class="nav-item nav-item__first-level nav-item--first-node-level">
+                            <router-link to="/tdtimeline" class="nav-link">td timeline</router-link>
+                        </li>
+                        <li class="nav-item nav-item__first-level nav-item--first-node-level">
+                            <router-link to="/tdgallery" class="nav-link">Gallery</router-link>
+                        </li>
+                        <li class="nav-item nav-item__first-level nav-item--first-node-level">
+                            <router-link to="/tdLisiting" class="nav-link">td Lisiting</router-link>
+                        </li>
+                        <li class="nav-item nav-item__first-level nav-item--first-node-level">
+                            <router-link to="/tdLisiting2" class="nav-link">td Lisiting2</router-link>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</section>
+
+<!-- mobile menu -->
+
+<section class="header header--mobile" id="header--mobile" style="display:none;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="header--mobile_wrapper">
+                    <div class="header--mobile_wrapper__menu">
+
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
+                            <span class="icon-burger-menu"></span>
+                            <span class="icon-close-icon"></span>
+                        </button>
+
+                        <div class="offcanvas offcanvas-start header--mobile_canvas" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
+
+                            <div class="offcanvas-body">
+                                <div class="offcanvas__logo">
+                                    <a href="/ar">
+                                        <img src="../../../../assets/logo.png" alt="وزارة السياحة والاثار">
+                                    </a>
+                                </div>
+                                <div class="offcanvas__search">
+                                    <form action="javascript:void(0)" autocomplete="off">
+                                        <input type="text" name="name" value="" placeholder=" بحث">
+                                        <span class="icon-search-icon"></span>
+                                    </form>
+                                </div>
+                                <div class="offcanvas__profile">
+                                    <div class="offcanvas__profile__login">
+                                        <a href="javascript:void(0)">
+                                            <span class="icon-profile-icon"></span>
+                                            <span>تسجيل الدخول</span>
+                                        </a>
+                                    </div>
+                                    <div class="offcanvas__profile__register">
+                                        <a href="javascript:void(0)">
+                                            <span>تسجيل</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="offcanvas__menu">
+                                    <div class="single-item single-item__first-level single-item__wrapper">
+                                        <router-link to="/">Home</router-link>
+                                    </div>
+                                    <div class="single-item__wrapper">
+                                        <div class="single-item single-item__first-level single-item__has-child">
+                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-1">Listing</a>
+                                        </div>
+                                        <div class="collapse multi-collapse" id="multiCollapseExample-1">
+                                            <div class="card card-body">
+                                                <div class="single-item single-item__second-level">
+                                                    <router-link to="/listing">Lazy</router-link>
+                                                </div>
+                                                <div class="single-item single-item__second-level">
+                                                    <router-link to="/listing">Loader</router-link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="single-item__wrapper">
+                                    <div class="single-item single-item__first-level single-item__has-child">
+                                        <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-2">Gallery</a>
+                                    </div>
+                                    <div class="collapse multi-collapse" id="multiCollapseExample-2">
+                                        <div class="card card-body">
+                                            <div class="">
+                                                <div class="single-item single-item__second-level single-item__has-child">
+                                                    <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-3">Gallery 1</a>
+                                                </div>
+                                                <div class="collapse multi-collapse" id="multiCollapseExample-3">
+                                                    <div class="card card-body">
+                                                        <div class="single-item single-item__third-level">
+                                                            <a href="#">Gallery 1 1</a>
+                                                        </div>
+                                                        <div class="single-item single-item__third-level">
+                                                            <a href="#">Gallery 1 2</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="single-item single-item__second-level single-item__has-child">
+                                                    <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-4">Gallery 2</a>
+                                                </div>
+                                                <div class="collapse multi-collapse" id="multiCollapseExample-4">
+                                                    <div class="card card-body">
+                                                        <div class="single-item single-item__third-level">
+                                                            <a href="#">Gallery 2 1</a>
+                                                        </div>
+                                                        <div class="single-item single-item__third-level">
+                                                            <a href="#">Gallery 2 2</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                        <div class="header--mobile_wrapper__title">
+
+                            <a href="/ar">
+                                <img src="../../../../assets/logo.png" alt="وزارة السياحة والاثار">
+                                <h1>FE Library</h1>
+                            </a>
+
+                        </div>
+                    <div class="header--mobile_wrapper__notification">
+                        <h2 style="display:none;">Trial Version</h2>
+                        <a class="header--mobile_wrapper__notification__wrapper" href="javascript:void(0)"><span class="icon-dot-shape"></span><span class="icon-bell"></span></a>
+                                <div class="switchLang"><a class="nav-link header--mobile_wrapper__language-switcher" href="/en/" data-switchlang="en-US">EN</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
