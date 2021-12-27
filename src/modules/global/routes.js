@@ -20,7 +20,7 @@ const routes = [
     {
         path: '/tdtimeline',
         name: 'tdtimeline',
-        component: () => import('./views/TD-ScrollAnimationProvider-Demo.vue')
+        component: () => import('./views/TD-timeline-Demo.vue')
     },
     {
         path: '/tdAnimation',
