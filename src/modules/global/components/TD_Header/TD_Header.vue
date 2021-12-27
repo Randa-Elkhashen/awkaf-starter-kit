@@ -48,7 +48,7 @@
                                 <router-link to="/tdtimeline" class="nav-link">td timeline</router-link>
                             </li>
                             <li class="nav-item nav-item__first-level nav-item--first-node-level">
-                                <router-link to="/tdAnimation" class="nav-link">td Animation</router-link>
+                                <router-link to="/tdgallery" class="nav-link">Gallery</router-link>
                             </li>
                             <li class="nav-item nav-item__first-level nav-item--first-node-level">
                                 <router-link to="/tdLisiting" class="nav-link">td Lisiting</router-link>
