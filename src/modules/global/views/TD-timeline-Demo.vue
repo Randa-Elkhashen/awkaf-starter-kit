@@ -4,7 +4,7 @@
         :service="getData"
         :updateNextCallServiceParams="updateNextCallServiceParams"
         :serviceParams="serviceParams"
-        class="container" 
+        class="container td-listing-container" 
       >
         <template v-slot="{ item  , index}">
             <div class="td-generic-timeline">
@@ -18,7 +18,7 @@
                     :class="[ index%2  ? 'justify-content-end' : 'justify-content-start']"
                     >
                         <div class="col-md-6 col-12" >
-                            <time-line-card :itemDataModel="item" />  
+                            <time-line-card :itemDataModel="item" :lazyLoad="false"  />  
                         </div>
                     </div>
                   </div>
@@ -39,7 +39,7 @@
 
 <script>
 import "../components/TD_timeLine/TD_timeline.scss"
-import TimeLineCard from './TD_TimeLineCard.vue';
+import TimeLineCard from "@/modules/global/components/TD_genericCard/TD_genericCard.vue"
 import Listing from "@/modules/global/components/TD_listing_feature/TD_Listing.vue";
 import { photos } from "@/services";
 

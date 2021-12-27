@@ -1,5 +1,5 @@
 <template>
-  <div  class="nap-listing-container">
+  <div  class="td-listing-container">
     <div class="container">
           <Listing loader 
             :service="getData" 
@@ -7,7 +7,7 @@
           >
             <template v-slot="{item}" >
                   <div class="col-md-4" >
-                      <list-item :itemDataModel="item" />
+                      <list-item :itemDataModel="item" :lazyLoad="false" />
                   </div>
             </template>
               <template v-slot:loader>
@@ -25,7 +25,7 @@
 
 <script>
 import Listing from "@/modules/global/components/TD_listing_feature/TD_Listing.vue"
-import ListItem from "./dummylistingCard/TD_GenericCard.vue" 
+import ListItem from "@/modules/global/components/TD_genericCard/TD_genericCard.vue"
 import {photos} from "@/services"
 export default {
   name: 'TD-Listing-Demo',

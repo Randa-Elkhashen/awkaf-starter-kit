@@ -13,23 +13,13 @@ const routes = [
         component: () => import('../../views/Home.vue')
     },
     {
-        path: '/tdloader',
-        name: 'tdloader',
-        component: () => import('./views/TD-loaderProvider-Demo.vue')
-    },
-    {
         path: '/tdtimeline',
         name: 'tdtimeline',
         component: () => import('./views/TD-timeline-Demo.vue')
     },
     {
-        path: '/tdAnimation',
-        name: 'tdAnimation',
-        component: () => import('./views/TD-ScrollAnimationProvider-Demo.vue')
-    },
-    {
-        path: '/tdLisiting',
-        name: 'tdLisiting',
+        path: '/tdLisiting1',
+        name: 'tdLisiting1',
         component: () => import('./views/TD-Listing-Demo.vue')
     },
     {

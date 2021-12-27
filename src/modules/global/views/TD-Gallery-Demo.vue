@@ -29,7 +29,7 @@
 </template>
 <script src="./TD-galleryDemo.js" ></script>
 <style  lang="scss">
-body {
+.td-generic-slider {
   background: #000;
   color: #000;
 }
