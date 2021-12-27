@@ -1,102 +1,70 @@
 <template>
-<scroll-animation-provider>
-  <div class="container">
-      <div v-for="(val , index) in 50" :key="index" class="row justify-content-between">
-          <div class="col-6 ">
-            <scroll-animation class="w-100" :class="[index%2 ==0 ? 'd-none' : '']" :aosAnimation="getAnimationType(index)" >
-                <div class="card"></div>
-            </scroll-animation>
+<Listing
+        loader
+        :service="getData"
+        :updateNextCallServiceParams="updateNextCallServiceParams"
+        :serviceParams="serviceParams"
+        class="container" 
+      >
+        <template v-slot="{ item  , index}">
+            <div class="td-generic-timeline">
+                <div class="td-generic-timeline__row">
+                  <div data-aos="zoom-in-up"  >
+                        <h3 class="td-generic-timeline__row__title"  >2020</h3>
+                  </div>
+                  <div  :data-aos="index%2 ? 'fade-left' : 'fade-right'"
+                     data-aos-delay="200">
+                    <div  class="td-generic-timeline__row__card row"
+                    :class="[ index%2  ? 'justify-content-end' : 'justify-content-start']"
+                    >
+                        <div class="col-md-6 col-12" >
+                            <time-line-card :itemDataModel="item" />  
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </template>
+        <template v-slot:loader>
+          <img src="../../../assets/spinner.gif" />
+        </template>
+        <template v-slot:emptyMessage>
+          <div class="alert alert-warning">
+            No Data Found
           </div>
-            <div class="col-6">
-                <scroll-animation class="w-100" :class="[index%2 == 1 ? 'd-none' : '']" :aosAnimation="getAnimationType(index)" >
-                    <div class="card"></div>
-                </scroll-animation>
-          </div>
-      </div>
-  </div>
-  </scroll-animation-provider>
+        </template>
+</Listing>
+
 </template>
 
 <script>
-import ScrollAnimationProvider from "@/modules/global/components/TD_scrollAnimationProvider/TD_ScrollAnimationProvider.vue"
-import ScrollAnimation from "@/modules/global/components/TD_scrollAnimation/TD_ScrollAnimation.vue"
+import "../components/TD_timeLine/TD_timeline.scss"
+import TimeLineCard from './TD_TimeLineCard.vue';
+import Listing from "@/modules/global/components/TD_listing_feature/TD_Listing.vue";
+import { photos } from "@/services";
+
+import aos from "aos";
+import 'aos/dist/aos.css';
+
 export default {
   name: 'TD-Listing-Demo',
   components : {
-    ScrollAnimationProvider ,
-    ScrollAnimation
+    TimeLineCard ,
+    Listing,
   },
-      data() {
+  data() {
         return {
+            index : 1 ,
         }
-    },
-    computed : {
-
-    },
+  },
   methods : {
-      getAnimationType(index){
-        switch( (index+1) % 20 ){
-          case 1 : 
-            return {'data-aos' : 'fade-up', }
-          case 2 : 
-            return {'data-aos' : 'fade-down', }
-          case 3 : 
-            return {'data-aos' : 'fade-right', }
-          case 4 : 
-            return {'data-aos' : 'fade-left', }
-          case 5 : 
-            return {'data-aos' : 'fade-up-right', }
-          case 6 : 
-            return {'data-aos' : 'fade-up-left', }
-          case 7 : 
-            return {'data-aos' : 'fade-down-right', }
-          case 8 : 
-            return {'data-aos' : 'fade-down-left', }
-          case 9 : 
-            return {'data-aos' : 'flip-left', }
-          case 10 : 
-            return {'data-aos' : 'flip-right', }
-          case 11 : 
-            return {'data-aos' : 'flip-up', }
-          case 12 : 
-              return {'data-aos' : 'flip-down', }
-          case 13 : 
-            return {'data-aos' : 'zoom-in', }
-          case 14 : 
-            return {'data-aos' : 'zoom-in-up', }
-          case 15 : 
-            return {'data-aos' : 'zoom-in-down', }
-          case 16 : 
-            return {'data-aos' : 'zoom-in-left', }
-          case 17 : 
-            return {'data-aos' : 'zoom-in-right', }
-          case 18 : 
-            return {'data-aos' : 'zoom-out', }
-          case 19 : 
-            return {'data-aos' : 'zoom-out-up', }
-          case 20 : 
-            return {'data-aos' : 'zoom-out-down', }
-
-
-        }
-      }
-  }
+    getData () {
+      let callIndex = this.index++;
+      return photos.getAlbumById(callIndex);
+    },
+  },
+  mounted() {
+          aos.init();
+  },
 }
 </script>
-<style lang="scss">
-
-.card{
-  border: 10px solid white;
-  width: 100%;
-  max-width: 350px;
-  height: 150px;
-  margin: auto;
-  margin-bottom: 250px;
-  background: #202746;
-  &.card--odd{
-  margin-top: 250px;
-  margin-bottom: 0;
-  }
-}
-
-</style>

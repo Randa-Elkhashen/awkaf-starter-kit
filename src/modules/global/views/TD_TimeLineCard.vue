@@ -14,6 +14,7 @@
         computed : {
  
         } ,
+        
         mounted(){
         }
     }
@@ -28,12 +29,8 @@
             width: 100%;
             padding-top: 0.5* 100%;
             }
-            // padding-top: 50%;
-            // border: 2px solid wheat;
-            // background-color: rgba($color: darkblue, $alpha: 0.7) ;
             .card-wrapper__card{
                 position: absolute;
-                // height: 50%;
                 height: 100%;
                 width: 100%;
                 top: 0;
