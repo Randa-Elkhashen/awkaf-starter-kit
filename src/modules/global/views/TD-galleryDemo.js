@@ -66,8 +66,6 @@ export default {
   },
   methods: {
     setMainSliderThumb(swiper){
-      if(!this.isHaveThumb)
-        return;
       this.thumbs = swiper;
     } ,
   },
