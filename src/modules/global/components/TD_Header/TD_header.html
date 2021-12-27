@@ -62,15 +62,15 @@
                                 <li>
                                     <a class="dropdown-item dropdown-item__has-child" href="#">Gallery 1</a>
                                     <ul class="submenu dropdown-menu  submenu--last-item">
-                                        <li><a class="dropdown-item" href="">Galler 1 1</a></li>
-                                        <li><a class="dropdown-item" href="">Galler 1 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Galler 1 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Galler 1 2</a></li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a class="dropdown-item dropdown-item__has-child" href="#">Gallery 2</a>
                                     <ul class="submenu dropdown-menu  submenu--last-item">
-                                        <li><a class="dropdown-item" href="">Galler 2 1</a></li>
-                                        <li><a class="dropdown-item" href="">Galler 2 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Galler 2 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Galler 2 2</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -132,61 +132,40 @@
                                 
                                 <div class="offcanvas__menu">
                                     <div class="single-item single-item__first-level single-item__wrapper">
-                                        <a href="/ar/">الرئيسية</a>
+                                        <router-link to="/">Home</router-link>
                                     </div>
                                     <div class="single-item__wrapper">
                                         <div class="single-item single-item__first-level single-item__has-child">
-                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-1">عن الوزارة</a>
+                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-1">Listing</a>
                                         </div>
                                         <div class="collapse multi-collapse" id="multiCollapseExample-1">
                                             <div class="card card-body">
                                                 <div class="single-item single-item__second-level">
-                                                    <a href="/ar/عن-الوزارة/نبذة-عن-الوزارة/">نبذة عن الوزارة</a>
+                                                    <router-link to="/listing">Lazy</router-link>
                                                 </div>
                                                 <div class="single-item single-item__second-level">
-                                                    <a href="/ar/عن-الوزارة/الرؤية-والرسالة/">الرؤية والرسالة</a>
-                                                </div>
-                                                <div class="single-item single-item__second-level">
-                                                    <a href="/ar/عن-الوزارة/استراتيجيات/">استراتيجيات</a>
-                                                </div>
-                                                <div class="single-item single-item__second-level">
-                                                    <a href="/ar/عن-الوزارة/القوانين-والوائح/">القوانين والوائح</a>
-                                                </div>
-                                                <div class="single-item single-item__second-level">
-                                                    <a href="/ar/عن-الوزارة/الوزير-والقيادات/">الوزير والقيادات</a>
+                                                    <router-link to="/listing">Loader</router-link>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="single-item__wrapper">
                                     <div class="single-item single-item__first-level single-item__has-child">
-                                        <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-2">الخدمات</a>
+                                        <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-2">Gallery</a>
                                     </div>
                                     <div class="collapse multi-collapse" id="multiCollapseExample-2">
                                         <div class="card card-body">
                                             <div class="">
                                                 <div class="single-item single-item__second-level single-item__has-child">
-                                                    <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-3">خدمات قطاع السياحة</a>
+                                                    <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-3">Gallery 1</a>
                                                 </div>
                                                 <div class="collapse multi-collapse" id="multiCollapseExample-3">
                                                     <div class="card card-body">
                                                         <div class="single-item single-item__third-level">
-                                                            <a href="/ar/الخدمات/خدمات-قطاع-السياحة/خدمات-المجال-والأنشطة-السياحية/">خدمات المجال والأنشطة السياحية</a>
+                                                            <a href="#">Gallery 1 1</a>
                                                         </div>
                                                         <div class="single-item single-item__third-level">
-                                                            <a href="/ar/الخدمات/خدمات-قطاع-السياحة/خدمات-المنشئات-الفندقية/">خدمات المنشئات الفندقية</a>
-                                                        </div>
-                                                        <div class="single-item single-item__third-level">
-                                                            <a href="/ar/الخدمات/خدمات-قطاع-السياحة/خدمات-شركات-السياحة/">خدمات شركات السياحة</a>
-                                                        </div>
-                                                        <div class="single-item single-item__third-level">
-                                                            <a href="/ar/الخدمات/خدمات-قطاع-السياحة/خدمات-اخطارات-البرامج-السياحية/">خدمات اخطارات البرامج السياحية</a>
-                                                        </div>
-                                                        <div class="single-item single-item__third-level">
-                                                            <a href="/ar/الخدمات/خدمات-قطاع-السياحة/نسب-الاشغال-الفندقى/">نسب الاشغال الفندقى</a>
-                                                        </div>
-                                                        <div class="single-item single-item__third-level">
-                                                            <a href="/ar/الخدمات/خدمات-قطاع-السياحة/خدمات-النقل-السياحي/">خدمات النقل السياحي</a>
+                                                            <a href="#">Gallery 1 2</a>
                                                         </div>
                                                     </div>
 
@@ -194,25 +173,15 @@
                                             </div>
                                             <div class="">
                                                 <div class="single-item single-item__second-level single-item__has-child">
-                                                    <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-4">خدمات قطاع الاثار</a>
+                                                    <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-4">Gallery 2</a>
                                                 </div>
                                                 <div class="collapse multi-collapse" id="multiCollapseExample-4">
                                                     <div class="card card-body">
                                                         <div class="single-item single-item__third-level">
-                                                            <a href="/ar/الخدمات/خدمات-قطاع-الاثار/خدمات-البعثات-الاثرية/">خدمات البعثات الاثرية </a>
-
+                                                            <a href="#">Gallery 2 1</a>
                                                         </div>
                                                         <div class="single-item single-item__third-level">
-                                                            <a href="/ar/الخدمات/خدمات-قطاع-الاثار/خدمات-المواقع-الأثرية-والمتاحف/">خدمات المواقع الأثرية والمتاحف</a>
-
-                                                        </div>
-                                                        <div class="single-item single-item__third-level">
-                                                            <a href="/ar/الخدمات/خدمات-قطاع-الاثار/حجز-التذاكر-المستسخات/">حجز التذاكر المستسخات</a>
-
-                                                        </div>
-                                                        <div class="single-item single-item__third-level">
-                                                            <a href="/ar/الخدمات/خدمات-قطاع-الاثار/خدمات-التصاريح-للدارسين-بكليات-الآثار/">خدمات التصاريح للدارسين بكليات الآثار</a>
-
+                                                            <a href="#">Gallery 2 2</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -220,18 +189,6 @@
                                         </div>
 
                                     </div>
-                                    </div>
-                                    <div class="single-item__wrapper">
-                                        <div class="single-item single-item__first-level single-item__has-child">
-                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-5">الركن الاعلامي</a>
-                                        </div>
-                                        <div class="collapse multi-collapse" id="multiCollapseExample-5">
-                                            <div class="card card-body">
-                                                <div class="single-item single-item__second-level">
-                                                    <a href="/ar/الركن-الاعلامي/البيانات-الصحفية-1-1/">البيانات الصحفية</a>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
