@@ -1,0 +1,25 @@
+.td-generic-timeline{
+    margin-bottom: 4px;
+    .td-generic-timeline__row{
+        .td-generic-timeline__row__card{
+            position: relative;
+            &::before{
+                display: inline-block;
+                content: "";
+                position: absolute;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translate(-50% , 0);
+                border-left: 1px solid red;
+            }
+        }
+        .td-generic-timeline__row__title{
+            color: red;
+            display: inline-block;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+}
