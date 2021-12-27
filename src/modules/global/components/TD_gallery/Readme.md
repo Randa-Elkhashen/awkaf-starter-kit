@@ -69,4 +69,4 @@
         - it emits thumbsMounted event  when thumbs swiper initalized
         - u can listen to thumbsMouted event to set main swiper thumb property with swiper thumb
 
-## TD_Gallery
+## for example please refer to views Demo
