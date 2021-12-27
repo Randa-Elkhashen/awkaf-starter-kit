@@ -8,9 +8,9 @@
 
 const routes = [
     {
-        path: '/tdAnimation',
-        name: 'tdAnimation',
-        component: () => import('./views/TD-ScrollAnimationProvider-Demo.vue')
+        path: '/tdtimeline',
+        name: 'tdtimeline',
+        component: () => import('./views/TD-timeline-Demo.vue')
     },
 ]
 
