@@ -2,8 +2,6 @@
 <Listing
         loader
         :service="getData"
-        :updateNextCallServiceParams="updateNextCallServiceParams"
-        :serviceParams="serviceParams"
         class="container" 
       >
         <template v-slot="{ item  , index}">
