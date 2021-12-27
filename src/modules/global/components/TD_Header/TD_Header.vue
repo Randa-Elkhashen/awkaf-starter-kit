@@ -170,11 +170,14 @@ import {STORAGE_VARIABLES} from "@/global/Constants.js";
                 localStorage.setItem(STORAGE_VARIABLES.DARK_MODE.VARIABLE_KEY , currentValue)
             }
         },
+        unmounted() {
+            window.removeEventListener('resize', this.headerShowMoreCalcs());
+        },
         mounted() {
+            window.addEventListener('resize', this.headerShowMoreCalcs());
             this.colorInverterGlobalFunction("init-call");
             this.setupFontSizeOnMount()
             this.initDarkMode()
-
         }
     }
 </script>
