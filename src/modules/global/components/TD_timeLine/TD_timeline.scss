@@ -1,7 +1,13 @@
 .td-generic-timeline{
     margin-bottom: 4px;
     .td-generic-timeline__row{
+        $mobileRowWidth : 90%;
+        $titlePosition : (100% - $mobileRowWidth)/2;
         .td-generic-timeline__row__card{
+            @media screen and (max-width : 768px){
+                max-width: $mobileRowWidth;
+                margin: auto;;
+            }
             position: relative;
             &::before{
                 display: inline-block;
@@ -12,6 +18,9 @@
                 top: 0;
                 transform: translate(-50% , 0);
                 border-left: 1px solid red;
+                @media screen and (max-width : 767px) {
+                    left:0;
+                }
             }
         }
         .td-generic-timeline__row__title{
@@ -20,6 +29,10 @@
             position: relative;
             left: 50%;
             transform: translate(-50%, 0);
+            @media screen and (max-width : 767px) {
+                left: #{$titlePosition};
+                transform: translate(-50%, 0);;
+            }
         }
         
     }
