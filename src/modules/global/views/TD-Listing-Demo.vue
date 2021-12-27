@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import Listing from "@/modules/global/components/TD_listing/TD_Listing.vue"
-import ListItem from "@/modules/global/components/TD_genericCard/TD_GenericCard.vue" 
+import Listing from "@/modules/global/components/TD_listing/TD_Listing.vue";
+import ListItem from "./dummyListingCard/TD_GenericCard.vue" 
 import {photos} from "@/services"
 export default {
   name: 'TD-Listing-Demo',

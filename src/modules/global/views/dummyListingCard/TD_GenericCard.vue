@@ -35,7 +35,7 @@
 <script>
 import "./TD_genericCard.scss"
 export default {
-  name: "ListingItem",
+  name: "DummyListingItem",
   props: {
     itemDataModel: {
       type: Object,
