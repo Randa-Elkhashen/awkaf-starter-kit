@@ -1,23 +1,36 @@
 <template>
-    <Gallery />
+<div class="td-generic-slider">
+    <slider key="main-slider"
+      class="td-generic-slider__main-slider"
+    :swiperModules="swiperModules"
+    :swiperParams="swiperParams"
+    :images="images"
+    :bindSwiperWithThumbs="true"
+    :thumbsSwiper="thumbs"
+    >
+      <template v-slot:slide="{ slideModel }">
+                <img :src="slideModel.thumb" />
+      </template>
+    </slider>
+    <thumb-slider  key="thumbs-slider"
+      v-if="true"
+      class="td-generic-slider__thumbs-slider"
+      :swiperModules="thumbsConfig.swiperModules"
+      :swiperParams="thumbsConfig.swiperParams"
+      :images="images"
+      @thumbsMounted="setMainSliderThumb"
+    >
+      <template v-slot:slide="{ slideModel }" >
+                <img :src="slideModel.thumb" />
+      </template>
+    </thumb-slider>
+</div>
+
 </template>
-<script>
-import Gallery from "@/modules/global/components/TD_gallery/TD_Gallery.vue"
-export default {
-  name: 'TD-Listing-Demo',
-  components : {
-    Gallery ,
-  },
-      data() {
-        return {
-        }
-    },
-    computed : {
-
-    },
-  methods : {
-
-  }
+<script src="./TD-galleryDemo.js" ></script>
+<style  lang="scss">
+body {
+  background: #000;
+  color: #000;
 }
-</script>
-
+</style>
