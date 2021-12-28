@@ -5,10 +5,12 @@ import swiperBaseMixin  from "./TD_galary.mixin";
 import "swiper/swiper-bundle.css";
 //#endregion
 export default {
-  name: "MainGalarySlider",
+  name: "TD_Slider",
   mixins: [swiperBaseMixin ],
   components: {
     Swiper,
     SwiperSlide,
+  },
+  mounted() {
   },
 };

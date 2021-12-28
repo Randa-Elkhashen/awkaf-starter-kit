@@ -3,6 +3,7 @@
 ## SwiperBaseMixin
 - uses :
     - use it for each slider u need to provide basic functionality of swiper
+
 - props 
     - images 
         - type : Array
@@ -44,6 +45,10 @@
     - call isNotCompatable method to check all required Props.
 ## TD_Slider
 - mixins : swiperBaseMixin
+- setup 
+    - swiperContainer 
+        - type ref
+        - is ref to swiper container element >> to access it use swiperContainer.$el
 - Components 
     - swiper , swiper-slide
 - slots 
@@ -69,4 +74,4 @@
         - it emits thumbsMounted event  when thumbs swiper initalized
         - u can listen to thumbsMouted event to set main swiper thumb property with swiper thumb
 
-## TD_Gallery
+## for example please refer to views Demo

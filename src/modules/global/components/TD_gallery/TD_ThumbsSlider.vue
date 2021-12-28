@@ -1,5 +1,6 @@
 <template>
-<slider :images="images" :events="eventModel" :swiperParams="swiperParams" 
+
+<slider ref="swiperThumbContainer" v-if="images.length > 1"  :images="images" :events="eventModel" :swiperParams="swiperParams" 
 :swiperModules="swiperModules"
 >
     <template v-slot:slide="{ slideModel }" >

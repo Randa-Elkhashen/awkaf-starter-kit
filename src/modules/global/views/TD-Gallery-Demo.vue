@@ -12,8 +12,7 @@
                 <img :src="slideModel.thumb" />
       </template>
     </slider>
-    <thumb-slider  key="thumbs-slider"
-      v-if="true"
+    <thumb-slider   key="thumbs-slider"
       class="td-generic-slider__thumbs-slider"
       :swiperModules="thumbsConfig.swiperModules"
       :swiperParams="thumbsConfig.swiperParams"

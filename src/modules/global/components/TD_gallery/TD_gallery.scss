@@ -44,9 +44,16 @@
       height: 100%;
       opacity: 0.4;
     }
+    .swiper-wrapper  {
+      &.swiper-wrapper--center{
+        justify-content:center;
+        transform: unset!important;
+      }
+    }
     .swiper-slide-thumb-active {
     opacity: 1;
     }
   }
 
-}
+  }
+

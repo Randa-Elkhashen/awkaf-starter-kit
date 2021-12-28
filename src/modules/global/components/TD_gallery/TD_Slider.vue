@@ -1,5 +1,5 @@
 <template>
-  <swiper
+  <swiper ref="swiperContainer"
     v-bind="swiperOptionsModel"
     :modules="swiperModules.modules"
     v-on="events"
