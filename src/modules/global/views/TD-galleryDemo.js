@@ -6,7 +6,7 @@ import "swiper/modules/navigation/navigation.min.css";
 import "../components/TD_gallery/TD_gallery.scss"
 import images from "@/mocking-data/images.json"
 export default {
-  name: "MainGalarySlider",
+  name: "TD_Gallery",
   components: {
     Slider,
     ThumbSlider
@@ -63,6 +63,9 @@ export default {
 
       }
     };
+  },
+  computed:{
+
   },
   methods: {
     setMainSliderThumb(swiper){

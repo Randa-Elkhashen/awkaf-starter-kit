@@ -1,49 +1,6 @@
 import { ErrorMessage } from "@/plugins";
-export const modulesProps = {
-  Navigation : {
-    propName : "navigation" ,
-    default : true ,
-    customOptions : {
-      disabledClass : 'swiper-button-disabled' , 
-      hiddenClass : 'swiper-button-hidden' ,
-      hideOnClick : false ,
-      lockClass : 'swiper-button-lock' , 
-      nextEl  : null, // selector
-      prevEl : null  // selector
-    }
-  } ,
-  Pagination : {
-    propName : "pagination" , 
-    default : true ,
-    customOptions : {
+import {modulesProps , Navigation , Pagination , Autoplay , ALL_MODULES , SWIPER_PROPS_OPTIONS_VALUES , } from "./swiperMapFiles.json"
 
-    }
-  } ,
-  Autoplay : {
-    propName : "autoplay" , 
-    default : true ,
-    customOptions : {
-
-    }
-  }
-};
-export const ALL_MODULES = Object.freeze({
-  Pagination : "Pagination" , 
-  Navigation : "Navigation" ,
-  Autoplay : "Autoplay"
-})
-export const SWIPER_PROPS_OPTIONS_VALUES = 
-Object.freeze({
- slidesPerView : {
-   auto :  "auto"
- } ,
- grid : {
-   fill : {
-     column : "column" , 
-     row : "row" ,
-   }
- }
-});
 export  const swiperBaseMixin = {
    props : {
     swiperParams : {
@@ -87,7 +44,7 @@ export  const swiperBaseMixin = {
   },
   methods: {
     isNotCompatable(){
-     if( this.swiperOptionsModel.loop &&  this.swiperOptionsModel.grid.rows > 1){
+     if( this.swiperOptionsModel.loop &&  this.swiperOptionsModel.grid?.rows > 1){
        throw new ErrorMessage(["swiper grid rows > 1  not Compatible with Loop"]);
      }
     if( (this.swiperOptionsModel.slidesPerView > 1 || this.swiperOptionsModel.slidesPerView == SWIPER_PROPS_OPTIONS_VALUES.slidesPerView.auto)
