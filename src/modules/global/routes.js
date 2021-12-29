@@ -12,6 +12,11 @@ const routes = [
         name: 'tdtimeline',
         component: () => import('./views/TD-timeline-Demo.vue')
     },
+    {
+        path: '/tdtimeline2',
+        name: 'tdtimeline2',
+        component: () => import('./views/TD-timeline-Demo2.vue')
+    },
 ]
 
 export default routes
