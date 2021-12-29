@@ -1,5 +1,5 @@
 <template>
-<div class="container td-generic-timeline-wrapper">
+<div class="container td-generic-timeline-wrapper td-generic-timeline-wrapper--type2 td-listing-container">
 <Listing
         loader
         :service="getData"
@@ -17,12 +17,11 @@
                     :class="[ index%2  ? 'td-generic-timeline__row__card--reverse' : '']"
                     >
                         <div class="col-md-6 col-12 td-generic-timeline__row__card__article" >
-                            article
-                            <time-line-card :itemDataModel="item" />  
+                          <h1>this is dummy title</h1>
+                          <p>this is dummy description </p>
                         </div>
                         <div class="col-md-6 col-12 td-generic-timeline__row__card__image" >
-                            image
-                            <time-line-card :itemDataModel="item" />  
+                            <time-line-card :itemDataModel="item"  />  
                         </div>
                     </div>
                   </div>
@@ -43,7 +42,7 @@
 
 <script>
 import "../components/TD_timeLine/TD_timelineType2.scss"
-import TimeLineCard from './TD_TimeLineCard.vue';
+import TimeLineCard from '../components/TD_genericCard/TD_genericCard.vue';
 import Listing from "@/modules/global/components/TD_listing_feature/TD_Listing.vue";
 import { photos } from "@/services";
 

@@ -68,8 +68,17 @@
                         <li class="nav-item  nav-item--first-node-level">
                             <router-link to="/tdgallery" class="nav-link nav-link--more-style">Gallery</router-link>
                         </li>
-                        <li class="nav-item nav-item__first-level nav-item--first-node-level"> 
-                            <router-link to="/tdtimeline" class="nav-link nav-link--more-style">Time Line</router-link>
+                        <li class="nav-item dropdown nav-item--first-node-level">
+                            <a class="nav-link  dropdown-toggle dropdown-item dropdown-item__has-child" href="#" data-bs-toggle="dropdown">Time Line</a>
+                            <ul class="dropdown-menu submenu">
+                                <li>
+                                    <router-link to="/tdtimeline" class="dropdown-item" href="#">Demo 1</router-link>
+
+                                </li>
+                                <li>
+                                    <router-link to="/tdtimeline2" class="dropdown-item" href="#">Demo 2</router-link>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item dropdown nav-item--more-dropdown">
                             <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">Load more</a>
