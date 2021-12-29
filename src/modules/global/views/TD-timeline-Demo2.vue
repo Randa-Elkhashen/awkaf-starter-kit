@@ -1,22 +1,28 @@
 <template>
+<div class="container td-generic-timeline-wrapper">
 <Listing
         loader
         :service="getData"
-        class="container td-generic-timeline-wrapper" 
+        class="td-generic-timeline-wrapper__spacer" 
       >
         <template v-slot="{ item  , index}">
             <div class="td-generic-timeline">
                 <div class="td-generic-timeline__row">
                   <div data-aos="zoom-in-up"  >
-                        <h3 class="td-generic-timeline__row__title"  >2020</h3>
+                        <span class="td-generic-timeline__row__node"  ></span>
                   </div>
-                  <div  :data-aos="index%2 ? 'fade-left' : 'fade-right'"
+                  <div  data-aos='fade-up'
                      data-aos-delay="200">
-                    <div  class="td-generic-timeline__row__card row"
-                    :class="[ index%2  ? 'justify-content-end' : 'justify-content-start']"
+                    <div  class="td-generic-timeline__row__card  row justify-content-between"
+                    :class="[ index%2  ? 'td-generic-timeline__row__card--reverse' : '']"
                     >
-                        <div class="col-md-6 col-12" >
-                            <time-line-card :itemDataModel="item" :lazyLoad="false"  />  
+                        <div class="col-md-6 col-12 td-generic-timeline__row__card__article" >
+                            article
+                            <time-line-card :itemDataModel="item" />  
+                        </div>
+                        <div class="col-md-6 col-12 td-generic-timeline__row__card__image" >
+                            image
+                            <time-line-card :itemDataModel="item" />  
                         </div>
                     </div>
                   </div>
@@ -32,11 +38,11 @@
           </div>
         </template>
 </Listing>
-
+</div>
 </template>
 
 <script>
-import "../components/TD_timeLine/TD_timelineType.scss"
+import "../components/TD_timeLine/TD_timelineType2.scss"
 import TimeLineCard from './TD_TimeLineCard.vue';
 import Listing from "@/modules/global/components/TD_listing_feature/TD_Listing.vue";
 import { photos } from "@/services";

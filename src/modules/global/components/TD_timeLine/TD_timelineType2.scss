@@ -1,0 +1,112 @@
+/* timeline variables starts*/
+$mobileRowWidth : 90%;
+$titlePosition : (100% - $mobileRowWidth)/2;
+$cardsColumnsCenterPadding : 30px;
+$TimeLinebreakpoints: (
+  'sm':  ( min-width:  320px ),
+  'md': ( min-width:  768px ),
+  'lg':  ( min-width: 1024px ),
+  'xl':  ( min-width: 1366px ),
+  'xxl':  ( min-width: 1920px ),
+)!default;
+/* timeline variables ends*/
+
+/* timeline mixins starts*/
+@mixin respond-to($breakpoint) {
+    @if map-has-key($TimeLinebreakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media screen and #{inspect(map-get($TimeLinebreakpoints, $breakpoint))} {
+          @content;
+        }
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Available breakpoints are: #{map-keys($TimeLinebreakpoints)}.";
+      }
+}
+@mixin addTimelineCenterLine {
+    position: relative;
+    &::before{
+        display: inline-block;
+        content: "";
+        position: absolute;
+        height: 100%;
+        #{$start}: 50%;
+        top: 0;
+        transform: translate(-50% , 0);
+        border-#{$start}: 1px solid grey;
+        @media screen and (max-width : 767px) {
+            #{$start}:0;
+        }
+    }
+}
+@mixin addTimeLineNode {
+    position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border: 10px solid grey;
+        display: inline-block;
+        border-radius: 50%;
+        #{$start}: 50%;
+        transform: translate(-50%, 0);
+        @media screen and (max-width : 767px) {
+            #{$start}: 0;
+            transform: translate( -50% ,  0);
+        }
+}
+/* timeline mixins ends*/
+.td-generic-timeline-wrapper{
+    overflow: hidden;
+    .td-generic-timeline-wrapper__spacer{
+        @include addTimelineCenterLine();
+        @media screen and (max-width:767px) {
+            margin-#{$start}: 12px ;
+        }
+    }
+    .td-generic-timeline{
+        margin-bottom: 4px;
+        .td-generic-timeline__row{
+            position: relative;
+            margin-bottom: 50px;
+            .td-generic-timeline__row__node{
+                color: black;
+                display: inline-block;
+                @include addTimeLineNode();
+            }
+            .td-generic-timeline__row__card{    
+                &.td-generic-timeline__row__card--reverse{
+                    .td-generic-timeline__row__card__article{
+                        @include respond-to('md'){
+                            order: 2;
+                            padding-#{$start}: $cardsColumnsCenterPadding;
+                            padding-#{$end}: 12px;
+                        }
+                        @media screen and (max-width : 767px) {
+                            order: unset;
+                        }
+                    }
+                    .td-generic-timeline__row__card__image{
+                        @include respond-to('md'){
+                        padding-#{$end}: $cardsColumnsCenterPadding;
+                        padding-#{$start}: 12px;
+                        }
+                    }
+                }
+                .td-generic-timeline__row__card__article{
+                    @include respond-to('md'){
+                    padding-#{$end}: $cardsColumnsCenterPadding;
+                    }
+                }
+                .td-generic-timeline__row__card__image{
+                    @include respond-to('md'){
+                    padding-#{$start}: $cardsColumnsCenterPadding;
+                    }
+                }
+                @media screen and (max-width : 767px){
+                    max-width: $mobileRowWidth;
+                    margin: auto;;
+                }
+            }
+        }
+    }
+}

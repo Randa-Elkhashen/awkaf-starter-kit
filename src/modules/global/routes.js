@@ -18,6 +18,11 @@ const routes = [
         component: () => import('./views/TD-timeline-Demo.vue')
     },
     {
+        path: '/tdtimeline2',
+        name: 'tdtimeline2',
+        component: () => import('./views/TD-timeline-Demo2.vue')
+    },
+    {
         path: '/tdLisiting1',
         name: 'tdLisiting1',
         component: () => import('./views/TD-Listing-Demo.vue')
@@ -36,8 +41,7 @@ const routes = [
         path: '/tdgallery',
         name: 'tdgallery',
         component: () => import('./views/TD-Gallery-Demo.vue')
-    },
-
+    }
 ]
 
 
