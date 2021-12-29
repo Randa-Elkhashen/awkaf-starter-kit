@@ -2,7 +2,7 @@
 <Listing
         loader
         :service="getData"
-        class="container" 
+        class="container td-generic-timeline-wrapper" 
       >
         <template v-slot="{ item  , index}">
             <div class="td-generic-timeline">
