@@ -1,6 +1,7 @@
 <template>
   <div class="nap-listing-container">
     <div class="container">
+      <h1 class="title-description">Infinite Scroll Option 2 to pass Props </h1>
       <Listing
         loader
         :service="getData"
