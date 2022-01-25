@@ -1,9 +1,13 @@
 <template>
+<div class="container">
+      <h1 class="title-description">Timeline Type 1 </h1>
+</div>
 <Listing
         loader
         :service="getData"
         class="container td-generic-timeline-wrapper" 
       >
+
         <template v-slot="{ item  , index}">
             <div class="td-generic-timeline">
                 <div class="td-generic-timeline__row">
