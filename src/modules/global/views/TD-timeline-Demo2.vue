@@ -1,4 +1,7 @@
 <template>
+<div class="container">
+<h1 class="title-description">Timeline Type 2 </h1>
+</div>
 <div class="container td-generic-timeline-wrapper td-generic-timeline-wrapper--type2 td-listing-container">
 <Listing
         loader
