@@ -58,14 +58,12 @@ function swapAttributes(el) {
     }
   })
 }
-
 function setLoadListeners(el) {
   el.addEventListener("load", () => {
     setTimeout(() => el.classList.add("loaded"), 100);
   });
   el.addEventListener("error", () => console.log("error"));
 }
-
 function findChild(parent, nodeName) {
   return Array.from(parent.children).find(
       el => el.nodeName === nodeName.toUpperCase()

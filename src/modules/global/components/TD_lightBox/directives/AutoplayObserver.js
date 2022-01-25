@@ -2,7 +2,6 @@ export default {
     mounted: el => {
       // getYoutube ID
       function isYoutubeVideo(url) {
-
         // youtube data
         const youtubeRegex = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
         const ytId = (url.match(youtubeRegex)) ? RegExp.$1 : false;
