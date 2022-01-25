@@ -1,5 +1,6 @@
 <template>
 <div class="container">
+  <h1 class="title-description">Gallery</h1>
   <div class="td-generic-slider">
       <slider key="main-slider"
         class="td-generic-slider__main-slider"
@@ -30,7 +31,6 @@
       </thumb-slider>
   </div>
 </div>
-
 </template>
 <script src="./TD-galleryDemo.js" ></script>
 <style  lang="scss">
