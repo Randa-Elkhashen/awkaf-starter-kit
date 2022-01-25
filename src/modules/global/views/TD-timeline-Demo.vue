@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import "../components/TD_timeLine/TD_timelineType.scss"
+import "../components/TD_timeLine/TD_timelineType1.scss"
 import TimeLineCard from './TD_TimeLineCard.vue';
 import Listing from "@/modules/global/components/TD_listing_feature/TD_Listing.vue";
 import { photos } from "@/services";
