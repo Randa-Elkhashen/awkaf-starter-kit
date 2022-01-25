@@ -13,6 +13,16 @@ const routes = [
         component: () => import('../../views/Home.vue')
     },
     {
+        path: '/lightbox',
+        name: 'lightbox',
+        component: () => import('./views/TD-lightBox-Demo.vue')
+    },
+    {
+        path: '/lightbox2',
+        name: 'lightbox2',
+        component: () => import('./views/TD-lightBox-Demo2.vue')
+    },
+    {
         path: '/tdtimeline',
         name: 'tdtimeline',
         component: () => import('./views/TD-timeline-Demo.vue')
