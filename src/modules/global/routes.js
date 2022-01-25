@@ -8,9 +8,14 @@
 
 const routes = [
     {
-        path: '/tdAnimation',
-        name: 'tdAnimation',
-        component: () => import('./views/TD-ScrollAnimationProvider-Demo.vue')
+        path: '/lightbox',
+        name: 'lightbox',
+        component: () => import('./views/TD-lightBox-Demo.vue')
+    },
+    {
+        path: '/lightbox2',
+        name: 'lightbox2',
+        component: () => import('./views/TD-lightBox-Demo2.vue')
     },
 ]
 

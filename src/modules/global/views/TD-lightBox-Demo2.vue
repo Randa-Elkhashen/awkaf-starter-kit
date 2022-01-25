@@ -18,7 +18,7 @@
             v-for="(image, imageIndex) in items"
             :key="imageIndex"
             @click="index = imageIndex"
-            :style="{ backgroundImage: 'url(' + image + ')' }"
+            :style="{ backgroundImage: 'url(' + image.thumb + ')' }"
           ></div>
       </div>
     </div>
@@ -26,24 +26,20 @@
 
 <script>
 import TDLightBox from "../components/TD_lightBox/TD_LightBox.vue"
-import {photos} from "@/services";
+import images from "@/mocking-data/images.json"
 export default {
-  name: 'TD-Listing-Demo',
+  name: 'TD-Listing-Demo2',
   components : {
       TDLightBox
   },
       data() {
         return {
-          items : [],
+          items : images,
           index : null ,
         }
     },
     mounted() {
-      photos.getAlbumById(1)
-     .then(res =>{
-       this.items = res.data.map(imageItem => imageItem.url)
-       console.log(this.items)
-     }  )
+
     },
 
 }
