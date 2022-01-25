@@ -1,18 +1,16 @@
 
 // A map of breakpoints.
+
 $breakpoints: (
   phone-sm: 420px,
   phone: 767px,
   tablet-lg: 1024px,
   desktop: 1202px
 );
-
 // Breakpoints SCSS
 @mixin breakpoint($breakpoint) {
-
   // If the breakpoint exists in the map.
 	@if map-has-key($breakpoints, $breakpoint) {
-	
     // Get the breakpoint value.
     $breakpoint-value: map-get($breakpoints, $breakpoint);
 	
@@ -22,7 +20,6 @@ $breakpoints: (
 		}
 	} 
 }
-
 .cool-lightbox {
   position: fixed; 
   left: 0;
@@ -540,7 +537,6 @@ $breakpoints: (
     }
   }
 }
-
 .cool-lightbox-toolbar {
   position: absolute;
   top: 0;
@@ -585,7 +581,6 @@ $breakpoints: (
     }
   }
 }
-
 .cool-lightbox-caption {
   bottom: 0;
   color: #eee;
@@ -633,14 +628,12 @@ $breakpoints: (
     }
   }
 }
-
 .cool-lightbox-modal-enter-active, .cool-lightbox-modal-leave-active {
   transition: opacity .35s
 }
 .cool-lightbox-modal-enter, .cool-lightbox-modal-leave-to {
   opacity: 0
 }
-
 .cool-lightbox-slide-change-enter-active, .cool-lightbox-slide-change-leave-active {
   transition: opacity 0.27s;
 }
@@ -648,7 +641,6 @@ $breakpoints: (
 .cool-lightbox-slide-change-enter, .cool-lightbox-slide-change-leave-to  {
   opacity: 0;
 }
-
 .cool-lightbox-loading-wrapper {
   top: 50%;
   left: 50%;
@@ -667,7 +659,6 @@ $breakpoints: (
     z-index: 500;
   }
 }
-
 @keyframes cool-lightbox-rotate {
   100% {
     transform: rotate(360deg);
