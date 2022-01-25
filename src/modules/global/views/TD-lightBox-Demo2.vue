@@ -1,6 +1,6 @@
 <template>
-    <h1>hello from lightbox</h1>
     <div class="container">
+    <h1 class="title-description">Lightbox Images and Videos with Caption</h1>
         <TDLightBox 
           :items="items" 
           :index="index"
