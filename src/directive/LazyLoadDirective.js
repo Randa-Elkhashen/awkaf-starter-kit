@@ -9,7 +9,7 @@ then add the binded img to :data-url and make a dummy img in img src
     <img :data-url="item.thumbnailUrl" src="../assets/spinner.gif" alt="card image" />
 </span>
 
-**********/
+**********/ 
 
 
 export default {

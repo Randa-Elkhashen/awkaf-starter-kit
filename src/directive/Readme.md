@@ -11,10 +11,10 @@ export default {
     lazyload: LazyLoadDirective
   },
 };
-```
+``` 
 
 As global 
-
+ 
 ```
 import App from './App.vue'
 import LazyLoadDirective from "@/directive/LazyLoadDirective"
