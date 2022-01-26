@@ -11,6 +11,8 @@
   --dark--grey-color: #554c2e;
   --primary-bg : white;
   --primary-color : #F16100; 
+  --primary-body-color : black; 
+  --primary-body-title-color : #F16100; 
   --secondary-bg:#F16100;
 }
 .invert-color {
@@ -21,6 +23,8 @@
     --dark--grey-color: #000000;
     --primary-bg : #F16100;
     --primary-color :black; 
+    --primary-body-color : white; 
+    --primary-body-title-color : white; 
     --secondary-bg:black;
 
   footer .footerContainer .logoContainer__logo img {
@@ -72,6 +76,7 @@
 /* Colors*/
 $primary-bg : var(--primary-bg);
 $primary-color : var(--primary-color);
+$primary-title-color : var(--primary-body-title-color);
 $secondary-bg : var(--secondary-bg);
 /* Colors*/
 
