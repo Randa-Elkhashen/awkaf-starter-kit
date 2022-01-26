@@ -1,31 +1,31 @@
-const attributes = ['media', 'srcset', 'sizes', 'src'];
+const attributes = ["media", "srcset", "sizes", "src"];
 export default {
-  mounted: el => {
+  mounted: (el) => {
     function loadImage() {
-      const imageElement = findChild(el, 'img')
-      const pictureElement = findChild(el, 'picture')
+      const imageElement = findChild(el, "img");
+      const pictureElement = findChild(el, "picture");
       if (imageElement) {
-        setLoadListeners(imageElement)
-        swapAttributes(imageElement)
+        setLoadListeners(imageElement);
+        swapAttributes(imageElement);
       } else if (pictureElement) {
-        const pictureImg = findChild(pictureElement, 'img');
+        const pictureImg = findChild(pictureElement, "img");
         const pictureSources = Array.from(pictureElement.children).filter(
-            child => child.nodeName === "SOURCE"
+          (child) => child.nodeName === "SOURCE"
         );
         if (pictureImg) {
-          setLoadListeners(pictureImg)
+          setLoadListeners(pictureImg);
           if (pictureSources.length) {
-            pictureSources.forEach(source => {
-              swapAttributes(source)
-            })
+            pictureSources.forEach((source) => {
+              swapAttributes(source);
+            });
           }
-          swapAttributes(pictureImg)
+          swapAttributes(pictureImg);
         }
       }
     }
 
     function handleIntersect(entries, observer) {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           loadImage();
           observer.unobserve(el);
@@ -36,7 +36,7 @@ export default {
     function createObserver() {
       const options = {
         root: null,
-        threshold: "0"
+        threshold: "0",
       };
       const observer = new IntersectionObserver(handleIntersect, options);
       observer.observe(el);
@@ -46,7 +46,7 @@ export default {
     } else {
       loadImage();
     }
-  }
+  },
 };
 
 function swapAttributes(el) {
@@ -54,9 +54,9 @@ function swapAttributes(el) {
     const dataAttribute = el.dataset[attribute];
     if (dataAttribute) {
       el[attribute] = dataAttribute;
-      el.removeAttribute(`data-${attribute}`)
+      el.removeAttribute(`data-${attribute}`);
     }
-  })
+  });
 }
 function setLoadListeners(el) {
   el.addEventListener("load", () => {
@@ -66,6 +66,6 @@ function setLoadListeners(el) {
 }
 function findChild(parent, nodeName) {
   return Array.from(parent.children).find(
-      el => el.nodeName === nodeName.toUpperCase()
+    (el) => el.nodeName === nodeName.toUpperCase()
   );
 }

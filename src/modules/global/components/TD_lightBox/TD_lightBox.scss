@@ -1,27 +1,26 @@
-
 // A map of breakpoints.
 
 $breakpoints: (
   phone-sm: 420px,
   phone: 767px,
   tablet-lg: 1024px,
-  desktop: 1202px
+  desktop: 1202px,
 );
 // Breakpoints SCSS
 @mixin breakpoint($breakpoint) {
   // If the breakpoint exists in the map.
-	@if map-has-key($breakpoints, $breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
     // Get the breakpoint value.
     $breakpoint-value: map-get($breakpoints, $breakpoint);
-	
-	  //Build the media query
-		@media (min-width: $breakpoint-value) {
-			@content;
-		}
-	} 
+
+    //Build the media query
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
 }
 .cool-lightbox {
-  position: fixed; 
+  position: fixed;
   left: 0;
   bottom: 0;
   top: 0;
@@ -29,7 +28,7 @@ $breakpoints: (
   align-items: center;
   justify-content: center;
   right: 0;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   .cool-lightbox-zoom {
     position: absolute;
     bottom: 15px;
@@ -41,16 +40,16 @@ $breakpoints: (
     padding: 0px 12px;
     align-items: center;
     transform: translateX(-50%);
-    input[type=range] {
+    input[type="range"] {
       -webkit-appearance: none;
       margin: 10px 0;
       width: 105px;
       background: transparent;
     }
-    input[type=range]:focus {
+    input[type="range"]:focus {
       outline: none;
     }
-    input[type=range]::-webkit-slider-runnable-track {
+    input[type="range"]::-webkit-slider-runnable-track {
       width: 100%;
       height: 4px;
       cursor: pointer;
@@ -60,7 +59,7 @@ $breakpoints: (
       border-radius: 11px;
       border: 0px solid #000000;
     }
-    input[type=range]::-webkit-slider-thumb {
+    input[type="range"]::-webkit-slider-thumb {
       box-shadow: 1px 1px 1px #000000;
       border: 1px solid #000000;
       height: 12px;
@@ -71,10 +70,10 @@ $breakpoints: (
       -webkit-appearance: none;
       margin-top: -4.5px;
     }
-    input[type=range]:focus::-webkit-slider-runnable-track {
+    input[type="range"]:focus::-webkit-slider-runnable-track {
       background: #e6e6e6;
     }
-    input[type=range]::-moz-range-track {
+    input[type="range"]::-moz-range-track {
       width: 100%;
       height: 4px;
       cursor: pointer;
@@ -84,7 +83,7 @@ $breakpoints: (
       border-radius: 11px;
       border: 0px solid #000000;
     }
-    input[type=range]::-moz-range-thumb {
+    input[type="range"]::-moz-range-thumb {
       box-shadow: 1px 1px 1px #000000;
       border: 1px solid #000000;
       height: 12px;
@@ -93,7 +92,7 @@ $breakpoints: (
       background: #ffffff;
       cursor: pointer;
     }
-    input[type=range]::-ms-track {
+    input[type="range"]::-ms-track {
       width: 100%;
       height: 4px;
       cursor: pointer;
@@ -102,19 +101,19 @@ $breakpoints: (
       border-color: transparent;
       color: transparent;
     }
-    input[type=range]::-ms-fill-lower {
+    input[type="range"]::-ms-fill-lower {
       background: #e6e6e6;
       border: 0px solid #000000;
       border-radius: 22px;
       box-shadow: 0px 0px 0px #000000;
     }
-    input[type=range]::-ms-fill-upper {
+    input[type="range"]::-ms-fill-upper {
       background: #e6e6e6;
       border: 0px solid #000000;
       border-radius: 22px;
       box-shadow: 0px 0px 0px #000000;
     }
-    input[type=range]::-ms-thumb {
+    input[type="range"]::-ms-thumb {
       box-shadow: 1px 1px 1px #000000;
       border: 1px solid #000000;
       height: 12px;
@@ -123,16 +122,16 @@ $breakpoints: (
       background: #ffffff;
       cursor: pointer;
     }
-    input[type=range]:focus::-ms-fill-lower {
+    input[type="range"]:focus::-ms-fill-lower {
       background: #e6e6e6;
     }
-    input[type=range]:focus::-ms-fill-upper {
+    input[type="range"]:focus::-ms-fill-upper {
       background: #e6e6e6;
     }
     .cool-lightbox-zoom__icon {
       height: 15px;
       width: 15px;
-      color: #FFF;
+      color: #fff;
       &:first-of-type {
         margin-right: 10px;
       }
@@ -154,7 +153,7 @@ $breakpoints: (
     scrollbar-width: thin;
     scrollbar-color: #fa4242 rgba(175, 175, 175, 0.9);
     @include breakpoint(phone) {
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     &::-webkit-scrollbar {
       width: 6px;
@@ -207,7 +206,7 @@ $breakpoints: (
         height: 75px;
         position: relative;
         @include breakpoint(phone) {
-          width: calc(100%/2 - 2px);
+          width: calc(100% / 2 - 2px);
         }
         &:before {
           top: 0;
@@ -215,9 +214,9 @@ $breakpoints: (
           right: 0;
           bottom: 0;
           opacity: 0;
-          content: '';
+          content: "";
           z-index: 150;
-          transition: all .3s ease;
+          transition: all 0.3s ease;
           position: absolute;
           visibility: hidden;
           border: 3px solid #fa4242;
@@ -235,23 +234,24 @@ $breakpoints: (
             left: 50%;
             width: 25px;
             height: 25px;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             path {
-              fill: #FFF;
+              fill: #fff;
             }
           }
           &:after {
-            content: '';
+            content: "";
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             z-index: 50;
             position: absolute;
-            background: rgba(0,0,0, 0.6);
+            background: rgba(0, 0, 0, 0.6);
           }
         }
-        &.active, &:hover {
+        &.active,
+        &:hover {
           &:before {
             opacity: 1;
             visibility: visible;
@@ -270,7 +270,7 @@ $breakpoints: (
     overflow: hidden;
     transition: none;
     @include breakpoint(phone) {
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
   .cool-lightbox__progressbar {
@@ -286,14 +286,15 @@ $breakpoints: (
     display: block;
   }
   &.cool-lightbox--is-swipping {
-    cursor: -webkit-grabbing; 
+    cursor: -webkit-grabbing;
     cursor: grabbing;
     iframe {
       pointer-events: none;
     }
     .cool-lightbox__slide {
       transition: none;
-      &.cool-lightbox__slide--hide, &.cool-lightbox__slide--hide {
+      &.cool-lightbox__slide--hide,
+      &.cool-lightbox__slide--hide {
         display: flex;
         z-index: 50;
       }
@@ -319,7 +320,7 @@ $breakpoints: (
         cursor: move; /* fallback if grab cursor is unsupported */
         cursor: grab;
         cursor: -moz-grab;
-        cursor: -webkit-grab; 
+        cursor: -webkit-grab;
       }
     }
     .cool-lightbox-caption {
@@ -391,7 +392,8 @@ $breakpoints: (
     outline: none;
   }
   svg {
-    path, rect {
+    path,
+    rect {
       fill: currentColor;
     }
   }
@@ -401,11 +403,11 @@ $breakpoints: (
     opacity: 1;
     z-index: 800;
     color: #ccc;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     position: absolute;
     top: calc(50% - 50px);
     width: 54px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     visibility: visible;
     @include breakpoint(phone) {
       width: 70px;
@@ -423,7 +425,7 @@ $breakpoints: (
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(30,30,30,.6);
+      background: rgba(30, 30, 30, 0.6);
       > svg {
         width: 100%;
         height: 100%;
@@ -477,7 +479,7 @@ $breakpoints: (
         position: relative;
         height: 100%;
         opacity: 0.4;
-        transition: opacity .3s linear;
+        transition: opacity 0.3s linear;
         &.cool-lightbox__slide--current {
           opacity: 1;
         }
@@ -497,7 +499,7 @@ $breakpoints: (
     &:last-of-type {
       margin-right: 0;
     }
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
     &.cool-lightbox__slide--current {
       display: flex;
     }
@@ -510,7 +512,7 @@ $breakpoints: (
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       transform: translate3d(-50%, -50%, 0px) scale3d(1, 1, 1);
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       display: flex;
     }
     img {
@@ -521,9 +523,9 @@ $breakpoints: (
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       -ms-transform: translateZ(0);
-      -webkit-transform: translateZ(0); 
+      -webkit-transform: translateZ(0);
       transform: translateZ(0);
-      box-shadow: 0 0 1.5rem rgba(0,0,0,.45);
+      box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.45);
     }
 
     picture {
@@ -543,14 +545,14 @@ $breakpoints: (
   right: 0;
   opacity: 1;
   display: flex;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   visibility: visible;
   &.hidden {
     opacity: 0;
     visibility: hidden;
   }
   .cool-lightbox-toolbar__btn {
-    background: rgba(30,30,30,.6);
+    background: rgba(30, 30, 30, 0.6);
     border: 0;
     border-radius: 0;
     box-shadow: none;
@@ -561,7 +563,7 @@ $breakpoints: (
     margin: 0;
     padding: 9px;
     position: relative;
-    transition: color .2s;
+    transition: color 0.2s;
     vertical-align: top;
     visibility: inherit;
     width: 40px;
@@ -577,7 +579,7 @@ $breakpoints: (
       height: 100%;
     }
     &:hover {
-      color: #FFFFFF;
+      color: #ffffff;
     }
   }
 }
@@ -594,9 +596,18 @@ $breakpoints: (
   text-align: center;
   direction: ltr;
   position: absolute;
-  transition: opacity .25s ease,visibility 0s ease .25s;
+  transition: opacity 0.25s ease, visibility 0s ease 0.25s;
   z-index: 99997;
-  background: linear-gradient(0deg,rgba(0,0,0,.75) 0,rgba(0,0,0,.3) 50%,rgba(0,0,0,.15) 65%,rgba(0,0,0,.075) 75.5%,rgba(0,0,0,.037) 82.85%,rgba(0,0,0,.019) 88%,transparent);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.75) 0,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.15) 65%,
+    rgba(0, 0, 0, 0.075) 75.5%,
+    rgba(0, 0, 0, 0.037) 82.85%,
+    rgba(0, 0, 0, 0.019) 88%,
+    transparent
+  );
   @include breakpoint(phone) {
     padding: 22px 30px 23px 30px;
   }
@@ -628,17 +639,21 @@ $breakpoints: (
     }
   }
 }
-.cool-lightbox-modal-enter-active, .cool-lightbox-modal-leave-active {
-  transition: opacity .35s
+.cool-lightbox-modal-enter-active,
+.cool-lightbox-modal-leave-active {
+  transition: opacity 0.35s;
 }
-.cool-lightbox-modal-enter, .cool-lightbox-modal-leave-to {
-  opacity: 0
+.cool-lightbox-modal-enter,
+.cool-lightbox-modal-leave-to {
+  opacity: 0;
 }
-.cool-lightbox-slide-change-enter-active, .cool-lightbox-slide-change-leave-active {
+.cool-lightbox-slide-change-enter-active,
+.cool-lightbox-slide-change-leave-active {
   transition: opacity 0.27s;
 }
 
-.cool-lightbox-slide-change-enter, .cool-lightbox-slide-change-leave-to  {
+.cool-lightbox-slide-change-enter,
+.cool-lightbox-slide-change-leave-to {
   opacity: 0;
 }
 .cool-lightbox-loading-wrapper {
@@ -653,7 +668,7 @@ $breakpoints: (
     border-bottom-color: #fff;
     border-radius: 50%;
     height: 50px;
-    opacity: .7;
+    opacity: 0.7;
     padding: 0;
     width: 50px;
     z-index: 500;

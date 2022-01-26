@@ -50,7 +50,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .images-wrapper{
-  background-color: wheat;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;

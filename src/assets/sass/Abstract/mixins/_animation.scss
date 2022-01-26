@@ -17,8 +17,8 @@
 }
 @keyframes from-top-zoom-in {
     0% {transform: translate(0 , -2em);z-index: 1000;}
-    33% {transform: translate(0 , 2em);z-index: 1000;}
-    66% {transform: scale(1.2) translate(2em , 1em); z-index: 1000;}
+    33% {margin-bottom: 1.5em; transform: translate(0 , 2em);z-index: 1000;}
+    66% { transform: scale(1.2) translate(2em , 1em); z-index: 1000;  }
     100% {transform: scale(1) translate(0)}
 }
 @mixin apply-animation($animation , $duration) {

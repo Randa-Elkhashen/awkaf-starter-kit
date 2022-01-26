@@ -18,4 +18,3 @@
 ## For API reference
 
 - <https://vue-cool-lightbox.lucaspulliese.com/>
-

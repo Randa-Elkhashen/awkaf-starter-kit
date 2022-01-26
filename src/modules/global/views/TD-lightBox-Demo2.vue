@@ -26,7 +26,7 @@
 
 <script>
 import TDLightBox from "../components/TD_lightBox/TD_LightBox.vue"
-import images from "@/mocking-data/images.json"
+import images from "@/mocking-data/images-lightbox.json"
 export default {
   name: 'TD-Listing-Demo2',
   components : {
@@ -46,7 +46,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .images-wrapper{
-  background-color: wheat;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
