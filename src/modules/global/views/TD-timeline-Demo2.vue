@@ -8,6 +8,7 @@
         :service="getData"
         class="td-generic-timeline-wrapper__spacer" 
       >
+      
         <template v-slot="{ item  , index}">
             <div class="td-generic-timeline">
                 <div class="td-generic-timeline__row">
@@ -74,3 +75,5 @@ export default {
   },
 }
 </script>
+
+

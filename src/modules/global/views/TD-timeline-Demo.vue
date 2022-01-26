@@ -25,6 +25,7 @@
                     </div>
                   </div>
                 </div>
+                
             </div>
         </template>
         <template v-slot:loader>
@@ -58,6 +59,7 @@ export default {
         return {
             index : 1 ,
         }
+
   },
   methods : {
     getData () {
@@ -70,3 +72,5 @@ export default {
   },
 }
 </script>
+
+
