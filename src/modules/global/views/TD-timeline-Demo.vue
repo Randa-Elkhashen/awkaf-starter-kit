@@ -25,6 +25,7 @@
                     </div>
                   </div>
                 </div>
+                
             </div>
         </template>
         <template v-slot:loader>
@@ -41,7 +42,7 @@
 
 <script>
 import "../components/TD_timeLine/TD_timelineType1.scss"
-import TimeLineCard from './TD_TimeLineCard.vue';
+import TimeLineCard from '@/modules/global/components/TD_genericCard/TD_genericCard.vue';
 import Listing from "@/modules/global/components/TD_listing_feature/TD_Listing.vue";
 import { photos } from "@/services";
 
@@ -58,6 +59,7 @@ export default {
         return {
             index : 1 ,
         }
+
   },
   methods : {
     getData () {
@@ -70,3 +72,5 @@ export default {
   },
 }
 </script>
+
+
