@@ -1,12 +1,4 @@
-body {
-    background-color: var(--main-bg);
-}
-
-.td-listing-container {
-    padding: 40px 0;
-    div[class*="col-"] {
-        margin-bottom: 30px;
-        .td-generic-card {
+.td-generic-card {
             background: #fff;
             border: 1px solid lightgray;
             display: flex;
@@ -157,6 +149,4 @@ body {
                     margin: auto;
                 }
             }
-        }
-    }
 }
