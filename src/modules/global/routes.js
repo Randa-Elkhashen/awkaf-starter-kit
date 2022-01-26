@@ -12,6 +12,16 @@ const routes = [
         name: 'home',
         component: () => import('../../views/Home.vue')
     },
+    {
+        path: '/lightbox',
+        name: 'lighbox1',
+        component: () => import('./views/TD-lightBox-Demo.vue')
+    },
+    {
+        path: '/lighbox2',
+        name: 'lighbox2',
+        component: () => import('./views/TD-lightBox-Demo2.vue')
+    },
 ]
 
 export default routes
