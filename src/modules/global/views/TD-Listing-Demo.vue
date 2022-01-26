@@ -45,3 +45,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.td-listing-container div[class*="col-"] {
+        margin-bottom: 30px;
+}
+</style>
