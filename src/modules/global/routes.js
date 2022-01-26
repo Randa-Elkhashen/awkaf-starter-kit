@@ -8,14 +8,9 @@
 
 const routes = [
     {
-        path: '/lightbox',
-        name: 'lightbox',
-        component: () => import('./views/TD-lightBox-Demo.vue')
-    },
-    {
-        path: '/lightbox2',
-        name: 'lightbox2',
-        component: () => import('./views/TD-lightBox-Demo2.vue')
+        path: '/',
+        name: 'home',
+        component: () => import('../../views/Home.vue')
     },
 ]
 
