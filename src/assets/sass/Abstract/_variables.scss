@@ -3,60 +3,26 @@
 /* built in modules*/
 
 :root {
-    --fontModifier: 1;
-    --blue-background-color: #28cede;
-  --black-nav-menu-color: #051d40;
-  --body-background-color: #fffaf2;
-  --font-modifier: 1;
-  --main-bg: #fffbf2;
-  --blue: #051d40;
-  --gold: #c19508;
-  --subtitle-black: #131313;
-  --dark--grey-color: #554c2e;
-  --baby-blue: #91d0d6;
-  --copyRights-bg: #1036a5;
-  --orangeColor: #ff5643;
-  --whiteColor: #fff;
-  --greyColor: #e3e3e3;
-  --darkGreyColor: #656565;
+  --fontModifier: 1;
   --terquois: #2accde;
-  --anchor: #2895de;
-  --greyAttached: #a2a9c8;
-  --greyBorder: #dbdbdb;
-  --tabsGreyBg: #dcd9d1;
-  --tabDetailsBg: #f0ebe5;
-  --tabsTitles: #4d4d4d;
-  --tabsHover: #f0ebe4;
-  --black: #000000;
-  --cardBorder: #e4e9f2;
-  --yellowColor: #f9de6d;
-  --cardText: #011727;
+  --whiteColor: #fff;
+  --copyRights-bg: #1036a5;
+  --black-nav-menu-color: #051d40;
+  --dark--grey-color: #554c2e;
+  --primary-bg : white;
+  --primary-color : #F16100; 
+  --secondary-bg:#F16100;
 }
-
 .invert-color {
     --terquois: #000;
+    --whiteColor: #000;
     --copyRights-bg: #373737;
-    --gold: #373737;
-    /****************/
-    --blue-background-color: #373737;
     --black-nav-menu-color: #000000;
-    --body-background-color: #ffffff;
     --dark--grey-color: #000000;
-    --subtitle-black: #000000;
-    --cardText: #011727;
-    --orangeColor: #000000;
-    /*--primary-second-color: #f5f7f8;
-    --primary-third-color: #f5f7f8;
-    --primary-fourth-color: #f5f7f8;
-    --primary-fifth-color: #f5f7f8;*/
-  /* Custom filter for specific icons */
-  img {
-    filter: grayscale(1.5);
-  }
-  .header .navbar-brand img,
-  footer .footerContainer .logoContainer__logo img {
-    filter: grayscale(1);
-  }
+    --primary-bg : #F16100;
+    --primary-color :black; 
+    --secondary-bg:black;
+
   footer .footerContainer .logoContainer__logo img {
     filter: greyscale(1) !important;
   }
@@ -91,12 +57,6 @@
     background: #fff;
     color: #000;
   }
-/*  .article__wrapper__img {
-    filter: grayscale(1);
-  }*/
-  /*.imgCard__wrapper {
-    filter: grayscale(1);
-  }*/
   .downloadCardWrapper .downloadCard__icon {
     background: #000;
 
@@ -107,10 +67,13 @@
   .searchBox__wrapper > i {
     color: #000;
   }
- /* .coverImg {
-    filter: grayscale(1);
-  }*/
+
 }
+/* Colors*/
+$primary-bg : var(--primary-bg);
+$primary-color : var(--primary-color);
+$secondary-bg : var(--secondary-bg);
+/* Colors*/
 
 /***Responsive variables***/
 $breakpoints: (
