@@ -13,4 +13,5 @@ body{
 .title-description{
     color: $primary-title-color;
     text-align: start;
+    @include apply-animation('scale-animation' , 1.5s);
 }
