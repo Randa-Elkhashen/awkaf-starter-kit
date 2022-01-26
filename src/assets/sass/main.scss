@@ -5,12 +5,12 @@
 body{
     font-family: $font-family;
     font-weight: normal;
-    background-color: $primary-title-color;
+    background-color: $primary-bg;
 }
 /*Import Modules*/
 @import "../../modules/global/styles/main.scss";
 
 .title-description{
-    color: $primary-color;
+    color: $primary-title-color;
     text-align: start;
 }
