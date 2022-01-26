@@ -19,11 +19,9 @@
                     :class="[ index%2  ? 'td-generic-timeline__row__card--reverse' : '']"
                     >
                         <div class="col-md-6 col-12 td-generic-timeline__row__card__article" >
-                            article
                             <time-line-card :itemDataModel="item" />  
                         </div>
                         <div class="col-md-6 col-12 td-generic-timeline__row__card__image" >
-                            image
                             <time-line-card :itemDataModel="item" />  
                         </div>
                     </div>
