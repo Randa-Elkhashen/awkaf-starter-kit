@@ -2,7 +2,7 @@
   <div>
       <div class="container">
           <div class="center-logo">
-            <h1>FE Library Components</h1>
+            <h1 class="title-description">FE Library</h1>
             <img src="../assets/images/banner.png" alt="">
           </div>
       </div>
