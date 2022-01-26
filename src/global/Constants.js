@@ -12,3 +12,4 @@
         INIT_VALUE : false
     }
 }
+
