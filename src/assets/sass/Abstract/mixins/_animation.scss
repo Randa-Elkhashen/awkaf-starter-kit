@@ -1,0 +1,31 @@
+/*animation mixins*/
+@keyframes scale-animation {
+    0% {transform: scale(1.5)}
+    33% {transform: scale(0.7)}
+    66% {transform: scale(1.5)}
+    100% {transform: scale(1)}
+}
+@keyframes translate-animation {
+    0% {transform: translate(-5em , 0)}
+    50% {transform: translate(5em , 0)}
+    100% {transform: translate(0)}
+}
+@keyframes from-top {
+    0% {transform: translate(0 , 2em)}
+    50% {transform: translate(0 , -2em)}
+    100% {transform: translate(0)}
+}
+@keyframes from-top-zoom-in {
+    0% {transform: translate(0 , -2em);z-index: 1000;}
+    33% {transform: translate(0 , 2em);z-index: 1000;}
+    66% {transform: scale(1.2) translate(2em , 1em); z-index: 1000;}
+    100% {transform: scale(1) translate(0)}
+}
+@mixin apply-animation($animation , $duration) {
+    animation-name: #{$animation};
+    animation-duration: #{$duration};
+    animation-fill-mode: forwards;
+    transform-origin: center center;
+    animation-timing-function: ease-in-out;
+}
+/*animation mixins ends*/
