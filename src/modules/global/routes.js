@@ -8,14 +8,14 @@
 
 const routes = [
     {
-        path: '/tdLisiting',
-        name: 'tdLisiting',
-        component: () => import('./views/TD-Listing-Demo.vue')
-    },
-    {
         path: '/',
         name: 'home',
         component: () => import('../../views/Home.vue')
+    },
+    {
+        path: '/tdLisiting1',
+        name: 'tdLisiting1',
+        component: () => import('./views/TD-Listing-Demo.vue')
     },
     {
         path: '/tdLisiting2',
