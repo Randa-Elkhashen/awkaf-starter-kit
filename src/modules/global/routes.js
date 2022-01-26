@@ -13,6 +13,11 @@ const routes = [
         component: () => import('./views/TD-Listing-Demo.vue')
     },
     {
+        path: '/',
+        name: 'home',
+        component: () => import('../../views/Home.vue')
+    },
+    {
         path: '/tdLisiting2',
         name: 'tdLisiting2',
         component: () => import('./views/TD-Listing-Demo2.vue')
