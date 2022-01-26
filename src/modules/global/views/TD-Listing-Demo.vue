@@ -1,7 +1,7 @@
 <template>
   <div class="td-listing-container">
     <div class="container">
-      <h1 class="title-description">Infinite Scroll Option 2 to pass Props</h1>
+      <h1 class="title-description">Infinite Scroll Option 1 to pass Props</h1>
       <Listing loader :service="getData" class="row">
         <template v-slot="{ item }">
           <div class="col-md-4">
