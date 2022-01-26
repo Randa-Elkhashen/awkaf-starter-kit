@@ -12,11 +12,12 @@
     >
       <template v-slot="{ item, index }">
         <div class="td-generic-timeline">
-          <div class="td-generic-timeline__row">
-            <div data-aos="zoom-in-up">
+          <div class="td-generic-timeline__row" 
+          data-aos-anchor-placement="top-center" data-aos="highlight" 
+          data-aos-offset="0" data-aos-duration="1000">
+            <div data-aos="zoom-in" data-aos-delay="500">
               <span class="td-generic-timeline__row__node"></span>
             </div>
-
             <div data-aos="fade-up" data-aos-delay="200">
               <div
                 class="td-generic-timeline__row__card  row justify-content-between"
@@ -83,3 +84,4 @@ export default {
   },
 };
 </script>
+                                        
