@@ -14,7 +14,12 @@ body{
 @import "../../modules/global/styles/main.scss";
 
 .title-description{
+    &.title-description--center{
+    @include apply-animation('scale-animation' , 1s);
+    }
     color: $primary-title-color;
     text-align: start;
-    @include apply-animation('scale-animation' , 1.5s);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    @include apply-animation('from-top-zoom-in' , 1s);
 }
