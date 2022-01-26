@@ -1,10 +1,10 @@
 <template>
-  <Header />
+<Header />
   <router-view></router-view>
 </template>
 
 <script>
-import Header from '../src/modules/global/components/TD_Header/TD_Header.vue'
+import Header from "@/modules/global/components/TD_Header/TD_Header.vue"
 export default {
   name: 'App',
   components : {
@@ -12,6 +12,7 @@ export default {
   }
 }
 </script>
+
 
 <style lanf="scss">
   .body {

@@ -27,7 +27,8 @@ module.exports = {
           @import './src/assets/sass/icomoon/style.scss';
           @import "./src/assets/sass/Abstract/_mixins.scss";
           @import "./src/assets/sass/Abstract/_variables.scss";
-        `
+          
+          `
       }
     }
   },

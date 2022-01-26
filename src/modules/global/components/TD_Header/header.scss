@@ -41,6 +41,9 @@ $headerlogoColor:var(--header-logo-color);
   color: $headerColor;
   border-bottom: 1px solid $headerColor;
   padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
   &.header--is-ready {
       .header__content__nav-menu {
           .navbar-nav {
@@ -448,6 +451,9 @@ $headerlogoColor:var(--header-logo-color);
           }
       }
   }
+}
+.header-top-spacer{
+    padding-top: 87px;
 }
 @media(max-width:1024px) {
     .header {
