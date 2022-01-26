@@ -3,7 +3,7 @@
       <div class="container">
           <div class="center-logo">
             <h1>FE Library Components</h1>
-            <img src="../assets/logo.png" alt="">
+            <img src="../assets/images/banner.png" alt="">
           </div>
       </div>
   </div>
@@ -30,7 +30,7 @@ export default {
         align-items: center;
         height: 400px;
         h1 {
-            color: var(--terquois);
+            color: $primary-color;
         }
     }
 </style>
