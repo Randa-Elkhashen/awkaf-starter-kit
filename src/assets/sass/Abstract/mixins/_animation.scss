@@ -1,0 +1,15 @@
+/*animation mixins*/
+@keyframes scale-animation {
+    0% {transform: scale(1.5)}
+    33% {transform: scale(0.7)}
+    66% {transform: scale(1.5)}
+    100% {transform: scale(1)}
+}
+@mixin apply-animation($animation , $duration) {
+    animation-name: #{$animation};
+    animation-duration: #{$duration};
+    animation-fill-mode: forwards;
+    transform-origin: center center;
+    animation-timing-function: ease-in-out;
+}
+/*animation mixins ends*/

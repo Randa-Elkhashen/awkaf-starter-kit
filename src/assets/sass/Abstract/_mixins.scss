@@ -1,4 +1,5 @@
 
+@import "./mixins/animation";
 @mixin mq($width, $type: max) {
     @if map_has_key($breakpoints, $width){
         $width: map_get($breakpoints, $width);
