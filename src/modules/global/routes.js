@@ -14,12 +14,12 @@ const routes = [
     },
     {
         path: '/lightbox',
-        name: 'lighbox1',
+        name: 'TD-Listing-Demo1',
         component: () => import('./views/TD-lightBox-Demo.vue')
     },
     {
-        path: '/lighbox2',
-        name: 'lighbox2',
+        path: '/lightbox2',
+        name: 'TD-Listing-Demo2',
         component: () => import('./views/TD-lightBox-Demo2.vue')
     },
 ]
