@@ -1,4 +1,6 @@
-
+/*variables*/
+$errorColor:red;
+$requiredColor : $errorColor;
 .login-container{
     display: block;
     max-width: 400px;
@@ -70,13 +72,18 @@
 
       }
       .td-field-group__validate-message{
-          
-        &.td-field-group__validate-message--error{
-
-        }
+        display: inline-block;
+        color: $errorColor;
+        font-size: 0.8em;
       }
     &.td-field-group--required{
-
+      .td-field-group__label{
+        &::after{
+          content: ' *';
+          color: $requiredColor;
+          vertical-align: super;
+        }
+      }
     }
   }
   .new-member{
