@@ -43,7 +43,7 @@
 import "./login.scss";
 import {Form as VeeForm} from "vee-validate"
 import {authModuleService} from '@/services';
-import useTDLogin from "./userTDLogin";
+import useTDLogin from "@/modules/auth/components/TD_login/userTDLogin";
 export default {
   name: 'Login',
   components:{

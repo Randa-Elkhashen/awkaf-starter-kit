@@ -1,7 +1,7 @@
 /*variables*/
 $errorColor:red;
 $requiredColor : $errorColor;
-.login-container{
+.login-container , .forgot-password-container{
     display: block;
     max-width: 400px;
     margin: auto;
@@ -47,6 +47,7 @@ $requiredColor : $errorColor;
     list-style: none;
     padding: 0;
     margin-bottom: 0;
+    font-size: 0.8em;
     .form-card__other-options__option{
       color: #0066c0;
       transition: all 0.2s ease-in-out;
