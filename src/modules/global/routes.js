@@ -8,11 +8,10 @@
 
 const routes = [
     {
-        path: '/path/here',
-        name: 'Name',
-        component: () => import('path/to/component')
+        path: '/',
+        name: 'home',
+        component: () => import('../../views/Home.vue')
     },
-
 ]
 
 export default routes

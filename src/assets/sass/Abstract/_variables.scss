@@ -3,8 +3,83 @@
 /* built in modules*/
 
 :root {
-    --fontModifier: 1;
+  --fontModifier: 1;
+  --terquois: #2accde;
+  --whiteColor: #fff;
+  --copyRights-bg: #1036a5;
+  --black-nav-menu-color: #051d40;
+  --dark--grey-color: #554c2e;
+  --primary-bg : #e7e7e7;
+  --primary-color : #F16100; 
+  --primary-body-color : black; 
+  --primary-body-title-color : #F16100; 
+  --secondary-bg:#F16100;
 }
+.invert-color {
+    --terquois: #000;
+    --whiteColor: #000;
+    --copyRights-bg: #373737;
+    --black-nav-menu-color: #000000;
+    --dark--grey-color: #000000;
+    --primary-bg : #e7e7e7;
+    --primary-color :black; 
+    --primary-body-color : white; 
+    --primary-body-title-color : #F16100; 
+    --secondary-bg:black;
+
+  footer .footerContainer .logoContainer__logo img {
+    filter: greyscale(1) !important;
+  }
+  .socialMedia img {
+    filter: grayscale(1);
+  }
+  footer .newsLetter {
+    &::before {
+      position: absolute;
+      content: "";
+      background: #000;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+      top: 0;
+    }
+
+    &__body {
+      &__form {
+        &__input[type="text"] {
+          &:disabled {
+            background: var(--whiteColor);
+          }
+        }
+      }
+    }
+  }
+  footer .footerContainer .logoContainer__hotline i::before {
+    color: #000;
+  }
+  .primary-btn {
+    background: #fff;
+    color: #000;
+  }
+  .downloadCardWrapper .downloadCard__icon {
+    background: #000;
+
+    i {
+      color: #fff;
+    }
+  }
+  .searchBox__wrapper > i {
+    color: #000;
+  }
+
+}
+/* Colors*/
+$primary-bg : var(--primary-bg);
+$primary-color : var(--primary-color);
+$primary-title-color : var(--primary-body-title-color);
+$secondary-bg : var(--secondary-bg);
+/* Colors*/
+
 /***Responsive variables***/
 $breakpoints: (
     "phone": 375,
