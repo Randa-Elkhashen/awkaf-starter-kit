@@ -47,15 +47,14 @@ export default {
 <style lang="scss" scoped>
 .images-wrapper{
   padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat( auto-fit , minmax(200px , 1fr ) );
   gap: 20px;
   justify-content: start;
   align-items: center;
   .image{
     cursor: pointer;
-    width : 200px;
-    height: 200px;
+    aspect-ratio: 1;
     background-size: cover;
   }
 }
