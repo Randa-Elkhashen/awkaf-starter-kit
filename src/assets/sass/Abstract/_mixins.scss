@@ -46,3 +46,59 @@
 }
 
 
+@mixin fluid-type-customized($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      @media screen and (min-width: $min-vw) and (max-width: $max-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+    }
+  }
+}
+
+/*hover effect*/
+
+@mixin hover-effect($baseColor, $hoverColor) {
+  background: linear-gradient(to left, $baseColor 50%, $hoverColor 50%) right;
+  transition: .25s ease-out;
+  background-size: 200%;
+}
+
+@mixin ar-hover-effect ($baseColor, $hoverColor) {
+  background: linear-gradient(to right, $baseColor 50%, $hoverColor 50%) left;
+  transition: .25s ease-out;
+  background-size: 200%;
+}
+/*hover effect*/
+
+@mixin selected($backgroundColor, $textColor) {
+  background-color: $backgroundColor;
+  color: $textColor;
+}
+
+@mixin define-responsive-property($property , $xLarge ,  $desktop , $tablet , $mobile){
+    #{$property}: #{$xLarge};
+    @include property-max-breakPoint( $property, $desktop , 1366px );
+    @include property-max-breakPoint( $property, $tablet , 768px );
+    @include property-max-breakPoint( $property, $mobile , 767px );
+}
+
+@mixin property-max-breakPoint( $property , $value , $max-screen ){
+  @if($property and $value and $max-screen ){
+    @media screen and (max-width: $max-screen ) {
+        #{$property}: #{$value};
+    }
+  }
+}
+@mixin property-min-breakPoint( $property , $value , $min-screen ){
+  @if($property and $value and $max-screen ){
+  @media screen and (min-width: $min-screen ) {
+      #{$property}: #{$value};
+  }
+}
+}
