@@ -1,3 +1,111 @@
-.login-container {
+
+.login-container{
     display: block;
+    max-width: 400px;
+    margin: auto;
 }
+  .form-card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgrey;
+    border-radius: 0.3rem;
+    padding: 15px;
+    margin-bottom: 15px;
+      box-shadow: 2px 2px 3px grey;
+    &:focus-within{
+      box-shadow: 5px 5px 5px grey;
+    }
+  .form-card__title{
+      font-family: $title-font-family;
+      font-size: 28px;
+      font-weight: bold;
+      color: black;
+      margin-bottom: 30px;
+      position: relative;
+      display: block;
+      &:after{
+        content: "";
+        display: inline-block;
+        width: 100%;
+        #{$start}: 0;
+        height: 1px;
+        background-color: lightgrey ;
+        position: absolute;
+        bottom: -15px;
+      }
+    }
+  .form-card__form{
+    display: block;
+    margin-bottom: 5px;
+      .form-card__form__submit-btn{
+        width: 100%;
+      }
+  }
+  .form-card__other-options{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    .form-card__other-options__option{
+      color: #0066c0;
+      transition: all 0.2s ease-in-out;
+      &:hover{
+        color: orangered;
+      }
+      .link{
+        text-decoration: none;
+        &:hover{
+          color:inherit;
+        }
+      }
+      
+    }
+  }
+  }
+  .td-field-group{
+      .td-field-group__label{
+          font-size: 1rem;
+          font-weight: bold;
+      }
+      .td-field-group__field{
+
+      }
+      .td-field-group__validate-message{
+          
+        &.td-field-group__validate-message--error{
+
+        }
+      }
+    &.td-field-group--required{
+
+    }
+  }
+  .new-member{
+    display: flex;
+    flex-direction: column;
+    .new-member__title{
+      color: grey;
+      position: relative;
+      font-size: 12px;
+      text-align: center;
+      margin-bottom: 10px;
+      &:after{
+        content: "";
+        height: 1px;
+        width: 100%;
+        #{$start}:0;
+        background-color: grey;
+        display: inline-block;
+        position: absolute;
+        bottom: 50%;
+      }
+      .title{
+        background-color: $primary-bg;
+        padding: 0 5px;
+        z-index: 1;
+        position: relative;
+        display: inline-block;
+        vertical-align: baseline;
+      }
+    }
+  }
+

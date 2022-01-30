@@ -6,19 +6,15 @@
        
         >
         <div class="form-card__form__fields">
-            <div class="mb-3 row">
-              <label for="staticEmail" class="col-sm-2 col-form-label">User Name</label>
-              <div class="col-sm-10">
-                <input type="text"  class="form-control" id="staticEmail" v-model="form.username.value"  >
-          </div>
-              <span>{{ form.username.error }}</span>
+            <div class="mb-3 td-field-group td-field-group--required">
+              <label for="staticEmail" class="form-label  td-field-group__label">Email</label>
+                <input type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.username.value"  >
+              <span class="td-field-group__validate-message">{{ form.username.error }}</span>
 
             </div>
-            <div class="mb-3 row">
-              <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-              <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword" v-model="form.password.value" >
-              </div>
+            <div class="mb-3 td-field-group td-field-group--required">
+              <label for="inputPassword" class="form-label td-field-group__label">Password</label>
+                <input type="password" class="form-control td-field-group__field" id="inputPassword" v-model="form.password.value" >
               <span>{{ form.password.error }}</span>
             </div>
         </div>
@@ -45,6 +41,7 @@
     </button>
 </template>
 <script>
+import "./login.scss";
 import {Form as VeeForm} from "vee-validate"
 import {authModuleService} from '@/services';
 import useTDLogin from "./userTDLogin";
@@ -77,95 +74,3 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-.login-container{
-  max-width: 400px;
-  margin: auto;
-  .form-card{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid lightgrey;
-    border-radius: 0.3rem;
-    padding: 15px;
-    margin-bottom: 15px;
-      box-shadow: 2px 2px 3px grey;
-    &:focus-within{
-      box-shadow: 5px 5px 5px grey;
-    }
-  .form-card__title{
-      font-family: $title-font-family;
-      font-size: 28px;
-      font-weight: bold;
-      color: black;
-      margin-bottom: 30px;
-      position: relative;
-      display: block;
-      &:after{
-        content: "";
-        display: inline-block;
-        width: 100%;
-        #{$start}: 0;
-        height: 1px;
-        background-color: lightgrey ;
-        position: absolute;
-        bottom: -15px;
-      }
-    }
-  .form-card__form{
-    display: block;
-    margin-bottom: 5px;
-      .form-card__form__submit-btn{
-        width: 100%;
-      }
-  }
-  .form-card__other-options{
-    list-style: none;
-    padding: 0;
-    margin-bottom: 0;
-    .form-card__other-options__option{
-      color: #0066c0;
-      transition: all 0.2s ease-in-out;
-      &:hover{
-        color: orangered;
-      }
-      .link{
-        text-decoration: none;
-        &:hover{
-          color:inherit;
-        }
-      }
-      
-    }
-  }
-  }
-  .new-member{
-    display: flex;
-    flex-direction: column;
-    .new-member__title{
-      color: grey;
-      position: relative;
-      font-size: 12px;
-      text-align: center;
-      margin-bottom: 10px;
-      &:after{
-        content: "";
-        height: 1px;
-        width: 100%;
-        #{$start}:0;
-        background-color: grey;
-        display: inline-block;
-        position: absolute;
-        bottom: 50%;
-      }
-      .title{
-        background-color: white;
-        padding: 0 5px;
-        z-index: 1;
-        position: relative;
-        display: inline-block;
-        vertical-align: baseline;
-      }
-    }
-  }
-}
-</style>
