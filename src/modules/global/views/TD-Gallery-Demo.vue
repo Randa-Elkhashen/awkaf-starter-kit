@@ -34,9 +34,6 @@
 </template>
 <script src="./TD-galleryDemo.js" ></script>
 <style  lang="scss">
-.container{
-  padding-top: 20px;
-}
 .td-generic-slider {
   background: #000;
   .slide-img{
