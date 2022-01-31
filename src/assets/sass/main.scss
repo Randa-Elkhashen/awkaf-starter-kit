@@ -2,10 +2,24 @@
 @import '../sass/icomoon/style.scss';
 @import "Abstract/_mixins.scss";
 @import "Abstract/_variables.scss";
+:root{
+    font-size: calc( var( --fontModifier ) * var(--bs-body-font-size) );
+}
+body{
+    font-family: $font-family;
+    font-weight: normal;
+    background-color: $primary-bg;
+}
 /*Import Modules*/
 @import "../../modules/global/styles/main.scss";
 
 .title-description{
-    color: orangered;
+    &.title-description--center{
+    @include apply-animation('scale-animation' , 1s);
+    }
+    color: $primary-title-color;
     text-align: start;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    @include apply-animation('from-top-zoom-in' , 1s);
 }

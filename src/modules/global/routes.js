@@ -8,9 +8,9 @@
 
 const routes = [
     {
-        path: '/tdgallery',
-        name: 'tdgallery',
-        component: () => import('./views/TD-Gallery-Demo.vue')
+        path: '/',
+        name: 'home',
+        component: () => import('../../views/Home.vue')
     },
 ]
 
