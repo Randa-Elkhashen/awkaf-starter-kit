@@ -9,7 +9,6 @@
               <label for="staticEmail" class="form-label  td-field-group__label">Email</label>
                 <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.email"  >
               <span class="td-field-group__validate-message">{{ form.errors.email || " "}} </span>
-
             </div>
             <div class="mb-3 td-field-group td-field-group--required">
               <label for="inputPassword" class="form-label td-field-group__label">Password</label>
@@ -21,7 +20,7 @@
         </form>
 
     <ul class="form-card__other-options">
-        <li class="form-card__other-options__option"> <a class="link" href="/register">Forgot your password?</a> </li>
+        <li class="form-card__other-options__option"> <a class="link" href="/forgotpassword">Forgot your password?</a> </li>
     </ul>
     </div>
     <div class="new-member">
@@ -41,18 +40,17 @@
 </template>
 <script>
 import "./login.scss";
-import {Form as VeeForm} from "vee-validate"
 import {authModuleService} from '@/services';
 import useTDLogin from "@/modules/auth/components/TD_login/userTDLogin";
+import { useRouter } from "vue-router";
 export default {
   name: 'Login',
-  components:{
-    VeeForm ,
-  },
   setup() {
+        const router = useRouter();
         const {form , handleSubmit }  = useTDLogin();
         const onsubmit = handleSubmit(values =>{
           console.log("values :" , values);
+          router.push('/')
         } , ({ values, errors, results })=>{
               console.log(values); // current form values
               console.log(errors); // a map of field names and their first error message
