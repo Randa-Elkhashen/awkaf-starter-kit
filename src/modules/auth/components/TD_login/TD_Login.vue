@@ -5,18 +5,18 @@
         <form @submit="onsubmit"  class="form-card__form"
         >
         <div class="form-card__form__fields">
-            <div class="mb-2 td-field-group td-field-group--required">
-              <label for="staticEmail" class="form-label  td-field-group__label">Email</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.email"  >
+            <div class="mb-2 form-floating td-field-group td-field-group--required">
+                <input autocomplete="off" type="text" placeholder="Email"  class="form-control td-field-group__field" id="floatingEmail" v-model="form.email"  >
+              <label for="floatingEmail" class="  td-field-group__label">Email</label>
               <span class="td-field-group__validate-message">{{ form.errors.email || " "}} </span>
             </div>
-            <div class="mb-3 td-field-group td-field-group--required">
-              <label for="inputPassword" class="form-label td-field-group__label">Password</label>
-                <input type="password" class="form-control td-field-group__field" id="inputPassword" v-model="form.password" >
+            <div class="mb-3 form-floating td-field-group td-field-group--required">
+              <input type="password" placeholder="Password" class="form-control td-field-group__field" id="floatingPassword" v-model="form.password" >
+              <label for="floatingPassword" class=" td-field-group__label">Password</label>
               <span class="td-field-group__validate-message">{{ form.errors.password }}</span>
             </div>
         </div>
-        <button type="submit" class="form-card__form__submit-btn btn btn-dark">LOGIN</button>
+        <button type="submit" class="form-card__form__submit-btn btn">LOGIN</button>
         </form>
 
     <ul class="form-card__other-options">
@@ -27,7 +27,7 @@
       <div class="new-member__title">
         <h3 class="title" >New memebr ?</h3>
       </div>
-        <button type="button" class="new-member__register-btn btn btn-dark">create new account</button>
+        <a href="/register" class="new-member__register-btn btn btn-dark">create new account</a>
     </div>
     <h3></h3>
 </div>
@@ -39,9 +39,9 @@
     </button> -->
 </template>
 <script>
-import "./login.scss";
+import "./TD_login.scss";
 import {authModuleService} from '@/services';
-import useTDLogin from "@/modules/auth/components/TD_login/userTDLogin";
+import useTDLogin from "@/modules/auth/components/TD_login/useTDLogin";
 import { useRouter } from "vue-router";
 export default {
   name: 'Login',
@@ -64,9 +64,6 @@ export default {
     } 
   },
   methods: {
-    onWrongSubmit(){
-      console.log("not valid submit")
-    },
     handleLogin: function(){
       authModuleService.users.loginByEmailAndPassword({}, () => {
         this.$store.commit('auth/setAuth')

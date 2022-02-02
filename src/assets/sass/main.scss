@@ -10,6 +10,9 @@ body{
     font-weight: normal;
     background-color: $primary-bg;
 }
+.cursor-pointer{
+    cursor: pointer;
+}
 /*Import Modules*/
 @import "../../modules/global/styles/main.scss";
 @import "../../modules/auth/styles/main.scss";
