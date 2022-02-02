@@ -1,25 +1,25 @@
 <template>
-<div class="forgot-password-container container">
+<div class="reset-password-container container">
     <div class="form-card">
-        <h1 class="form-card__title" >Forgot Password</h1>
+        <h1 class="form-card__title" >Reset Password</h1>
         <p class="form-card__description">
             Enter your new Password.
         </p>
         <form @submit="onsubmit"  class="form-card__form"
         >
         <div  class="form-card__form__fields">
-            <div class="mb-2 td-field-group td-field-group--required">
-              <label for="staticEmail" class="form-label  td-field-group__label">Password</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.password"  >
+            <div class="mb-2 form-floating td-field-group td-field-group--required">
+                <input placeholder="New Password" autocomplete="off" type="text"  class="form-control td-field-group__field" id="floatingPassword" v-model="form.password"  >
+              <label for="floatingPassword" class="form-label  td-field-group__label">New Password</label>
               <span class="td-field-group__validate-message">{{ form.errors.password || " "}} </span>
             </div>
-            <div class="mb-2 td-field-group td-field-group--required">
-              <label for="staticEmail" class="form-label  td-field-group__label">Confirm Password</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.confirmPassword"  >
+            <div class="mb-2 form-floating td-field-group td-field-group--required">
+                <input placeholder="Confirm Password" autocomplete="off" type="text"  class="form-control td-field-group__field" id="floatingConfirmPassword" v-model="form.confirmPassword"  >
+              <label for="floatingConfirmPassword" class="form-label  td-field-group__label">Confirm Password</label>
               <span class="td-field-group__validate-message">{{ form.errors.confirmPassword || " "}} </span>
             </div>
         </div>
-        <button type="submit" class="form-card__form__submit-btn btn btn-dark">SUBMIT</button>
+        <button type="submit" class="form-card__form__submit-btn btn ">SUBMIT</button>
         </form>
     </div>
 

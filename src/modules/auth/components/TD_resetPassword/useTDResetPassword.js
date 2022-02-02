@@ -4,8 +4,8 @@ import { reactive } from 'vue';
 import {object , string , ref }  from 'yup';
 export default function useTDResetPassword(){
     const schema = object({
-    password: string().required("password is required").min(6),
-    confirmPassword: string().required("retype your password").oneOf([ref('password')] , "password must match"),
+    password: string().required().min(6),
+    confirmPassword: string().required("retype new password").oneOf([ref('password')] , "password must match"),
     });
     const { errors , handleSubmit  } = useForm({ validationSchema: schema, });
     const { value: password } = useField('password');
