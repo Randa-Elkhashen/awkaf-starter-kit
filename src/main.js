@@ -5,7 +5,8 @@ import store from './store'
 import { setHttpDefaults } from '@/services'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import initValidationsCustomDefaultMessage from "./modules/auth/components/TD_validations/validationsConfig"
+initValidationsCustomDefaultMessage();
  const app = createApp(App)
  app.use(router)
  app.use(store)
