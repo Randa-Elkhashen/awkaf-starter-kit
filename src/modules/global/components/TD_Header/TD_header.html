@@ -2,7 +2,7 @@
 <header class="header header--desktop header--is-ready">
     <nav class="navbar  navbar-expand-sm">
         <div class="container">
-            <a class="navbar-brand" href="/ar">
+            <a class="navbar-brand" href="/">
                 <img src="../../../../assets/images/logo.svg" alt="img alt" class="d-inline-block align-text-top">
                 <div class="logo-mark">
                     <h1 class="logo-mark__title">TURN DIGITAL</h1>
@@ -28,12 +28,15 @@
                                 <li><a class="dropdown-item fontDown-icon" id="decreaseFont" href="#" @click="fontDownButtonClick">A-</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item nav-item--hide">
-                            <a class="nav-link" href="/login">
-                                <span>
-                                    <span class="icon-profile-icon"></span><span class="icon-arrow-down-sign-to-navigate"></span>
+                        <li class="nav-item nav-item--user nav-item--hide">
+                            <router-link class="nav-link" to="/login">
+                                <span class="d-inline-flex align-items-center">
+                                    <span class="icon-profile-icon me-2"></span>
+                                    <!-- <span class="icon-arrow-down-sign-to-navigate"></span> -->
+                                    <span>Login</span>
                                 </span>
-                            </a>
+                            </router-link>
+
                         </li>
                         <li class="nav-item nav-item--language-switcher nav-item--hide">
                             <div class="switchLang"><a class="nav-link" href="/en/" data-switchlang="en-US">EN</a></div>
@@ -56,11 +59,10 @@
                                 <a class="nav-link  dropdown-toggle dropdown-item dropdown-item__has-child" href="#" data-bs-toggle="dropdown">Infinite Scrolling</a>
                                 <ul class="dropdown-menu submenu">
                                     <li>
-                                        <router-link to="/tdLisiting1" class="dropdown-item" href="#">Method 1</router-link>
-
+                                        <router-link to="/tdLisiting1" class="dropdown-item" >Method 1</router-link>
                                     </li>
                                     <li>
-                                        <router-link to="/tdLisiting2" class="dropdown-item" href="#">Method 2</router-link>
+                                        <router-link to="/tdLisiting2" class="dropdown-item" >Method 2</router-link>
                                     </li>
                                 </ul>
                             </li>
