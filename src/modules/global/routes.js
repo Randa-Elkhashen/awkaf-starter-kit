@@ -51,7 +51,13 @@ const routes = [
         path: '/tdgallery',
         name: 'tdgallery',
         component: () => import('./views/TD-Gallery-Demo.vue')
-    }
+    },
+    {
+        path: '/contactUs',
+        name: 'Contact Us',
+        component: () => import('./views/ContactUsDemo.vue')
+    },
+    
 ]
 
 
