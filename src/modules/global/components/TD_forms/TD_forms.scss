@@ -1,4 +1,12 @@
 /*Import module components*/
+/*mixins*/
+@mixin addFocusFloatingLabelStyle{
+  opacity: 1;
+  font-weight: bold;
+  color: $fieldGroupLabelFocusColor;
+  transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
+}
+/*mixins*/
 /*variables*/
 :root{
     .form-card{
@@ -139,14 +147,23 @@
       }
       }
   }
-    &.td-field-group--photo-picker{
-      .td-field-group__field{
-        display: block;
-        margin: auto;
-        width: 150px;
-        aspect-ratio: 1;
-      }
+  &.td-field-group--photo-picker{
+    .td-field-group__field{
+      display: block;
+      margin: auto;
+      width: 150px;
+      aspect-ratio: 1;
     }
+  }
+  &.td-field-group--date-picker{
+    .td-field-group__field{
+      width: auto;
+      cursor: pointer;
+    }
+    .td-field-group__label{
+      @include addFocusFloatingLabelStyle();
+    }
+  }
   }
   .form-card{
     .td-field-group{
@@ -155,9 +172,7 @@
         >.form-control:focus~label,
         >.form-control:not(:placeholder-shown)~label,
         >.form-select~label{
-          opacity: 1;
-          font-weight: bold;
-          color: $fieldGroupLabelFocusColor;
+          @include addFocusFloatingLabelStyle();
         }
         .form-control:focus {
           border-color: $fieldGroupLabelFocusColor;
