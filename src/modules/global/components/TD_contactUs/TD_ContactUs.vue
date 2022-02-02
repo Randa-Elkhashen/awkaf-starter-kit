@@ -29,14 +29,12 @@
         </div>
         <button type="submit" class="form-card__form__submit-btn btn">Submit</button>
         </form>
-    <ul class="form-card__other-options">
-        <li class="form-card__other-options__option"> <a class="link" href="/forgotpassword">Forgot your password?</a> </li>
-    </ul>
     </div>
 </div>
 </template>
 <script>
 import "./TD_contactUs.scss";
+import "@/modules/global/components/TD_forms/TD_forms.scss";
 import {authModuleService} from '@/services';
 import useTDContactUs from "./useTDContactUs";
 import { useRouter } from "vue-router";
