@@ -210,6 +210,19 @@ $headerLinks : var(--header-links);
               border-top: 2px solid $headerColor;
               width: 225px;
               padding: 0;
+              li:last-child{
+                >.dropdown-item{
+                      border-radius: 0px 0px 10px 10px;
+                }
+            }
+            .submenu{
+                li:last-child{
+                    >.dropdown-item{
+                        border-radius: 0px 0px 10px 10px;
+                    }
+                }
+            }
+              /*border radius*/
               .dropdown-item__has-child {
                   position: relative;
                   &:before {
@@ -366,7 +379,6 @@ $headerLinks : var(--header-links);
 
                           &:before {
                               color: var(--black-nav-menu-color);
-                              transition: 0.2s all ease-in-out;
                           }
 
                           &.icon-search-icon {
@@ -438,7 +450,7 @@ $headerLinks : var(--header-links);
                       border-radius: 0px 0px 5px 5px;
                       outline: unset;
                       border-top: 2px solid $headerColor;
-
+                      
                       li {
                           a {
                               color: inherit;
