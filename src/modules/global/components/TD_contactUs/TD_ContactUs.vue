@@ -21,8 +21,8 @@
               <span class="td-field-group__validate-message">{{ form.errors.phone }}</span>
             </div>
             <div class="form-floating mb-3  td-field-group td-field-group--required">
-                <textarea maxlength="500" v-model="form.message" class=" form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 10em"></textarea>
-                <label for="floatingTextarea2">Message</label>
+                <textarea maxlength="500" v-model="form.message" class=" form-control td-field-group__field" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 10em"></textarea>
+                <label class="td-field-group__label" for="floatingTextarea2">Message</label>
                   <span class="td-field-group__validate-message">{{ form.errors.message }}</span>
                   <span class="td-field-group__counter">Number of characters: {{500 - (form.message?.length || 0)}}</span>
             </div>
