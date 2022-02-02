@@ -147,6 +147,8 @@ import { DatePicker } from "v-calendar";
 import VueMultiselect from "vue-multiselect";
 import 'vue-multiselect/dist/dist/vue-multiselect.css'
 import 'v-calendar/dist/style.css';
+import "@/modules/global/components/TD_forms/TD_forms.scss";
+
 import { useRouter } from "vue-router";
 import useTDPhotoPicker from "./useTDPhotoPicker"
 export default {

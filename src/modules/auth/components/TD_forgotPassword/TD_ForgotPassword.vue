@@ -23,6 +23,7 @@
 </template>
 <script>
 import useTDForgotPassword from "./useTDForgotPassword";
+import "@/modules/global/components/TD_forms/TD_forms.scss";
 import "./TD_forgotPassword.scss";
 import { useRouter } from 'vue-router';
 

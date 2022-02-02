@@ -39,6 +39,7 @@
 </template>
 <script>
 import "./TD_login.scss";
+import "@/modules/global/components/TD_forms/TD_forms.scss";
 import {authModuleService} from '@/services';
 import useTDLogin from "@/modules/auth/components/TD_login/useTDLogin";
 import { useRouter } from "vue-router";

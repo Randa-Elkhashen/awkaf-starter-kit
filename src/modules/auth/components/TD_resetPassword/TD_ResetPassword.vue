@@ -29,6 +29,7 @@
 <script>
 import useTDResetPassword from "./useTDResetPassword";
 import "./TD_resetPassword.scss";
+import "@/modules/global/components/TD_forms/TD_forms.scss";
 import { useRouter } from 'vue-router';
 
 export default {
