@@ -1,5 +1,5 @@
 <template>
-<div class="login-container container">
+<div class=" container">
     {{form}}
     <div class="form-card">
         <h1 class="form-card__title" > Register</h1>
@@ -14,33 +14,33 @@
               <span class="td-field-group__validate-message">{{ form.errors.photo || " "}} </span>
             </div>
             <!-- email -->
-            <div class="mb-2 td-field-group td-field-group--required">
-              <label for="staticEmail" class="form-label  td-field-group__label">Email</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.email"  >
+            <div class="mb-2 form-floating td-field-group td-field-group--required">
+                <input placeholder="Email" autocomplete="off" type="text"  class="form-control td-field-group__field" id="floatingEmail" v-model="form.email"  >
+              <label for="floatingEmail" class="form-label  td-field-group__label">Email</label>
               <span class="td-field-group__validate-message">{{ form.errors.email || " "}} </span>
             </div>
             <!-- username -->
-            <div class="mb-2 td-field-group td-field-group--required">
-              <label for="staticEmail" class="form-label  td-field-group__label">name</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.name"  >
+            <div class="mb-2 form-floating td-field-group td-field-group--required">
+                <input placeholder="name" autocomplete="off" type="text"  class="form-control td-field-group__field" id="floatingName" v-model="form.name"  >
+              <label for="floatingName" class="form-label  td-field-group__label">name</label>
               <span class="td-field-group__validate-message">{{ form.errors.name || " "}} </span>
             </div>
             <!-- password -->
-            <div class="mb-2 td-field-group td-field-group--required">
-              <label for="staticEmail" class="form-label  td-field-group__label">Password</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.password"  >
+            <div class="mb-2 form-floating td-field-group td-field-group--required">
+                <input autocomplete="off" type="text" placeholder="Password"  class="form-control td-field-group__field" id="floatingPassword" v-model="form.password"  >
+              <label for="floatingPassword" class="form-label  td-field-group__label">Password</label>
               <span class="td-field-group__validate-message">{{ form.errors.password || " "}} </span>
             </div>
             <!--confirm password -->
-            <div class="mb-2 td-field-group td-field-group--required">
-              <label for="staticEmail" class="form-label  td-field-group__label">Confirm Password</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.confirmPassword"  >
+            <div class="mb-2 form-floating td-field-group td-field-group--required">
+                <input placeholder="Confirm Password" autocomplete="off" type="text"  class="form-control td-field-group__field" id="floatingPassword" v-model="form.confirmPassword"  >
+              <label for="floatingPassword" class="form-label  td-field-group__label">Confirm Password</label>
               <span class="td-field-group__validate-message">{{ form.errors.confirmPassword || " "}} </span>
             </div>
             <!--address -->
-            <div v-for="(field , index ) in form.addresses" :key="index" class="mb-2 td-field-group td-field-group--required">
-              <label for="staticEmail" class="form-label  td-field-group__label">Address</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="field.value"  >
+            <div v-for="(field , index ) in form.addresses" :key="index" class="mb-2 form-floating td-field-group td-field-group--required">
+                <input placeholder="Address" autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="field.value"  >
+              <label for="staticEmail"  class="form-label  td-field-group__label">Address</label>
               <!-- <span class="td-field-group__validate-message">{{ form.errors.fields[index] || " "}} </span> -->
             </div>
             <div class="d-flex justify-content-center">
@@ -48,9 +48,9 @@
                 <button @click="()=> popAddress('new address')" type="button" class="btn btn-primary my-2 me-5">remove</button>
             </div>
             <!--address -->
-            <div class="mb-2 td-field-group td-field-group--required">
-              <label for="staticEmail" class="form-label  td-field-group__label">adress</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.adress"  >
+            <div class="mb-2 form-floating td-field-group td-field-group--required">
+                <input placeholder="Address" autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.adress"  >
+              <label for="staticEmail" class="form-label  td-field-group__label">address</label>
               <span class="td-field-group__validate-message">{{ form.errors.adress || " "}} </span>
             </div>
             <!-- <div v-for="(testAddress , index ) in form.testAddresses" :key="index" class="mb-2 td-field-group td-field-group--required">
@@ -59,9 +59,9 @@
               <span class="td-field-group__validate-message">{{ form.errors.testAddresses[index] || " "}} </span>
             </div> -->
             <!--phone -->
-            <div class="mb-2 td-field-group td-field-group--required">
+            <div class="mb-2 form-floating td-field-group td-field-group--required">
+                <input placeholder="phone" autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.phone"  >
               <label for="staticEmail" class="form-label  td-field-group__label">phone</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.phone"  >
               <span class="td-field-group__validate-message">{{ form.errors.phone || " "}} </span>
             </div>
             <!--Nationality -->
@@ -92,7 +92,7 @@
               <span class="td-field-group__validate-message">{{ form.errors.adress || " "}} </span>
             </div> -->
             <!--Date of Birth -->
-            <div class="mb-2 td-field-group td-field-group--required">
+            <div class="mb-2  td-field-group td-field-group--required">
               <label for="staticEmail" class="form-label  td-field-group__label">Date of Birth</label>
                 <DatePicker  class="inline-block h-full" v-model="form.date">
                 <template v-slot="{ inputValue, togglePopover }">
@@ -109,7 +109,7 @@
               <span class="td-field-group__validate-message">{{ form.errors.date || " "}} </span>
             </div>
             <!--Gender -->
-            <div class="mb-2 td-field-group td-field-group--required ">
+            <div class="mb-2  td-field-group td-field-group--required ">
               <label   class="form-label  td-field-group__label ">Gender</label>
                 <div class="td-field-group ">
                 <input type="radio" name="gender" value="male"  class="me-2 td-field-group__field" id="maleId" v-model="form.gender"  >
@@ -122,7 +122,7 @@
               <span class="td-field-group__validate-message">{{ form.errors.gender || " "}} </span>
             </div>
         </div>
-        <button type="submit" class="form-card__form__submit-btn btn btn-dark">REGISTER</button>
+        <button type="submit" class="form-card__form__submit-btn btn ">REGISTER</button>
         </form>
 
     <ul class="form-card__other-options">
