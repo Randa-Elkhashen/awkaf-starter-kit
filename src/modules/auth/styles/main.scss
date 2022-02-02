@@ -1,13 +1,36 @@
 /*Import module components*/
 /*variables*/
+:root{
+  .form-card{
+    --form-card-btn-bg:#F16100;
+    --form-card-btn-color:white;
+    --form-card-bg:white;
+    --form-card-color:black;
+  }
+}
+.invert-color{
+  .form-card{
+    --form-card-btn-bg:#F16100;
+    --form-card-btn-color:white;
+    --form-card-bg:transparent;
+    --form-card-color:white;
+  }
+}
 $errorColor:red;
 $requiredColor : $errorColor;
+$formCardBtnBg : var(--form-card-btn-bg);
+$formCardBtnColor : var(--form-card-btn-color);
+$formCardBg : var(--form-card-bg);
+$formCardColor : var(--form-card-color);
+/*variables*/
 .form-card{
     display: flex;
     flex-direction: column;
     border: 1px solid lightgrey;
     border-radius: 0.3rem;
     padding: 15px;
+    background-color: $formCardBg;
+    color: $formCardColor;
     margin-bottom: 15px;
       box-shadow: 2px 2px 3px grey;
     &:focus-within{
@@ -32,11 +55,17 @@ $requiredColor : $errorColor;
         bottom: -15px;
       }
     }
+    .form-card__description{
+      color: black;
+    }
   .form-card__form{
     display: block;
     margin-bottom: 5px;
       .form-card__form__submit-btn{
         width: 100%;
+        background-color: $formCardBtnBg;
+        background: linear-gradient( to bottom, $formCardBtnBg  , $formCardBtnBg ) ;
+        color: $formCardBtnColor;
       }
   }
   .form-card__other-options{
@@ -59,14 +88,36 @@ $requiredColor : $errorColor;
       
     }
   }
+}
+/* field group colors*/
+:root{
+  .td-field-group{
+    --field-group-focus-label-color:#F16100;
+    --field-group-label-color:grey;
   }
+}
+.invert-color{
+  .td-field-group{
+    --field-group-focus-label-color:#F16100;
+    --field-group-label-color:#F16100;
+    --field-group-label-color:black;
+  }
+}
+$fieldGroupLabelFocusColor : var(--field-group-focus-label-color);
+$fieldGroupLabelColor : var(--field-group-label-color);
+$fieldGroupBorderColor : var(--field-group-label-color);
+/*field group colors*/
 .td-field-group{
+  color: inherit;
     .td-field-group__label{
         font-size: 1rem;
-        font-weight: bold;
+        color: $fieldGroupLabelFocusColor;
+        line-height: 1;
     }
     .td-field-group__field{
-
+      background-color: inherit;
+      color: inherit;
+      border-color: $fieldGroupLabelColor;
     }
     .td-field-group__validate-message{
     display: inline-block;
@@ -82,4 +133,31 @@ $requiredColor : $errorColor;
     }
     }
 }
+  &.td-field-group--photo-picker{
+    .td-field-group__field{
+      display: block;
+      margin: auto;
+      width: 150px;
+      aspect-ratio: 1;
+    }
+  }
+}
+.form-card{
+  .td-field-group{
+    /* bootstrap overrides*/
+    &.form-floating{
+      >.form-control:focus~label,
+      >.form-control:not(:placeholder-shown)~label,
+      >.form-select~label{
+        opacity: 1;
+        font-weight: bold;
+        color: $fieldGroupLabelFocusColor;
+      }
+      .form-control:focus {
+        border-color: $fieldGroupLabelFocusColor;
+        box-shadow: 0 0 0 0.25rem transparent;
+      }
+    }
+    /* bootstrap overrides*/
+  }
 }
