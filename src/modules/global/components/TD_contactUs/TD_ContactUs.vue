@@ -29,9 +29,6 @@
         </div>
         <button type="submit" class="form-card__form__submit-btn btn">Submit</button>
         </form>
-    <ul class="form-card__other-options">
-        <li class="form-card__other-options__option"> <a class="link" href="/forgotpassword">Forgot your password?</a> </li>
-    </ul>
     </div>
 </div>
 </template>
