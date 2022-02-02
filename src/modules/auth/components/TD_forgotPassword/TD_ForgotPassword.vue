@@ -8,13 +8,13 @@
         <form @submit="onsubmit"  class="form-card__form"
         >
         <div  class="form-card__form__fields">
-            <div class="mb-2 td-field-group td-field-group--required">
-              <label for="staticEmail" class="form-label  td-field-group__label">Email or mobile phone number</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.emailorPhone"  >
+            <div class="mb-2 form-floating td-field-group td-field-group--required">
+                <input autocomplete="off" type="text" placeholder="Email or mobile phone number"  class="form-control td-field-group__field" id="floatingEmail" v-model="form.emailorPhone"  >
+              <label for="floatingEmail" class="form-label  td-field-group__label">Email or mobile phone number</label>
               <span class="td-field-group__validate-message">{{ form.errors.emailorPhone || " "}} </span>
             </div>
         </div>
-        <button type="submit" class="form-card__form__submit-btn btn btn-dark">Continue</button>
+        <button type="submit" class="form-card__form__submit-btn btn ">Continue</button>
         </form>
     </div>
 
