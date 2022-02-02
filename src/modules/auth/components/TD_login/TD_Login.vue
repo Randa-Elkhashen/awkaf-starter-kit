@@ -29,7 +29,6 @@
       </div>
         <a href="/register" class="new-member__register-btn btn btn-dark">create new account</a>
     </div>
-    <h3></h3>
 </div>
 <!-- 
   <br />
