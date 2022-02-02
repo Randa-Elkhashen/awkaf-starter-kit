@@ -34,6 +34,7 @@
 </template>
 <script>
 import "./TD_contactUs.scss";
+import "@/modules/global/components/TD_forms/TD_forms.scss";
 import {authModuleService} from '@/services';
 import useTDContactUs from "./useTDContactUs";
 import { useRouter } from "vue-router";
