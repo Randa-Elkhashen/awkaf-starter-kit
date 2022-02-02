@@ -12,6 +12,12 @@ const routes = [
         name: 'home',
         component: () => import('../../views/Home.vue')
     },
+    {
+        path: '/contactUs',
+        name: 'Contact Us',
+        component: () => import('./views/ContactUsDemo.vue')
+    },
+    
 ]
 
 export default routes
