@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Login from "@/modules/auth/components/TD_login/Login.vue"
+import Login from "@/modules/auth/components/TD_login/TD_Login.vue"
 export default {
   name: 'LoginPage',
   components : {
