@@ -2,7 +2,7 @@
 import { useForm , useField } from 'vee-validate';
 import { reactive } from 'vue';
 import {object , string  }  from 'yup';
-import validations from '../TD_validations/TD_Validations';
+import validations from '@/modules/global/components/TD_validations/TD_Validations';
 export default function useTDForgotPassword(){
     validations.init();
     const schema = object({

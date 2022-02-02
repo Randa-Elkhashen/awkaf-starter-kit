@@ -2,7 +2,7 @@
 import { useForm , useField , useFieldArray} from 'vee-validate';
 import { reactive , toRefs , isRef ,} from 'vue';
 import {object , string , ref ,  array, mixed , AnySchema }  from 'yup';
-import validations from '../TD_validations/TD_Validations';
+import validations from '@/modules/global/components/TD_validations/TD_Validations';
 
 export default function useTDRegister(){
     validations.init();

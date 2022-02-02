@@ -124,6 +124,12 @@ $fieldGroupBorderColor : var(--field-group-label-color);
     color: $errorColor;
     font-size: 0.8em;
     }
+    .td-field-group__counter{
+      display: inline-block;
+      float: right;
+      color: gray;
+      font-size: 0.8em;
+    }
 &.td-field-group--required{
     .td-field-group__label{
     &::after{
