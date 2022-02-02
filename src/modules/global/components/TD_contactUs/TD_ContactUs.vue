@@ -6,7 +6,7 @@
         >
         <div class="form-card__form__fields">
             <div class="mb-2 form-floating td-field-group td-field-group--required">
-                <input autocomplete="off" type="text" placeholder="Email"  class="form-control td-field-group__field" id="floatingEmail" v-model="form.email"  >
+                <input autocomplete="off" type="text" placeholder="Email"  class="form-control td-field-group__field" id="floatingEmail" v-model="form.name"  >
               <label for="floatingEmail" class="  td-field-group__label">Full Name</label>
               <span class="td-field-group__validate-message">{{ form.errors.name || " "}} </span>
             </div>
@@ -16,7 +16,7 @@
               <span class="td-field-group__validate-message">{{ form.errors.email || " "}} </span>
             </div>
             <div class="mb-3 form-floating td-field-group td-field-group--required">
-              <input type="password" placeholder="Password" class="form-control td-field-group__field" id="floatingPassword" v-model="form.password" >
+              <input type="phone" placeholder="Password" class="form-control td-field-group__field" id="floatingPassword" v-model="form.phone" >
               <label for="floatingPassword" class=" td-field-group__label">Phone</label>
               <span class="td-field-group__validate-message">{{ form.errors.phone }}</span>
             </div>
