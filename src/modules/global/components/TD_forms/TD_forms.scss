@@ -20,12 +20,10 @@
     .form-card{
       --form-card-btn-bg:#F16100;
       --form-card-btn-color:white;
-      --form-card-bg:transparent;
+      --form-card-bg:black;
       --form-card-color:white;
     }
   }
-  $errorColor:red;
-  $requiredColor : $errorColor;
   $formCardBtnBg : var(--form-card-btn-bg);
   $formCardBtnColor : var(--form-card-btn-color);
   $formCardBg : var(--form-card-bg);
@@ -36,7 +34,7 @@
       flex-direction: column;
       border: 1px solid lightgrey;
       border-radius: 0.3rem;
-      padding: 15px;
+      padding: 15px 50px;
       background-color: $formCardBg;
       color: $formCardColor;
       margin-bottom: 15px;
@@ -101,19 +99,26 @@
   :root{
     .td-field-group{
       --field-group-focus-label-color:#F16100;
-      --field-group-label-color:grey;
+      --field-group-label-color:black;
+      --field-group-counter-color:grey;
+      --field-group-error-color:red;
     }
   }
   .invert-color{
     .td-field-group{
       --field-group-focus-label-color:#F16100;
-      --field-group-label-color:#F16100;
-      --field-group-label-color:black;
+      --field-group-label-color:white;
+      --field-group-error-color:white;
+      --field-group-counter-color:white;
     }
   }
   $fieldGroupLabelFocusColor : var(--field-group-focus-label-color);
   $fieldGroupLabelColor : var(--field-group-label-color);
-  $fieldGroupBorderColor : var(--field-group-label-color);
+  $fieldGroupBorderColor : $fieldGroupLabelColor;
+  $errorColor:var(--field-group-error-color);
+  $fieldGroupCounterColor:var(--field-group-counter-color);
+  $requiredColor : $errorColor;
+
   /*field group colors*/
   .td-field-group{
     color: inherit;
@@ -135,7 +140,7 @@
       .td-field-group__counter{
         display: inline-block;
         float: right;
-        color: gray;
+        color: $fieldGroupCounterColor;
         font-size: 0.8em;
       }
   &.td-field-group--required{

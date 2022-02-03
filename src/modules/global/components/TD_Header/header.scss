@@ -19,17 +19,18 @@
 }
 /*define custom colors for headers*/
 .header{
-    --header-color: #F16100;
-    --header-bg: black;
-    --header-logo-color: white;
-    --header-links: white;
+    --header-color: black;
+    --header-bg: white;
+    --header-logo-color: black;
+    --header-links: black;
 }
 .invert-color{
     .header{
-        --header-color: black;
-        --header-bg: white;
-        --header-logo-color: black;
-        --header-links: black;
+        --header-color: #F16100;
+        --header-bg: black;
+        --header-logo-color: white;
+        --header-links: white;
+   
     }
 }
 /*define custom colors for headers*/
