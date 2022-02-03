@@ -1,6 +1,6 @@
 <template>
 <div class=" container">
-    {{form}}
+    <!-- {{form}} -->
     <div class="form-card">
         <h1 class="form-card__title" > Register</h1>
         <form @submit="onsubmit"  class="form-card__form"
@@ -65,7 +65,7 @@
               <span class="td-field-group__validate-message">{{ form.errors.phone || " "}} </span>
             </div>
             <!--Nationality -->
-            <div class="mb-2 td-field-group td-field-group--required">
+            <div class="mb-2 td-field-group td-field-group--vue-multi-select td-field-group--required">
               <label for="staticEmail" class="form-label  td-field-group__label">select country</label>
                                               <!-- <VueMultiselect placeholder="select country "
                                                 v-model="selectedCountry"
@@ -76,21 +76,25 @@
                                                 :searchable="false"
                                                 :allow-empty="false">
                                 </VueMultiselect> -->
-              <VueMultiselect v-model="form.selectedCountry" :options="options" label="name"  searchable :allow-empty="false"  track-by="name" ></VueMultiselect>
-              <span class="td-field-group__validate-message">{{ form.errors.adress || " "}} </span>
+              <VueMultiselect v-model="form.country" deselectLabel="" selectLabel="" placeholder="Select Country"  :options="options" label="name"  searchable   track-by="name" >
+                    <template v-slot:singleLabel="{option}" >
+                      <p class="td-field-group__field m-0">{{ option.name }}</p>
+                      </template>
+              </VueMultiselect>
+              <span class="td-field-group__validate-message">{{ form.errors.country || " "}} </span>
+            </div>
+            <!--National number -->
+            <div v-if="form.country?.value == 'egypt'" class="mb-2 td-field-group  form-floating td-field-group--required">
+                <input autocomplete="off" placeholder="National Number" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.nationalNumber"  >
+              <label for="staticEmail" class="form-label  td-field-group__label">National Number</label>
+              <span class="td-field-group__validate-message">{{ form.errors.nationalNumber || " "}} </span>
             </div>
             <!--National Id -->
-            <!-- <div v-if="selectedCountry?.value != 'egypt'" class="mb-2 td-field-group td-field-group--required">
+            <div v-if="form.country?.value != 'egypt'" class="mb-2 form-floating td-field-group td-field-group--required">
+                <input autocomplete="off" type="text" placeholder="National ID"  class="form-control td-field-group__field" id="staticEmail" v-model="form.nationalID"  >
               <label for="staticEmail" class="form-label  td-field-group__label">National ID</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.adress"  >
-              <span class="td-field-group__validate-message">{{ form.errors.adress || " "}} </span>
-            </div> -->
-            <!--National number -->
-            <!-- <div v-else class="mb-2 td-field-group  td-field-group--required">
-              <label for="staticEmail" class="form-label  td-field-group__label">National Number</label>
-                <input autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.adress"  >
-              <span class="td-field-group__validate-message">{{ form.errors.adress || " "}} </span>
-            </div> -->
+              <span class="td-field-group__validate-message">{{ form.errors.nationalID || " "}} </span>
+            </div>
             <!--Date of Birth -->
                 <DatePicker  v-model="form.date">
                 <template v-slot="{ inputValue, togglePopover }">
@@ -170,12 +174,20 @@ export default {
     DatePicker , 
     VueMultiselect ,
   },
+  watch : {
+    "form.selectedCountry" : function(){
+      if(this.form.selectedCountry?.value == 'egypt')
+        this.form.nationalNumber = "";
+      else 
+        this.form.nationalID = "";
+    }
+  },
   data() {
     return {
       selectedCountry: undefined,
       options: [
-        { name: 'Egypt', lang: 'egypt' },
-        { name: 'Italy', lang: 'italy' },
+        { name: 'Egypt', value: 'egypt' },
+        { name: 'Italy', value: 'italy' },
       ]
     }
   },
