@@ -1,5 +1,5 @@
 <template>
-<div class=" container">
+<div class=" contact-us-container container">
     <div class="form-card">
         <form @submit="onsubmit"  class="form-card__form"
         >
