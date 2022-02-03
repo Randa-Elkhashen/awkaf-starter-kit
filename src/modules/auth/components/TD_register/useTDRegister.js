@@ -12,13 +12,21 @@ export default function useTDRegister(){
     name : string().required("user name is required") ,
     password: string().required("password is required").min(6),
     confirmPassword: string().required("retype your password").oneOf([ref('password')] , "password must match"),
-    phone: string().required("phone is required").isPhone("please provide a valid phone"),
+    phone: string().required().isPhone("please provide a valid phone"),
     // addresses : array( string().optional().min(25) ),
     address : string().required() ,
-    date : string().required("date is required"),
-    country : mixed().required("country is required") ,
-    gender : string().required("gender is required"),
-});
+    date : string().required(),
+    country : mixed().required(),
+    gender : string().required(),
+    nationalID : string().when("country", {
+        is : country => country && country.value !='egypt' ,
+        then : (schema)=> schema.required() ,
+    }),
+    nationalNumber : string().when("country", {
+        is : country => country && country.value =='egypt' ,
+        then : (schema)=> schema.required() ,
+    }).max(14),
+})
     const { errors , handleSubmit  } = useForm({ 
         validationSchema: schema,
      });
@@ -29,10 +37,12 @@ export default function useTDRegister(){
     const { value: confirmPassword } = useField('confirmPassword');
     const { value: phone } = useField('phone');
     const { value: date } = useField('date');
-    const { value: country } = useField('selectedCountry');
+    const { value: country } = useField('country');
     const { value: gender } = useField('gender');
     // const { remove, push, fields:addresses } = useFieldArray('addresses');
-    const { value: address } = useField('adress');
+    const { value: address } = useField('address');
+    const { value: nationalID } = useField('nationalID');
+    const { value: nationalNumber } = useField('nationalNumber');
     return { form : reactive({
         errors ,
         photo ,
@@ -45,7 +55,9 @@ export default function useTDRegister(){
         address , 
         date ,
         country ,
-        gender
+        gender ,
+        nationalID ,
+        nationalNumber
     }) ,
     // pushAddress : push ,
     // popAddress : remove , 
