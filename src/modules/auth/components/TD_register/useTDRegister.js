@@ -13,15 +13,13 @@ export default function useTDRegister(){
     password: string().required("password is required").min(6),
     confirmPassword: string().required("retype your password").oneOf([ref('password')] , "password must match"),
     phone: string().required("phone is required").isPhone("please provide a valid phone"),
-    addresses : array( string().optional().min(25) ),
+    // addresses : array( string().optional().min(25) ),
+    address : string().required() ,
     date : string().required("date is required"),
     country : mixed().required("country is required") ,
     gender : string().required("gender is required"),
 });
     const { errors , handleSubmit  } = useForm({ 
-        initialValues: {
-            addresses: ['https://github.com/logaretm'],
-          },
         validationSchema: schema,
      });
     const { value: photo } = useField('photo');
@@ -33,9 +31,8 @@ export default function useTDRegister(){
     const { value: date } = useField('date');
     const { value: country } = useField('selectedCountry');
     const { value: gender } = useField('gender');
-    const { remove, push, fields:addresses } = useFieldArray('addresses');
-    const { value: adress } = useField('testAddresses[0]');
-     console.log(adress)
+    // const { remove, push, fields:addresses } = useFieldArray('addresses');
+    const { value: address } = useField('adress');
     return { form : reactive({
         errors ,
         photo ,
@@ -44,14 +41,14 @@ export default function useTDRegister(){
         password , 
         confirmPassword ,
         phone,
-        addresses ,
-        adress , 
+        // addresses ,
+        address , 
         date ,
         country ,
         gender
     }) ,
-    pushAddress : push ,
-    popAddress : remove , 
+    // pushAddress : push ,
+    // popAddress : remove , 
     handleSubmit ,
 };
 }

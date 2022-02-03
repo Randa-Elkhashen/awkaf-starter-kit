@@ -38,20 +38,20 @@
               <span class="td-field-group__validate-message">{{ form.errors.confirmPassword || " "}} </span>
             </div>
             <!--address -->
-            <div v-for="(field , index ) in form.addresses" :key="index" class="mb-2 form-floating td-field-group td-field-group--required">
+            <!-- <div v-for="(field , index ) in form.addresses" :key="index" class="mb-2 form-floating td-field-group td-field-group--required">
                 <input placeholder="Address" autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="field.value"  >
               <label for="staticEmail"  class="form-label  td-field-group__label">Address</label>
-              <!-- <span class="td-field-group__validate-message">{{ form.errors.fields[index] || " "}} </span> -->
-            </div>
-            <div class="d-flex justify-content-center">
+              <span class="td-field-group__validate-message">{{ form.errors.fields[index] || " "}} </span>
+            </div> -->
+            <!-- <div class="d-flex justify-content-center">
                 <button @click="()=> pushAddress('new address')" type="button" class="btn btn-primary my-2 me-5">add</button>
                 <button @click="()=> popAddress('new address')" type="button" class="btn btn-primary my-2 me-5">remove</button>
-            </div>
+            </div> -->
             <!--address -->
             <div class="mb-2 form-floating td-field-group td-field-group--required">
-                <input placeholder="Address" autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.adress"  >
+                <input placeholder="Address" autocomplete="off" type="text"  class="form-control td-field-group__field" id="staticEmail" v-model="form.address"  >
               <label for="staticEmail" class="form-label  td-field-group__label">address</label>
-              <span class="td-field-group__validate-message">{{ form.errors.adress || " "}} </span>
+              <span class="td-field-group__validate-message">{{ form.errors.address || " "}} </span>
             </div>
             <!-- <div v-for="(testAddress , index ) in form.testAddresses" :key="index" class="mb-2 td-field-group td-field-group--required">
               <label for="staticEmail" class="form-label  td-field-group__label">Address</label>
@@ -92,22 +92,21 @@
               <span class="td-field-group__validate-message">{{ form.errors.adress || " "}} </span>
             </div> -->
             <!--Date of Birth -->
-            <div class="mb-2  td-field-group td-field-group--required">
-              <label for="staticEmail" class="form-label  td-field-group__label">Date of Birth</label>
-                <DatePicker  class="inline-block h-full" v-model="form.date">
+                <DatePicker  v-model="form.date">
                 <template v-slot="{ inputValue, togglePopover }">
-                  <div class="flex items-center">
+                  <div class="form-floating mb-2 td-field-group td-field-group--required td-field-group--date-picker">
                     <input
+                      placeholder="Date of Birth"
                       @click="togglePopover"
                       :value="inputValue"
-                      class="bg-white border px-3 py-2  custom-input"
+                      class="form-control td-field-group__field"
                       readonly
                     />
+                <label for="staticEmail" class="form-label  td-field-group__label">Date of Birth</label>
+                <span class="td-field-group__validate-message">{{ form.errors.date || " "}} </span>
                   </div>
                 </template>
               </DatePicker >
-              <span class="td-field-group__validate-message">{{ form.errors.date || " "}} </span>
-            </div>
             <!--Gender -->
             <div class="mb-2  td-field-group td-field-group--required ">
               <label   class="form-label  td-field-group__label ">Gender</label>
