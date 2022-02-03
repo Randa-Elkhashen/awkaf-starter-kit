@@ -14,6 +14,7 @@
       --form-card-btn-color:white;
       --form-card-bg:white;
       --form-card-color:black;
+      --form-card-other-options : #0066c0;
     }
   }
   .invert-color{
@@ -22,12 +23,14 @@
       --form-card-btn-color:white;
       --form-card-bg:black;
       --form-card-color:white;
+      --form-card-other-options : #F16100;
     }
   }
   $formCardBtnBg : var(--form-card-btn-bg);
   $formCardBtnColor : var(--form-card-btn-color);
   $formCardBg : var(--form-card-bg);
   $formCardColor : var(--form-card-color);
+  $formCardOtherOptions: var(--form-card-other-options);
   /*variables*/
   .form-card{
       display: flex;
@@ -46,7 +49,6 @@
         font-family: $title-font-family;
         font-size: 28px;
         font-weight: bold;
-        color: black;
         margin-bottom: 30px;
         position: relative;
         display: block;
@@ -80,7 +82,7 @@
       margin-bottom: 0;
       font-size: 0.8em;
       .form-card__other-options__option{
-        color: #0066c0;
+        color: $formCardOtherOptions;
         transition: all 0.2s ease-in-out;
         &:hover{
           color: orangered;
