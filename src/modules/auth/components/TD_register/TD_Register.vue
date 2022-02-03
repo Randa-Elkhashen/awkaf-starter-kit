@@ -2,7 +2,6 @@
 <div class=" container">
     <!-- {{form}} -->
     <div class="form-card">
-        <h1 class="form-card__title" > Register</h1>
         <form @submit="onsubmit"  class="form-card__form"
         >
         <div class="form-card__form__fields">
