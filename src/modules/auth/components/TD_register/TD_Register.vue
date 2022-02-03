@@ -9,7 +9,7 @@
             <!-- photo -->
             <div class="mb-2 td-field-group td-field-group--required td-field-group--photo-picker">
               <label for="staticEmail" class="form-label  td-field-group__label">Photo</label>
-                <img @load="form.photo=photoSrc" ref="photoElement" @click="selectPhoto" class="td-field-group__field" :src="photoSrc || require('../../../../assets/images/profile.jpg')"/>
+                <img @load="form.photo=photoSrc" ref="photoElement" @click="selectPhoto" class="td-field-group__field cursor-pointer" :src="photoSrc || require('../../../../assets/images/profile.jpg')"/>
                 <input @change="onPhotoInputChange"  ref="photoInput" type="file"  accept="image/png, image/jpeg"  class="form-control d-none" id="staticEmail" >
               <span class="td-field-group__validate-message">{{ form.errors.photo || " "}} </span>
             </div>
