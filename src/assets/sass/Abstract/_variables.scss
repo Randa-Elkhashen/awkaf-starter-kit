@@ -1,7 +1,24 @@
 /* built in modules*/
 @use "sass:map";
 /* built in modules*/
-
+// $primary:,
+// $secondary,
+// $success,
+// $info,
+// $warning,
+// $danger,
+// $light,
+// $dark
+// $theme-colors: (
+//   "primary":    $primary,
+//   "secondary":  $secondary,
+//   "success":    $success,
+//   "info":       $info,
+//   "warning":    $warning,
+//   "danger":     $danger,
+//   "light":      $light,
+//   "dark":       $dark
+// );
 :root {
   --fontModifier: 1;
   --terquois: #2accde;

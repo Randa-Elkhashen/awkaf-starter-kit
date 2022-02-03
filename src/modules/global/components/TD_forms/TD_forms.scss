@@ -14,7 +14,7 @@
       --form-card-btn-color:white;
       --form-card-bg:white;
       --form-card-color:black;
-      --form-card-other-options : #0066c0;
+      --form-card-other-options : #F16100;
     }
   }
   .invert-color{
@@ -110,7 +110,7 @@
     .td-field-group{
       --field-group-focus-label-color:#F16100;
       --field-group-label-color:white;
-      --field-group-error-color:white;
+      --field-group-error-color:red;
       --field-group-counter-color:white;
     }
   }
@@ -126,7 +126,7 @@
     color: inherit;
       .td-field-group__label{
           font-size: 1rem;
-          color: $fieldGroupLabelFocusColor;
+          color: $fieldGroupLabelColor;
           line-height: 1;
       }
       .td-field-group__field{
