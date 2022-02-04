@@ -20,7 +20,7 @@ body{
 @import "../../modules/auth/styles/main.scss";
 
 .title-description{
-    @include override-theme-colors( '--primary' , map-get($td-light-theme, "primary") , black  );
+    @include add-theme-colors( '--primary' , map-get($td-light-theme, "primary") , black  );
     &.title-description--center{
     // @include apply-animation('scale-animation' , 1s);
     }
