@@ -1,5 +1,5 @@
 
-import {string , number, addMethod }  from 'yup';
+import {string , ref , addMethod }  from 'yup';
 const validations = {
     init : ()=> {
         addMethod(string , 'emailOrPhone', function isEmailOrPhone( errorMessage , ...args ) {
@@ -29,6 +29,16 @@ const validations = {
               return (
                  isPhotoPathDefined(value)|| 
                 createError({ path, message: errorMessage })
+              );
+            });
+        })
+        addMethod(string , 'requiredIf', function requiredIf( conditionFunction , thisBinding , errorMessage   , ...args ) {
+          // test is custom validation method by yup
+          return this.test(`requiredIf-test`, errorMessage, function (value) {
+              const { path , createError  } = this;
+              return (
+                conditionFunction.call(this , value) || 
+                createError({ path, message: errorMessage || '{$path} is required custom' })
               );
             });
         })

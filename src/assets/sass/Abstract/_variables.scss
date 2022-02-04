@@ -9,40 +9,32 @@
 // $danger,
 // $light,
 // $dark
-// $theme-colors: (
-//   "primary":    $primary,
-//   "secondary":  $secondary,
-//   "success":    $success,
-//   "info":       $info,
-//   "warning":    $warning,
-//   "danger":     $danger,
-//   "light":      $light,
-//   "dark":       $dark
-// );
+
 :root {
   --fontModifier: 1;
-  --terquois: #2accde;
-  --whiteColor: #fff;
-  --copyRights-bg: #1036a5;
-  --black-nav-menu-color: #051d40;
-  --dark--grey-color: #554c2e;
-  --primary-bg : #e7e7e7;
-  --primary-color : #F16100; 
-  --primary-body-color : black; 
-  --primary-body-title-color : #F16100; 
-  --secondary-bg:#F16100;
+  // --terquois: #2accde;
+  // --whiteColor: #fff;
+  // --copyRights-bg: #1036a5;
+  // --black-nav-menu-color: #051d40;
+  // --dark--grey-color: #554c2e;
+  // --primary-bg : #e7e7e7;
+  // --primary-color : #F16100; 
+  // --primary-body-color : black; 
+  // --primary-body-title-color : #F16100; 
+  // --secondary-bg:#F16100;
 }
 .invert-color {
-    --terquois: #000;
-    --whiteColor: #000;
-    --copyRights-bg: #373737;
-    --black-nav-menu-color: #000000;
-    --dark--grey-color: #000000;
-    --primary-bg : #e7e7e7;
-    --primary-color :black; 
-    --primary-body-color : white; 
-    --primary-body-title-color : #F16100; 
-    --secondary-bg:black;
+    // --main-bg: #bdbcbc;
+    // --terquois: #000;
+    // --whiteColor: #000;
+    // --copyRights-bg: #373737;
+    // --black-nav-menu-color: #000000;
+    // --dark--grey-color: #000000;
+    // --primary-bg : #e7e7e7;
+    // --primary-color :black; 
+    // --primary-body-color : white; 
+    // --primary-body-title-color : #F16100; 
+    // --secondary-bg:black;
 
   footer .footerContainer .logoContainer__logo img {
     filter: greyscale(1) !important;
@@ -88,13 +80,28 @@
   .searchBox__wrapper > i {
     color: #000;
   }
-
 }
 /* Colors*/
+$td-light-theme: (
+  "primary" : #F16100,
+  "primary-bg" : #e7e7e7,
+  "primary-color" :black,
+  "secondary-bg" : white,
+  "secondary-color" : black,
+);
+$td-dark-theme: (
+  "primary" : white,
+  "primary-bg" : #e7e7e7,
+  "primary-color" :white,
+  "secondary-bg" : black,
+  "secondary-color" : white,
+);
+$primary : var(--primary);
 $primary-bg : var(--primary-bg);
 $primary-color : var(--primary-color);
-$primary-title-color : var(--primary-body-title-color);
 $secondary-bg : var(--secondary-bg);
+$secondary-color : var(--secondary-color);
+$primary-title-color : var(--primary-body-title-color);
 /* Colors*/
 
 /***Responsive variables***/

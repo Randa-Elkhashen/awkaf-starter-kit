@@ -1,0 +1,17 @@
+<div>
+    <!-- errorMessage  -->
+  <error-message :goHome="goHome" v-if="!GenericListingData.length && isInitialFetchDone" >
+          <slot name="emptyMessage"></slot>
+  </error-message>
+  <!-- listing -->
+        <div :class="[listWrapperClass]" v-else >
+                    <slot  :key="index" v-for="(item, index) in GenericListingData" :item="item" :index="index" ></slot>
+        </div>
+      <!-- loader -->
+      <scroll-loader v-if="loader"
+      :onScrollToEnd="getData" 
+      :isLoadMore="isThereMoreData" 
+      >
+      <slot name="loader"></slot>
+      </scroll-loader>
+  </div>

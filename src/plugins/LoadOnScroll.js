@@ -28,7 +28,6 @@ export class LoadOnScrollPlugin {
         this.#observer.disconnect()
     }
     attachLoader(loader) {
-        debugger
         setTimeout(()=> {
             this.#observer.observe(loader);
         }, 100);
