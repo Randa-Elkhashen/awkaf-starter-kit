@@ -22,8 +22,5 @@ export default {
         justify-content: center;
         align-items: center;
         height: 400px;
-        h1 {
-            color: $primary-color;
-        }
     }
 </style>
