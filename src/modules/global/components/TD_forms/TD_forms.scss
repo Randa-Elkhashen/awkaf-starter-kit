@@ -8,31 +8,16 @@
 }
 /*mixins*/
 /*variables*/
-:root{
-    .form-card{
-      --form-card-btn-bg:#F16100;
-      --form-card-btn-color:white;
-      --form-card-bg:white;
-      --form-card-color:black;
-      --form-card-other-options : #F16100;
-    }
-  }
-  .invert-color{
-    .form-card{
-      --form-card-btn-bg:#F16100;
-      --form-card-btn-color:white;
-      --form-card-bg:black;
-      --form-card-color:white;
-      --form-card-other-options : #F16100;
-    }
-  }
   $formCardBtnBg : var(--form-card-btn-bg);
   $formCardBtnColor : var(--form-card-btn-color);
-  $formCardBg : var(--form-card-bg);
-  $formCardColor : var(--form-card-color);
+  $formCardBg : $secondary-bg;
+  $formCardColor : $primary-color;
   $formCardOtherOptions: var(--form-card-other-options);
   /*variables*/
   .form-card{
+    @include add-theme-colors( '--form-card-btn-bg' , map-get($td-light-theme, "primary") , map-get($td-light-theme, "primary")  );
+    @include add-theme-colors( '--form-card-btn-color' , white , white);
+    @include add-theme-colors( '--form-card-other-options' , map-get($td-light-theme, "primary") , map-get($td-light-theme, "primary"));
       display: flex;
       flex-direction: column;
       border: 1px solid lightgrey;
@@ -98,24 +83,8 @@
     }
   }
   /* field group colors*/
-  :root{
-    .td-field-group{
-      --field-group-focus-label-color:#F16100;
-      --field-group-label-color:black;
-      --field-group-counter-color:grey;
-      --field-group-error-color:red;
-    }
-  }
-  .invert-color{
-    .td-field-group{
-      --field-group-focus-label-color:#F16100;
-      --field-group-label-color:white;
-      --field-group-error-color:red;
-      --field-group-counter-color:white;
-    }
-  }
   $fieldGroupLabelFocusColor : var(--field-group-focus-label-color);
-  $fieldGroupLabelColor : var(--field-group-label-color);
+  $fieldGroupLabelColor : $secondary-color;
   $fieldGroupBorderColor : $fieldGroupLabelColor;
   $errorColor:var(--field-group-error-color);
   $fieldGroupCounterColor:var(--field-group-counter-color);
@@ -123,6 +92,10 @@
 
   /*field group colors*/
   .td-field-group{
+    @include add-theme-colors( '--field-group-focus-label-color' , map-get($td-light-theme, "primary") , map-get($td-light-theme, "primary")  );
+    @include add-theme-colors( '--field-group-error-color' , red, red );
+    @include add-theme-colors( '--field-group-counter-color' , grey, white );
+
     color: inherit;
       .td-field-group__label{
           font-size: 1rem;
