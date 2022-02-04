@@ -135,7 +135,7 @@
   }
 }
 
-@mixin override-theme-colors( $colorName , $lightColor , $darkColor  ) {
+@mixin add-theme-colors( $colorName , $lightColor , $darkColor  ) {
       @at-root :root &{
         #{$colorName} : #{$lightColor};
     }
