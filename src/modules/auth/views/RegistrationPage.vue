@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container register-container">
     <h1 class="title-description">Registration Page</h1>
     <register />
     </div>
@@ -14,3 +14,17 @@ export default {
   }
 }
 </script>
+<style lang="scss" >
+.td-field-group--radio{
+  .form-label{
+    margin: 0;
+    padding-top: 0.5rem;
+  }
+}
+@media screen and(max-width:767px) {
+  .register-container{
+    padding: 0;
+  }
+}
+
+</style>

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
     <h1 class="title-description">Login</h1>
-    <login />
+    <login class="login-container" />
     </div>
 </template>
 
@@ -14,3 +14,13 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.login-container {
+    display: block;
+    max-width: 400px;
+    margin: auto;
+    .form-card{
+      padding: 15px;
+    }
+}
+</style>

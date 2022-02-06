@@ -1,5 +1,5 @@
 <template>
-<div class="reset-password-container container">
+<div >
     <div class="form-card">
         <h1 class="form-card__title" >Reset Password</h1>
         <p class="form-card__description">

@@ -1,5 +1,5 @@
 <template>
-<div class="forgot-password-container container">
+<div>
     <div class="form-card">
         <h1 class="form-card__title" >Forgot Password</h1>
         <p class="form-card__description">

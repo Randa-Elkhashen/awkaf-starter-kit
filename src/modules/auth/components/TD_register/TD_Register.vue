@@ -1,5 +1,5 @@
 <template>
-<div class=" container">
+<div>
     <!-- {{form}} -->
     <div class="form-card">
         <form @submit="onsubmit"  class="form-card__form"
@@ -77,7 +77,7 @@
                                 </VueMultiselect> -->
               <VueMultiselect v-model="form.country" deselectLabel="" selectLabel="" placeholder="Select Country"  :options="options" label="name"  searchable   track-by="name" >
                     <template v-slot:singleLabel="{option}" >
-                      <p class="td-field-group__field m-0">{{ option.name }}</p>
+                      <p class="m-0">{{ option.name }}</p>
                       </template>
               </VueMultiselect>
               <span class="td-field-group__validate-message">{{ form.errors.country || " "}} </span>
@@ -111,14 +111,14 @@
                 </template>
               </DatePicker >
             <!--Gender -->
-            <div class="mb-2  td-field-group td-field-group--required ">
+            <div class="mb-2  td-field-group td-field-group--required td-field-group--radio ">
               <label   class="form-label  td-field-group__label ">Gender</label>
                 <div class="td-field-group ">
-                <input type="radio" name="gender" value="male"  class="me-2 td-field-group__field" id="maleId" v-model="form.gender"  >
+                <input type="radio" name="gender" value="male"  class="me-2 " id="maleId" v-model="form.gender"  >
                 <label for="maleId"  class="form-label  ">male</label>
                 </div>
                 <div class="td-field-group td-field-group--required">
-                  <input type="radio" name="gender" value="female"  class="me-2 td-field-group__field" id="female" v-model="form.gender"  >
+                  <input type="radio" name="gender" value="female"  class="me-2 " id="female" v-model="form.gender"  >
                   <label for="female"  class="form-label  ">female</label>
                 </div>
               <span class="td-field-group__validate-message">{{ form.errors.gender || " "}} </span>

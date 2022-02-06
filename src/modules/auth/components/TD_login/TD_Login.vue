@@ -1,5 +1,5 @@
 <template>
-<div class="login-container container">
+<div>
     <div class="form-card">
         <h1 class="form-card__title" > Login Page</h1>
         <form @submit="onsubmit"  class="form-card__form"

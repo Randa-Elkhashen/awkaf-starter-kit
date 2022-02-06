@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container reset-password-container">
     <h1 class="title-description">Reset Password</h1>
     <reset-password/>
 </div>
@@ -13,3 +13,10 @@ export default {
     }
 }
 </script>
+<style lang="scss" scoped>
+@media screen and (max-width :767px) {
+    .reset-password-container{
+        padding: 0;
+    }
+}
+</style>

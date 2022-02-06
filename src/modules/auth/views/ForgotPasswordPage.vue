@@ -1,7 +1,7 @@
 <template>
-<div class="container">
+<div class="container forgot-password-container">
     <h1 class="title-description">Forgot Password</h1>
-    <forgot-password/>
+    <forgot-password />
 </div>
 </template>
 <script>
@@ -14,3 +14,18 @@ export default {
     
 }
 </script>
+<style lang="scss" scoped>
+ .forgot-password-container{
+    display: block;
+    max-width: 400px;
+    margin: auto;
+    .form-card{
+        padding: 15px;
+      }
+}
+@media screen and (max-width :767px) {
+    .forgot-password-container{
+        padding: 0;
+    }
+}
+</style>
