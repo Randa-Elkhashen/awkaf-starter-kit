@@ -32,7 +32,8 @@
       }
     .form-card__title{
         font-family: $title-font-family;
-        font-size: 28px;
+        color: $primary;
+        font-size: 1.75rem;
         font-weight: bold;
         margin-bottom: 30px;
         position: relative;
@@ -49,12 +50,12 @@
         }
       }
       .form-card__description{
-        color: black;
       }
     .form-card__form{
       display: block;
       margin-bottom: 5px;
         .form-card__form__submit-btn{
+          font-size: inherit;
           width: 100%;
           background-color: $formCardBtnBg;
           background: linear-gradient( to bottom, $formCardBtnBg  , $formCardBtnBg ) ;
@@ -145,6 +146,40 @@
     }
   }
   }
+  /*mobile*/
+  @media screen and (max-width : 767px) {
+    .form-card{
+      padding: 15px;
+      .form-card__title{
+        font-size: 1.375rem;
+      }
+    }
+    .td-field-group{
+
+      .td-field-group__field {
+       font-size: inherit;
+       padding: 0.80rem 0.75rem;
+       height: calc(3rem + 2px);
+    }
+    .td-field-group__label {
+      font-size: 0.875rem;
+      padding: 0.80rem 0.75rem;
+      }
+      &.td-field-group--photo-picker{
+        .td-field-group__field{
+          height: auto;
+          padding: 0;
+        }
+       }
+       &.td-field-group--date-picker{
+        .td-field-group__field{
+          width: 100%;
+        }
+       }
+    }
+  
+  }
+  /*mobile ends*/
   .form-card{
     .td-field-group{
       /* bootstrap overrides*/
