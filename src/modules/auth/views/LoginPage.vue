@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div class="container login-container">
     <h1 class="title-description">Login</h1>
-    <login class="login-container" />
+    <login />
     </div>
 </template>
 
@@ -22,5 +22,10 @@ export default {
     .form-card{
       padding: 15px;
     }
+}
+@media screen and (max-width:767px) {
+  .login-container{
+    padding: 0;
+  }
 }
 </style>
