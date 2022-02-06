@@ -30,3 +30,8 @@ body{
     padding-bottom: 15px;
     // @include apply-animation('from-top-zoom-in' , 1s);
 }
+@media screen and(max-width : 767px) {
+    body{
+        font-size: 0.875rem;
+    }
+}

@@ -22,5 +22,8 @@ export default {
         justify-content: center;
         align-items: center;
         height: 400px;
+        img{
+          max-width: 100%;
+        }
     }
 </style>
