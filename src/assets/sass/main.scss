@@ -30,6 +30,12 @@ body{
     padding-bottom: 15px;
     // @include apply-animation('from-top-zoom-in' , 1s);
 }
+.title{
+    @include add-title('inherit');
+    &.title--dimmed{
+        color : #767676;
+    }
+}
 @media screen and(max-width : 767px) {
     body{
         font-size: 0.875rem;

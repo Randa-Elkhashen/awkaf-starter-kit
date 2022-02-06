@@ -1,0 +1,19 @@
+@mixin add-title($color) {
+    color: $color;
+    padding: 0 5px;
+    vertical-align: baseline;
+    display: inline-block;
+}
+@mixin add-title-divider-bg($dividerColor) {
+    &:after{
+        content: "";
+        height: 1px;
+        width: 100%;
+        left: 0;
+        background-color: $dividerColor;
+        display: inline-block;
+        position: absolute;
+        bottom: 50%;
+        z-index: -1;
+    }
+}

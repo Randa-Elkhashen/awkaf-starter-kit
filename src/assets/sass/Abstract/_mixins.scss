@@ -1,5 +1,6 @@
 
 @import "./mixins/animation";
+@import "./mixins/style";
 @use "sass:map";
 @mixin mq($width, $type: max) {
     @if map_has_key($breakpoints, $width){
