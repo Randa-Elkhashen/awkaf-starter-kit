@@ -30,10 +30,10 @@
                         </li>
                         <li class="nav-item nav-item--user nav-item--hide">
                             <router-link class="nav-link" to="/login">
-                                <span class="d-inline-flex align-items-center">
+                                <span class="d-inline-flex align-items-center ">
                                     <span class="icon-profile-icon me-2"></span>
                                     <!-- <span class="icon-arrow-down-sign-to-navigate"></span> -->
-                                    <span>Login</span>
+                                    <span class="text">Login</span>
                                 </span>
                             </router-link>
 
@@ -119,7 +119,7 @@
                 <div class="header--mobile_wrapper">
                     <div class="header--mobile_wrapper__title">
 
-                        <a href="/ar">
+                        <a href="/">
                             <img src="../../../../assets/images/logo.svg" alt="turn digital logo">
                         </a>
                     </div>
@@ -146,15 +146,15 @@
                                 </div>
                                 <div class="offcanvas__profile">
                                     <div class="offcanvas__profile__login">
-                                        <a href="javascript:void(0)">
+                                        <router-link to="/login">
                                             <span class="icon-profile-icon"></span>
                                             <span>تسجيل الدخول</span>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="offcanvas__profile__register">
-                                        <a href="javascript:void(0)">
+                                        <router-link to="/register">
                                             <span>تسجيل</span>
-                                        </a>
+                                        </router-link>
                                     </div>
                                 </div>
                                 
@@ -172,51 +172,54 @@
                                                     <router-link to="/listing">Lazy</router-link>
                                                 </div>
                                                 <div class="single-item single-item__second-level">
-                                                    <router-link to="/listing">Loader</router-link>
+                                                </div>
+                                                <div class="single-item single-item__second-level">
+                                                    <router-link to="/listing1">Infinite scroll Method 1</router-link>
+                                                </div>
+                                                <div class="single-item single-item__second-level">
+                                                    <router-link to="/listing2">Infinite scroll Method 2</router-link>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="single-item single-item__first-level single-item__wrapper">
+                                        <router-link to="/tdgallery">Gallery</router-link>
+                                    </div>
+                                    <!-- timeline mobile -->
                                     <div class="single-item__wrapper">
-                                    <div class="single-item single-item__first-level single-item__has-child">
-                                        <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-2">Gallery</a>
-                                    </div>
-                                    <div class="collapse multi-collapse" id="multiCollapseExample-2">
-                                        <div class="card card-body">
-                                            <div class="">
-                                                <div class="single-item single-item__second-level single-item__has-child">
-                                                    <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-3">Gallery 1</a>
+                                        <div class="single-item single-item__first-level single-item__has-child">
+                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#timelineMenu">Timeline</a>
+                                        </div>
+                                        <div class="collapse multi-collapse" id="timelineMenu">
+                                            <div class="card card-body">
+                                                <div class="single-item single-item__second-level">
+                                                    <router-link to="/tdtimeline">Type 1</router-link>
                                                 </div>
-                                                <div class="collapse multi-collapse" id="multiCollapseExample-3">
-                                                    <div class="card card-body">
-                                                        <div class="single-item single-item__third-level">
-                                                            <a href="#">Gallery 1 1</a>
-                                                        </div>
-                                                        <div class="single-item single-item__third-level">
-                                                            <a href="#">Gallery 1 2</a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <div class="single-item single-item__second-level single-item__has-child">
-                                                    <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample-4">Gallery 2</a>
-                                                </div>
-                                                <div class="collapse multi-collapse" id="multiCollapseExample-4">
-                                                    <div class="card card-body">
-                                                        <div class="single-item single-item__third-level">
-                                                            <a href="#">Gallery 2 1</a>
-                                                        </div>
-                                                        <div class="single-item single-item__third-level">
-                                                            <a href="#">Gallery 2 2</a>
-                                                        </div>
-                                                    </div>
+                                                <div class="single-item single-item__second-level">
+                                                    <router-link to="/tdtimeline2">Type 2</router-link>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
+                                    <!-- lightbox mobile -->
+                                    <div class="single-item__wrapper">
+                                        <div class="single-item single-item__first-level single-item__has-child">
+                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#lightboxMenu">LightBox</a>
+                                        </div>
+                                        <div class="collapse multi-collapse" id="lightboxMenu">
+                                            <div class="card card-body">
+                                                <div class="single-item single-item__second-level">
+                                                    <router-link to="/lightbox">Images</router-link>
+                                                </div>
+                                                <div class="single-item single-item__second-level">
+                                                    <router-link to="/lightbox2">Images and Videos</router-link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- contact us mobile -->
+                                    <div class="single-item single-item__first-level single-item__wrapper">
+                                        <router-link to="/contactUs">Contact Us</router-link>
                                     </div>
                                 </div>
                             </div>
