@@ -1,0 +1,88 @@
+@mixin font-size($max-font-size, $min-font-size, $max-vw, $min-vw) {
+$u1: unit($min-vw);
+$u2: unit($max-vw);
+$u3: unit($min-font-size);
+$u4: unit($max-font-size);
+
+@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+    font-size: $min-font-size;
+    @media screen and (min-width: $min-vw) {
+        font-size: calc(
+        #{$min-font-size} * var(--font-resizer) + #{strip-unit(
+            $max-font-size - $min-font-size
+            )} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+    }
+    @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+    }
+    }
+}
+}
+@mixin invert-color {
+-webkit-filter: invert(100%);
+filter: invert(100%);
+background-color: #000;
+}
+@mixin dark-mode {
+
+}
+@mixin fluid-type-customized($min-vw, $max-vw, $min-font-size, $max-font-size) {
+$u1: unit($min-vw);
+$u2: unit($max-vw);
+$u3: unit($min-font-size);
+$u4: unit($max-font-size);
+
+@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+& {
+    @media screen and (min-width: $min-vw) and (max-width: $max-vw) {
+    font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+    }
+}
+}
+}
+@function checkThemeSetKeys($theme){
+@if(
+    map-has-key($theme, "primary") != null &&
+    map-has-key($theme, "primary-bg") != null &&
+    map-has-key($theme, "primary-color") != null  &&
+    map-has-key($theme, "secondary-bg") != null &&
+    map-has-key($theme, "secondary-color") != null  &&
+){
+    @return true;
+}
+@return false;
+}
+@mixin add-site-themes-colors($light-colors , $dark-colors) {
+@if (checkThemeSetKey($light-colors) && checkThemeSetKey($dark-colors)){
+    :root{
+    --primary : #{map-get($map: $light-colors, $key: "primary")};
+    --primary-bg : #{map-get($map: $light-colors, $key: "primary-bg")};
+    --primary-color : #{map-get($map: $light-colors, $key: "primary-color")}; 
+    --secondary-bg : #{map-get($map: $light-colors, $key: "secondary-bg")};
+    --secondary-color : #{map-get($map: $light-colors, $key: "secondary-color")}; 
+    }
+    .invert-color{
+    --primary : #{map-get($map: $dark-colors, $key: "primary")};
+    --primary-bg : #{map-get($map: $dark-colors, $key: "primary-bg")};
+    --primary-color : #{map-get($map: $dark-colors, $key: "primary-color")}; 
+    --secondary-bg : #{map-get($map: $dark-colors, $key: "secondary-bg")};
+    --secondary-color : #{map-get($map: $dark-colors, $key: "secondary-color")}; 
+    }
+}
+}
+@mixin add-theme-colors( $colorName , $lightColor , $darkColor  ) {
+    @at-root :root &{
+        #{$colorName} : #{$lightColor};
+    }
+    @at-root .invert-color &{
+        #{$colorName} : #{$darkColor};
+    }
+}
+@mixin add-clamp($number){
+    display: -webkit-box;
+    -webkit-line-clamp: $number;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }

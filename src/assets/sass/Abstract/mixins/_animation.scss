@@ -29,3 +29,16 @@
     animation-timing-function: ease-in-out;
 }
 /*animation mixins ends*/
+
+/*hover effect*/
+@mixin hover-effect($baseColor, $hoverColor) {
+    background: linear-gradient(to left, $baseColor 50%, $hoverColor 50%) right;
+    transition: .25s ease-out;
+    background-size: 200%;
+  }
+  @mixin ar-hover-effect ($baseColor, $hoverColor) {
+    background: linear-gradient(to right, $baseColor 50%, $hoverColor 50%) left;
+    transition: .25s ease-out;
+    background-size: 200%;
+  }
+  /*hover effect*/

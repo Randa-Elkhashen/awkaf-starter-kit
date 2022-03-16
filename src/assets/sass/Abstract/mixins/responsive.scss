@@ -1,0 +1,21 @@
+
+  @mixin define-responsive-property($property , $xLarge ,  $desktop , $tablet , $mobile){
+    #{$property}: #{$xLarge};
+    @include property-max-breakPoint( $property, $desktop , 1366px );
+    @include property-max-breakPoint( $property, $tablet , 1024px );
+    @include property-max-breakPoint( $property, $mobile , 767px );
+  }
+  @mixin property-max-breakPoint( $property , $value , $max-screen ){
+  @if($property and $value and $max-screen ){
+    @media screen and (max-width: $max-screen ) {
+        #{$property}: #{$value};
+    }
+  }
+  }
+  @mixin property-min-breakPoint( $property , $value , $min-screen ){
+  @if($property and $value and $max-screen ){
+    @media screen and (min-width: $min-screen ) {
+        #{$property}: #{$value};
+    }
+  }
+  }
