@@ -2,8 +2,8 @@
     "root": true,
     "env": {
         "browser": true,
-        "es2020": true ,
-        "node": true
+        "node":true,
+        "es6": true 
     },
     "extends": [
         "eslint:recommended",
@@ -26,19 +26,19 @@
         "vue/no-unused-components": "warn",
         "no-useless-escape": "warn",
         "indent": [
-            "error",
+            "warn",
             "tab"
         ],
         "linebreak-style": [
-            "error",
+            "warn",
             "windows"
         ],
         "quotes": [
-            "error",
+            "warn",
             "double"
         ],
         "semi": [
-            "error",
+            "warn",
             "never"
         ]
     }
