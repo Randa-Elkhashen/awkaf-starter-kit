@@ -1,0 +1,45 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2020": true ,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:vue/essential",
+        "plugin:vue/vue3-essential",
+        "eslint:recommended",
+        "plugin:json/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "parser": "babel-eslint"
+    },
+    "plugins": [
+        "vue"
+    ],
+    "rules": {
+        "no-debugger": "warn",
+        "no-unused-vars": "warn",
+        "vue/no-unused-components": "warn",
+        "no-useless-escape": "warn",
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ]
+    }
+}

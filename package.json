@@ -42,26 +42,6 @@
     "node-sass": "^6.0.1",
     "sass-loader": "^10.2.0"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended",
-      "plugin:json/recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {
-      "no-debugger": "warn",
-      "no-unused-vars": "warn",
-      "vue/no-unused-components": "warn",
-      "no-useless-escape": "warn"
-    }
-  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
