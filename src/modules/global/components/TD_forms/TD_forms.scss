@@ -1,19 +1,6 @@
-/*Import module components*/
-/*mixins*/
-@mixin addFocusFloatingLabelStyle{
-  opacity: 1;
-  font-weight: bold;
-  color: $fieldGroupLabelFocusColor;
-  transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
-}
-/*mixins*/
-/*variables*/
-  $formCardBtnBg : var(--form-card-btn-bg);
-  $formCardBtnColor : var(--form-card-btn-color);
-  $formCardBg : $secondary-bg;
-  $formCardColor : $primary-color;
-  $formCardOtherOptions: var(--form-card-other-options);
-  /*variables*/
+
+@import "./variables.scss";
+@import "./mixins.scss";
   .form-card{
     @include add-theme-colors( '--form-card-btn-bg' , map-get($td-light-theme, "primary") , map-get($td-light-theme, "primary")  );
     @include add-theme-colors( '--form-card-btn-color' , white , white);
@@ -83,21 +70,18 @@
         
       }
     }
+    .multiselect{
+      color: $formCardColor;
+      .multiselect__content-wrapper{
+        background-color: $formCardBg;
+        border-color: $fieldGroupBorderColor;
+      }
+    }
   }
-  /* field group colors*/
-  $fieldGroupLabelFocusColor : var(--field-group-focus-label-color);
-  $fieldGroupLabelColor : $secondary-color;
-  $fieldGroupBorderColor : $fieldGroupLabelColor;
-  $errorColor:var(--field-group-error-color);
-  $fieldGroupCounterColor:var(--field-group-counter-color);
-  $requiredColor : $errorColor;
-
-  /*field group colors*/
   .td-field-group{
     @include add-theme-colors( '--field-group-focus-label-color' , map-get($td-light-theme, "primary") , map-get($td-light-theme, "primary")  );
     @include add-theme-colors( '--field-group-error-color' , red, red );
     @include add-theme-colors( '--field-group-counter-color' , grey, white );
-
     color: inherit;
       .td-field-group__label{
           font-size: 1rem;
@@ -105,9 +89,7 @@
           line-height: 1;
       }
       .td-field-group__field{
-        background-color: inherit;
-        color: inherit;
-        border-color: $fieldGroupLabelColor;
+        @include add-field-group-input($fieldGroupLabelColor);
       }
       .td-field-group__validate-message{
       display: inline-block;
@@ -146,6 +128,7 @@
       @include addFocusFloatingLabelStyle();
     }
   }
+
   }
   /*mobile*/
   @media screen and (max-width : 767px) {
@@ -156,12 +139,6 @@
       }
     }
     .td-field-group{
-
-      .td-field-group__field {
-       font-size: inherit;
-       padding: 0.80rem 0.75rem;
-       height: calc(3rem + 2px);
-    }
     .td-field-group__label {
       font-size: 0.875rem;
       padding: 0.80rem 0.75rem;
@@ -196,5 +173,111 @@
         }
       }
       /* bootstrap overrides*/
+    }
+  }
+
+  .multiselect{
+    font-size: inherit!important;
+    .multiselect__select{
+      height: 100%;
+      &::before{
+        display: inline-block;
+        top: 28%;
+      }
+    }
+    &.multiselect--active{
+      .multiselect__tags{
+      border-color: $fieldGroupLabelFocusColor;
+      .multiselect__input{
+        color: $fieldGroupLabelFocusColor;
+        font-size: inherit;
+        @include define-responsive-property(line-height , 1.5 , 1.5 , 1.5 , 1.6 );
+        padding: 0;
+        &::placeholder{
+          color: inherit;
+        }
+       }
+      }
+    }
+    .multiselect__tags{
+      border-color: $fieldGroupLabelColor;
+      padding: 1rem 0.75rem;
+      background-color: transparent ;
+      font-size: inherit;
+      line-height: 1;
+      .multiselect__placeholder{
+        color: inherit;
+        margin: 0;
+        font-size: inherit;
+        padding: 0;
+       @include define-responsive-property(line-height , 1.5 , 1.5 , 1.5 , 1.6 );
+
+      }
+      .multiselect__single{
+        margin: 0;
+        background-color: transparent;
+        @include define-responsive-property(line-height , 1.5 , 1.5 , 1.5 , 1.6 );
+        padding: 0;
+        font-size: inherit;
+      }
+      .multiselect__input{
+       margin: 0;
+       background-color: transparent;
+       @include define-responsive-property(line-height , 1.5 , 1.5 , 1.5 , 1.6 );
+      }
+    }
+    .multiselect__content-wrapper{
+      .multiselect__content{
+        .multiselect__element{
+          .multiselect__option{
+            &.multiselect__option--highlight{
+              background: transparent;
+              color: inherit;
+            }
+            &.multiselect__option--selected{
+              background: transparent;
+              color: map-get($map: $td-light-theme, $key: 'primary' );
+              &::after{
+                content: "";
+              }
+            }
+          }
+        }
+      }
+    }
+    @media screen and(max-width:767px) {
+      .multiselect__select{
+      }
+      &.multiselect--active{
+        .multiselect__tags{
+        .multiselect__input{
+          &::placeholder{
+          }
+         }
+        }
+      }
+      .multiselect__tags{
+        padding: 0.80rem 0.75rem;
+        .multiselect__placeholder{
+          &::placeholder{
+          }
+        }
+        .multiselect__single{
+        }
+        .multiselect__input{
+        }
+      }
+      .multiselect__content-wrapper{
+        .multiselect__content{
+          .multiselect__element{
+            .multiselect__option{
+              &.multiselect__option--highlight{
+              }
+              &.multiselect__option--selected{
+              }
+            }
+          }
+        }
+      }
     }
   }

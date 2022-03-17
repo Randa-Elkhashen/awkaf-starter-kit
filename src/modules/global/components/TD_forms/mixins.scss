@@ -1,0 +1,19 @@
+/*mixins*/
+@mixin addFocusFloatingLabelStyle{
+    opacity: 1;
+    font-weight: bold;
+    color: $fieldGroupLabelFocusColor;
+    transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
+  }
+  /*mixins*/
+@mixin add-field-group-input($border-color){
+    background-color: inherit;
+    color: inherit;
+    border-color: $border-color;
+    @media screen and(max-width:767px) {
+        font-size: inherit;
+        padding: 0.80rem 0.75rem;
+        height: calc(3rem + 2px);
+    }
+
+}
