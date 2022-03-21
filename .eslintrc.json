@@ -1,30 +1,19 @@
 {
-    "root": true,
     "env": {
         "browser": true,
-        "node":true,
-        "es6": true 
+        "es6": true
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:vue/essential",
-        "plugin:vue/vue3-essential",
-        "eslint:recommended",
-        "plugin:json/recommended"
+        "eslint:recommended"
     ],
     "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module",
-        "parser": "babel-eslint"
+        "ecmaVersion": 11,
+        "sourceType": "module"
     },
     "plugins": [
         "vue"
     ],
     "rules": {
-        "no-debugger": "warn",
-        "no-unused-vars": "warn",
-        "vue/no-unused-components": "warn",
-        "no-useless-escape": "warn",
         "indent": [
             "warn",
             "tab"
@@ -37,9 +26,26 @@
             "warn",
             "double"
         ],
-        "semi": [
-            "warn",
-            "never"
-        ]
+        "vue/multi-word-component-names": "error",
+        "vue/no-arrow-functions-in-watch": "error",
+        "vue/require-v-for-key": "error",
+        "vue/no-unused-components": "error",
+        "vue/no-unused-vars": "error",
+        "vue/component-definition-name-casing": "error",
+        "vue/html-end-tags": "error",
+        "vue/html-indent": "error",
+        "vue/html-button-has-type": "error",
+        "vue/no-static-inline-styles": "error",
+        "vue/no-template-target-blank": "error",
+        "vue/no-unused-properties": "error",
+        "vue/no-unused-refs": "error",
+        "vue/no-v-html": "error",
+        "vue/no-multi-spaces": "error",
+        "vue/first-attribute-linebreak": "error",
+        "vue/attribute-hyphenation": "warn",
+        "vue/html-closing-bracket-newline": "warn",
+        "vue/html-closing-bracket-spacing": "warn",
+        "vue/singleline-html-element-content-newline": "warn",
+        "vue/html-comment-content-newline": "warn"
     }
 }
