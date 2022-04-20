@@ -333,4 +333,14 @@
     content: $icon-up-left-arrow;     
   }
 }
+.icon-eye-blocked {
+  &:before {
+    content: $icon-eye-blocked; 
+  }
+}
+.icon-eye {
+  &:before {
+    content: $icon-eye; 
+  }
+}
 
