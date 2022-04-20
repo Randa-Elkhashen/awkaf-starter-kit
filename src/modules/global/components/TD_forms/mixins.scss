@@ -3,17 +3,33 @@
     opacity: 1;
     font-weight: bold;
     color: $fieldGroupLabelFocusColor;
-    transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
+    transform: scale(.85) translateY(-0.5em) translateX(0.15em);
   }
   /*mixins*/
 @mixin add-field-group-input($border-color){
+    font-size: inherit;
     background-color: inherit;
     color: inherit;
     border-color: $border-color;
-    @media screen and(max-width:767px) {
-        font-size: inherit;
-        padding: 0.80rem 0.75rem;
-        height: calc(3rem + 2px);
-    }
-
+    padding-#{$end}: 2em;
+    height: calc(3.5em + 2px);
+    // @media screen and(max-width:767px) {
+    //     font-size: inherit;
+    //     padding: 0.80em 0.75em;
+    //     height: calc(3em + 2px);
+    // }
 }
+
+@mixin add-field-group-input-focus(){
+    &:focus , &:not(:placeholder-shown) {
+            padding-top: 1.625em;
+            padding-bottom: 0.625em;
+            padding-#{$end}:2.5em;
+    }
+    &:focus{
+        &::placeholder{
+            color: grey;
+        }
+    }
+}
+
