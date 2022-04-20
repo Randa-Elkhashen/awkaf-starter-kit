@@ -3,6 +3,7 @@
 @import "./mixins/style";
 @import "./mixins/responsive";
 @import "./mixins/fonts";
+@import "./mixins/colors";
 @use "sass:map";
 @mixin mq($width, $type: max) {
     @if map_has_key($breakpoints, $width){
@@ -18,7 +19,6 @@
     }
 
 }
-
 @mixin selected($backgroundColor, $textColor) {
   background-color: $backgroundColor;
   color: $textColor;

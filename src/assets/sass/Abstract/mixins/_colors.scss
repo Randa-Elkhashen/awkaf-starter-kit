@@ -1,0 +1,75 @@
+@function to-rgba($color , $alpha) {
+    @return #{"rgb(" + red($color) + ", " + green($color) + ", " + blue($color)+ "," + $alpha ")"};
+}
+/* set main variables colors set  */
+@mixin set-main-colors( $colors ) {
+    $primary-bg : map-get($map:$colors ,  $key: "primary-bg")!global;
+    $secondary-bg :map-get( $map: $colors , $key:  "secondary-bg")!global;
+    $navbar-bg :map-get( $map: $colors , $key:  "navbar-bg")!global;
+    $dark-color :map-get( $map: $colors , $key:  "dark-color")!global;
+    $dark-theme-switcher :map-get( $map: $colors , $key:  "dark-theme-switcher")!global;
+}
+@mixin normal-mode($modeColors : $normaModeColors) {
+    @include set-main-colors($modeColors);
+}
+@mixin dark-mode($modeColors : $darkModeColors) {
+    @include set-main-colors($modeColors);
+}
+/* set main variables colors set  */
+
+@mixin dark-mode--force {
+    @include set-all-item-proprties( ( "color" : $dark-color , "background-color": $primary-bg ) );
+}
+@mixin set-all-item-proprties( $properties){
+    @each $property , $value in $properties {
+        @include set-all-item-proprty($property , $value  , $isImprtant : true );
+    }
+}
+@mixin set-all-item-proprty( $property , $value  , $isImprtant : false ){
+    @if $isImprtant {
+        $value : #{$value + '!important'};
+      }
+    div , p , label ,  span , a , h1, h2 , h3 , h4 , h5 , h6 , main , footer , header , ul , li , button , section {
+        #{$property}:$value;
+    }  
+}
+
+@function checkThemeSetKeys($theme){
+    @if(
+        map-has-key($theme, "primary") != null &&
+        map-has-key($theme, "primary-bg") != null &&
+        map-has-key($theme, "primary-color") != null  &&
+        map-has-key($theme, "secondary-bg") != null &&
+        map-has-key($theme, "secondary-color") != null  &&
+    ){
+        @return true;
+    }
+    @return false;
+    }
+    @mixin add-site-themes-colors($light-colors , $dark-colors) {
+    @if (checkThemeSetKey($light-colors) && checkThemeSetKey($dark-colors)){
+        :root{
+        --primary : #{map-get($map: $light-colors, $key: "primary")};
+        --primary-bg : #{map-get($map: $light-colors, $key: "primary-bg")};
+        --primary-color : #{map-get($map: $light-colors, $key: "primary-color")}; 
+        --secondary-bg : #{map-get($map: $light-colors, $key: "secondary-bg")};
+        --secondary-color : #{map-get($map: $light-colors, $key: "secondary-color")}; 
+        }
+        .invert-color{
+        --primary : #{map-get($map: $dark-colors, $key: "primary")};
+        --primary-bg : #{map-get($map: $dark-colors, $key: "primary-bg")};
+        --primary-color : #{map-get($map: $dark-colors, $key: "primary-color")}; 
+        --secondary-bg : #{map-get($map: $dark-colors, $key: "secondary-bg")};
+        --secondary-color : #{map-get($map: $dark-colors, $key: "secondary-color")}; 
+        }
+    }
+    }
+    @mixin add-theme-colors( $colorName , $lightColor , $darkColor  ) {
+        @at-root :root &{
+            #{$colorName} : #{$lightColor};
+        }
+        @at-root .invert-color &{
+            #{$colorName} : #{$darkColor};
+        }
+    }
+/*** Colors***/
