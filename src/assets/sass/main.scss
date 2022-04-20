@@ -15,6 +15,9 @@ body{
 .cursor-pointer{
     cursor: pointer;
 }
+.no-event{
+    pointer-events: none;
+}
 /*Import Modules*/
 @import "../../modules/global/styles/main.scss";
 @import "../../modules/auth/styles/main.scss";
