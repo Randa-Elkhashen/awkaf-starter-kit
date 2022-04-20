@@ -13,7 +13,7 @@ export class AsyncHandler {
         this.notifyListeners(true)
         let res = await this.requestWrapper(asyncRequestFunc);
         this.notifyListeners(false)
-        if(res.status == this.status.SUCCESS)
+        if(res.status >= this.status.SUCCESS && res.status < this.status.SUCCESS + 99)
         return res;
         throw new ErrorMessage()
     }
