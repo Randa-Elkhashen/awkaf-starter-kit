@@ -93,6 +93,8 @@
         font-size: 1em;
         color: $fieldGroupLabelColor;
         line-height: 1;
+        #{$start}:0;
+        #{$end}:unset;
     }
     &:not(.td-field-group--radio-item ){
       > .td-field-group__field{
