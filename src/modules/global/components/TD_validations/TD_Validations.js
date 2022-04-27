@@ -52,7 +52,7 @@ export default validations;
   const isPhone = (phone) =>{
     if(!phone)
       return true;
-    const phoneSchema = string().length(12).matches(/^01[0-9]/igm);
+    const phoneSchema = string().length(11).matches(/^01[0-9]{9}$/igm);
     return phoneSchema.isValidSync(phone);
   }
   const isPhotoPathDefined = (path) =>{
