@@ -36,18 +36,18 @@
 
 @function checkThemeSetKeys($theme){
     @if(
-        map-has-key($theme, "primary") != null &&
-        map-has-key($theme, "primary-bg") != null &&
-        map-has-key($theme, "primary-color") != null  &&
-        map-has-key($theme, "secondary-bg") != null &&
-        map-has-key($theme, "secondary-color") != null  &&
+        map-has-key($theme, "primary") and
+        map-has-key($theme, "primary-bg") and
+        map-has-key($theme, "primary-color") and
+        map-has-key($theme, "secondary-bg") and
+        map-has-key($theme, "secondary-color")
     ){
         @return true;
     }
     @return false;
     }
     @mixin add-site-themes-colors($light-colors , $dark-colors) {
-    @if (checkThemeSetKey($light-colors) && checkThemeSetKey($dark-colors)){
+    @if (checkThemeSetKey($light-colors) and checkThemeSetKey($dark-colors)){
         :root{
         --primary : #{map-get($map: $light-colors, $key: "primary")};
         --primary-bg : #{map-get($map: $light-colors, $key: "primary-bg")};
