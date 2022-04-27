@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+.nav {
+    &.nav-tabs{
+        border-color: $tabsActiveColor;
+        align-items: end;
+        .nav-item{
+            .nav-link{
+                color: $tabsColor;
+                background-color: $tabsBg;
+                background-clip: padding-box;
+                border: none;
+                border-#{$end}: 1px solid transparent;
+                border-bottom: 1px solid transparent;
+                // margin: 0;
+                &.active{
+                    color: $tabsActiveColor;
+                    background-color: $tabsBg;
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+}
