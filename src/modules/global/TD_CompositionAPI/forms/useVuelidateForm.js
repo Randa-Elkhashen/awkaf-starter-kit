@@ -1,7 +1,6 @@
 import useVuelidate from "@vuelidate/core"
 import { reactive } from "vue"
 const useAddField = (field , rule , state)=>{
-    console.log(0)
     const [fieldKey , fieldValue ] =  Object.entries(field)[0];
     console.log(fieldKey , fieldValue)
     state.form[fieldKey] = fieldValue;
@@ -17,7 +16,7 @@ const useAddForm = (form , rules , state )=>{
 }
 export default function useForm(form , rules ){
     const state = reactive({ form , rules });
-    const  v$  = useVuelidate(state.rules ,state.form , {$lazy:true });
+    const  v$  = useVuelidate(state.rules ,state.form , { $autoDirty: true });
     const addField = (field , rule)=> useAddField(field , rule , state);
     const addForm = (form , rules ) => useAddForm( form , rules , state);
     return { form:state.form , v$ , addField, addForm }

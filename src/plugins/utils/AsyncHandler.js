@@ -1,6 +1,6 @@
-import statusCodes from "./statusCodes.json";
+import { STATUS_CODES } from "../../global/Constants";
+import { ErrorMessage } from "./ErrorMessage";
 export class AsyncHandler {
-    static status = statusCodes
     static listeners = [];
     static addRequestEventListener = (listener)=> this.listeners.push(listener)
     static notifyListeners( isRequestPending ){
@@ -13,7 +13,7 @@ export class AsyncHandler {
         this.notifyListeners(true)
         let res = await this.requestWrapper(asyncRequestFunc);
         this.notifyListeners(false)
-        if(res.status >= this.status.SUCCESS && res.status < this.status.SUCCESS + 99)
+        if(res.status >= STATUS_CODES.SUCCESS && res.status < STATUS_CODES.SUCCESS + 99)
         return res;
         throw new ErrorMessage()
     }
@@ -32,22 +32,3 @@ export class AsyncHandler {
         return await asyncRequest()
     }
 }
-//#region errors
-Error.prototype.getErrorMessages = function(){
-    return [this.message]
-  }
-export class ErrorMessage extends Error {
-      #displayMessages;
-      constructor(ApiMessages =["Something went wrong , Please Contact system Adminstrator"] ) {
-          super(ApiMessages[0]);
-          this.#setDisplayMessages(ApiMessages);
-        }
-        getErrorMessages(){
-            return this.#displayMessages;
-        }
-        #setDisplayMessages(messages){
-            this.#displayMessages = messages;
-        }
-  }
-//#endregion errors
-export default { AsyncHandler , ErrorMessage }
