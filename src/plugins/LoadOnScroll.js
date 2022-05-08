@@ -1,4 +1,4 @@
-export class LoadOnScrollPlugin {
+export default class LoadOnScrollPlugin {
     #observer;
     #isCallBackSetteled = true;
     #observerOptions = {

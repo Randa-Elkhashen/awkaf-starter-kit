@@ -1,6 +1,6 @@
 import { STATUS_CODES } from "../../global/Constants";
 import { ErrorMessage } from "./ErrorMessage";
-export class AsyncHandler {
+export default class AsyncHandler {
     static listeners = [];
     static addRequestEventListener = (listener)=> this.listeners.push(listener)
     static notifyListeners( isRequestPending ){
@@ -11,7 +11,7 @@ export class AsyncHandler {
     }
     static async responseHandler( asyncRequestFunc ){
         this.notifyListeners(true)
-        let res = await this.requestWrapper(asyncRequestFunc);
+        let res = await asyncRequestFunc(asyncRequestFunc);
         this.notifyListeners(false)
         if(res.status >= STATUS_CODES.SUCCESS && res.status < STATUS_CODES.SUCCESS + 99)
         return res;
@@ -27,8 +27,5 @@ export class AsyncHandler {
             }
             return error;
         }
-    }
-    static async requestWrapper( asyncRequest ){
-        return await asyncRequest()
     }
 }

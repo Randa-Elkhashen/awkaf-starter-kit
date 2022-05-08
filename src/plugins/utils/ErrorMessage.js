@@ -1,3 +1,4 @@
+// todo
 //#region errors
 Error.prototype.getErrorMessages = function(){
     return [this.message]
