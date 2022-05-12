@@ -45,31 +45,44 @@
         @return true;
     }
     @return false;
-    }
-    @mixin add-site-themes-colors($light-colors , $dark-colors) {
-    @if (checkThemeSetKey($light-colors) and checkThemeSetKey($dark-colors)){
-        :root{
-        --primary : #{map-get($map: $light-colors, $key: "primary")};
-        --primary-bg : #{map-get($map: $light-colors, $key: "primary-bg")};
-        --primary-color : #{map-get($map: $light-colors, $key: "primary-color")}; 
-        --secondary-bg : #{map-get($map: $light-colors, $key: "secondary-bg")};
-        --secondary-color : #{map-get($map: $light-colors, $key: "secondary-color")}; 
+}
+// define main themes css variables in light , dark modes
+@mixin define-themes-colors($light-mode , $dark-mode ) {
+    @each $colorName, $color in $light-mode {
+        --#{$colorName}:#{$color};
         }
-        .invert-color{
-        --primary : #{map-get($map: $dark-colors, $key: "primary")};
-        --primary-bg : #{map-get($map: $dark-colors, $key: "primary-bg")};
-        --primary-color : #{map-get($map: $dark-colors, $key: "primary-color")}; 
-        --secondary-bg : #{map-get($map: $dark-colors, $key: "secondary-bg")};
-        --secondary-color : #{map-get($map: $dark-colors, $key: "secondary-color")}; 
+        @at-root .invert-color #{&} {
+                &{
+                    @each $colorName, $color in $dark-mode {
+                        --#{$colorName}:#{$color};
+                    }
+                }
         }
+}
+@mixin add-site-themes-colors($light-colors , $dark-colors) {
+@if (checkThemeSetKey($light-colors) and checkThemeSetKey($dark-colors)){
+    :root{
+    --primary : #{map-get($map: $light-colors, $key: "primary")};
+    --primary-bg : #{map-get($map: $light-colors, $key: "primary-bg")};
+    --primary-color : #{map-get($map: $light-colors, $key: "primary-color")}; 
+    --secondary-bg : #{map-get($map: $light-colors, $key: "secondary-bg")};
+    --secondary-color : #{map-get($map: $light-colors, $key: "secondary-color")}; 
     }
+    .invert-color{
+    --primary : #{map-get($map: $dark-colors, $key: "primary")};
+    --primary-bg : #{map-get($map: $dark-colors, $key: "primary-bg")};
+    --primary-color : #{map-get($map: $dark-colors, $key: "primary-color")}; 
+    --secondary-bg : #{map-get($map: $dark-colors, $key: "secondary-bg")};
+    --secondary-color : #{map-get($map: $dark-colors, $key: "secondary-color")}; 
     }
-    @mixin add-theme-colors( $colorName , $lightColor , $darkColor  ) {
-        @at-root :root &{
-            #{$colorName} : #{$lightColor};
-        }
-        @at-root .invert-color &{
-            #{$colorName} : #{$darkColor};
-        }
+}
+}
+@mixin add-theme-colors( $colorName , $lightColor , $darkColor  ) {
+    @at-root :root &{
+        #{$colorName} : #{$lightColor};
     }
+    @at-root .invert-color &{
+        #{$colorName} : #{$darkColor};
+    }
+}
 /*** Colors***/
