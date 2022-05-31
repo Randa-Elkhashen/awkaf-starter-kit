@@ -15,9 +15,6 @@ body{
 .cursor-pointer{
     cursor: pointer;
 }
-/*Import Modules*/
-@import "../../modules/global/styles/main.scss";
-@import "../../modules/auth/styles/main.scss";
 
 .title-description{
     @include add-theme-colors( '--primary' , map-get($td-light-theme, "primary") , black  );
