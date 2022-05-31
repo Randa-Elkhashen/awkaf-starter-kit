@@ -12,30 +12,8 @@
 
 :root {
   --fontModifier: 1;
-  // --terquois: #2accde;
-  // --whiteColor: #fff;
-  // --copyRights-bg: #1036a5;
-  // --black-nav-menu-color: #051d40;
-  // --dark--grey-color: #554c2e;
-  // --primary-bg : #e7e7e7;
-  // --primary-color : #F16100; 
-  // --primary-body-color : black; 
-  // --primary-body-title-color : #F16100; 
-  // --secondary-bg:#F16100;
 }
 .invert-color {
-    // --main-bg: #bdbcbc;
-    // --terquois: #000;
-    // --whiteColor: #000;
-    // --copyRights-bg: #373737;
-    // --black-nav-menu-color: #000000;
-    // --dark--grey-color: #000000;
-    // --primary-bg : #e7e7e7;
-    // --primary-color :black; 
-    // --primary-body-color : white; 
-    // --primary-body-title-color : #F16100; 
-    // --secondary-bg:black;
-
   footer .footerContainer .logoContainer__logo img {
     filter: greyscale(1) !important;
   }
@@ -64,10 +42,6 @@
     }
   }
   footer .footerContainer .logoContainer__hotline i::before {
-    color: #000;
-  }
-  .primary-btn {
-    background: #fff;
     color: #000;
   }
   .downloadCardWrapper .downloadCard__icon {
@@ -133,34 +107,6 @@ $darkModeColors : (
     "dark-theme-switcher" : #e2ded4
 );
 
-@mixin set-main-colors( $colors ) {
-    $primary-bg : map-get($map:$colors ,  $key: "primary-bg")!global;
-    $secondary-bg :map-get( $map: $colors , $key:  "secondary-bg")!global;
-    $navbar-bg :map-get( $map: $colors , $key:  "navbar-bg")!global;
-    $dark-color :map-get( $map: $colors , $key:  "dark-color")!global;
-    $dark-theme-switcher :map-get( $map: $colors , $key:  "dark-theme-switcher")!global;
-}
-@mixin normal-mode($modeColors : $normaModeColors) {
-    @include set-main-colors($modeColors);
-}
-@mixin dark-mode($modeColors : $darkModeColors) {
-    @include set-main-colors($modeColors);
-}
 
-@mixin dark-mode--force {
-    @include set-all-item-proprties( ( "color" : $dark-color , "background-color": $primary-bg ) );
-}
-@mixin set-all-item-proprties( $properties){
-    @each $property , $value in $properties {
-        @include set-all-item-proprty($property , $value  , $isImprtant : true );
-    }
-}
-@mixin set-all-item-proprty( $property , $value  , $isImprtant : false ){
-    @if $isImprtant {
-        $value : #{$value + '!important'};
-      }
-    div , p , label ,  span , a , h1, h2 , h3 , h4 , h5 , h6 , main , footer , header , ul , li , button , section {
-        #{$property}:$value;
-    }  
-}
-/*** Colors***/
+
+

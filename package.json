@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "start": "npm run watch",
     "watch": "vue-cli-service build --mode development --watch",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "cypress":"npx cypress open"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.0",
@@ -36,6 +37,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
+    "cypress": "^9.5.3",
     "eslint": "^6.8.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-vue": "^7.0.0",

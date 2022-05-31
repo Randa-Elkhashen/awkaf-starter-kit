@@ -42,44 +42,7 @@ $u4: unit($max-font-size);
 }
 }
 }
-@function checkThemeSetKeys($theme){
-@if(
-    map-has-key($theme, "primary") != null &&
-    map-has-key($theme, "primary-bg") != null &&
-    map-has-key($theme, "primary-color") != null  &&
-    map-has-key($theme, "secondary-bg") != null &&
-    map-has-key($theme, "secondary-color") != null  &&
-){
-    @return true;
-}
-@return false;
-}
-@mixin add-site-themes-colors($light-colors , $dark-colors) {
-@if (checkThemeSetKey($light-colors) && checkThemeSetKey($dark-colors)){
-    :root{
-    --primary : #{map-get($map: $light-colors, $key: "primary")};
-    --primary-bg : #{map-get($map: $light-colors, $key: "primary-bg")};
-    --primary-color : #{map-get($map: $light-colors, $key: "primary-color")}; 
-    --secondary-bg : #{map-get($map: $light-colors, $key: "secondary-bg")};
-    --secondary-color : #{map-get($map: $light-colors, $key: "secondary-color")}; 
-    }
-    .invert-color{
-    --primary : #{map-get($map: $dark-colors, $key: "primary")};
-    --primary-bg : #{map-get($map: $dark-colors, $key: "primary-bg")};
-    --primary-color : #{map-get($map: $dark-colors, $key: "primary-color")}; 
-    --secondary-bg : #{map-get($map: $dark-colors, $key: "secondary-bg")};
-    --secondary-color : #{map-get($map: $dark-colors, $key: "secondary-color")}; 
-    }
-}
-}
-@mixin add-theme-colors( $colorName , $lightColor , $darkColor  ) {
-    @at-root :root &{
-        #{$colorName} : #{$lightColor};
-    }
-    @at-root .invert-color &{
-        #{$colorName} : #{$darkColor};
-    }
-}
+
 @mixin add-clamp($number){
     display: -webkit-box;
     -webkit-line-clamp: $number;
