@@ -24,7 +24,6 @@ module.exports = {
       scss: {
         additionalData: `
           @import './src/assets/sass/Directions/_ltr-direction.scss';
-          @import './src/assets/sass/icomoon/style.scss';
           @import "./src/assets/sass/Abstract/_mixins.scss";
           @import "./src/assets/sass/Abstract/_variables.scss";
           
