@@ -1,5 +1,5 @@
 {
-  "name": "fe-starter-kit",
+  "name": "awkaf-starter-kit",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "npm run watch",
     "watch": "vue-cli-service build --mode development --watch",
     "lint": "vue-cli-service lint",
-    "cypress":"npx cypress open"
+    "cypress": "npx cypress open"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.0",

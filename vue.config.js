@@ -3,16 +3,7 @@ const path = require("path");
 module.exports = {
   outputDir: path.resolve(__dirname, "./dist"),
   assetsDir: "./",
-  chainWebpack: (config) => {
-    config
-      .entry("main-ltr")
-      .add("./src/assets/sass/main-ltr.scss")
-      .end();
-    config
-      .entry("main-rtl")
-      .add("./src/assets/sass/main-rtl.scss")
-      .end();
-  },
+  chainWebpack: (config) => {},
   css: {
     extract: {
       filename: "[name].css", // to have a name related to a theme
@@ -26,7 +17,6 @@ module.exports = {
           @import './src/assets/sass/Directions/_ltr-direction.scss';
           @import "./src/assets/sass/Abstract/_mixins.scss";
           @import "./src/assets/sass/Abstract/_variables.scss";
-          
           `
       }
     }
