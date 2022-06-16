@@ -1,0 +1,23 @@
+@font-face {
+    font-family: $font-family;
+    src: url('#{$font-path}/#{$font-family}-Regular.ttf');
+    // src: url('#{$font-path}/#{$font-family}-Regular.ttf')  format('truetype'),
+    //  url('#{$font-path}/#{$font-family}-Regular.eot')  format('truetype'),
+    //  url('#{$font-path}/#{$font-family}-Regular.woff')  format('truetype'),
+    //  url('#{$font-path}/#{$font-family}-Regular.svg')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// no bold font in rtl 
+@if $direction=='ltr' {
+    @font-face {
+        font-family: $font-family;
+        src: url('#{$font-path}/#{$font-family}-Bold.eot')  format('truetype'),
+        url('#{$font-path}/#{$font-family}-Bold.ttf')  format('truetype'),
+        url('#{$font-path}/#{$font-family}-Bold.woff')  format('truetype'),
+        url('#{$font-path}/#{$font-family}-Bold.svg')  format('truetype');
+        font-weight: bold;
+        font-style: normal;
+      }
+}
