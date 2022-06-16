@@ -6,6 +6,8 @@
 
   <Example_one :successErrorIcon="popupIconSuccess" />
   <!-- <Example_one :successErrorIcon="popupIconErro" /> -->
+    <div class="btn btn-primary" @click="throwAnError" >throw error </div>
+
 </template>
 
 <script>
@@ -25,6 +27,11 @@ export default {
           popupIconSuccess: right,
           popupIconErro: error
       }
-  }
+  },
+    methods: {
+    throwAnError(){
+        throw new Error("throwed error by method")
+    }
+    },
 };
 </script>
