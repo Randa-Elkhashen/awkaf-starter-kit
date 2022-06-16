@@ -4,8 +4,13 @@
 
 export const routes = [
     {
-        path: '/',
+        path: '/Home',
         name: 'Home',
         component: () => import(/* webpackChunkName: "home" */'../views/Home.vue')
+    },
+    {
+        path: '/ErrorPage',
+        name: 'ErrorPage',
+        component: () => import(/* webpackChunkName: "home" */'../views/ErrorPage.vue')
     },
 ]
