@@ -43,6 +43,7 @@
           >
             {{ popupInformation.button1Text }}
           </button>
+          <button>{{$t("message.test")}}</button>
         </div>
       </div>
     </div>

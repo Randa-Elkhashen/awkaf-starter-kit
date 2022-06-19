@@ -1,11 +1,14 @@
 <template>
   <div>Welocme home</div>
+  <div>Testing i18n {{ $t("message.hello", {name: "randa"}) }}</div>
+  <div>Testing i18n {{ $t("message.hello", {name: `${test}`}) }}</div>
+  <div></div>
   <div class="relative-of-this" style="position: relative;min-height: 200px;">
       <Example_LoaderVue />
   </div>
 
-  <Example_one :successErrorIcon="popupIconSuccess" />
-  <!-- <Example_one :successErrorIcon="popupIconErro" /> -->
+  <!-- <Example_one :successErrorIcon="popupIconSuccess" /> -->
+  <Example_one :successErrorIcon="popupIconErro" />
     <div class="btn btn-primary" @click="throwAnError" >throw error </div>
 
 </template>
@@ -25,7 +28,8 @@ export default {
   data() {
       return {
           popupIconSuccess: right,
-          popupIconErro: error
+          popupIconErro: error,
+          test: "from Component"
       }
   },
     methods: {

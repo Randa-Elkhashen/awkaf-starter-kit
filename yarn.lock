@@ -976,6 +976,44 @@
     "cssnano-preset-default" "^4.0.0"
     "postcss" "^7.0.0"
 
+"@intlify/core-base@9.2.0-beta.36":
+  "integrity" "sha512-PGYUdWUgb+1Do9Ol/4csHTKxu0cNIOGhJSHZZxSb5tI9k3YkejCFBRIlKBokF5rK8OX4LDboJ6tDXeSwt1hO3g=="
+  "resolved" "https://registry.npmjs.org/@intlify/core-base/-/core-base-9.2.0-beta.36.tgz"
+  "version" "9.2.0-beta.36"
+  dependencies:
+    "@intlify/devtools-if" "9.2.0-beta.36"
+    "@intlify/message-compiler" "9.2.0-beta.36"
+    "@intlify/shared" "9.2.0-beta.36"
+    "@intlify/vue-devtools" "9.2.0-beta.36"
+
+"@intlify/devtools-if@9.2.0-beta.36":
+  "integrity" "sha512-UbU4xtHu87WnlimdCycRS4DZbEu8X31bCDJwdm7ShM+9WvCjFEttnD0KDyviIwblzTvJOtGRQ60R7zDgCOFz5Q=="
+  "resolved" "https://registry.npmjs.org/@intlify/devtools-if/-/devtools-if-9.2.0-beta.36.tgz"
+  "version" "9.2.0-beta.36"
+  dependencies:
+    "@intlify/shared" "9.2.0-beta.36"
+
+"@intlify/message-compiler@9.2.0-beta.36":
+  "integrity" "sha512-u4EwW/U9Mc50G7vM1p24UQ3aPrrkm0eM60xKRLVib1XKpH+TK8taLeetSVPI/8mNOBkLNpXmysMfhD3HlsXHIA=="
+  "resolved" "https://registry.npmjs.org/@intlify/message-compiler/-/message-compiler-9.2.0-beta.36.tgz"
+  "version" "9.2.0-beta.36"
+  dependencies:
+    "@intlify/shared" "9.2.0-beta.36"
+    "source-map" "0.6.1"
+
+"@intlify/shared@9.2.0-beta.36":
+  "integrity" "sha512-+IXLiQ0V+9muzEf7RT9t9wEh6hNIK+kq+34Lce8W+DYny/jaFxPWIU4REYja3xC16kV7q+fz4I3vFz03gh7ysA=="
+  "resolved" "https://registry.npmjs.org/@intlify/shared/-/shared-9.2.0-beta.36.tgz"
+  "version" "9.2.0-beta.36"
+
+"@intlify/vue-devtools@9.2.0-beta.36":
+  "integrity" "sha512-g2aPb9Gy5z4prF3Lmj+ag6/ujzNFJd6CPrUxFKprljWhmxlpf83+xEaoZkbl3zog5Nq5GKF4hU3xLDwnIjGGRA=="
+  "resolved" "https://registry.npmjs.org/@intlify/vue-devtools/-/vue-devtools-9.2.0-beta.36.tgz"
+  "version" "9.2.0-beta.36"
+  dependencies:
+    "@intlify/core-base" "9.2.0-beta.36"
+    "@intlify/shared" "9.2.0-beta.36"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   "integrity" "sha1-UkryQNGjYFJ7cwR17PoTRKpUDd4="
   "resolved" "https://registry.npm.taobao.org/@mrmlnc/readdir-enhanced/download/@mrmlnc/readdir-enhanced-2.2.1.tgz"
@@ -1520,7 +1558,7 @@
   optionalDependencies:
     "prettier" "^1.18.2"
 
-"@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.0.0-beta.14", "@vue/devtools-api@^6.0.0-beta.15":
+"@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.0.0-beta.13", "@vue/devtools-api@^6.0.0-beta.14", "@vue/devtools-api@^6.0.0-beta.15":
   "integrity" "sha512-56vRhO7nXWWFYTx520BQSDlQH5VYpwy62hFDEqi2yHHEBpEqseOP5WYQusq7BEW3DXSY9E9cfPVR5CFtJbKuMg=="
   "resolved" "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.0.0-beta.18.tgz"
   "version" "6.0.0-beta.18"
@@ -9074,6 +9112,11 @@
   "resolved" "https://registry.npm.taobao.org/source-map/download/source-map-0.6.1.tgz"
   "version" "0.6.1"
 
+"source-map@0.6.1":
+  "integrity" "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g=="
+  "resolved" "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz"
+  "version" "0.6.1"
+
 "sourcemap-codec@^1.4.4":
   "integrity" "sha1-6oBL2UhXQC5pktBaOO8a41qatMQ="
   "resolved" "https://registry.npm.taobao.org/sourcemap-codec/download/sourcemap-codec-1.4.8.tgz"
@@ -10139,6 +10182,16 @@
   "integrity" "sha1-UylVzB6yCKPZkLOp+acFdGV+CPI="
   "resolved" "https://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz"
   "version" "2.3.4"
+
+"vue-i18n@^9.2.0-beta.36":
+  "integrity" "sha512-xdMBEFic9hUQ+i95gDfNx1UKzfGO7mptQfGOpfLZ2g9lR1yiFUaFEj42S2Epg5l1tDc9/NU4SE1eYcwHXcmluw=="
+  "resolved" "https://registry.npmjs.org/vue-i18n/-/vue-i18n-9.2.0-beta.36.tgz"
+  "version" "9.2.0-beta.36"
+  dependencies:
+    "@intlify/core-base" "9.2.0-beta.36"
+    "@intlify/shared" "9.2.0-beta.36"
+    "@intlify/vue-devtools" "9.2.0-beta.36"
+    "@vue/devtools-api" "^6.0.0-beta.13"
 
 "vue-loader-v16@npm:vue-loader@^16.1.0":
   "integrity" "sha512-7vKN45IxsKxe5GcVCbc2qFU5aWzyiLrYJyUuMz4BQLKctCj/fmCa0w6fGiiQ2cLFetNcek1ppGJQDCup0c1hpA=="

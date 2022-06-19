@@ -1,0 +1,9 @@
+{
+    "message": {
+        "language": "العربية",
+        "greeting": "السلام عليكم",
+        "hello": "اهلا, {name}!",
+        "successEdit": "تم التعديل بنجاح",
+        "test": "تست تست"
+    }
+}

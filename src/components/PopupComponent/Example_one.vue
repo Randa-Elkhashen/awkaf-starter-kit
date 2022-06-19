@@ -14,7 +14,7 @@
       <section
         class="d-flex flex-column justify-content-center align-items-center"
       >
-        <p class="text">تم التعديل</p>
+        <p class="text">{{ $t("message.successEdit") }}</p>
         <p class="success">بنجاح</p>
       </section>
     </template>

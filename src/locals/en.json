@@ -1,0 +1,9 @@
+{
+    "message": {
+        "language": "English",
+        "greeting": "Hello !",
+        "hello": "Hello, {name}!",
+        "successEdit": "edit suuccesfully",
+        "test": "Test Text"
+    }
+}
